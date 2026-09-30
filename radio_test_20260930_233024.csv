@@ -1,0 +1,5 @@
+timestamp,elapsed_s,car_id,last_world_seq,world_packets_lost,world_gap_events,max_world_gap,telemetry_received,telemetry_lost,telemetry_last_seq
+2026-09-30 23:31:25,60.0,1,5994,686,88,121,1137,66,1202
+2026-09-30 23:31:25,60.0,2,5999,635,57,121,1137,25,1157
+2026-09-30 23:32:25,120.0,1,11994,1528,199,121,2267,138,2402
+2026-09-30 23:32:25,120.0,2,11997,1415,125,121,2247,35,2277

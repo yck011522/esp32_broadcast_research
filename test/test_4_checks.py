@@ -96,6 +96,7 @@ class LongRunChecks(unittest.TestCase):
     def test_unconfirmed_slave_is_not_silently_counted(self):
         state = self.ready()
         state.receive((2, 1000, 20000, 500, 50, 121), 1)
+        state.receive((2, 1001, 20001, 501, 51, 121), 1.05)
         self.assertFalse(state.stop.is_set())
         self.assertIsNone(state.error)
         self.assertEqual(state.stats[2]['status'], 'FAIL_TO_RESET')
@@ -103,9 +104,25 @@ class LongRunChecks(unittest.TestCase):
         rows = self.rows(state)
         self.assertEqual(rows[0]['status'], 'OK')
         self.assertEqual(rows[1]['status'], 'FAIL_TO_RESET')
+        self.assertEqual(rows[1]['observed_telemetry'], '2')
+        self.assertEqual(rows[1]['raw_last_world_seq'], '20001')
+        self.assertEqual(rows[1]['max_observed_gap_s'], '0.05')
         for field in ('world_packets_lost', 'world_loss_percent', 'max_world_gap',
                       'telemetry_received', 'telemetry_lost', 'last_world_seq'):
             self.assertEqual(rows[1][field], '')
+
+    def test_silence_is_measured_without_trusting_loss_counters(self):
+        state = State()
+        state.start = 100.0
+        state.collect = True
+        state.receive((7, 10, 20, 2, 1, 2), 100.2)
+        state.receive((7, 20, 30, 3, 2, 2), 105.2)
+        car = state.stats[7]
+        self.assertEqual(car['status'], 'FAIL_TO_RESET')
+        self.assertEqual(car['observed_telemetry'], 2)
+        self.assertAlmostEqual(car['first_telemetry_delay_s'], .2)
+        self.assertAlmostEqual(car['max_observed_gap_s'], 5)
+        self.assertAlmostEqual(car['observed_last_rx'], 105.2)
 
     def rows(self, state):
         state.start = time.perf_counter() - 10

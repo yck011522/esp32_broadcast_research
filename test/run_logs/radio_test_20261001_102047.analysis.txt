@@ -1,0 +1,40 @@
+Radio test: radio_test_20261001_102047.csv
+Run status: COMPLETE
+Elapsed: 8.000 h; intervals logged: 475 (last interval #475)
+World packets sent: 1,840,098
+Aggregates below use OK rows only; unobserved trailing losses are not measurable.
+
+Host transmission:
+  Rate during logged intervals: 64.471 packets/s (median interval 64.314 packets/s)
+  Expected rate for comparison: 100.000 packets/s; sent by host: 64.471%
+  Schedule rebases: 902,157
+  Worst scheduling lateness: 23.716 ms
+  Longest TX interval: 33.716 ms
+
+Slave 1:
+  Intervals: OK 475, 0 absent
+  Valid world loss: 48,859 / 1,840,098 = 2.655%
+  Valid telemetry loss: 12 / 570,846 = 0.002%
+  Largest valid consecutive world gap: 33
+  First half valid world loss: 0.162% across 237 OK intervals
+  Second half valid world loss: 5.152% across 238 OK intervals
+  Worst valid intervals (world loss):
+    #432: 21.676% (838/3866), max gap 33
+    #470: 20.119% (780/3877), max gap 5
+    #448: 19.602% (758/3867), max gap 4
+
+Slave 2:
+  Intervals: OK 399, STALE 13, FAIL_TO_RESET 63, 0 absent
+  Valid world loss: 59,379 / 1,547,149 = 3.838%
+  Valid telemetry loss: 19,717 / 479,336 = 4.113%
+  Largest valid consecutive world gap: 11
+  First half valid world loss: 2.131% across 237 OK intervals
+  Second half valid world loss: 6.347% across 162 OK intervals
+  Worst valid intervals (world loss):
+    #414: 32.928% (1273/3866), max gap 10
+    #453: 28.753% (1111/3864), max gap 7
+    #452: 28.704% (1112/3874), max gap 9
+  Non-OK intervals with telemetry observed within 2 s of the end: 38/76
+  Non-OK intervals: #368 STALE, #369 FAIL_TO_RESET, #370 FAIL_TO_RESET, #371 FAIL_TO_RESET, #372 FAIL_TO_RESET, #373 FAIL_TO_RESET, #374 FAIL_TO_RESET, #375 FAIL_TO_RESET, #376 FAIL_TO_RESET, #377 FAIL_TO_RESET, #378 STALE, #379 FAIL_TO_RESET, #380 FAIL_TO_RESET, #381 FAIL_TO_RESET, #383 FAIL_TO_RESET ... (76 total)
+
+The final interval is shorter than one minute and is included where status is OK.

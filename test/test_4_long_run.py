@@ -152,14 +152,28 @@ class State:
                 if world == -1 and lost == events == gap == 0:
                     self.reset_seen.add(car_id)
                 return
-            if car_id not in self.reset_seen:
-                # Presence is useful even when this interval's counters cannot
-                # be trusted. Quarantine this device until the next interval.
-                self.stats[car_id] = dict(status="FAIL_TO_RESET", last_rx=now)
-                return
             car = self.stats.get(car_id)
             if car is None:
                 car = self.stats[car_id] = dict(
+                    observed_telemetry=0,
+                    observed_last_rx=now,
+                    max_observed_gap_s=0.0,
+                    first_telemetry_delay_s=max(0.0, now - self.start) if self.start else 0.0,
+                )
+            else:
+                car["max_observed_gap_s"] = max(
+                    car["max_observed_gap_s"], now - car["observed_last_rx"]
+                )
+            car["observed_telemetry"] += 1
+            car["observed_last_rx"] = now
+            car["raw_last_world_seq"] = world
+            if car_id not in self.reset_seen:
+                # Presence is useful even when this interval's counters cannot
+                # be trusted. Quarantine this device until the next interval.
+                car["status"] = "FAIL_TO_RESET"
+                return
+            if "status" not in car:
+                car.update(
                     status="OK",
                     telemetry_received=0,
                     telemetry_lost=0,
@@ -302,6 +316,11 @@ FIELDS = [
     "telemetry_loss_percent",
     "telemetry_duplicates",
     "telemetry_age_s",
+    "observed_telemetry",
+    "first_telemetry_delay_s",
+    "max_observed_gap_s",
+    "max_observed_silence_s",
+    "raw_last_world_seq",
     "world_sequence_lag",
     "max_tx_lateness_ms",
     "max_write_ms",
@@ -340,13 +359,27 @@ class Reporter:
                 **tx,
             )
             car = snapshot[car_id]
+            observed_age = now - car["observed_last_rx"]
+            observed_fields = dict(
+                observed_telemetry=car["observed_telemetry"],
+                first_telemetry_delay_s=round(car["first_telemetry_delay_s"], 3),
+                max_observed_gap_s=round(car["max_observed_gap_s"], 3),
+                max_observed_silence_s=round(max(
+                    car["first_telemetry_delay_s"], car["max_observed_gap_s"], observed_age
+                ), 3),
+                raw_last_world_seq=car["raw_last_world_seq"],
+            )
+            row.update(observed_fields)
             if car["status"] == "FAIL_TO_RESET":
                 row.update(
                     status="FAIL_TO_RESET",
-                    telemetry_age_s=round(now - car["last_rx"], 3),
+                    telemetry_age_s=round(observed_age, 3),
                 )
                 print(
-                    f"  Slave {car_id}: FAIL_TO_RESET (excluded from interval statistics)"
+                    f"  Slave {car_id}: FAIL_TO_RESET | {car['observed_telemetry']} "
+                    f"telemetry packets observed | max silence "
+                    f"{observed_fields['max_observed_silence_s']:.2f}s "
+                    "(loss counters excluded)"
                 )
             else:
                 age = now - car["last_rx"]
@@ -383,7 +416,8 @@ class Reporter:
                 print(
                     f"  Slave {car_id}: {row['status']} | world loss {loss:.3f}% "
                     f"(since last log {interval_loss:.3f}%) | max gap {car['max_world_gap']} | "
-                    f"telemetry loss {telemetry_loss:.3f}% | age {age:.2f}s"
+                    f"telemetry loss {telemetry_loss:.3f}% | age {age:.2f}s | "
+                    f"max observed silence {observed_fields['max_observed_silence_s']:.2f}s"
                 )
             self.writer.writerow(row)
         self.log_file.flush()
@@ -479,8 +513,8 @@ def run(args):
                             "marked FAIL_TO_RESET for this interval.",
                             flush=True,
                         )
+                    state.start = time.perf_counter()
                     state.collect = True
-                state.start = time.perf_counter()
                 if state.run_start is None:
                     state.run_start = state.start
                 remaining = state.run_start + duration - state.start

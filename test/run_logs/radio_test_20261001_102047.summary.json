@@ -1,0 +1,8 @@
+{
+  "status": "COMPLETE",
+  "error": null,
+  "csv": "C:\\Users\\leungp\\Documents\\GitHub\\esp32_broadcast_research\\test\\run_logs\\radio_test_20261001_102047.csv",
+  "finished_local": "2026-10-01T18:20:48",
+  "intervals_started": 475,
+  "total_world_packets_sent": 1840098
+}

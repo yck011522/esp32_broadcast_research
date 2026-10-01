@@ -1,0 +1,8 @@
+{
+  "status": "FAILED",
+  "error": "Stopped manually",
+  "csv": "C:\\Users\\leungp\\Documents\\GitHub\\esp32_broadcast_research\\test\\run_logs\\radio_test_20261001_093129.csv",
+  "finished_local": "2026-10-01T09:38:04",
+  "intervals_started": 7,
+  "total_world_packets_sent": 30411
+}

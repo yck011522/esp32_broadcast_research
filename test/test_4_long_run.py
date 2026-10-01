@@ -62,7 +62,7 @@ import serial
 PORT = "COM4"
 BAUD = 115200
 SEND_FREQUENCY_HZ = 100
-SEND_DURATION_S = 4 * 60 * 60
+SEND_DURATION_S = 8 * 60 * 60
 TAIL_OBSERVATION_TIME_S = 1.0
 LOG_INTERVAL_S = 60.0
 
@@ -78,9 +78,13 @@ class WindowsSession:
         self.awake = False
         if sys.platform == "win32":
             self.timer = ctypes.windll.winmm.timeBeginPeriod(1) == 0
-            self.awake = bool(ctypes.windll.kernel32.SetThreadExecutionState(0x80000001))
+            self.awake = bool(
+                ctypes.windll.kernel32.SetThreadExecutionState(0x80000001)
+            )
             if not self.timer or not self.awake:
-                print("WARNING: could not enable timer precision or prevent idle sleep.")
+                print(
+                    "WARNING: could not enable timer precision or prevent idle sleep."
+                )
         return self
 
     def __exit__(self, *args):
@@ -157,18 +161,27 @@ class State:
             if car is None:
                 car = self.stats[car_id] = dict(
                     status="OK",
-                    telemetry_received=0, telemetry_lost=0,
-                    telemetry_duplicates=0, telemetry_first_seq=seq,
-                    telemetry_last_seq=seq, last_world_seq=world,
-                    world_packets_lost=lost, world_gap_events=events,
-                    max_world_gap=gap, last_rx=now,
+                    telemetry_received=0,
+                    telemetry_lost=0,
+                    telemetry_duplicates=0,
+                    telemetry_first_seq=seq,
+                    telemetry_last_seq=seq,
+                    last_world_seq=world,
+                    world_packets_lost=lost,
+                    world_gap_events=events,
+                    max_world_gap=gap,
+                    last_rx=now,
                 )
             elif car["status"] == "COUNTER_RESET":
                 # Preserve the trusted prefix rather than mix counter epochs.
                 return
-            elif (seq < car["telemetry_last_seq"] or world < car["last_world_seq"]
-                  or lost < car["world_packets_lost"] or events < car["world_gap_events"]
-                  or gap < car["max_world_gap"]):
+            elif (
+                seq < car["telemetry_last_seq"]
+                or world < car["last_world_seq"]
+                or lost < car["world_packets_lost"]
+                or events < car["world_gap_events"]
+                or gap < car["max_world_gap"]
+            ):
                 car["status"] = "COUNTER_RESET"
                 return
             elif seq == car["telemetry_last_seq"]:
@@ -176,19 +189,28 @@ class State:
                 return
             else:
                 car["telemetry_lost"] += seq - car["telemetry_last_seq"] - 1
-            car.update(last_world_seq=world, world_packets_lost=lost,
-                       world_gap_events=events, max_world_gap=gap,
-                       telemetry_last_seq=seq, last_rx=now)
+            car.update(
+                last_world_seq=world,
+                world_packets_lost=lost,
+                world_gap_events=events,
+                max_world_gap=gap,
+                telemetry_last_seq=seq,
+                last_rx=now,
+            )
             car["telemetry_received"] += 1
 
     def snapshot(self):
         with self.lock:
-            return ({key: value.copy() for key, value in self.stats.items()},
-                    dict(world_packets_sent=self.sent,
-                         max_tx_lateness_ms=self.max_lateness_ms,
-                         max_write_ms=self.max_write_ms,
-                         max_tx_interval_ms=self.max_tx_interval_ms,
-                         schedule_rebases=self.schedule_rebases))
+            return (
+                {key: value.copy() for key, value in self.stats.items()},
+                dict(
+                    world_packets_sent=self.sent,
+                    max_tx_lateness_ms=self.max_lateness_ms,
+                    max_write_ms=self.max_write_ms,
+                    max_tx_interval_ms=self.max_tx_interval_ms,
+                    schedule_rebases=self.schedule_rebases,
+                ),
+            )
 
 
 def receive_loop(ser, state):
@@ -248,8 +270,9 @@ def transmit_loop(ser, state, duration, frequency, tail=TAIL_OBSERVATION_TIME_S)
             state.max_lateness_ms = max(state.max_lateness_ms, (actual - target) * 1000)
             state.max_write_ms = max(state.max_write_ms, (finished - actual) * 1000)
             if previous_actual is not None:
-                state.max_tx_interval_ms = max(state.max_tx_interval_ms,
-                                               (actual - previous_actual) * 1000)
+                state.max_tx_interval_ms = max(
+                    state.max_tx_interval_ms, (actual - previous_actual) * 1000
+                )
             state.schedule_rebases += int(rebased)
         previous_actual = actual
         target = following
@@ -258,14 +281,33 @@ def transmit_loop(ser, state, duration, frequency, tail=TAIL_OBSERVATION_TIME_S)
         state.stop.wait(max(0, end - time.perf_counter()) + tail)
 
 
-FIELDS = ["timestamp", "elapsed_s", "interval", "interval_elapsed_s",
-          "total_world_packets_sent", "car_id", "status", "world_packets_sent",
-          "last_world_seq", "world_packets_lost", "world_loss_percent",
-          "interval_world_loss_percent", "world_gap_events", "max_world_gap",
-          "telemetry_received", "telemetry_lost", "telemetry_last_seq",
-          "telemetry_loss_percent", "telemetry_duplicates", "telemetry_age_s",
-          "world_sequence_lag", "max_tx_lateness_ms", "max_write_ms",
-          "max_tx_interval_ms", "schedule_rebases"]
+FIELDS = [
+    "timestamp",
+    "elapsed_s",
+    "interval",
+    "interval_elapsed_s",
+    "total_world_packets_sent",
+    "car_id",
+    "status",
+    "world_packets_sent",
+    "last_world_seq",
+    "world_packets_lost",
+    "world_loss_percent",
+    "interval_world_loss_percent",
+    "world_gap_events",
+    "max_world_gap",
+    "telemetry_received",
+    "telemetry_lost",
+    "telemetry_last_seq",
+    "telemetry_loss_percent",
+    "telemetry_duplicates",
+    "telemetry_age_s",
+    "world_sequence_lag",
+    "max_tx_lateness_ms",
+    "max_write_ms",
+    "max_tx_interval_ms",
+    "schedule_rebases",
+]
 
 
 class Reporter:
@@ -279,45 +321,81 @@ class Reporter:
         timestamp = datetime.now().isoformat(timespec="seconds")
         interval_elapsed = now - self.state.start
         elapsed = now - (self.state.run_start or self.state.start)
-        print(f"\n[{timestamp}] {elapsed / 3600:.3f} h elapsed | interval {self.state.interval}")
+        print(
+            f"\n[{timestamp}] {elapsed / 3600:.3f} h elapsed | interval {self.state.interval}"
+        )
         if not snapshot:
-            print("  No slaves observed during this measurement; no device rows written.")
+            print(
+                "  No slaves observed during this measurement; no device rows written."
+            )
         for car_id in sorted(snapshot):
-            row = dict(timestamp=timestamp, elapsed_s=round(elapsed, 3),
-                       interval=self.state.interval, interval_elapsed_s=round(interval_elapsed, 3),
-                       total_world_packets_sent=self.state.completed_packets + tx['world_packets_sent'],
-                       car_id=car_id, **tx)
+            row = dict(
+                timestamp=timestamp,
+                elapsed_s=round(elapsed, 3),
+                interval=self.state.interval,
+                interval_elapsed_s=round(interval_elapsed, 3),
+                total_world_packets_sent=self.state.completed_packets
+                + tx["world_packets_sent"],
+                car_id=car_id,
+                **tx,
+            )
             car = snapshot[car_id]
             if car["status"] == "FAIL_TO_RESET":
-                row.update(status="FAIL_TO_RESET", telemetry_age_s=round(now - car["last_rx"], 3))
-                print(f"  Slave {car_id}: FAIL_TO_RESET (excluded from interval statistics)")
+                row.update(
+                    status="FAIL_TO_RESET",
+                    telemetry_age_s=round(now - car["last_rx"], 3),
+                )
+                print(
+                    f"  Slave {car_id}: FAIL_TO_RESET (excluded from interval statistics)"
+                )
             else:
                 age = now - car["last_rx"]
-                loss = 100 * car["world_packets_lost"] / max(tx["world_packets_sent"], 1)
+                loss = (
+                    100 * car["world_packets_lost"] / max(tx["world_packets_sent"], 1)
+                )
                 total = car["telemetry_received"] + car["telemetry_lost"]
                 telemetry_loss = 100 * car["telemetry_lost"] / max(total, 1)
                 old_sent, old_lost = self.previous.get(car_id, (0, 0))
-                interval_loss = 100 * (car["world_packets_lost"] - old_lost) / max(
-                    tx["world_packets_sent"] - old_sent, 1)
-                self.previous[car_id] = tx["world_packets_sent"], car["world_packets_lost"]
+                interval_loss = (
+                    100
+                    * (car["world_packets_lost"] - old_lost)
+                    / max(tx["world_packets_sent"] - old_sent, 1)
+                )
+                self.previous[car_id] = (
+                    tx["world_packets_sent"],
+                    car["world_packets_lost"],
+                )
                 row.update({k: v for k, v in car.items() if k in FIELDS})
-                row.update(status=car["status"] if car["status"] != "OK" else ("STALE" if age > 2 else "OK"),
-                           world_loss_percent=round(loss, 4),
-                           interval_world_loss_percent=round(interval_loss, 4),
-                           telemetry_loss_percent=round(telemetry_loss, 4),
-                           telemetry_age_s=round(age, 3),
-                           world_sequence_lag=tx["world_packets_sent"] - 1 - car["last_world_seq"])
-                print(f"  Slave {car_id}: {row['status']} | world loss {loss:.3f}% "
-                      f"(since last log {interval_loss:.3f}%) | max gap {car['max_world_gap']} | "
-                      f"telemetry loss {telemetry_loss:.3f}% | age {age:.2f}s")
+                row.update(
+                    status=(
+                        car["status"]
+                        if car["status"] != "OK"
+                        else ("STALE" if age > 2 else "OK")
+                    ),
+                    world_loss_percent=round(loss, 4),
+                    interval_world_loss_percent=round(interval_loss, 4),
+                    telemetry_loss_percent=round(telemetry_loss, 4),
+                    telemetry_age_s=round(age, 3),
+                    world_sequence_lag=tx["world_packets_sent"]
+                    - 1
+                    - car["last_world_seq"],
+                )
+                print(
+                    f"  Slave {car_id}: {row['status']} | world loss {loss:.3f}% "
+                    f"(since last log {interval_loss:.3f}%) | max gap {car['max_world_gap']} | "
+                    f"telemetry loss {telemetry_loss:.3f}% | age {age:.2f}s"
+                )
             self.writer.writerow(row)
         self.log_file.flush()
-        print(f"  Interval TX packets: {tx['world_packets_sent']:,} | "
-              f"run total: {self.state.completed_packets + tx['world_packets_sent']:,} | "
-              f"max lateness: {tx['max_tx_lateness_ms']:.3f} ms | "
-              f"max write: {tx['max_write_ms']:.3f} ms | "
-              f"max TX interval: {tx['max_tx_interval_ms']:.3f} ms | "
-              f"schedule rebases: {tx['schedule_rebases']}", flush=True)
+        print(
+            f"  Interval TX packets: {tx['world_packets_sent']:,} | "
+            f"run total: {self.state.completed_packets + tx['world_packets_sent']:,} | "
+            f"max lateness: {tx['max_tx_lateness_ms']:.3f} ms | "
+            f"max write: {tx['max_write_ms']:.3f} ms | "
+            f"max TX interval: {tx['max_tx_interval_ms']:.3f} ms | "
+            f"schedule rebases: {tx['schedule_rebases']}",
+            flush=True,
+        )
 
     def loop(self, interval):
         try:
@@ -328,21 +406,39 @@ class Reporter:
 
 
 def run(args):
-    duration = args.duration_seconds if args.duration_seconds is not None else args.hours * 3600
-    if duration <= 0 or args.frequency <= 0 or args.log_interval <= 0 or args.reset_interval < 0:
+    duration = (
+        args.duration_seconds
+        if args.duration_seconds is not None
+        else args.hours * 3600
+    )
+    if (
+        duration <= 0
+        or args.frequency <= 0
+        or args.log_interval <= 0
+        or args.reset_interval < 0
+    ):
         raise ValueError("Duration, frequency and log interval must be positive")
     folder = Path(args.log_dir)
     folder.mkdir(parents=True, exist_ok=True)
     path = folder / ("radio_test_" + datetime.now().strftime("%Y%m%d_%H%M%S") + ".csv")
     state = State()
-    print(f"ESP-NOW LONG-DURATION TEST\nPort: {args.port}\n"
-          f"Frequency: {args.frequency:g} Hz\nDuration: {duration / 3600:.4f} hours\n"
-          f"Packet upper bound (before reset overhead): {round(duration * args.frequency):,}\n"
-          f"Reset interval: {args.reset_interval:g} measured seconds (0 = continuous)\n"
-          f"CSV: {path.resolve()}\n"
-          f"Python: {sys.version.split()[0]}", flush=True)
-    ser = serial.Serial(port=None, baudrate=BAUD, timeout=0.05, write_timeout=2,
-                        rtscts=False, dsrdtr=False)
+    print(
+        f"ESP-NOW LONG-DURATION TEST\nPort: {args.port}\n"
+        f"Frequency: {args.frequency:g} Hz\nDuration: {duration / 3600:.4f} hours\n"
+        f"Packet upper bound (before reset overhead): {round(duration * args.frequency):,}\n"
+        f"Reset interval: {args.reset_interval:g} measured seconds (0 = continuous)\n"
+        f"CSV: {path.resolve()}\n"
+        f"Python: {sys.version.split()[0]}",
+        flush=True,
+    )
+    ser = serial.Serial(
+        port=None,
+        baudrate=BAUD,
+        timeout=0.05,
+        write_timeout=2,
+        rtscts=False,
+        dsrdtr=False,
+    )
     ser.port = args.port
     ser.rts = ser.dtr = False
     receiver = logger = None
@@ -356,11 +452,16 @@ def run(args):
             ser.open()
             time.sleep(0.2)
             ser.reset_input_buffer()
-            receiver = threading.Thread(target=receive_loop, args=(ser, state), daemon=True)
+            receiver = threading.Thread(
+                target=receive_loop, args=(ser, state), daemon=True
+            )
             receiver.start()
             while not state.stop.is_set():
                 # Avoid starting another reset when the four-hour budget is exhausted.
-                if state.run_start is not None and time.perf_counter() >= state.run_start + duration - 0.7:
+                if (
+                    state.run_start is not None
+                    and time.perf_counter() >= state.run_start + duration - 0.7
+                ):
                     break
                 state.prepare_interval()
                 print(f"Resetting slaves for interval {state.interval}...", flush=True)
@@ -368,21 +469,33 @@ def run(args):
                     send_world(ser, -1)
                     time.sleep(0.1)
                 with state.lock:
-                    print(f"Reset confirmed by slaves: {sorted(state.reset_seen)}", flush=True)
+                    print(
+                        f"Reset confirmed by slaves: {sorted(state.reset_seen)}",
+                        flush=True,
+                    )
                     if not state.reset_seen:
-                        print("No reset confirmations; continuing. Any observed slave will be "
-                              "marked FAIL_TO_RESET for this interval.", flush=True)
+                        print(
+                            "No reset confirmations; continuing. Any observed slave will be "
+                            "marked FAIL_TO_RESET for this interval.",
+                            flush=True,
+                        )
                     state.collect = True
                 state.start = time.perf_counter()
                 if state.run_start is None:
                     state.run_start = state.start
                 remaining = state.run_start + duration - state.start
                 tail = 0.1 if args.reset_interval else TAIL_OBSERVATION_TIME_S
-                interval_duration = min(args.reset_interval, max(0, remaining - tail)) if args.reset_interval else duration
+                interval_duration = (
+                    min(args.reset_interval, max(0, remaining - tail))
+                    if args.reset_interval
+                    else duration
+                )
                 reporter = Reporter(state, writer, log_file)
                 interval_logged = False
                 if not args.reset_interval:
-                    logger = threading.Thread(target=reporter.loop, args=(args.log_interval,), daemon=True)
+                    logger = threading.Thread(
+                        target=reporter.loop, args=(args.log_interval,), daemon=True
+                    )
                     logger.start()
                 # TX on the main thread, just as in Test 3. Errors propagate here.
                 transmit_loop(ser, state, interval_duration, args.frequency, tail)
@@ -411,18 +524,26 @@ def run(args):
             ser.close()
             if state.start is not None and not interval_logged:
                 reporter.write()
-            summary = dict(status="FAILED" if state.error else "COMPLETE",
-                           error=state.error, csv=str(path.resolve()),
-                           finished_local=datetime.now().isoformat(timespec="seconds"),
-                           intervals_started=state.interval,
-                           total_world_packets_sent=state.completed_packets +
-                           (state.sent if not interval_logged else 0))
-            path.with_suffix(".summary.json").write_text(json.dumps(summary, indent=2), encoding="utf-8")
+            summary = dict(
+                status="FAILED" if state.error else "COMPLETE",
+                error=state.error,
+                csv=str(path.resolve()),
+                finished_local=datetime.now().isoformat(timespec="seconds"),
+                intervals_started=state.interval,
+                total_world_packets_sent=state.completed_packets
+                + (state.sent if not interval_logged else 0),
+            )
+            path.with_suffix(".summary.json").write_text(
+                json.dumps(summary, indent=2), encoding="utf-8"
+            )
         if state.error:
             print(f"TEST FAILED: {state.error}", flush=True)
             return 1
-        print(f"TEST COMPLETE: {state.completed_packets:,} packets sent over "
-              f"{state.interval} intervals. CSV: {path.resolve()}", flush=True)
+        print(
+            f"TEST COMPLETE: {state.completed_packets:,} packets sent over "
+            f"{state.interval} intervals. CSV: {path.resolve()}",
+            flush=True,
+        )
         return 0
 
 
@@ -430,12 +551,20 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--port", default=PORT)
     parser.add_argument("--hours", type=float, default=SEND_DURATION_S / 3600)
-    parser.add_argument("--duration-seconds", type=float, help="Short validation; overrides --hours")
+    parser.add_argument(
+        "--duration-seconds", type=float, help="Short validation; overrides --hours"
+    )
     parser.add_argument("--frequency", type=float, default=SEND_FREQUENCY_HZ)
     parser.add_argument("--log-interval", type=float, default=LOG_INTERVAL_S)
-    parser.add_argument("--reset-interval", type=float, default=60,
-                        help="Measured seconds per reset interval; 0 disables periodic resets")
-    parser.add_argument("--log-dir", default=str(Path(__file__).resolve().parent / "run_logs"))
+    parser.add_argument(
+        "--reset-interval",
+        type=float,
+        default=60,
+        help="Measured seconds per reset interval; 0 disables periodic resets",
+    )
+    parser.add_argument(
+        "--log-dir", default=str(Path(__file__).resolve().parent / "run_logs")
+    )
     return run(parser.parse_args())
 
 

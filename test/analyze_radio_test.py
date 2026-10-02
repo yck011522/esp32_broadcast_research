@@ -254,11 +254,83 @@ def plot_run(path, rows, expected_hz=100):
     return output
 
 
+def plot_gap_distribution(path, rows, expected_hz=100):
+    """Plot occurrences of per-minute maxima, with nominal gap duration."""
+    import matplotlib
+
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+    from matplotlib.ticker import FuncFormatter
+
+    by_car = defaultdict(list)
+    for row in rows:
+        if (row["status"] == "OK" and
+                number(row, "interval_elapsed_s", 0) >= 55 and
+                number(row, "max_world_gap") is not None):
+            by_car[row["car_id"]].append(int(number(row, "max_world_gap")))
+    if not by_car:
+        raise ValueError("No complete, reset-confirmed minutes have max_world_gap data")
+
+    maximum = max(max(values) for values in by_car.values())
+    lengths = list(range(maximum + 1))
+    fig, axes = plt.subplots(2, 1, figsize=(12, 8), sharex=True,
+                             gridspec_kw={"height_ratios": [1.3, 1]})
+    palette = plt.get_cmap("tab10")
+    cars = sorted(by_car)
+    width = min(0.8 / len(cars), 0.35)
+    for index, car in enumerate(cars):
+        values = by_car[car]
+        counts = Counter(values)
+        color = palette(index % 10)
+        offset = (index - (len(cars) - 1) / 2) * width
+        axes[0].bar([length + offset for length in lengths],
+                    [counts.get(length, 0) for length in lengths],
+                    width=width, color=color, label=f"Slave {car} ({len(values)} minutes)")
+        tail = [sum(value >= length for value in values) for length in lengths]
+        axes[1].step(lengths, tail, where="mid", color=color, linewidth=1.8,
+                     label=f"Slave {car}: {sum(v >= 10 for v in values)} minutes with gap ≥10")
+    integer_ticks = [0, 1, 2, 5, 10, 20, 50, 100, 200, 500, 1000]
+    for ax in axes:
+        ax.set_yscale("symlog", linthresh=1)
+        ax.set_yticks(integer_ticks)
+        ax.yaxis.set_major_formatter(FuncFormatter(lambda value, _: f"{int(value):,}"))
+    axes[0].set_ylabel("Number of occurrences")
+    axes[1].set_ylabel("Cumulative occurrences")
+    axes[1].set_xlabel("Maximum consecutive world packets lost in a minute")
+    axes[1].axvline(10, color="#a23a3a", linestyle="--", linewidth=1,
+                    label="10-packet threshold")
+    packet_ticks = list(range(0, maximum + 1, 5 if maximum > 20 else 2))
+    axes[1].set_xticks(packet_ticks)
+    axes[1].set_xlim(-0.7, maximum + 0.7)
+    duration_axis = axes[0].secondary_xaxis(
+        "top", functions=(lambda packets: packets * 1000 / expected_hz,
+                          lambda milliseconds: milliseconds * expected_hz / 1000)
+    )
+    duration_axis.set_xticks([packets * 1000 / expected_hz for packets in packet_ticks])
+    duration_axis.set_xlabel(f"Nominal gap duration at {expected_hz:g} Hz (ms)")
+    for ax in axes:
+        ax.grid(axis="y", alpha=0.25)
+        ax.legend(loc="upper right", fontsize=9)
+    fig.suptitle(f"Per-minute maximum world-packet loss: {path.stem}", fontsize=14, y=0.99)
+    fig.text(0.5, 0.02,
+             "One occurrence = one valid full minute, not one loss event. "
+             "Duration axis assumes the requested rate; actual send timing may differ. "
+             "Invalid and partial intervals are excluded.",
+             ha="center", fontsize=9)
+    fig.tight_layout(rect=(0, 0.045, 1, 0.91))
+    output = path.with_suffix(".max_gap_distribution.png")
+    fig.savefig(output, dpi=160)
+    plt.close(fig)
+    return output, {car: (len(values), sum(value >= 10 for value in values))
+                    for car, values in by_car.items()}
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("csv", nargs="?", type=Path, help="Test 4 CSV; defaults to latest by filename")
     parser.add_argument("--save", action="store_true", help="Write a .analysis.txt beside the CSV")
-    parser.add_argument("--plot", action="store_true", help="Write a .analysis.png graph beside the CSV")
+    parser.add_argument("--plot", action="store_true",
+                        help="Write time-series and maximum-gap distribution PNGs beside the CSV")
     parser.add_argument("--top", type=int, default=5, help="Worst valid intervals to list per slave")
     parser.add_argument("--expected-hz", type=float, default=100,
                         help="Planned world send rate for comparison (default: 100)")
@@ -283,6 +355,10 @@ def main():
     if args.plot:
         output = plot_run(path, rows, expected_hz=args.expected_hz)
         print(f"Saved graph: {output.resolve()}")
+        distribution, counts = plot_gap_distribution(path, rows, expected_hz=args.expected_hz)
+        print(f"Saved maximum-gap distribution: {distribution.resolve()}")
+        for car, (minutes, at_least_ten) in counts.items():
+            print(f"Slave {car}: {at_least_ten}/{minutes} valid full minutes had max gap >=10")
 
 
 if __name__ == "__main__":

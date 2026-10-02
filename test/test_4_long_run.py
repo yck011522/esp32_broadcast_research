@@ -59,7 +59,7 @@ import time
 
 import serial
 
-PORT = "COM4"
+PORT = "COM9"
 BAUD = 115200
 SEND_FREQUENCY_HZ = 100
 SEND_DURATION_S = 8 * 60 * 60

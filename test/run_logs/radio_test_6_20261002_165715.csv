@@ -1,0 +1,2 @@
+timestamp,phase,world_packets_sent,car_id,telemetry_received,telemetry_lost,telemetry_loss_percent,telemetry_first_seq,telemetry_last_seq,telemetry_age_s,max_silence_s,world_packets_lost,world_gap_events,max_world_gap,last_world_seq
+2026-10-02T16:57:48,baseline,1500,2,532,0,0.0,0,531,0.048,2.384,705,39,165,1499

@@ -1,13 +1,27 @@
 /*
 ===============================================================================
-master_radio/main.cpp
+master_radio_ota/main.cpp
 ===============================================================================
 
 PURPOSE
 -------
 Schema-agnostic ESP-NOW <-> USB serial bridge.
 
-The master knows nothing about the contents of messages.
+Identical to master_radio, except that the Wi-Fi channel is fixed to
+channel 6.
+
+WHY CHANNEL 6?
+--------------
+In the OTA test setup the slave connects to the lab router
+("M7026 Lab's ASUS Router"), which is fixed to Wi-Fi channel 6.
+
+When an ESP32 connects to an access point, its radio follows the
+access point's channel, and ESP-NOW on the slave therefore also
+operates on channel 6.
+
+The master is not connected to any access point, so it would
+otherwise stay on channel 1 and the two radios would not hear
+each other. Fixing the master to channel 6 keeps ESP-NOW working.
 
 PC -> MASTER -> SLAVES
 ----------------------
@@ -34,25 +48,6 @@ Master:
     4. Appends '\n'
 
 
-WHY THE QUEUE?
---------------
-Do NOT perform USB Serial.write() directly inside the ESP-NOW receive callback.
-
-The callback should return quickly.
-
-Instead:
-
-    ESP-NOW callback
-          |
-          | copy packet
-          v
-       QUEUE
-          |
-          | loop()
-          v
-    USB SERIAL
-
-
 MESSAGE SIZE
 ------------
 Maximum raw message length:
@@ -66,27 +61,27 @@ One serial line corresponds to exactly one ESP-NOW packet.
 
 #include <Arduino.h>
 #include <WiFi.h>
+#include <esp_wifi.h>
 #include <esp_now.h>
 
 // =============================================================================
 // CONFIGURATION
 // =============================================================================
 
+// Must match the lab router's fixed Wi-Fi channel so that ESP-NOW
+// works between this master and the router-connected slave.
+
+const uint8_t ESP_NOW_CHANNEL = 6;
+
 const size_t MAX_MESSAGE_LENGTH = 250;
 
 // Number of received ESP-NOW packets that can wait for USB forwarding.
-//
-// 32 packets is far more than necessary for normal 20 Hz telemetry,
-// while still using very little memory.
 
 const size_t RX_QUEUE_LENGTH = 32;
 
 // =============================================================================
 // MESSAGE TYPE USED INTERNALLY BY MASTER
 // =============================================================================
-// This is NOT an application protocol.
-//
-// It only lets the master temporarily store one arbitrary ESP-NOW packet.
 
 struct RadioMessage
 {
@@ -100,8 +95,8 @@ struct RadioMessage
 
 // ESP-NOW broadcast MAC address.
 
-uint8_t broadcast_mac[] = {
-    0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF};
+// uint8_t broadcast_mac[] = {0x68, 0xEE, 0x8F, 0x4B, 0x5B, 0x18};
+uint8_t broadcast_mac[] = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF};
 
 // Serial input buffer for PC -> ESP-NOW.
 
@@ -142,8 +137,6 @@ void onReceive(
     // Non-blocking queue insertion.
     //
     // If the queue is full, this packet is dropped.
-    // For this initial test we simply drop it rather than blocking
-    // the Wi-Fi callback.
 
     xQueueSend(
         rx_queue,
@@ -180,6 +173,12 @@ void setup()
 
     WiFi.mode(WIFI_STA);
 
+    // Fix the radio to the lab router's channel BEFORE initializing ESP-NOW.
+
+    esp_wifi_set_channel(
+        ESP_NOW_CHANNEL,
+        WIFI_SECOND_CHAN_NONE);
+
     if (esp_now_init() != ESP_OK)
     {
 
@@ -200,7 +199,7 @@ void setup()
         broadcast_mac,
         6);
 
-    peer.channel = 0;
+    peer.channel = ESP_NOW_CHANNEL;
     peer.encrypt = false;
 
     esp_now_add_peer(&peer);
@@ -215,10 +214,6 @@ void loop()
     // =========================================================================
     // ESP-NOW -> PC
     // =========================================================================
-    //
-    // Drain all received radio packets from the queue.
-    //
-    // USB serial operations happen here rather than inside the ESP-NOW callback.
 
     RadioMessage message;
 

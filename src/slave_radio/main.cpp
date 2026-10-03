@@ -1,69 +1,70 @@
 /*
 ===============================================================================
-slave_radio/main.cpp
+slave_radio_ota/main.cpp
 ===============================================================================
 
 PURPOSE
 -------
-ESP-NOW slave/car radio for Seeed Studio XIAO ESP32-S3.
+ESP-NOW slave/car radio for Seeed Studio XIAO ESP32-S3,
+with Over-The-Air (OTA) firmware update support.
 
-Current world message:
+This is a copy of slave_radio with one addition: the slave connects
+to the offline lab router ("M7026 Lab's ASUS Router") so that new
+firmware can be uploaded over Wi-Fi from PlatformIO (espota),
+without a USB cable.
+
+NETWORK SETUP
+-------------
+Router SSID:     M7026 Lab's ASUS Router
+Router channel:  6 (fixed in the router admin page)
+Slave address:   192.168.50.200 (static, no DHCP)
+Gateway:         192.168.50.1
+
+Because the slave is connected to the router, its radio follows the
+router's channel (6). ESP-NOW therefore also runs on channel 6, and
+the master firmware (master_radio_ota) is fixed to channel 6 to match.
+
+OTA
+---
+Hostname:        esp32-car2
+OTA password:    ota7026
+Upload command:  pio run -e slave_radio_ota -t upload
+
+ArduinoOTA.handle() is called at the TOP of loop() so that OTA
+requests are serviced even when the radio test is idle or in
+diagnostic mode. During an upload the board reboots automatically
+into the new firmware.
+
+LOCAL SERIAL OUTPUT
+-------------------
+Startup and OTA event messages are printed over USB serial. Periodic
+status and timeout diagnostics remain disabled during radio-loss testing.
+ESP-NOW telemetry and OTA remain active. Wi-Fi modem sleep is disabled
+when station mode starts to keep the radio awake for ESP-NOW reception.
+
+RADIO BEHAVIOR (unchanged from slave_radio)
+-------------------------------------------
+World message:
 
     W,<world_seq>
 
-Examples:
-
-    W,-1
-    W,0
-    W,1
-    W,2
-
-
-Telemetry message:
+Telemetry message (20 Hz, unicast to master MAC learned from
+the first world packet):
 
     T,car_id,telemetry_seq,last_world_seq,
       world_packets_lost,world_gap_events,max_world_gap
 
-
-DIAGNOSTIC MODE
----------------
-During an active test, the slave does NOT print diagnostic information.
-
-If no valid world packet has been received for 1 second:
-
-1. Telemetry transmission stops.
-2. A diagnostic report is printed once to the slave USB serial port.
-
-Example:
-
-    === TEST DIAGNOSTICS ===
-    Car ID:                  2
-    Last world sequence:     2999
-    World packets lost:      11
-    World gap events:        11
-    Maximum world gap:       1
-
-    Telemetry attempted:     603
-    Send call errors:        0
-    Send success callbacks:  462
-    Send failure callbacks:  141
-
-This helps determine whether missing telemetry packets are being lost:
-
-    - before ESP-NOW accepts the send request
-    - during ESP-NOW unicast transmission
-    - or later at the master / serial / Python side
-
-
-RESET
------
 W,-1 resets all test statistics.
+
+If no valid world packet has been received for 1 second, telemetry
+stops. Local USB diagnostics are disabled during this test.
 
 ===============================================================================
 */
 
 #include <Arduino.h>
 #include <WiFi.h>
+#include <ArduinoOTA.h>
 #include <esp_now.h>
 
 // =============================================================================
@@ -72,8 +73,37 @@ W,-1 resets all test statistics.
 
 #define CAR_ID 2
 
+// Wifi used for OTA.
+#if !defined(WIFI_SSID)
+#define WIFI_SSID "M7026 Lab ASUS Router"
+#define WIFI_PASSWORD "70267026"
+#endif
+
+#if !defined(STATIC_IP_ADDRESS)
+#define STATIC_IP_ADDRESS 192, 168, 50, 200
+#endif
+#if !defined(GATEWAY_ADDRESS)
+#define GATEWAY_ADDRESS 192, 168, 50, 1
+#endif
+
+// Static IP so PlatformIO's upload_port never changes.
+const IPAddress STATIC_IP(STATIC_IP_ADDRESS);
+const IPAddress GATEWAY(GATEWAY_ADDRESS);
+const IPAddress SUBNET(255, 255, 255, 0);
+const uint32_t WIFI_CONNECT_TIMEOUT_MS = 20000;
+
+// OTA identity. The password is required by PlatformIO (upload_flags --auth).
+
+#if !defined(OTA_HOSTNAME)
+#define OTA_HOSTNAME "esp32-car1"
+#endif
+#if !defined(OTA_PASSWORD)
+#define OTA_PASSWORD "ota7026"
+#endif
+
 const uint32_t TELEMETRY_INTERVAL_MS = 50; // 20 Hz
 const uint32_t TEST_TIMEOUT_MS = 1000;     // stop after 1 s without world data
+// const uint32_t STATUS_INTERVAL_MS = 10000; // local status disabled
 const size_t MAX_MESSAGE_LENGTH = 250;
 
 // =============================================================================
@@ -107,12 +137,14 @@ uint32_t last_telemetry_ms = 0;
 uint32_t last_world_receive_ms = 0;
 
 bool test_started = false;
-bool diagnostics_printed = false;
+bool ota_initialized = false;
+// bool diagnostics_printed = false; // local diagnostics disabled
+
+// uint32_t last_status_ms = 0; // local status disabled
 
 // =============================================================================
 // ESP-NOW SEND CALLBACK
 // =============================================================================
-// Called after a unicast telemetry transmission completes at the Wi-Fi layer.
 
 void onSend(
     const uint8_t *mac_addr,
@@ -125,7 +157,7 @@ void onSend(
 }
 
 // =============================================================================
-// ESP-NOW RECEIVE CALLBACK
+// ESP-NOW CALLBACK - After receiving a world packet.
 // =============================================================================
 
 void onReceive(
@@ -158,12 +190,13 @@ void onReceive(
 
     last_world_receive_ms = millis();
     test_started = true;
-    diagnostics_printed = false;
+    // diagnostics_printed = false; // local diagnostics disabled
 
     int32_t world_seq = atoi(message + 2);
 
     // -------------------------------------------------------------------------
-    // RESET
+    // RESET when world_seq == -1. This is a special packet sent by the master
+    // to reset all test statistics.
     // -------------------------------------------------------------------------
 
     if (world_seq == -1)
@@ -224,6 +257,46 @@ void onReceive(
 }
 
 // =============================================================================
+// LOCAL SERIAL STATUS (disabled during radio-loss tests)
+// =============================================================================
+// Printed every STATUS_INTERVAL_MS while no radio test is running, so a
+// USB serial monitor attached after boot can still see the connection state.
+
+#if 0
+void printStatus()
+{
+    Serial.print("STATUS | FW: ");
+    Serial.print(FW_VERSION);
+
+    Serial.print(" | WiFi: ");
+
+    if (WiFi.status() == WL_CONNECTED)
+        Serial.print("connected");
+    else
+        Serial.print("DISCONNECTED");
+
+    Serial.print(" | IP: ");
+    Serial.print(WiFi.localIP());
+
+    Serial.print(" | Channel: ");
+    Serial.print(WiFi.channel());
+
+    Serial.print(" | RSSI: ");
+    Serial.print(WiFi.RSSI());
+    Serial.print(" dBm");
+
+    Serial.print(" | OTA: ready (");
+    Serial.print(OTA_HOSTNAME);
+    Serial.print(")");
+
+    Serial.print(" | Test: ");
+    Serial.print(test_started ? "started" : "waiting for world packets");
+
+    Serial.print(" | Last world seq: ");
+    Serial.println(last_world_seq);
+}
+
+// =============================================================================
 // PRINT DIAGNOSTICS
 // =============================================================================
 
@@ -265,29 +338,111 @@ void printDiagnostics()
 
     Serial.println("================================");
 }
+#endif
 
 // =============================================================================
 // SETUP
 // =============================================================================
 
+void OTA_onStart();
+
+void initialize_OTA()
+{
+    ArduinoOTA.setHostname(OTA_HOSTNAME);
+    ArduinoOTA.setPassword(OTA_PASSWORD);
+
+    ArduinoOTA.onStart([]()
+                       { OTA_onStart(); });
+
+    ArduinoOTA.onEnd([]()
+                     { Serial.println("OTA update finished. Rebooting."); });
+
+    ArduinoOTA.onError([](ota_error_t error)
+                       {
+        Serial.print("OTA error: ");
+        Serial.println(error); });
+
+    ArduinoOTA.begin();
+    Serial.println("OTA ready.");
+}
+
+void OTA_onStart()
+{
+    // After integration: Turn off motors and stuff here.
+    Serial.println("OTA update started...");
+}
+
 void setup()
 {
-    Serial.begin(115200);
+    // -------------------------------------------------------------------------
+    // Local USB serial output is used during setup only.
+    // -------------------------------------------------------------------------
 
+    Serial.begin(115200);
     delay(1000);
 
     Serial.println();
     Serial.println("================================");
-    Serial.println("ESP-NOW SLAVE RADIO");
+    Serial.println("ESP-NOW SLAVE RADIO (OTA)");
     Serial.println("================================");
 
     Serial.print("Car ID: ");
     Serial.println(CAR_ID);
 
-    WiFi.mode(WIFI_STA);
+    // -------------------------------------------------------------------------
+    // Connect to Wifi router for OTA upload (static IP, no DHCP).
+    //
+    // After connecting, the radio is locked to the router's channel (6),
+    // and ESP-NOW will operate on that channel as well.
+    // -------------------------------------------------------------------------
 
-    Serial.print("MAC: ");
-    Serial.println(WiFi.macAddress());
+    WiFi.mode(WIFI_STA);
+    WiFi.setSleep(false); // To keep the radio awake for low latency ESP-NOW reception.
+
+    WiFi.config(STATIC_IP, GATEWAY, SUBNET);
+    WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
+
+    Serial.print("Connecting to router");
+
+    uint32_t connect_start = millis();
+
+    // Wait for Wifi connection. If the router is not available beyond timeout, continue controller anyways.
+    while (1)
+    {
+        // If timeout, print an error message and move on.
+        if (millis() - connect_start > WIFI_CONNECT_TIMEOUT_MS)
+        {
+            Serial.println();
+            Serial.println("ERROR: Router connection timeout.");
+            break;
+        }
+        // If successful, print a newline and the IP address.
+        if (WiFi.status() == WL_CONNECTED)
+        {
+            Serial.println();
+
+            Serial.print("IP:      ");
+            Serial.println(WiFi.localIP());
+
+            Serial.print("MAC:     ");
+            Serial.println(WiFi.macAddress());
+
+            Serial.print("Channel: ");
+            Serial.println(WiFi.channel());
+
+            // Initialize OTA on if Wi-Fi connection is successful.
+            initialize_OTA();
+            ota_initialized = true;
+            break;
+        }
+        // While not yet timeout, print a dot every 500 ms to indicate progress.
+        Serial.print(".");
+        delay(500);
+    }
+
+    // -------------------------------------------------------------------------
+    // ESP-NOW
+    // -------------------------------------------------------------------------
 
     if (esp_now_init() != ESP_OK)
     {
@@ -302,7 +457,7 @@ void setup()
     esp_now_register_send_cb(onSend);
 
     Serial.println("ESP-NOW initialized.");
-    Serial.println("Waiting for broadcasts...");
+    Serial.println("Setup complete. Waiting for world packets...");
 }
 
 // =============================================================================
@@ -311,13 +466,53 @@ void setup()
 
 void loop()
 {
+    // The initial router attempt can time out while Wi-Fi is still connecting.
+    // Complete OTA setup if Wi-Fi connects later. Sleep was disabled in setup().
+    bool wifi_connected = WiFi.status() == WL_CONNECTED;
+    if (wifi_connected && !ota_initialized)
+    {
+        initialize_OTA();
+        ota_initialized = true;
+    }
+
+    // -------------------------------------------------------------------------
+    // OTA must be serviced even when the radio test is idle or in
+    // diagnostic mode, so this call stays at the top of loop().
+    // -------------------------------------------------------------------------
+
+    ArduinoOTA.handle();
+
+    // -------------------------------------------------------------------------
+    // IDLE STATUS (local serial output disabled)
+    //
+    // While no test is running, print a one-line status report every
+    // STATUS_INTERVAL_MS. This stays silent during an active test, so a
+    // USB serial monitor attached after boot can still see whether the
+    // slave is connected to the router and ready for OTA.
+    // -------------------------------------------------------------------------
+
+#if 0
+    bool test_active =
+        test_started &&
+        millis() - last_world_receive_ms <= TEST_TIMEOUT_MS;
+
+    if (
+        !test_active &&
+        millis() - last_status_ms >= STATUS_INTERVAL_MS)
+    {
+
+        last_status_ms = millis();
+        printStatus();
+    }
+#endif
+
     // -------------------------------------------------------------------------
     // TEST TIMEOUT
     //
     // If world packets stop for more than 1 second:
     //
     // - stop transmitting telemetry
-    // - print diagnostics once
+    // - local serial diagnostics are disabled for this test
     // -------------------------------------------------------------------------
 
     if (
@@ -325,12 +520,14 @@ void loop()
         millis() - last_world_receive_ms > TEST_TIMEOUT_MS)
     {
 
+#if 0
         if (!diagnostics_printed)
         {
 
             printDiagnostics();
             diagnostics_printed = true;
         }
+#endif
 
         return;
     }
@@ -426,9 +623,6 @@ void loop()
         length);
 
     // This means ESP-NOW rejected the send request locally.
-    //
-    // The send callback is separate and tells us whether an accepted
-    // transmission eventually succeeded or failed.
 
     if (result != ESP_OK)
         telemetry_send_call_errors++;

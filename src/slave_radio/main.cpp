@@ -72,7 +72,9 @@ stops. Local USB diagnostics are disabled during this test.
 // CONFIGURATION
 // =============================================================================
 
+#if !defined(CAR_ID)
 #define CAR_ID 2
+#endif
 
 // Wifi used for OTA.
 #if !defined(WIFI_SSID)

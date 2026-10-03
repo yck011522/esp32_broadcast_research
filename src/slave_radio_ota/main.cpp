@@ -37,9 +37,10 @@ into the new firmware.
 
 LOCAL SERIAL OUTPUT
 -------------------
-All local USB serial printouts are commented out for radio-loss testing.
+Startup and OTA event messages are printed over USB serial. Periodic
+status and timeout diagnostics remain disabled during radio-loss testing.
 ESP-NOW telemetry and OTA remain active. Wi-Fi modem sleep is disabled
-after router connection to keep the radio awake for ESP-NOW reception.
+when station mode starts to keep the radio awake for ESP-NOW reception.
 
 RADIO BEHAVIOR (unchanged from slave_radio)
 -------------------------------------------
@@ -65,7 +66,6 @@ stops. Local USB diagnostics are disabled during this test.
 #include <WiFi.h>
 #include <ArduinoOTA.h>
 #include <esp_now.h>
-#include <esp_wifi.h>
 
 // =============================================================================
 // CONFIGURATION
@@ -137,6 +137,7 @@ uint32_t last_telemetry_ms = 0;
 uint32_t last_world_receive_ms = 0;
 
 bool test_started = false;
+bool ota_initialized = false;
 // bool diagnostics_printed = false; // local diagnostics disabled
 
 // uint32_t last_status_ms = 0; // local status disabled
@@ -343,6 +344,8 @@ void printDiagnostics()
 // SETUP
 // =============================================================================
 
+void OTA_onStart();
+
 void initialize_OTA()
 {
     ArduinoOTA.setHostname(OTA_HOSTNAME);
@@ -365,13 +368,14 @@ void initialize_OTA()
 
 void OTA_onStart()
 {
+    // After integration: Turn off motors and stuff here.
     Serial.println("OTA update started...");
 }
 
 void setup()
 {
     // -------------------------------------------------------------------------
-    // Local USB serial output. Only used during startup and for OTA upload progress.
+    // Local USB serial output is used during setup only.
     // -------------------------------------------------------------------------
 
     Serial.begin(115200);
@@ -393,6 +397,7 @@ void setup()
     // -------------------------------------------------------------------------
 
     WiFi.mode(WIFI_STA);
+    WiFi.setSleep(false); // To keep the radio awake for low latency ESP-NOW reception.
 
     WiFi.config(STATIC_IP, GATEWAY, SUBNET);
     WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
@@ -425,12 +430,9 @@ void setup()
             Serial.print("Channel: ");
             Serial.println(WiFi.channel());
 
-            // A router-connected station otherwise uses modem sleep by default. Keep
-            // the radio awake for low-latency ESP-NOW reception during this test.
-            esp_wifi_set_ps(WIFI_PS_NONE);
-
             // Initialize OTA on if Wi-Fi connection is successful.
             initialize_OTA();
+            ota_initialized = true;
             break;
         }
         // While not yet timeout, print a dot every 500 ms to indicate progress.
@@ -445,7 +447,7 @@ void setup()
     if (esp_now_init() != ESP_OK)
     {
 
-        // Serial.println("ERROR: ESP-NOW initialization failed.");
+        Serial.println("ERROR: ESP-NOW initialization failed.");
 
         while (true)
             delay(1000);
@@ -455,7 +457,7 @@ void setup()
     esp_now_register_send_cb(onSend);
 
     Serial.println("ESP-NOW initialized.");
-    Serial.println("Setup complete. Waiting for broadcasts...");
+    Serial.println("Setup complete. Waiting for world packets...");
 }
 
 // =============================================================================
@@ -464,6 +466,15 @@ void setup()
 
 void loop()
 {
+    // The initial router attempt can time out while Wi-Fi is still connecting.
+    // Complete OTA setup if Wi-Fi connects later. Sleep was disabled in setup().
+    bool wifi_connected = WiFi.status() == WL_CONNECTED;
+    if (wifi_connected && !ota_initialized)
+    {
+        initialize_OTA();
+        ota_initialized = true;
+    }
+
     // -------------------------------------------------------------------------
     // OTA must be serviced even when the radio test is idle or in
     // diagnostic mode, so this call stays at the top of loop().

@@ -63,6 +63,7 @@ stops. Local USB diagnostics are disabled during this test.
 */
 
 #include <Arduino.h>
+#include <atomic>
 #include <WiFi.h>
 #include <ArduinoOTA.h>
 #include <esp_now.h>
@@ -122,10 +123,10 @@ uint32_t max_world_gap = 0;
 
 uint32_t telemetry_seq = 0;
 
-volatile uint32_t telemetry_attempted = 0;
-volatile uint32_t telemetry_send_call_errors = 0;
-volatile uint32_t telemetry_send_success = 0;
-volatile uint32_t telemetry_send_failure = 0;
+std::atomic<uint32_t> telemetry_attempted{0};
+std::atomic<uint32_t> telemetry_send_call_errors{0};
+std::atomic<uint32_t> telemetry_send_success{0};
+std::atomic<uint32_t> telemetry_send_failure{0};
 
 // =============================================================================
 // RADIO STATE
@@ -147,13 +148,13 @@ bool ota_initialized = false;
 // =============================================================================
 
 void onSend(
-    const uint8_t *mac_addr,
+    const esp_now_send_info_t *tx_info,
     esp_now_send_status_t status)
 {
     if (status == ESP_NOW_SEND_SUCCESS)
-        telemetry_send_success++;
+        telemetry_send_success.fetch_add(1, std::memory_order_relaxed);
     else
-        telemetry_send_failure++;
+        telemetry_send_failure.fetch_add(1, std::memory_order_relaxed);
 }
 
 // =============================================================================
@@ -161,7 +162,7 @@ void onSend(
 // =============================================================================
 
 void onReceive(
-    const uint8_t *mac,
+    const esp_now_recv_info_t *esp_now_info,
     const uint8_t *data,
     int len)
 {
@@ -186,7 +187,7 @@ void onReceive(
         return;
 
     // Valid world packet received.
-    memcpy(master_mac, mac, 6);
+    memcpy(master_mac, esp_now_info->src_addr, 6);
 
     last_world_receive_ms = millis();
     test_started = true;
@@ -210,10 +211,10 @@ void onReceive(
 
         telemetry_seq = 0;
 
-        telemetry_attempted = 0;
-        telemetry_send_call_errors = 0;
-        telemetry_send_success = 0;
-        telemetry_send_failure = 0;
+        telemetry_attempted.store(0, std::memory_order_relaxed);
+        telemetry_send_call_errors.store(0, std::memory_order_relaxed);
+        telemetry_send_success.store(0, std::memory_order_relaxed);
+        telemetry_send_failure.store(0, std::memory_order_relaxed);
 
         return;
     }
@@ -615,7 +616,7 @@ void loop()
     // Attempt ESP-NOW transmission.
     // -------------------------------------------------------------------------
 
-    telemetry_attempted++;
+    telemetry_attempted.fetch_add(1, std::memory_order_relaxed);
 
     esp_err_t result = esp_now_send(
         master_mac,
@@ -625,5 +626,5 @@ void loop()
     // This means ESP-NOW rejected the send request locally.
 
     if (result != ESP_OK)
-        telemetry_send_call_errors++;
+        telemetry_send_call_errors.fetch_add(1, std::memory_order_relaxed);
 }

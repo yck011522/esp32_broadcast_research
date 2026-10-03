@@ -118,7 +118,7 @@ QueueHandle_t rx_queue;
 // Just copy the packet into the queue and return as quickly as possible.
 
 void onReceive(
-    const uint8_t *mac,
+    const esp_now_recv_info_t *info,
     const uint8_t *data,
     int len)
 {

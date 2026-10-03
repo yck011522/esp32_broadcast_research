@@ -1,0 +1,5 @@
+timestamp,interval,mode,car_id,status,reset_confirmed,reset_attempts,measurement_s,world_packets_attempted,world_packets_written,world_packets_skipped,world_tx_rate_hz,last_world_seq,world_packets_lost,world_loss_percent,max_world_gap,world_gap_events,telemetry_received,telemetry_packets_lost,telemetry_loss_percent,telemetry_first_seq,telemetry_last_seq,telemetry_age_s,max_telemetry_silence_s,counter_rebases,serial_disconnects
+2026-10-03T10:40:59,1,unicast,2,OK,1,1,30,3000,3000,0,100.0,2999,55,1.8333,8,18,599,2,0.3328,4,604,0.054,0.18,0,0
+2026-10-03T10:41:29,2,unicast,2,OK,1,1,30,3000,3000,0,100.0,2999,41,1.3667,6,18,601,0,0.0,4,604,0.058,0.096,0,0
+2026-10-03T10:42:00,3,unicast,2,OK,1,1,30,3000,3000,0,100.0,2999,4,0.1333,4,1,600,1,0.1664,4,604,0.049,0.116,0,0
+2026-10-03T10:42:30,4,unicast,2,OK,1,1,30,3000,3000,0,100.0,2999,10,0.3333,3,6,597,4,0.6656,4,604,0.063,0.131,0,0

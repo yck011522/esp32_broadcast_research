@@ -7,21 +7,8 @@ PURPOSE
 -------
 Schema-agnostic ESP-NOW <-> USB serial bridge.
 
-Identical to master_radio, except that the Wi-Fi channel is fixed to
-channel 6.
+Identical to master_radio, except that it is using unicast.
 
-WHY CHANNEL 6?
---------------
-In the OTA test setup the slave connects to the lab router
-("M7026 Lab's ASUS Router"), which is fixed to Wi-Fi channel 6.
-
-When an ESP32 connects to an access point, its radio follows the
-access point's channel, and ESP-NOW on the slave therefore also
-operates on channel 6.
-
-The master is not connected to any access point, so it would
-otherwise stay on channel 1 and the two radios would not hear
-each other. Fixing the master to channel 6 keeps ESP-NOW working.
 
 PC -> MASTER -> SLAVES
 ----------------------
@@ -32,7 +19,12 @@ PC sends one newline-terminated serial message:
 Master:
     1. Reads bytes until '\n'
     2. Removes the newline
-    3. Broadcasts the raw message over ESP-NOW
+    3. Sends the raw message to each slave over ESP-NOW
+        - If a new message arrives from PC before the previous TX
+          completes, the new message will wait in a latest_message buffer.
+        - If the previous TX failed, there will be no retry. The next TX will send the latest_message buffer.
+        - After a few consecutive Tx Failure,
+          the master will enter a back-off state where it will not send any more messages for a specified period.
 
 
 SLAVE -> MASTER -> PC
@@ -93,18 +85,25 @@ struct RadioMessage
 // STATE
 // =============================================================================
 
-// ESP-NOW broadcast MAC address.
+// Slave mac address x 4
 
-// uint8_t broadcast_mac[] = {0x68, 0xEE, 0x8F, 0x4B, 0x5B, 0x18};
-uint8_t broadcast_mac[] = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF};
+uint8_t slave_macs[4][6] = {
+    {0x68, 0xEE, 0x8F, 0x4B, 0x5B, 0x4C},
+    {0x68, 0xEE, 0x8F, 0x4B, 0x5B, 0x18},
+    {0x68, 0xEE, 0x8F, 0x4B, 0x5B, 0x1A},
+    {0x68, 0xEE, 0x8F, 0x4B, 0x5B, 0x1B}};
 
 // Serial input buffer for PC -> ESP-NOW.
+// Holds only the latest message.
+char latest_tx_message_buffer[MAX_MESSAGE_LENGTH];
+size_t latest_tx_buffer_length = 0;
+char incoming_tx_message_buffer[MAX_MESSAGE_LENGTH];
+// Char counter for storing bytes from PC until newline is received.
+size_t incoming_buffer_length = 0;
 
-char serial_buffer[MAX_MESSAGE_LENGTH];
-size_t serial_length = 0;
+bool new_message_to_send[4] = {false, false, false, false};
 
 // Queue for ESP-NOW -> PC traffic.
-
 QueueHandle_t rx_queue;
 
 // =============================================================================
@@ -112,9 +111,7 @@ QueueHandle_t rx_queue;
 // =============================================================================
 //
 // IMPORTANT:
-//
 // Do not perform Serial.write() here.
-//
 // Just copy the packet into the queue and return as quickly as possible.
 
 void onReceive(
@@ -162,7 +159,6 @@ void setup()
 
     if (rx_queue == nullptr)
     {
-
         while (true)
             delay(1000);
     }
@@ -189,20 +185,26 @@ void setup()
     esp_now_register_recv_cb(onReceive);
 
     // -------------------------------------------------------------------------
-    // Register broadcast address
+    // Register four slave peers
     // -------------------------------------------------------------------------
 
-    esp_now_peer_info_t peer = {};
+    for (int i = 0; i < 4; i++)
+    {
+        esp_now_peer_info_t peerInfo = {};
 
-    memcpy(
-        peer.peer_addr,
-        broadcast_mac,
-        6);
+        memcpy(
+            peerInfo.peer_addr,
+            slave_macs[i],
+            6);
 
-    peer.channel = ESP_NOW_CHANNEL;
-    peer.encrypt = false;
-
-    esp_now_add_peer(&peer);
+        peerInfo.channel = ESP_NOW_CHANNEL;
+        peerInfo.encrypt = false;
+        if (esp_now_add_peer(&peerInfo) != ESP_OK)
+        {
+            Serial.print("Failed to add peer");
+            Serial.println(i);
+        }
+    }
 }
 
 // =============================================================================
@@ -252,16 +254,23 @@ void loop()
         if (c == '\n')
         {
 
-            if (serial_length > 0)
+            if (incoming_buffer_length > 0)
             {
 
-                esp_now_send(
-                    broadcast_mac,
-                    reinterpret_cast<uint8_t *>(serial_buffer),
-                    serial_length);
+                // Copy the incoming message into the latest message buffer for sending to slaves.
+                memcpy(
+                    latest_tx_message_buffer,
+                    incoming_tx_message_buffer,
+                    incoming_buffer_length);
+                latest_tx_buffer_length = incoming_buffer_length;
+                // Mark flags for all four slaves to send the latest message.
+                new_message_to_send[0] = true;
+                new_message_to_send[1] = true;
+                new_message_to_send[2] = true;
+                new_message_to_send[3] = true;
             }
 
-            serial_length = 0;
+            incoming_buffer_length = 0;
 
             continue;
         }
@@ -270,20 +279,20 @@ void loop()
         // Accumulate serial message
         // ---------------------------------------------------------------------
 
-        if (serial_length < MAX_MESSAGE_LENGTH)
+        if (incoming_buffer_length < MAX_MESSAGE_LENGTH)
         {
 
-            serial_buffer[serial_length] = c;
-            serial_length++;
+            incoming_tx_message_buffer[incoming_buffer_length] = c;
+            incoming_buffer_length++;
         }
 
         else
         {
 
             // Line exceeded maximum ESP-NOW message size.
-            // Drop it.
+            // Truncate the message by discarding the rest of the line.
 
-            serial_length = 0;
+            // incoming_buffer_length = 0;
         }
     }
 }

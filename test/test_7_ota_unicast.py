@@ -1,6 +1,8 @@
 """Test 7: ten 60-second ESP-NOW intervals with an OTA-enabled slave.
 
-The master is on COM4 and relays W,<sequence> at 100 Hz. The --mode argument
+The master is on COM4 and relays a 23-byte World State at 100 Hz:
+W,<six-digit sequence>,99,FL,FS,SS,FR. The OTA slave uses the sequence and
+ignores the later fields. The --mode argument
 labels the CSV; it does not reconfigure the master firmware. Before each interval,
 send W,-1 up to 20 times (100 ms apart) until Slave 2 reports reset counters.
 The slave firmware remains connected to Wi-Fi and services ArduinoOTA.handle().
@@ -24,6 +26,8 @@ import math
 import time
 from datetime import datetime
 from pathlib import Path
+
+import serial
 
 from test_4_long_run import WindowsSession
 from test_5_loss_run import SerialLink
@@ -56,6 +60,26 @@ FIELDS = [
     "counter_rebases",
     "serial_disconnects",
 ]
+
+
+def encode_world_state(sequence):
+    """Return one fixed-size World State plus its USB-only newline."""
+    if not 0 <= sequence <= 999999:
+        raise ValueError("world sequence must fit in six decimal digits")
+    return f"W,{sequence:06d},99,FL,FS,SS,FR\n".encode("ascii")
+
+
+def send_world_state(link, sequence):
+    if link.ser is None:
+        return False
+    message = encode_world_state(sequence)
+    try:
+        if link.ser.write(message) != len(message):
+            raise serial.SerialException("short serial write")
+        return True
+    except (OSError, serial.SerialException, serial.SerialTimeoutException) as exc:
+        link.disconnect(exc)
+        return False
 
 
 def reset_slave(link, car_id, attempts, spacing):
@@ -191,7 +215,7 @@ def measure(link, car_id, confirmed, seconds, hz):
             skipped += slot - next_slot
             next_slot = slot + 1
             attempted += 1
-            written += int(link.send(slot))
+            written += int(send_world_state(link, slot))
         else:
             remaining = start + next_slot * period - now
             if remaining > 0.003:
@@ -225,6 +249,8 @@ def run(args):
         raise ValueError(
             "minutes, interval, frequency, and reset settings must be positive"
         )
+    if math.ceil(args.interval_seconds * args.hz) > 1_000_000:
+        raise ValueError("interval requires world sequence beyond six digits")
     folder = Path(args.log_dir)
     folder.mkdir(parents=True, exist_ok=True)
     path = folder / (

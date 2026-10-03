@@ -319,7 +319,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--port", default="COM4")
     parser.add_argument("--baud", type=int, default=115200)
-    parser.add_argument("--slave", type=int, default=2)
+    parser.add_argument("--slave", type=int, default=1)
     parser.add_argument(
         "--mode",
         choices=("unicast", "broadcast"),
@@ -328,7 +328,7 @@ def main():
     )
     parser.add_argument("--minutes", type=int, default=10)
     parser.add_argument("--interval-seconds", type=float, default=30)
-    parser.add_argument("--hz", type=float, default=100)
+    parser.add_argument("--hz", type=float, default=50)
     parser.add_argument("--reset-attempts", type=int, default=40)
     parser.add_argument("--reset-spacing", type=float, default=0.1)
     parser.add_argument(

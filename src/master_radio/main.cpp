@@ -22,9 +22,9 @@ Master:
     3. Sends the raw message to each slave over ESP-NOW
         - If a new message arrives from PC before the previous TX
           completes, the new message will wait in a latest_message buffer.
-        - If the previous TX failed, there will be no retry. The next TX will send the latest_message buffer.
-        - After a few consecutive Tx Failure,
-          the master will enter a back-off state where it will not send any more messages for a specified period.
+        - After a failed TX, that slave backs off before trying the latest message.
+          If no newer message arrived, the retained message is tried again.
+        - Backoff applies separately to each slave; other slaves remain eligible.
 
 
 SLAVE -> MASTER -> PC
@@ -71,6 +71,14 @@ const size_t MAX_MESSAGE_LENGTH = 250;
 
 const size_t RX_QUEUE_LENGTH = 32;
 
+// Per-slave waiting time after consecutive transmission failures.
+//
+// First failure: 100 ms. Second failure: 250 ms.
+// Third and further failures: 1000 ms.
+// A successful transmission returns that slave to normal operation.
+
+const uint32_t TX_BACKOFF_MS[] = {100, 250, 1000};
+
 // =============================================================================
 // MESSAGE TYPE USED INTERNALLY BY MASTER
 // =============================================================================
@@ -90,8 +98,13 @@ struct RadioMessage
 uint8_t slave_macs[4][6] = {
     {0x68, 0xEE, 0x8F, 0x4B, 0x5B, 0x4C},
     {0x68, 0xEE, 0x8F, 0x4B, 0x5B, 0x18},
-    {0x68, 0xEE, 0x8F, 0x4B, 0x5B, 0x1A},
-    {0x68, 0xEE, 0x8F, 0x4B, 0x5B, 0x1B}};
+    // {0x68, 0xEE, 0x8F, 0x4B, 0x5B, 0x1A},
+    // {0x68, 0xEE, 0x8F, 0x4B, 0x5B, 0x1B}
+};
+
+// Derive the number of destinations from the MAC address array.
+
+const size_t SLAVE_COUNT = sizeof(slave_macs) / sizeof(slave_macs[0]);
 
 // Serial input buffer for PC -> ESP-NOW.
 // Holds only the latest message.
@@ -101,10 +114,61 @@ char incoming_tx_message_buffer[MAX_MESSAGE_LENGTH];
 // Char counter for storing bytes from PC until newline is received.
 size_t incoming_buffer_length = 0;
 
+// True when a slave still needs the latest computer message.
+// Clear its flag when submitting a transmission, NOT when it completes.
+// This allows a newer computer message to set the flag again during TX.
+
 bool new_message_to_send[4] = {false, false, false, false};
+
+// Independent backoff state for each slave.
+// failure_stage selects a delay from TX_BACKOFF_MS.
+// next_attempt_ms stores the millis() deadline for that slave's cooldown.
+
+uint8_t failure_stage[SLAVE_COUNT] = {};
+uint32_t next_attempt_ms[SLAVE_COUNT] = {};
+bool cooling_down[SLAVE_COUNT] = {};
+
+// Round-robin starting position for the next search for an eligible slave.
+
+size_t next_slave = 0;
+
+// Only one ESP-NOW transmission may be outstanding at a time.
+// Keep its destination until its callback is processed.
+
+size_t active_slave = 0;
+bool tx_busy = false;
+
+// Once a serial line exceeds the buffer size, ignore it until the newline.
+
+bool discard_incoming_line = false;
+
+// Send callback -> loop() completion queue.
+// One outstanding send requires only one completion slot.
+// Only loop() changes the transmission flags and backoff state.
+
+QueueHandle_t tx_result_queue;
 
 // Queue for ESP-NOW -> PC traffic.
 QueueHandle_t rx_queue;
+
+// =============================================================================
+// ESP-NOW SEND CALLBACK
+// =============================================================================
+//
+// IMPORTANT:
+// This callback runs in the Wi-Fi task.
+// Do not print, wait, or submit the next transmission here.
+// Just copy the result into the queue and return as quickly as possible.
+//
+// The destination is already stored in active_slave, so info is not needed.
+// Success confirms MAC-layer delivery, not application processing by the slave.
+
+void onSend(const esp_now_send_info_t *info, esp_now_send_status_t status)
+{
+    // Non-blocking queue insertion. loop() handles this result on its next pass.
+
+    xQueueSend(tx_result_queue, &status, 0);
+}
 
 // =============================================================================
 // ESP-NOW RECEIVE CALLBACK
@@ -150,14 +214,18 @@ void setup()
     Serial.begin(115200);
 
     // -------------------------------------------------------------------------
-    // Create ESP-NOW receive queue
+    // Create ESP-NOW receive and send-completion queues
     // -------------------------------------------------------------------------
 
     rx_queue = xQueueCreate(
         RX_QUEUE_LENGTH,
         sizeof(RadioMessage));
 
-    if (rx_queue == nullptr)
+    // Create the completion queue before registering the send callback.
+
+    tx_result_queue = xQueueCreate(1, sizeof(esp_now_send_status_t));
+
+    if (rx_queue == nullptr || tx_result_queue == nullptr)
     {
         while (true)
             delay(1000);
@@ -183,6 +251,13 @@ void setup()
     }
 
     esp_now_register_recv_cb(onReceive);
+    // Without a send callback, the scheduler cannot know when the radio is free.
+
+    if (esp_now_register_send_cb(onSend) != ESP_OK)
+    {
+        while (true)
+            delay(1000);
+    }
 
     // -------------------------------------------------------------------------
     // Register four slave peers
@@ -214,16 +289,53 @@ void setup()
 void loop()
 {
     // =========================================================================
+    // PROCESS THE PREVIOUS TRANSMISSION RESULT
+    // =========================================================================
+
+    esp_now_send_status_t result;
+    if (xQueueReceive(tx_result_queue, &result, 0) == pdTRUE)
+    {
+        if (result == ESP_NOW_SEND_SUCCESS)
+        {
+            // Restore normal service for this slave after a successful TX.
+
+            failure_stage[active_slave] = 0;
+            cooling_down[active_slave] = false;
+            // Do not clear pending here: a newer message may have arrived.
+        }
+        else
+        {
+            // Restore the pending flag so this slave can try again after backoff.
+            // The next attempt uses the latest buffer contents.
+
+            new_message_to_send[active_slave] = true;
+            // Start this slave's cooldown without pausing the other slaves.
+            // Advance the delay for its next failure, capped at the last entry.
+
+            next_attempt_ms[active_slave] = millis() + TX_BACKOFF_MS[failure_stage[active_slave]];
+            cooling_down[active_slave] = true;
+            if (failure_stage[active_slave] + 1 < sizeof(TX_BACKOFF_MS) / sizeof(TX_BACKOFF_MS[0]))
+                failure_stage[active_slave]++;
+        }
+        // The previous send is complete. Scheduling below may submit another.
+
+        tx_busy = false;
+    }
+    // =========================================================================
     // ESP-NOW -> PC
     // =========================================================================
 
     RadioMessage message;
 
-    while (
-        xQueueReceive(
-            rx_queue,
-            &message,
-            0) == pdTRUE)
+    // Limit forwarding work per pass so incoming telemetry cannot keep loop()
+    // from reaching the computer input and transmission scheduler.
+
+    for (size_t forwarded = 0; forwarded < RX_QUEUE_LENGTH &&
+                               xQueueReceive(
+                                   rx_queue,
+                                   &message,
+                                   0) == pdTRUE;
+         ++forwarded)
     {
 
         Serial.write(
@@ -237,7 +349,11 @@ void loop()
     // PC -> ESP-NOW
     // =========================================================================
 
-    while (Serial.available())
+    // Read only the bytes available at the start of this pass.
+    // Newly arriving bytes wait for the next pass, giving TX scheduling a turn.
+
+    int available_bytes = Serial.available();
+    while (available_bytes-- > 0)
     {
 
         char c = Serial.read();
@@ -254,9 +370,8 @@ void loop()
         if (c == '\n')
         {
 
-            if (incoming_buffer_length > 0)
+            if (incoming_buffer_length > 0 && !discard_incoming_line)
             {
-
                 // Copy the incoming message into the latest message buffer for sending to slaves.
                 memcpy(
                     latest_tx_message_buffer,
@@ -271,6 +386,7 @@ void loop()
             }
 
             incoming_buffer_length = 0;
+            discard_incoming_line = false;
 
             continue;
         }
@@ -278,6 +394,9 @@ void loop()
         // ---------------------------------------------------------------------
         // Accumulate serial message
         // ---------------------------------------------------------------------
+
+        if (discard_incoming_line)
+            continue;
 
         if (incoming_buffer_length < MAX_MESSAGE_LENGTH)
         {
@@ -290,9 +409,67 @@ void loop()
         {
 
             // Line exceeded maximum ESP-NOW message size.
-            // Truncate the message by discarding the rest of the line.
+            // Drop the entire oversized line, never forward a truncated command.
+            discard_incoming_line = true;
+        }
+    }
 
-            // incoming_buffer_length = 0;
+    // =========================================================================
+    // SEND THE LATEST MESSAGE TO THE NEXT ELIGIBLE SLAVE
+    // =========================================================================
+    //
+    // Submit at most one transmission per pass.
+    // While waiting for its callback, subsequent passes still process USB input
+    // and telemetry, but do not submit another radio transmission.
+
+    if (!tx_busy)
+    {
+        const uint32_t now = millis();
+        for (size_t checked = 0; checked < SLAVE_COUNT; ++checked)
+        {
+            // Continue from the previous selection rather than always starting
+            // with slave 1. A busy input stream must not starve the later slaves.
+
+            const size_t slave = next_slave;
+            next_slave = (next_slave + 1) % SLAVE_COUNT;
+            if (!new_message_to_send[slave])
+                continue;
+            // Skip this destination until its cooldown expires.
+            // Signed subtraction handles millis() rollover for these short waits.
+
+            if (cooling_down[slave] && static_cast<int32_t>(now - next_attempt_ms[slave]) < 0)
+                continue;
+
+            // Record the active destination before submitting the send.
+
+            cooling_down[slave] = false;
+            active_slave = slave;
+            tx_busy = true;
+            // Clear only the flag for the message being submitted.
+            // New computer input may set it again while the radio is working.
+
+            new_message_to_send[slave] = false;
+
+            // ESP-NOW copies the payload before returning; the latest buffer
+            // can therefore be replaced while awaiting the send callback.
+            esp_err_t error = esp_now_send(
+                slave_macs[slave],
+                reinterpret_cast<const uint8_t *>(latest_tx_message_buffer),
+                latest_tx_buffer_length);
+            if (error != ESP_OK)
+            {
+                // Submission failed: no completion is expected. Do not classify
+                // a local driver/resource error as a failed radio delivery.
+                // Restore pending state and use the shortest cooldown without
+                // increasing the slave's consecutive-failure stage.
+                tx_busy = false;
+                new_message_to_send[slave] = true;
+                cooling_down[slave] = true;
+                next_attempt_ms[slave] = now + TX_BACKOFF_MS[0];
+            }
+            // Give loop() another pass before selecting the next destination.
+
+            break;
         }
     }
 }

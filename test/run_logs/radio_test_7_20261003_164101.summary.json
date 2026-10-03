@@ -1,0 +1,10 @@
+{
+  "status": "INTERRUPTED",
+  "csv": "C:\\Users\\leungp\\Documents\\GitHub\\esp32_broadcast_research\\test\\run_logs\\radio_test_7_20261003_164101.csv",
+  "mode": "unicast",
+  "car_id": 1,
+  "intervals_requested": 10,
+  "intervals_completed": 2,
+  "serial_disconnects": 0,
+  "last_serial_error": null
+}

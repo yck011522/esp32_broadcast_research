@@ -1,0 +1,11 @@
+timestamp,interval,mode,car_id,status,reset_confirmed,reset_attempts,measurement_s,world_packets_attempted,world_packets_written,world_packets_skipped,world_tx_rate_hz,last_world_seq,world_packets_lost,world_loss_percent,max_world_gap,world_gap_events,telemetry_received,telemetry_packets_lost,telemetry_loss_percent,telemetry_first_seq,telemetry_last_seq,telemetry_age_s,max_telemetry_silence_s,counter_rebases,serial_disconnects
+2026-10-03T17:19:48,1,broadcast,1,OK,1,1,30,1500,1500,0,50.0,1499,304,20.2667,4,245,602,0,0.0,4,605,0.01,0.101,0,0
+2026-10-03T17:20:19,2,broadcast,1,OK,1,1,30,1500,1500,0,50.0,1499,287,19.1333,4,237,602,0,0.0,4,605,0.005,0.078,0,0
+2026-10-03T17:20:49,3,broadcast,1,OK,1,3,30,1500,1500,0,50.0,1499,308,20.5333,4,241,602,0,0.0,4,605,0.006,0.063,0,0
+2026-10-03T17:21:19,4,broadcast,1,OK,1,1,30,1500,1500,0,50.0,1499,390,26.0,4,291,601,0,0.0,4,604,0.054,0.08,0,0
+2026-10-03T17:21:50,5,broadcast,1,OK,1,3,30,1500,1500,0,50.0,1499,315,21.0,5,255,602,0,0.0,4,605,0.005,0.079,0,0
+2026-10-03T17:22:20,6,broadcast,1,OK,1,1,30,1500,1500,0,50.0,1499,353,23.5333,5,279,602,0,0.0,4,605,0.01,0.073,0,0
+2026-10-03T17:22:50,7,broadcast,1,OK,1,1,30,1500,1500,0,50.0,1498,343,22.8667,6,250,602,0,0.0,4,605,0.005,0.07,0,0
+2026-10-03T17:23:21,8,broadcast,1,OK,1,3,30,1500,1500,0,50.0,1499,342,22.8,6,269,602,0,0.0,4,605,0.006,0.098,0,0
+2026-10-03T17:23:51,9,broadcast,1,OK,1,1,30,1500,1500,0,50.0,1499,338,22.5333,4,263,601,0,0.0,4,604,0.037,0.121,0,0
+2026-10-03T17:24:22,10,broadcast,1,OK,1,3,30,1500,1500,0,50.0,1499,344,22.9333,5,265,602,0,0.0,4,605,0.006,0.073,0,0

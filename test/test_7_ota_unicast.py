@@ -323,7 +323,7 @@ def main():
     parser.add_argument(
         "--mode",
         choices=("unicast", "broadcast"),
-        default="unicast",
+        default="broadcast",
         help="CSV label for the master firmware currently flashed",
     )
     parser.add_argument("--minutes", type=int, default=10)

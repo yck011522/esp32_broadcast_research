@@ -1,0 +1,10 @@
+{
+  "status": "COMPLETE",
+  "csv": "C:\\Users\\leungp\\Documents\\GitHub\\esp32_broadcast_research\\test\\run_logs\\radio_test_7_20261003_171918.csv",
+  "mode": "broadcast",
+  "car_id": 1,
+  "intervals_requested": 10,
+  "intervals_completed": 10,
+  "serial_disconnects": 0,
+  "last_serial_error": null
+}

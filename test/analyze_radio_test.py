@@ -290,10 +290,15 @@ def plot_gap_distribution(path, rows, expected_hz=100):
         axes[1].step(lengths, tail, where="mid", color=color, linewidth=1.8,
                      label=f"Slave {car}: {sum(v >= 10 for v in values)} minutes with gap ≥10")
     integer_ticks = [0, 1, 2, 5, 10, 20, 50, 100, 200, 500, 1000]
+    # Keep short runs readable: setting ticks beyond the data otherwise expands
+    # the logarithmic axis to 1000 even when only a few minutes were observed.
+    maximum_count = max(len(values) for values in by_car.values())
+    integer_ticks = [tick for tick in integer_ticks if tick <= maximum_count]
     for ax in axes:
         ax.set_yscale("symlog", linthresh=1)
         ax.set_yticks(integer_ticks)
         ax.yaxis.set_major_formatter(FuncFormatter(lambda value, _: f"{int(value):,}"))
+        ax.set_ylim(0, maximum_count * 1.25)
     axes[0].set_ylabel("Number of occurrences")
     axes[1].set_ylabel("Cumulative occurrences")
     axes[1].set_xlabel("Maximum consecutive world packets lost in a minute")
@@ -307,7 +312,7 @@ def plot_gap_distribution(path, rows, expected_hz=100):
                           lambda milliseconds: milliseconds * expected_hz / 1000)
     )
     duration_axis.set_xticks([packets * 1000 / expected_hz for packets in packet_ticks])
-    duration_axis.set_xlabel(f"Nominal gap duration at {expected_hz:g} Hz (ms)")
+    duration_axis.set_xlabel(f"Nominal duration of lost packet slots at {expected_hz:g} Hz (ms)")
     for ax in axes:
         ax.grid(axis="y", alpha=0.25)
         ax.legend(loc="upper right", fontsize=9)

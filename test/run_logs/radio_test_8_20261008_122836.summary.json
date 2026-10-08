@@ -1,0 +1,92 @@
+{
+  "status": "COMPLETE",
+  "error": null,
+  "csv": "C:\\Users\\scmuser\\Documents\\esp32_broadcast_research\\test\\run_logs\\radio_test_8_20261008_122836.csv",
+  "started_at": "2026-10-08T12:28:36",
+  "updated_at": "2026-10-08T12:29:36",
+  "mode": "broadcast",
+  "slave_ids": [
+    1,
+    2
+  ],
+  "unexpected_slave_ids": [],
+  "configured_hz": 100,
+  "duration_requested_s": 60.0,
+  "elapsed_s": 60.007,
+  "interval_seconds": 60,
+  "intervals_completed": 1,
+  "world_packets_written": 5882,
+  "world_packets_skipped": 0,
+  "measurement_seconds": 58.814967,
+  "reset_seconds": 1.1780220000000554,
+  "max_tx_lateness_ms": 0.106,
+  "max_serial_write_ms": 0.446,
+  "max_tx_interval_ms": 10.083,
+  "serial_disconnects": 0,
+  "last_serial_error": null,
+  "slaves": {
+    "1": {
+      "intervals": 1,
+      "status_counts": {
+        "OK": 1
+      },
+      "complete_world_loss_intervals": 1,
+      "partial_or_missing_intervals": 0,
+      "measured_seconds": 58.814967,
+      "complete_world_loss_seconds": 58.814967,
+      "avg_world_loss_percent": 86.2122,
+      "weighted_world_loss_percent": 86.21217273036382,
+      "max_interval_world_loss_percent": 86.2122,
+      "world_packets_lost_complete_intervals": 5071,
+      "world_packets_written_complete_intervals": 5882,
+      "max_world_gap": 208,
+      "max_world_gap_estimate_ms": 2090.0,
+      "intervals_world_gap_estimate_over_200ms": 1,
+      "interval_max_world_gap_distribution": {
+        "208": 1
+      },
+      "max_telemetry_silence_s": 2.113,
+      "intervals_telemetry_silence_over_200ms": 1,
+      "telemetry_received": 187,
+      "telemetry_packets_lost": 472,
+      "telemetry_loss_percent": 71.6236722306525,
+      "reset_unconfirmed_intervals": 0,
+      "counter_rebases": 0
+    },
+    "2": {
+      "intervals": 1,
+      "status_counts": {
+        "OK": 1
+      },
+      "complete_world_loss_intervals": 1,
+      "partial_or_missing_intervals": 0,
+      "measured_seconds": 58.814967,
+      "complete_world_loss_seconds": 58.814967,
+      "avg_world_loss_percent": 86.7052,
+      "weighted_world_loss_percent": 86.70520231213872,
+      "max_interval_world_loss_percent": 86.7052,
+      "world_packets_lost_complete_intervals": 5100,
+      "world_packets_written_complete_intervals": 5882,
+      "max_world_gap": 161,
+      "max_world_gap_estimate_ms": 1620.0,
+      "intervals_world_gap_estimate_over_200ms": 1,
+      "interval_max_world_gap_distribution": {
+        "161": 1
+      },
+      "max_telemetry_silence_s": 1.647,
+      "intervals_telemetry_silence_over_200ms": 1,
+      "telemetry_received": 205,
+      "telemetry_packets_lost": 681,
+      "telemetry_loss_percent": 76.86230248306998,
+      "reset_unconfirmed_intervals": 0,
+      "counter_rebases": 0
+    }
+  },
+  "notes": [
+    "World loss averages exclude unconfirmed resets and counter rebases; remaining loss can omit leading/trailing losses.",
+    "Telemetry silence is PC-observed, within measurement intervals; intentional resets are excluded.",
+    "Gap durations are sequence-based estimates, not measured receiver timings.",
+    "Long-gap interval counts count affected intervals, not individual outage events.",
+    "Host totals count each transmission once, not once per slave CSV row."
+  ]
+}

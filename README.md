@@ -44,3 +44,13 @@ Observation is that the presence of missing unicast targets creates a huge world
 Interpretation: The ESP NOW unicast automatic retry consumes too much time. Since only one slave device can be served at one single time, the master radio is blocked from sending to the healthy slaves.
 
 Recommendation: Use a broadcast master to send World State to all slaves.
+
+
+## Test Results in LAB environment - Broadcast Master , 2 slave radios, Wifi AP nearby
+[2026-10-08T12:29:36] 0.017 h | interval 1 | reset confirmed [1, 2] (11 attempts)
+Slave 1: OK | world loss 86.2122% | max gap 208 | telemetry lost 472 | max telemetry silence 2.113s
+Slave 2: OK | world loss 86.7052% | max gap 161 | telemetry lost 681 | max telemetry silence 1.647s
+
+[2026-10-08T12:32:43] 0.017 h | interval 1 | reset confirmed [1, 2] (18 attempts)
+Slave 1: OK | world loss 87.6118% | max gap 208 | telemetry lost 426 | max telemetry silence 2.063s
+Slave 2: OK | world loss 84.4976% | max gap 161 | telemetry lost 668 | max telemetry silence 1.623s

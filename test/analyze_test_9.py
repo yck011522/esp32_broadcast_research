@@ -34,6 +34,7 @@ def main():
     with path.open(newline="", encoding="utf-8") as source:
         all_rows = list(csv.DictReader(source))
     rows = [row for row in all_rows if row["record_type"] == "ble_stats"]
+    test_number = 10 if path.name.startswith("ble_test_10_") else 9
     if not rows:
         parser.error("no combined BLE_STATS rows found")
     rows.sort(key=lambda row: float(row["elapsed_s"]))
@@ -105,7 +106,7 @@ def main():
     axes[3].legend(loc="upper right", fontsize=8)
     for ax in axes:
         ax.grid(alpha=.2)
-    fig.suptitle(f"Test 9 BLE: {len(rows):,} reports, {received:,} notifications, {lost} detected sequence losses\n{path.stem}")
+    fig.suptitle(f"Test {test_number} BLE: {len(rows):,} reports, {received:,} notifications, {lost} detected sequence losses\n{path.stem}")
     fig.text(.5, .015, "Each point is a five-second report. RTT assumes steady 50 Hz writes, has 20 ms resolution, and includes server echo timing.", ha="center", fontsize=9)
     fig.tight_layout(rect=(0, .04, 1, .94))
     plot_path = path.with_suffix(".timeseries.png")
@@ -129,7 +130,7 @@ def main():
     fig.savefig(hist_path, dpi=160)
     plt.close(fig)
 
-    report = f"""# Test 9 BLE analysis
+    report = f"""# Test {test_number} BLE analysis
 
 Source: `{path.name}`. Logger status: {run.get('status', 'unknown')}.
 Run start: {run.get('started_utc', 'unknown')} (UTC).
@@ -137,7 +138,7 @@ Run start: {run.get('started_utc', 'unknown')} (UTC).
 - Reports: **{len(rows):,}**; reported windows total **{sum(windows)/3600:.3f} hours**.
 - Received: **{received:,}**; inferred notification sequence loss: **{lost}**.
 - Weighted receive rate: **{metrics['weighted_receive_rate_hz']:.3f} Hz**.
-- Serial connections: **{run.get('connections', 'unknown')}**; serial errors: **{run.get('serial_errors', 'unknown')}**.
+- Connections: **{run.get('connections', 'unknown')}**; transport errors: **{run.get('serial_errors', run.get('ble_errors', 'unknown'))}**.
 - Missing report/session boundaries detected: **{len(missing)}**.
 - Receive gap: largest completed gap **{metrics['max_gap_s']['max']*1000:.0f} ms**.
 - Windows with a gap >=200 ms: **{metrics['windows_gap_at_least_200ms']} / {len(rows)}**;

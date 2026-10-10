@@ -211,3 +211,87 @@ python test/analyze_test_9.py
 
 An optional CSV path selects a specific run. Plots distinguish window-average
 RTT from window-maximum RTT; these are not individual-packet percentiles.
+
+### Test 10: computer Bluetooth adapter as the client
+
+Keep the existing car `ble_server` firmware. Power off the ESP32 client board,
+enable Bluetooth on the computer, and run from a terminal:
+
+```powershell
+python -m pip install bleak
+python -u test/test_10_ble_pc.py --duration-seconds 30
+python -u test/test_10_ble_pc.py --hours 2
+```
+
+Python 3.11 or newer is required. The default duration is two hours. This test uses the computer's BLE adapter
+directly, with no COM port. It scans for the advertised service, validates both
+characteristics, subscribes to 20 Hz telemetry, and writes exactly 20 bytes at
+50 Hz using write-without-response. Multiple matching cars require selecting
+one with `--address XX:XX:XX:XX:XX:XX`. BLE failures trigger scan/reconnect
+attempts within the original run deadline. Ctrl+C preserves partial results.
+Windows idle sleep is prevented while the script runs.
+
+On Windows 11, the runner automatically uses the public WinRT
+`ThroughputOptimized` preference alongside Bleak. It verifies the negotiated
+interval and holds the preference request for the session. On this computer the
+preset requests 15 ms with zero peripheral latency. Failure to obtain that preset
+is logged as an error and triggers reconnection. No firmware change is required.
+
+Output files under `test/run_logs/` start with `ble_test_10_`: numeric CSV,
+raw notification/event JSONL, and checkpointed summary JSON. Five-second rows
+use the Test 9 notification fields plus actual world write rate, local write
+failures, maximum send gap, and maximum write API duration. Reconnection and
+final partial windows are marked with `partial_window=1`; session sequence
+baselines reset on reconnect. Notification gap and silence use Python callback
+arrival times, including Windows/Python scheduling, rather than ESP32 timestamps.
+
+`rtt_avg_ms`/`rtt_max_ms` reproduce the Test 9 sequence-based estimate.
+`echo_age_avg_ms`/`echo_age_max_ms` use the echoed world's recorded monotonic
+timestamp immediately before its Python write call. This includes OS queuing,
+BLE transport, and server echo timing; it is not a pure radio RTT. Initial zero
+echoes are excluded until a nonzero command echo confirms reception. The raw log
+preserves each notification payload and its RTT/age sample for later analysis.
+Writes are paced without recovery bursts; inspect `world_tx_rate_hz` and
+`max_tx_gap_s` to see whether the computer maintained 50 Hz.
+Windows pacing uses Python's high-resolution sleep in a worker thread so the
+event loop can continue receiving notifications. Timer precision and idle-sleep
+settings are restored when the run exits.
+
+Plot the newest Test 10 log with the shared BLE analysis:
+
+```powershell
+python -m pip install matplotlib
+python test/analyze_test_10.py
+```
+
+The plots show notification rate/loss, receive timing, and sequence-based RTT.
+Server world-state loss still requires its serial statistics; sampled echoed
+world sequences do not establish that all world commands were received.
+
+### Optional Test 10 server log and comparison with Test 9
+
+To record the car's command receive rate, sequence losses, and silence, close
+other COM3 monitors and start this in a separate terminal before the BLE runner:
+
+```powershell
+python -m pip install pyserial
+python -u test/test_10_monitor_server.py --port COM3
+```
+
+It saves `ble_test_10_server_*.log` and defaults to two hours plus one minute
+for setup. Use `--seconds` to change this, or Ctrl+C to stop.
+
+For the two-hour experiment, run `python -u test/test_10_ble_pc.py --hours 2`.
+Afterward run `python test/analyze_test_10.py` to plot the newest Test 10 CSV.
+The original Test 9 logs and analysis remain available via
+`python test/analyze_test_9.py`. Both analyses use the same notification rate,
+sequence-loss, gap, silence, and sequence-based RTT fields. Compare runs of
+similar duration under the same conditions. PC callback timing and ESP32 timing
+are different measurement points; timestamp-based echo age is Test 10 only.
+The client TX rate counts write attempts; use the server log for delivered
+command rate/loss. The two-hour duration includes scanning and reconnect time.
+
+The successful short validation and its logs are retained in
+`test/test_10_throughput_result.md`. Development experiments and failed Test 10
+logs have been removed. Measurement and connection-lifetime regression checks
+remain in `test/test_10_checks.py`.

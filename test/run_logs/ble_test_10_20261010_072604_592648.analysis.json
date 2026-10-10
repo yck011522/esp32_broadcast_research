@@ -1,0 +1,155 @@
+{
+  "source": "c:\\Users\\leungp\\Documents\\GitHub\\esp32_broadcast_research\\test\\run_logs\\ble_test_10_20261010_072604_592648.csv",
+  "logger_summary": {
+    "started_utc": "2026-10-10T07:26:04.592648+00:00",
+    "planned_duration_s": 7200,
+    "status": "interrupted",
+    "connections": 1,
+    "ble_errors": 0,
+    "ble_disconnects": 0,
+    "ble_stats_reports": 483,
+    "received": 48839,
+    "seq_lost": 0,
+    "world_attempted": 122091,
+    "write_failures": 0,
+    "elapsed_s": 2452.1244750000005,
+    "connection_mode": "throughput",
+    "connection_parameters": {
+      "interval_ms": 15.0,
+      "latency": 0,
+      "supervision_timeout_ms": 9600
+    },
+    "finished_utc": "2026-10-10T08:06:56.717477+00:00"
+  },
+  "reports": 483,
+  "reported_window_seconds": 2441.92967,
+  "received": 48839,
+  "seq_lost": 0,
+  "sequence_loss_percent": 0.0,
+  "weighted_receive_rate_hz": 20.00016650766195,
+  "report_interval_s": {
+    "min": 3.9349010000000817,
+    "mean": 5.055768817427386,
+    "median": 5.0799710000000005,
+    "p95": 5.10219809999993,
+    "p99": 5.1077759799999765,
+    "max": 5.112354000000003
+  },
+  "missing_report_or_connection_boundaries": [],
+  "rtt_samples": 48838,
+  "weighted_rtt_estimate_ms": 33.88058479053196,
+  "windows_gap_at_least_200ms": 0,
+  "windows_gap_above_200ms": 0,
+  "worst_gap_windows": [
+    {
+      "timestamp_utc": "2026-10-10T08:06:17.265+00:00",
+      "elapsed_s": "2412.672334",
+      "max_gap_s": "0.07581269999718643",
+      "rtt_max_ms": "120.0",
+      "received": "102"
+    },
+    {
+      "timestamp_utc": "2026-10-10T08:05:21.470+00:00",
+      "elapsed_s": "2356.876846",
+      "max_gap_s": "0.07565570000224398",
+      "rtt_max_ms": "200.0",
+      "received": "102"
+    },
+    {
+      "timestamp_utc": "2026-10-10T07:33:59.476+00:00",
+      "elapsed_s": "474.883454",
+      "max_gap_s": "0.07560929999817745",
+      "rtt_max_ms": "140.0",
+      "received": "102"
+    },
+    {
+      "timestamp_utc": "2026-10-10T07:42:14.761+00:00",
+      "elapsed_s": "970.168341",
+      "max_gap_s": "0.0756044000008842",
+      "rtt_max_ms": "160.0",
+      "received": "102"
+    },
+    {
+      "timestamp_utc": "2026-10-10T08:03:04.674+00:00",
+      "elapsed_s": "2220.081541",
+      "max_gap_s": "0.0755578999996942",
+      "rtt_max_ms": "160.0",
+      "received": "101"
+    },
+    {
+      "timestamp_utc": "2026-10-10T07:57:05.682+00:00",
+      "elapsed_s": "1861.089239",
+      "max_gap_s": "0.07555720000164001",
+      "rtt_max_ms": "100.0",
+      "received": "102"
+    },
+    {
+      "timestamp_utc": "2026-10-10T07:42:50.123+00:00",
+      "elapsed_s": "1005.529939",
+      "max_gap_s": "0.07552779999969061",
+      "rtt_max_ms": "120.0",
+      "received": "101"
+    },
+    {
+      "timestamp_utc": "2026-10-10T08:05:01.107+00:00",
+      "elapsed_s": "2336.514766",
+      "max_gap_s": "0.0754895000027318",
+      "rtt_max_ms": "140.0",
+      "received": "102"
+    },
+    {
+      "timestamp_utc": "2026-10-10T07:46:12.273+00:00",
+      "elapsed_s": "1207.680045",
+      "max_gap_s": "0.07546279999951366",
+      "rtt_max_ms": "140.0",
+      "received": "102"
+    },
+    {
+      "timestamp_utc": "2026-10-10T07:40:58.776+00:00",
+      "elapsed_s": "894.183266",
+      "max_gap_s": "0.07542479999756324",
+      "rtt_max_ms": "120.0",
+      "received": "102"
+    }
+  ],
+  "rate_hz": {
+    "min": 19.77201863922947,
+    "mean": 20.000090480000814,
+    "median": 19.999352177841782,
+    "p95": 20.15749163079104,
+    "p99": 20.194739039433333,
+    "max": 20.198015746931418
+  },
+  "max_gap_s": {
+    "min": 0.06021049999981187,
+    "mean": 0.06472772836443583,
+    "median": 0.06084460000056424,
+    "p95": 0.07524652999927639,
+    "p99": 0.07555732600128977,
+    "max": 0.07581269999718643
+  },
+  "silence_s": {
+    "min": 9.770000178832561e-05,
+    "mean": 0.02553883436861796,
+    "median": 0.025621000000683125,
+    "p95": 0.05652004000112356,
+    "p99": 0.05935734199963918,
+    "max": 0.06336100000044098
+  },
+  "rtt_avg_ms": {
+    "min": 18.431372549019606,
+    "mean": 33.87941376249146,
+    "median": 33.529411764705884,
+    "p95": 43.12352941176471,
+    "p99": 49.54163222147458,
+    "max": 52.94117647058823
+  },
+  "rtt_max_ms": {
+    "min": 60.0,
+    "mean": 120.99378881987577,
+    "median": 120.0,
+    "p95": 180.0,
+    "p99": 200.0,
+    "max": 280.0
+  }
+}

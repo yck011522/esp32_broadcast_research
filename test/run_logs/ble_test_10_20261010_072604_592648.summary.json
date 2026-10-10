@@ -1,0 +1,21 @@
+{
+  "started_utc": "2026-10-10T07:26:04.592648+00:00",
+  "planned_duration_s": 7200,
+  "status": "interrupted",
+  "connections": 1,
+  "ble_errors": 0,
+  "ble_disconnects": 0,
+  "ble_stats_reports": 483,
+  "received": 48839,
+  "seq_lost": 0,
+  "world_attempted": 122091,
+  "write_failures": 0,
+  "elapsed_s": 2452.1244750000005,
+  "connection_mode": "throughput",
+  "connection_parameters": {
+    "interval_ms": 15.0,
+    "latency": 0,
+    "supervision_timeout_ms": 9600
+  },
+  "finished_utc": "2026-10-10T08:06:56.717477+00:00"
+}

@@ -31,6 +31,12 @@ uint32_t windowLost = 0;
 uint32_t windowMaxGapMs = 0;
 bool haveLastSequence = false;
 bool haveLastReceiveTime = false;
+uint16_t latestAttemptedWorldSequence = 0;
+bool haveWorldAttempt = false;
+bool haveWorldEcho = false;
+uint32_t windowRttSamples = 0;
+uint64_t windowRttSumMs = 0;
+uint32_t windowRttMaxMs = 0;
 
 void onPacket(BLERemoteCharacteristic *, uint8_t *data, size_t length, bool)
 {
@@ -56,6 +62,23 @@ void onPacket(BLERemoteCharacteristic *, uint8_t *data, size_t length, bool)
     latestWorldSequence = worldSequence;
     haveLastSequence = true;
     ++windowReceived;
+    // Zero is also the server's initial value before receiving any world state.
+    // Wait for a nonzero echo once per connection before estimating RTT.
+    if (worldSequence != 0)
+        haveWorldEcho = true;
+    if (haveWorldAttempt && haveWorldEcho)
+    {
+        const uint16_t lag = static_cast<uint16_t>(
+            latestAttemptedWorldSequence - worldSequence);
+        if (lag < 0x8000U)
+        {
+            const uint32_t rttMs = static_cast<uint32_t>(lag) * WORLD_INTERVAL_MS;
+            ++windowRttSamples;
+            windowRttSumMs += rttMs;
+            if (rttMs > windowRttMaxMs)
+                windowRttMaxMs = rttMs;
+        }
+    }
     if (haveLastReceiveTime)
     {
         const uint32_t gapMs = now - lastReceiveTimeMs;
@@ -77,20 +100,35 @@ void reportStats(uint32_t elapsedMs)
     const uint16_t worldSequence = latestWorldSequence;
     const bool havePacket = haveLastReceiveTime;
     const uint32_t silenceMs = havePacket ? now - lastReceiveTimeMs : 0;
+    const uint32_t rttSamples = windowRttSamples;
+    const uint64_t rttSumMs = windowRttSumMs;
+    const uint32_t rttMaxMs = windowRttMaxMs;
     windowReceived = 0;
     windowLost = 0;
     windowMaxGapMs = 0;
+    windowRttSamples = 0;
+    windowRttSumMs = 0;
+    windowRttMaxMs = 0;
     portEXIT_CRITICAL(&statsMux);
     const uint32_t total = received + lost;
     const double lossPercent = total == 0 ? 0.0 : (100.0 * lost / total);
-    char report[240];
+    char rttAverage[24] = "NA";
+    char rttMaximum[24] = "NA";
+    if (rttSamples > 0)
+    {
+        snprintf(rttAverage, sizeof(rttAverage), "%.1f",
+                 static_cast<double>(rttSumMs) / rttSamples);
+        snprintf(rttMaximum, sizeof(rttMaximum), "%" PRIu32, rttMaxMs);
+    }
+    char report[384];
     snprintf(report, sizeof(report),
-        "computer stats: window=%.3f s received=%" PRIu32 " seq_lost=%" PRIu32
-        " loss=%.2f%% rate=%.2f Hz max_gap=%.3f s silence=%.3f s have_packet=%u world_seq=%u\r\n",
+        "BLE_STATS window_s=%.3f received=%" PRIu32 " seq_lost=%" PRIu32
+        " loss_percent=%.2f rate_hz=%.2f max_gap_s=%.3f silence_s=%.3f"
+        " have_packet=%u world_seq=%u rtt_avg_ms=%s rtt_max_ms=%s rtt_samples=%" PRIu32 "\r\n",
         elapsedMs / 1000.0, received, lost, lossPercent,
         elapsedMs == 0 ? 0.0 : received * 1000.0 / elapsedMs,
         maxGapMs / 1000.0, silenceMs / 1000.0, static_cast<unsigned>(havePacket),
-        static_cast<unsigned>(worldSequence));
+        static_cast<unsigned>(worldSequence), rttAverage, rttMaximum, rttSamples);
     if (Serial.availableForWrite() >= static_cast<int>(strlen(report)))
         Serial.print(report);
 }
@@ -103,11 +141,9 @@ bool findAndConnect(BLEClient *client, BLERemoteCharacteristic **packetCharacter
     scanner->setInterval(100);
     scanner->setWindow(80);
 
-    Serial.println("Scanning for ble_server");
     BLEScanResults *results = scanner->start(SCAN_DURATION_SECONDS, false);
     if (results == nullptr)
     {
-        Serial.println("BLE scan failed");
         return false;
     }
 
@@ -119,8 +155,6 @@ bool findAndConnect(BLEClient *client, BLERemoteCharacteristic **packetCharacter
             !device.isAdvertisingService(BLEUUID(SERVICE_UUID)))
             continue;
 
-        Serial.print("Found ");
-        Serial.println(SERVICE_UUID);
         scanner->stop();
         connected = client->connect(&device);
         break;
@@ -129,14 +163,12 @@ bool findAndConnect(BLEClient *client, BLERemoteCharacteristic **packetCharacter
 
     if (!connected)
     {
-        Serial.println("Server not found or connection failed; retrying scan");
         return false;
     }
 
     BLERemoteService *service = client->getService(SERVICE_UUID);
     if (service == nullptr)
     {
-        Serial.println("Required BLE service not found");
         client->disconnect();
         return false;
     }
@@ -145,7 +177,6 @@ bool findAndConnect(BLEClient *client, BLERemoteCharacteristic **packetCharacter
     if (*packetCharacteristic == nullptr ||
         !(*packetCharacteristic)->canNotify())
     {
-        Serial.println("Required notification characteristic not found");
         client->disconnect();
         return false;
     }
@@ -153,7 +184,6 @@ bool findAndConnect(BLEClient *client, BLERemoteCharacteristic **packetCharacter
     *worldCharacteristic = service->getCharacteristic(WORLD_CHARACTERISTIC_UUID);
     if (*worldCharacteristic == nullptr || !(*worldCharacteristic)->canWriteNoResponse())
     {
-        Serial.println("Required world-state write characteristic not found");
         client->disconnect();
         return false;
     }
@@ -165,11 +195,16 @@ bool findAndConnect(BLEClient *client, BLERemoteCharacteristic **packetCharacter
     windowLost = 0;
     windowMaxGapMs = 0;
     latestWorldSequence = 0;
+    haveWorldAttempt = false;
+    haveWorldEcho = false;
+    latestAttemptedWorldSequence = 0;
+    windowRttSamples = 0;
+    windowRttSumMs = 0;
+    windowRttMaxMs = 0;
     portEXIT_CRITICAL(&statsMux);
 #if defined(CONFIG_NIMBLE_ENABLED)
     if (!(*packetCharacteristic)->subscribe(true, onPacket, true))
     {
-        Serial.println("Notification subscription failed; reconnecting");
         client->disconnect();
         return false;
     }
@@ -178,7 +213,6 @@ bool findAndConnect(BLEClient *client, BLERemoteCharacteristic **packetCharacter
         (*packetCharacteristic)->getDescriptor(BLEUUID(static_cast<uint16_t>(0x2902)));
     if (configuration == nullptr)
     {
-        Serial.println("Notification configuration descriptor not found");
         client->disconnect();
         return false;
     }
@@ -187,20 +221,19 @@ bool findAndConnect(BLEClient *client, BLERemoteCharacteristic **packetCharacter
     uint8_t enableNotifications[] = {0x01, 0x00};
     if (!configuration->writeValue(enableNotifications, sizeof(enableNotifications), true))
     {
-        Serial.println("Notification subscription failed; reconnecting");
         client->disconnect();
         return false;
     }
 #endif
     if (!client->isConnected())
         return false;
-    Serial.println("Connected; subscribed to car notifications at 20 Hz");
     return true;
 }
 }
 
 void setup()
 {
+    Serial.setTxBufferSize(512); // Room for one complete BLE_STATS line.
     Serial.begin(115200);
     Serial.setTxTimeoutMs(1);
     BLEDevice::init("ble_client");
@@ -232,6 +265,10 @@ void loop()
             world[0] = static_cast<uint8_t>(worldSequence);
             world[1] = static_cast<uint8_t>(worldSequence >> 8);
             esp_fill_random(world + 2, sizeof(world) - 2);
+            portENTER_CRITICAL(&statsMux);
+            latestAttemptedWorldSequence = worldSequence;
+            haveWorldAttempt = true;
+            portEXIT_CRITICAL(&statsMux);
             ++worldSequence; // Advance on every attempt, including local failures.
             worldCharacteristic->writeValue(world, sizeof(world), false);
         }
@@ -245,6 +282,5 @@ void loop()
         delay(1);
     }
 
-    Serial.println("BLE server disconnected; restarting scan");
     delay(500);
 }

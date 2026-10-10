@@ -1,0 +1,151 @@
+{
+  "source": "C:\\Users\\leungp\\Documents\\GitHub\\esp32_broadcast_research\\test\\run_logs\\ble_test_9_20261010_033938_305168.csv",
+  "logger_summary": {
+    "port": "COM4",
+    "baud": 115200,
+    "planned_duration_s": 7200,
+    "started_utc": "2026-10-10T03:39:38.305168+00:00",
+    "connections": 1,
+    "serial_errors": 0,
+    "serial_lines": 1440,
+    "notification_reports": 0,
+    "rtt_reports": 0,
+    "ble_stats_reports": 1440,
+    "status": "completed",
+    "csv": "C:\\Users\\leungp\\Documents\\GitHub\\esp32_broadcast_research\\test\\run_logs\\ble_test_9_20261010_033938_305168.csv",
+    "raw_log": "C:\\Users\\leungp\\Documents\\GitHub\\esp32_broadcast_research\\test\\run_logs\\ble_test_9_20261010_033938_305168.jsonl",
+    "elapsed_s": 7200.0,
+    "finished_utc": "2026-10-10T05:39:38.304548+00:00"
+  },
+  "reports": 1440,
+  "reported_window_seconds": 7200.0,
+  "received": 144000,
+  "seq_lost": 0,
+  "sequence_loss_percent": 0.0,
+  "weighted_receive_rate_hz": 20.0,
+  "report_interval_s": {
+    "min": 4.983999999999469,
+    "mean": 4.999902015288395,
+    "median": 5.0,
+    "p95": 5.0,
+    "p99": 5.014999999999418,
+    "max": 5.016000000000531
+  },
+  "missing_report_or_connection_boundaries": [],
+  "rtt_samples": 144000,
+  "weighted_rtt_estimate_ms": 58.40975486111107,
+  "windows_gap_at_least_200ms": 76,
+  "windows_gap_above_200ms": 12,
+  "worst_gap_windows": [
+    {
+      "timestamp_utc": "2026-10-10T04:21:56.763+00:00",
+      "elapsed_s": "2538.454",
+      "max_gap_s": "0.3",
+      "rtt_max_ms": "300",
+      "received": "100"
+    },
+    {
+      "timestamp_utc": "2026-10-10T04:47:11.733+00:00",
+      "elapsed_s": "4053.438",
+      "max_gap_s": "0.299",
+      "rtt_max_ms": "300",
+      "received": "100"
+    },
+    {
+      "timestamp_utc": "2026-10-10T03:49:36.802+00:00",
+      "elapsed_s": "598.5",
+      "max_gap_s": "0.25",
+      "rtt_max_ms": "260",
+      "received": "100"
+    },
+    {
+      "timestamp_utc": "2026-10-10T03:49:51.801+00:00",
+      "elapsed_s": "613.5",
+      "max_gap_s": "0.25",
+      "rtt_max_ms": "240",
+      "received": "100"
+    },
+    {
+      "timestamp_utc": "2026-10-10T03:57:46.791+00:00",
+      "elapsed_s": "1088.485",
+      "max_gap_s": "0.25",
+      "rtt_max_ms": "260",
+      "received": "100"
+    },
+    {
+      "timestamp_utc": "2026-10-10T03:59:01.790+00:00",
+      "elapsed_s": "1163.485",
+      "max_gap_s": "0.25",
+      "rtt_max_ms": "260",
+      "received": "100"
+    },
+    {
+      "timestamp_utc": "2026-10-10T04:02:31.785+00:00",
+      "elapsed_s": "1373.485",
+      "max_gap_s": "0.25",
+      "rtt_max_ms": "260",
+      "received": "100"
+    },
+    {
+      "timestamp_utc": "2026-10-10T05:15:46.701+00:00",
+      "elapsed_s": "5768.391",
+      "max_gap_s": "0.25",
+      "rtt_max_ms": "260",
+      "received": "100"
+    },
+    {
+      "timestamp_utc": "2026-10-10T05:33:01.681+00:00",
+      "elapsed_s": "6803.375",
+      "max_gap_s": "0.25",
+      "rtt_max_ms": "240",
+      "received": "100"
+    },
+    {
+      "timestamp_utc": "2026-10-10T05:14:16.702+00:00",
+      "elapsed_s": "5678.407",
+      "max_gap_s": "0.249",
+      "rtt_max_ms": "240",
+      "received": "99"
+    }
+  ],
+  "rate_hz": {
+    "min": 19.6,
+    "mean": 20.0,
+    "median": 20.0,
+    "p95": 20.2,
+    "p99": 20.2,
+    "max": 20.4
+  },
+  "max_gap_s": {
+    "min": 0.1,
+    "mean": 0.1237,
+    "median": 0.1,
+    "p95": 0.2,
+    "p99": 0.2,
+    "max": 0.3
+  },
+  "silence_s": {
+    "min": 0.0,
+    "mean": 0.005276388888888889,
+    "median": 0.001,
+    "p95": 0.051,
+    "p99": 0.051,
+    "max": 0.101
+  },
+  "rtt_avg_ms": {
+    "min": 51.2,
+    "mean": 58.408680555555556,
+    "median": 58.0,
+    "p95": 64.6,
+    "p99": 70.78299999999997,
+    "max": 90.5
+  },
+  "rtt_max_ms": {
+    "min": 100.0,
+    "mean": 138.43055555555554,
+    "median": 120.0,
+    "p95": 200.0,
+    "p99": 260.0,
+    "max": 340.0
+  }
+}

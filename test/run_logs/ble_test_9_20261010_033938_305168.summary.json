@@ -1,0 +1,17 @@
+{
+  "port": "COM4",
+  "baud": 115200,
+  "planned_duration_s": 7200,
+  "started_utc": "2026-10-10T03:39:38.305168+00:00",
+  "connections": 1,
+  "serial_errors": 0,
+  "serial_lines": 1440,
+  "notification_reports": 0,
+  "rtt_reports": 0,
+  "ble_stats_reports": 1440,
+  "status": "completed",
+  "csv": "C:\\Users\\leungp\\Documents\\GitHub\\esp32_broadcast_research\\test\\run_logs\\ble_test_9_20261010_033938_305168.csv",
+  "raw_log": "C:\\Users\\leungp\\Documents\\GitHub\\esp32_broadcast_research\\test\\run_logs\\ble_test_9_20261010_033938_305168.jsonl",
+  "elapsed_s": 7200.0,
+  "finished_utc": "2026-10-10T05:39:38.304548+00:00"
+}

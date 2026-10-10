@@ -139,3 +139,75 @@ The server interval is `PACKET_INTERVAL_MS = 50`; the client world interval is
 `WORLD_INTERVAL_MS = 20`. Scheduling can vary actual timings. Both loops avoid
 catch-up bursts. USB transmit timeouts are short and periodic reports are skipped
 when the USB transmit buffer lacks room, to avoid diagnostic logging stalls.
+
+### Rough round-trip estimate
+
+The client samples RTT when a notification arrives, using
+`uint16_t(latest_attempted_world_seq - echoed_world_seq) * 20 ms`.
+It reports the average, maximum, and sample count for each five-second window.
+The subtraction handles sequence wrap; ambiguous differences of 32768 or more
+are excluded. Estimation starts after a nonzero world echo, since the server's
+initial zero does not confirm receipt of a command. State resets on reconnect.
+
+This measures the approximate age of the echoed command at the client, with
+20 ms resolution, assuming steady 50 Hz generation. It can underestimate age
+by nearly one send interval; zero means less than one interval, not zero delay.
+It includes any server wait before the echo is sampled into a notification.
+Sender stalls or old echoes caused by failed writes can distort this estimate.
+No server changes or packet-format changes are needed.
+
+### Test 9: two-hour BLE USB log
+
+Close any serial monitor using COM4, then run:
+
+```powershell
+python -m pip install pyserial
+python -u test/test_9_ble_test.py
+```
+
+Defaults are COM4, 115200 baud, and two hours. To try a short run or another port:
+
+```powershell
+python -u test/test_9_ble_test.py --duration-seconds 30
+python -u test/test_9_ble_test.py --port COM13 --hours 2
+```
+
+Files are saved under `test/run_logs/` with a unique UTC timestamp:
+
+- `.csv`: one `ble_stats` row per five-second report, containing notification
+  and RTT measurements together, UTC timestamps, monotonic elapsed seconds,
+  and serial connection numbers. Empty RTT values mean unavailable measurements,
+  not zero latency.
+- `.jsonl`: every serial line, including startup/reconnection messages, plus
+  logger connection/error events and any incomplete trailing line.
+- `.summary.json`: run settings, progress, report counts, and completion status.
+
+Reports are flushed to disk as they arrive. Ctrl+C saves a partial run. Serial
+errors trigger a reconnect attempt every five seconds without extending the
+requested duration. Windows automatic idle sleep is prevented during the run;
+keep the laptop lid open and powered. The script only reads USB output and does
+not send commands. It also accepts the older two-line output, preserving those
+legacy notification and RTT rows separately.
+
+The client firmware emits only one application statistics line per window:
+
+```text
+BLE_STATS window_s=5.000 received=100 seq_lost=0 loss_percent=0.00 rate_hz=20.00 max_gap_s=0.199 silence_s=0.051 have_packet=1 world_seq=3243 rtt_avg_ms=84.0 rtt_max_ms=180 rtt_samples=100
+```
+
+Keys include units, and values contain no unit suffixes. Unavailable RTT is
+`rtt_avg_ms=NA rtt_max_ms=NA rtt_samples=0`. Client startup, scan, connection,
+and error prints have been removed; board boot output may still appear and is
+preserved in the raw log. Incomplete statistics lines are retained in the raw
+log but excluded from numeric CSV rows. Generated filenames start with
+`ble_test_9_`. Reflash the client before running this test.
+
+To analyze the newest Test 9 run and save plots plus a Markdown/JSON report:
+
+```powershell
+python -m pip install matplotlib
+python test/analyze_test_9.py
+```
+
+An optional CSV path selects a specific run. Plots distinguish window-average
+RTT from window-maximum RTT; these are not individual-packet percentiles.

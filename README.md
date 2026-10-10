@@ -55,97 +55,87 @@ Slave 2: OK | world loss 86.7052% | max gap 161 | telemetry lost 681 | max telem
 Slave 1: OK | world loss 87.6118% | max gap 208 | telemetry lost 426 | max telemetry silence 2.063s
 Slave 2: OK | world loss 84.4976% | max gap 161 | telemetry lost 668 | max telemetry silence 1.623s
 
-## BLE slave firmware
+## BLE bidirectional car/computer test
 
-The `ble_slave` firmware makes the ESP32-S3 a Bluetooth Low Energy (BLE)
-peripheral. A computer (the BLE central) connects to it and subscribes to a
-GATT notification characteristic. While connected, the board sends one
-notification every 100 ms (10 Hz). It does not use Wi-Fi or ESP-NOW.
+`src/ble_server/main.cpp` represents the car (BLE peripheral/server).
+`src/ble_client/main.cpp` represents the computer side, using an ESP32-S3
+connected to the computer over USB (BLE central/client). The client sends dummy
+world-state commands at 50 Hz, while the server sends notifications at 20 Hz
+when subscribed. No dummy command is applied to a motor.
 
 ### Build and flash
 
-Connect the XIAO ESP32-S3 to the computer by USB, then run these commands from
-the repository root:
-
-```sh
-pio run -e ble_slave
-pio run -e ble_slave -t upload
-pio device monitor -b 115200
-```
-
-If more than one serial device is connected, select the correct USB serial port
-in PlatformIO (`upload_port` for flashing and `monitor_port` for the monitor).
-USB is used for flashing and diagnostic messages; the packet stream itself is
-sent over BLE.
-
-### Connect from the computer
-
-Use a BLE client/scanner on the computer to find and connect to
-`ble_slave_1`. Open service
-`7a1e0001-4b6d-4f7a-9c2e-6d3b1a5f0001` and enable notifications on
-characteristic `7a1e0002-4b6d-4f7a-9c2e-6d3b1a5f0001`. The client must subscribe
-to that characteristic to receive packets; a BLE connection by itself is not
-enough.
-
-### Packet and settings
-
-Each notification is exactly five binary bytes:
-
-| Byte(s) | Meaning |
-| ------- | ------- |
-| 0       | Device ID, unsigned 8-bit integer |
-| 1-4     | Sequence number, unsigned 32-bit integer, little-endian |
-
-The first sequence number is 0. It increments once for each notification sent
-while a client is connected and wraps back to 0 after `4,294,967,295`. BLE
-notifications are unacknowledged, so a sequence gap at the computer means one
-or more notifications may have been missed. The payload contains no text,
-timestamp, or framing bytes.
-
-Settings you may need to change:
-
-- **Device ID:** change `-D BLE_DEVICE_ID=1` in `[env:ble_slave]` in
-  `platformio.ini`. It must be from 0 to 255. The advertised name is generated
-  as `ble_slave_<ID>`, so rebuild and reflash after changing it.
-- **Packet rate:** `PACKET_INTERVAL_MS` in `src/ble_slave/main.cpp` is 100 ms.
-  Change it only if you want a rate other than 10 Hz.
-- **BLE service and characteristic UUIDs:** leave these as-is unless you also
-  update the computer-side client to use the replacement UUIDs.
-- **Bluetooth on the computer:** the computer needs a BLE-capable adapter and
-  client software. Wi-Fi credentials, Wi-Fi channel, and the ESP-NOW channel
-  are not used by this firmware.
-- **USB upload/monitor port:** select the ESP32-S3's serial port in PlatformIO
-  if it cannot identify the board automatically. Monitor speed is 115200 baud.
-
-## BLE board-to-board loss test
-
-When the computer does not have a BLE adapter, two ESP32-S3 boards can test the
-link directly. The server is the BLE peripheral; the client scans for it and
-writes incrementing 32-bit sequence numbers at 100 Hz. The server estimates
-missing packets from sequence-number gaps and prints statistics to USB serial
-every five seconds. Loss is calculated as `lost / (received + lost)`. The
-maximum gap is the largest observed time between two received packets in that
-reporting window. Notifications/writes that are lost after the last received
-packet in a window cannot be inferred until a later sequence arrives.
-
-Connect the server board to COM11 and the client board to COM13. From the
-repository root, build and upload each firmware:
+Server upload port: COM11. Client upload port: COM13 (`platformio.ini`).
 
 ```powershell
-pio run -e ble_server
+pio run -e ble_server -e ble_client
 pio run -e ble_server -t upload
-pio run -e ble_client
 pio run -e ble_client -t upload
 ```
 
-The upload ports are set in `platformio.ini`. Open a serial monitor on COM11 at
-115200 baud to read the server's loss and gap statistics; COM13 reports the
-client's attempted writes and local write failures. Start the server before the
-client. Pairing is not required. The server restarts advertising after a client
-disconnects, and the client scans and reconnects automatically.
+Start the server before the client. Serial monitors use 115200 baud. The server
+resumes advertising after disconnect; the client scans, reconnects, discovers
+both characteristics, and subscribes again. Pairing is not required.
 
-The packet payload is four bytes: an unsigned 32-bit sequence number in
-little-endian order. At 100 Hz, the nominal interval is 10 ms; the client
-interval is configured by `PACKET_INTERVAL_US` in
-`src/ble_client/main.cpp`. BLE connection interval and radio scheduling can
-cause actual send and receive times to vary.
+### GATT interface
+
+The server advertises `ble_server` and service UUID
+`7a1e0001-4b6d-4f7a-9c2e-6d3b1a5f0001`. The client discovers the characteristics
+inside that service after connecting.
+
+| Characteristic | UUID | Direction | Rate |
+| --- | --- | --- | --- |
+| Telemetry notification | `7a1e0002-4b6d-4f7a-9c2e-6d3b1a5f0001` | Server to subscribed client | 20 Hz |
+| World state, write without response | `7a1e0003-4b6d-4f7a-9c2e-6d3b1a5f0001` | Client to server | 50 Hz |
+
+World state is exactly 20 binary bytes. The server ignores commands of other
+lengths in its processing and statistics.
+
+| Bytes | World-state contents |
+| --- | --- |
+| 0-1 | `world_seq_n`: unsigned 16-bit sequence, little-endian |
+| 2-19 | 18 random dummy bytes |
+
+Each notification is exactly four binary bytes:
+
+| Bytes | Notification contents |
+| --- | --- |
+| 0-1 | `server_seq_n`: unsigned 16-bit notification sequence, little-endian |
+| 2-3 | Latest accepted `world_seq_n`, little-endian |
+
+Both sequences wrap from 65535 to zero. The server sequence starts at zero on
+boot and advances on each notification attempt. The client world sequence starts
+at zero per connection and advances on each write attempt, including local
+write failures. The echoed world sequence is zero until the first valid command;
+zero by itself cannot distinguish that condition from a received sequence zero.
+
+### Five-second statistics
+
+Monitor COM11 for the server's three world-state measurements:
+
+```text
+world stats: rate=50.00 Hz seq_lost=0 silence=0.012 s
+```
+
+`rate` is accepted forward commands divided by the actual reporting duration.
+`seq_lost` counts missing sequence values inferred between accepted commands.
+`silence` is the time since the latest accepted command, or since connection
+start if none has arrived. Sequence baselines and world reporting counters reset
+on connection. Window counters reset every five seconds, but the last sequence
+and receive timestamp persist across windows. Duplicates, backward sequences,
+and malformed commands are ignored.
+
+Monitor COM13 for notification receive rate, sequence loss, completed receive
+gaps, current silence, and the latest echoed world sequence. Expect about 100
+notifications and 250 world commands per five seconds on a steady healthy link.
+Neither sequence loss metric counts send slots missed because a sending loop
+paused. Missing packets after the last received packet are inferred only when
+a later sequence arrives. The 16-bit forward-gap calculation assumes fewer than
+32768 sequence increments between valid received packets; longer gaps are
+ambiguous. The echo samples world reception at 20 Hz, so skipped echo values do
+not indicate world loss when commands arrive at 50 Hz.
+
+The server interval is `PACKET_INTERVAL_MS = 50`; the client world interval is
+`WORLD_INTERVAL_MS = 20`. Scheduling can vary actual timings. Both loops avoid
+catch-up bursts. USB transmit timeouts are short and periodic reports are skipped
+when the USB transmit buffer lacks room, to avoid diagnostic logging stalls.

@@ -1,0 +1,270 @@
+Processing ble_server_car_1 (platform: https://github.com/pioarduino/platform-espressif32/releases/download/55.03.312-1/platform-espressif32.zip; board: seeed_xiao_esp32s3; framework: arduino)
+--------------------------------------------------------------------------------
+Verbose mode can be enabled via `-v, --verbose` option
+CONFIGURATION: https://docs.platformio.org/page/boards/espressif32/seeed_xiao_esp32s3.html
+PLATFORM: Espressif 32 (55.3.312) > Seeed Studio XIAO ESP32S3
+HARDWARE: ESP32S3 240MHz, 320KB RAM, 8MB Flash
+DEBUG: Current (cmsis-dap) External (cmsis-dap, esp-bridge, esp-builtin, esp-prog, esp-prog-2, iot-bus-jtag, jlink, minimodule, olimex-arm-usb-ocd, olimex-arm-usb-ocd-h, olimex-arm-usb-tiny-h, olimex-jtag-tiny, tumpa)
+PACKAGES: 
+ - contrib-piohome @ 3.4.4 
+ - framework-arduinoespressif32 @ 3.3.12 
+ - framework-arduinoespressif32-libs @ 5.5.5+sha.b774170ff46 
+ - tool-esptoolpy @ 5.4.0 
+ - tool-xtensa-esp-elf-gdb @ 17.1.0+20260402 
+ - toolchain-xtensa-esp-elf @ 14.2.0+20260121
+LDF: Library Dependency Finder -> https://bit.ly/configure-pio-ldf
+LDF Modes: Finder ~ chain, Compatibility ~ soft
+Found 44 compatible libraries
+Scanning dependencies...
+Dependency Graph
+|-- BLE @ 3.3.12
+Building in release mode
+Compiling .pio\build\ble_server_car_1\libea5\Preferences\Preferences.cpp.o
+Compiling .pio\build\ble_server_car_1\libd4f\BLE\BLE2901.cpp.o
+Compiling .pio\build\ble_server_car_1\libd4f\BLE\BLE2902.cpp.o
+Compiling .pio\build\ble_server_car_1\libd4f\BLE\BLE2904.cpp.o
+Compiling .pio\build\ble_server_car_1\libd4f\BLE\BLEAddress.cpp.o
+Compiling .pio\build\ble_server_car_1\libd4f\BLE\BLEAdvertisedDevice.cpp.o
+Compiling .pio\build\ble_server_car_1\libd4f\BLE\BLEAdvertising.cpp.o
+Compiling .pio\build\ble_server_car_1\libd4f\BLE\BLEBeacon.cpp.o
+Compiling .pio\build\ble_server_car_1\libd4f\BLE\BLECharacteristic.cpp.o
+Compiling .pio\build\ble_server_car_1\libd4f\BLE\BLECharacteristicMap.cpp.o
+Compiling .pio\build\ble_server_car_1\libd4f\BLE\BLEClient.cpp.o
+Compiling .pio\build\ble_server_car_1\libd4f\BLE\BLEDescriptor.cpp.o
+Compiling .pio\build\ble_server_car_1\libd4f\BLE\BLEDescriptorMap.cpp.o
+Compiling .pio\build\ble_server_car_1\libd4f\BLE\BLEDevice.cpp.o
+Compiling .pio\build\ble_server_car_1\libd4f\BLE\BLEEddystoneTLM.cpp.o
+Compiling .pio\build\ble_server_car_1\libd4f\BLE\BLEEddystoneURL.cpp.o
+Compiling .pio\build\ble_server_car_1\libd4f\BLE\BLEExceptions.cpp.o
+Compiling .pio\build\ble_server_car_1\libd4f\BLE\BLEHIDDevice.cpp.o
+Compiling .pio\build\ble_server_car_1\libd4f\BLE\BLERemoteCharacteristic.cpp.o
+Compiling .pio\build\ble_server_car_1\libd4f\BLE\BLERemoteDescriptor.cpp.o
+Compiling .pio\build\ble_server_car_1\libd4f\BLE\BLERemoteService.cpp.o
+Compiling .pio\build\ble_server_car_1\libd4f\BLE\BLEScan.cpp.o
+Compiling .pio\build\ble_server_car_1\libd4f\BLE\BLESecurity.cpp.o
+Compiling .pio\build\ble_server_car_1\libd4f\BLE\BLEServer.cpp.o
+Compiling .pio\build\ble_server_car_1\libd4f\BLE\BLEService.cpp.o
+Compiling .pio\build\ble_server_car_1\libd4f\BLE\BLEServiceMap.cpp.o
+Compiling .pio\build\ble_server_car_1\libd4f\BLE\BLEUUID.cpp.o
+Compiling .pio\build\ble_server_car_1\libd4f\BLE\BLEUtils.cpp.o
+Compiling .pio\build\ble_server_car_1\libd4f\BLE\BLEValue.cpp.o
+Compiling .pio\build\ble_server_car_1\libd4f\BLE\FreeRTOS.cpp.o
+Compiling .pio\build\ble_server_car_1\libd4f\BLE\GeneralUtils.cpp.o
+Compiling .pio\build\ble_server_car_1\src\ble_server\main.cpp.o
+Building .pio\build\ble_server_car_1\bootloader.bin
+Generating partitions .pio\build\ble_server_car_1\partitions.bin
+Compiling .pio\build\ble_server_car_1\FrameworkArduino\ColorFormat.c.o
+esptool v5.4.0
+Creating ESP32-S3 image...
+Merged 2 ELF sections.
+Successfully created ESP32-S3 image.
+Compiling .pio\build\ble_server_car_1\FrameworkArduino\Esp.cpp.o
+Compiling .pio\build\ble_server_car_1\FrameworkArduino\FirmwareMSC.cpp.o
+Compiling .pio\build\ble_server_car_1\FrameworkArduino\FunctionalInterrupt.cpp.o
+Compiling .pio\build\ble_server_car_1\FrameworkArduino\HEXBuilder.cpp.o
+Compiling .pio\build\ble_server_car_1\FrameworkArduino\HWCDC.cpp.o
+Compiling .pio\build\ble_server_car_1\FrameworkArduino\HardwareSerial.cpp.o
+Compiling .pio\build\ble_server_car_1\FrameworkArduino\HashBuilder.cpp.o
+Compiling .pio\build\ble_server_car_1\FrameworkArduino\IPAddress.cpp.o
+Compiling .pio\build\ble_server_car_1\FrameworkArduino\MD5Builder.cpp.o
+Compiling .pio\build\ble_server_car_1\FrameworkArduino\MacAddress.cpp.o
+Compiling .pio\build\ble_server_car_1\FrameworkArduino\Print.cpp.o
+Compiling .pio\build\ble_server_car_1\FrameworkArduino\Stream.cpp.o
+Compiling .pio\build\ble_server_car_1\FrameworkArduino\StreamString.cpp.o
+Compiling .pio\build\ble_server_car_1\FrameworkArduino\StringUtils.cpp.o
+Compiling .pio\build\ble_server_car_1\FrameworkArduino\Tone.cpp.o
+Compiling .pio\build\ble_server_car_1\FrameworkArduino\USB.cpp.o
+Compiling .pio\build\ble_server_car_1\FrameworkArduino\USBCDC.cpp.o
+Compiling .pio\build\ble_server_car_1\FrameworkArduino\USBHost.cpp.o
+Compiling .pio\build\ble_server_car_1\FrameworkArduino\USBMSC.cpp.o
+Compiling .pio\build\ble_server_car_1\FrameworkArduino\WMath.cpp.o
+Compiling .pio\build\ble_server_car_1\FrameworkArduino\WString.cpp.o
+Compiling .pio\build\ble_server_car_1\FrameworkArduino\base64.cpp.o
+Compiling .pio\build\ble_server_car_1\FrameworkArduino\cbuf.cpp.o
+Compiling .pio\build\ble_server_car_1\FrameworkArduino\chip-debug-report.cpp.o
+Compiling .pio\build\ble_server_car_1\FrameworkArduino\esp32-hal-adc.c.o
+Compiling .pio\build\ble_server_car_1\FrameworkArduino\esp32-hal-bt.c.o
+Compiling .pio\build\ble_server_car_1\FrameworkArduino\esp32-hal-cpu.c.o
+Compiling .pio\build\ble_server_car_1\FrameworkArduino\esp32-hal-dac.c.o
+Compiling .pio\build\ble_server_car_1\FrameworkArduino\esp32-hal-gpio.c.o
+Compiling .pio\build\ble_server_car_1\FrameworkArduino\esp32-hal-hosted.c.o
+Compiling .pio\build\ble_server_car_1\FrameworkArduino\esp32-hal-i2c-ng.c.o
+Compiling .pio\build\ble_server_car_1\FrameworkArduino\esp32-hal-i2c-slave.c.o
+Compiling .pio\build\ble_server_car_1\FrameworkArduino\esp32-hal-i2c.c.o
+Compiling .pio\build\ble_server_car_1\FrameworkArduino\esp32-hal-ldo.c.o
+Compiling .pio\build\ble_server_car_1\FrameworkArduino\esp32-hal-ledc.c.o
+Compiling .pio\build\ble_server_car_1\FrameworkArduino\esp32-hal-log-wrapper.c.o
+Compiling .pio\build\ble_server_car_1\FrameworkArduino\esp32-hal-matrix.c.o
+Compiling .pio\build\ble_server_car_1\FrameworkArduino\esp32-hal-misc.c.o
+Compiling .pio\build\ble_server_car_1\FrameworkArduino\esp32-hal-periman.c.o
+Compiling .pio\build\ble_server_car_1\FrameworkArduino\esp32-hal-psram.c.o
+Compiling .pio\build\ble_server_car_1\FrameworkArduino\esp32-hal-rgb-led.c.o
+Compiling .pio\build\ble_server_car_1\FrameworkArduino\esp32-hal-rmt.c.o
+Compiling .pio\build\ble_server_car_1\FrameworkArduino\esp32-hal-sigmadelta.c.o
+Compiling .pio\build\ble_server_car_1\FrameworkArduino\esp32-hal-spi.c.o
+Compiling .pio\build\ble_server_car_1\FrameworkArduino\esp32-hal-time.c.o
+Compiling .pio\build\ble_server_car_1\FrameworkArduino\esp32-hal-timer.c.o
+Compiling .pio\build\ble_server_car_1\FrameworkArduino\esp32-hal-tinyusb.c.o
+Compiling .pio\build\ble_server_car_1\FrameworkArduino\esp32-hal-touch-ng.c.o
+Compiling .pio\build\ble_server_car_1\FrameworkArduino\esp32-hal-touch.c.o
+Compiling .pio\build\ble_server_car_1\FrameworkArduino\esp32-hal-uart.c.o
+Compiling .pio\build\ble_server_car_1\FrameworkArduino\firmware_msc_fat.c.o
+Compiling .pio\build\ble_server_car_1\FrameworkArduino\freertos_stats.cpp.o
+Compiling .pio\build\ble_server_car_1\FrameworkArduino\idf_openthread_mpool_wrapper.c.o
+Compiling .pio\build\ble_server_car_1\FrameworkArduino\libb64\cdecode.c.o
+Compiling .pio\build\ble_server_car_1\FrameworkArduino\libb64\cencode.c.o
+Compiling .pio\build\ble_server_car_1\FrameworkArduino\main.cpp.o
+Compiling .pio\build\ble_server_car_1\FrameworkArduino\stdlib_noniso.c.o
+Compiling .pio\build\ble_server_car_1\FrameworkArduino\wiring_pulse.c.o
+Compiling .pio\build\ble_server_car_1\FrameworkArduino\wiring_shift.c.o
+Archiving .pio\build\ble_server_car_1\libFrameworkArduino.a
+Linking .pio\build\ble_server_car_1\firmware.elf
+                            Memory Type Usage Summary                             
+┌─────────────────────┬──────────────┬──────────┬────────────────┬───────────────┐
+│ Memory Type/Section │ Used [bytes] │ Used [%] │ Remain [bytes] │ Total [bytes] │
+├─────────────────────┼──────────────┼──────────┼────────────────┼───────────────┤
+│ Flash Code          │       366744 │          │                │               │
+│    .text            │       366744 │          │                │               │
+│ DIRAM               │       105062 │    30.74 │         236698 │        341760 │
+│    .text            │        76915 │    22.51 │                │               │
+│    .data            │        19163 │     5.61 │                │               │
+│    .bss             │         8984 │     2.63 │                │               │
+│ Flash Data          │        90616 │          │                │               │
+│    .rodata          │        81616 │          │                │               │
+│    .eh_frame        │         8744 │          │                │               │
+│    .appdesc         │          256 │          │                │               │
+│ IRAM                │        16384 │    100.0 │              0 │         16384 │
+│    .text            │        15356 │    93.73 │                │               │
+│    .vectors         │         1028 │     6.27 │                │               │
+│ RTC SLOW            │            8 │      0.1 │           7672 │          7680 │
+│    .data            │            8 │      0.1 │                │               │
+└─────────────────────┴──────────────┴──────────┴────────────────┴───────────────┘
+Total image size: 569830 bytes (.bin may be padded larger)
+Note: The reported total sizes may be smaller than those in the technical reference manual due to reserved memory and application configuration. The total flash size available for the application is not included by default, as it cannot be reliably determined due to the presence of other data like the bootloader, partition table, and application partition size. The total external RAM size is not included either, because the amount of RAM connected to the chip is detected at boot and is not known during the build.
+Retrieving maximum program size .pio\build\ble_server_car_1\firmware.elf
+Checking size .pio\build\ble_server_car_1\firmware.elf
+Advanced Memory Usage is available via "PlatformIO Home > Project Inspect"
+RAM:   [=         ]   8.6% (used 28148 bytes from 327680 bytes)
+Flash: [==        ]  16.8% (used 560822 bytes from 3342336 bytes)
+Building .pio\build\ble_server_car_1\firmware.bin
+esptool v5.4.0
+Creating ESP32-S3 image...
+Merged 4 ELF sections.
+Successfully created ESP32-S3 image.
+Creating binary "firmware.factory.bin" with:
+    Offset   | File
+ -  0x0000   | bootloader.bin
+ -  0x8000   | partitions.bin
+ -  0xe000   | boot_app0.bin
+ -  0x10000  | firmware.bin
+Successfully created combined binary image.
+Configuring upload protocol...
+AVAILABLE: cmsis-dap, esp-bridge, esp-builtin, esp-prog, esp-prog-2, espota, esptool, iot-bus-jtag, jlink, minimodule, olimex-arm-usb-ocd, olimex-arm-usb-ocd-h, olimex-arm-usb-tiny-h, olimex-jtag-tiny, tumpa
+CURRENT: upload_protocol = esptool
+Looking for upload port...
+Uploading .pio\build\ble_server_car_1\firmware.bin
+esptool v5.4.0
+Serial port COM3:
+Connecting...
+Connected to ESP32-S3 on COM3:
+Chip type:          ESP32-S3 (QFN56) (revision v0.2)
+Features:           Wi-Fi, BT 5 (LE), Dual Core + LP Core, 240MHz, Embedded PSRAM 8MB (AP_3v3)
+Crystal frequency:  40MHz
+USB mode:           USB-Serial/JTAG
+MAC:                68:ee:8f:4b:5b:4c
+
+Uploading stub flasher...
+Running stub flasher...
+Stub flasher running.
+Changing baud rate to 460800...
+Changed.
+
+Configuring flash size...
+Auto-detected flash size: 8MB
+
+Writing 'C:\Users\leungp\Documents\GitHub\esp32_broadcast_research\.pio\build\ble_server_car_1\bootloader.bin' at 0x00000000...
+SHA digest in image updated.
+Flash will be erased from 0x00000000 to 0x00004fff...
+Compressed 19968 bytes to 12992...
+
+Writing at 0x00004e00 [██████████████████████████████] 100.0% 12.69kB/12.69kB [0s] 
+Wrote 19968 bytes (12992 compressed) at 0x00000000 in 0.3 seconds (550.8 kbit/s).
+Verifying written data...
+Hash of data verified.
+
+Writing 'C:\Users\leungp\Documents\GitHub\esp32_broadcast_research\.pio\build\ble_server_car_1\partitions.bin' at 0x00008000...
+Flash will be erased from 0x00008000 to 0x00008fff...
+Compressed 3072 bytes to 146...
+
+Writing at 0x00008c00 [██████████████████████████████] 100.0% 146B/146B [0s] 
+Wrote 3072 bytes (146 compressed) at 0x00008000 in 0.0 seconds (571.5 kbit/s).
+Verifying written data...
+Hash of data verified.
+
+Writing 'C:\Users\leungp\.platformio\packages\framework-arduinoespressif32\tools\partitions\boot_app0.bin' at 0x0000e000...
+Flash will be erased from 0x0000e000 to 0x0000ffff...
+Compressed 8192 bytes to 47...
+
+Writing at 0x00010000 [██████████████████████████████] 100.0% 47B/47B [0s] 
+Wrote 8192 bytes (47 compressed) at 0x0000e000 in 0.1 seconds (732.2 kbit/s).
+Verifying written data...
+Hash of data verified.
+
+Writing '.pio\build\ble_server_car_1\firmware.bin' at 0x00010000...
+Flash will be erased from 0x00010000 to 0x0009bfff...
+Compressed 569984 bytes to 354890...
+
+Writing at 0x0001c1ed [█░░░░░░░░░░░░░░░░░░░░░░░░░░░░░]   4.6% 16.00kB/346.57kB [0s] 
+
+Writing at 0x00026134 [██░░░░░░░░░░░░░░░░░░░░░░░░░░░░]   9.2% 32.00kB/346.57kB [0s] 
+
+Writing at 0x0002e978 [████░░░░░░░░░░░░░░░░░░░░░░░░░░]  13.8% 48.00kB/346.57kB [0s] 
+
+Writing at 0x00034395 [█████░░░░░░░░░░░░░░░░░░░░░░░░░]  18.5% 64.00kB/346.57kB [0s] 
+
+Writing at 0x0003a0d4 [██████░░░░░░░░░░░░░░░░░░░░░░░░]  23.1% 80.00kB/346.57kB [0s] 
+
+Writing at 0x0003fb2d [████████░░░░░░░░░░░░░░░░░░░░░░]  27.7% 96.00kB/346.57kB [1s] 
+
+Writing at 0x0004511b [█████████░░░░░░░░░░░░░░░░░░░░░]  32.3% 112.00kB/346.57kB [1s] 
+
+Writing at 0x0004ac68 [███████████░░░░░░░░░░░░░░░░░░░]  36.9% 128.00kB/346.57kB [1s] 
+
+Writing at 0x00050af8 [████████████░░░░░░░░░░░░░░░░░░]  41.5% 144.00kB/346.57kB [1s] 
+
+Writing at 0x00056374 [█████████████░░░░░░░░░░░░░░░░░]  46.2% 160.00kB/346.57kB [1s] 
+
+Writing at 0x0005bbb7 [███████████████░░░░░░░░░░░░░░░]  50.8% 176.00kB/346.57kB [1s] 
+
+Writing at 0x0006140d [████████████████░░░░░░░░░░░░░░]  55.4% 192.00kB/346.57kB [2s] 
+
+Writing at 0x00066cba [██████████████████░░░░░░░░░░░░]  60.0% 208.00kB/346.57kB [2s] 
+
+Writing at 0x0006c748 [███████████████████░░░░░░░░░░░]  64.6% 224.00kB/346.57kB [2s] 
+
+Writing at 0x00071ef8 [████████████████████░░░░░░░░░░]  69.2% 240.00kB/346.57kB [2s] 
+
+Writing at 0x00077a7d [██████████████████████░░░░░░░░]  73.9% 256.00kB/346.57kB [2s] 
+
+Writing at 0x0007d21b [███████████████████████░░░░░░░]  78.5% 272.00kB/346.57kB [2s] 
+
+Writing at 0x0008605b [████████████████████████░░░░░░]  83.1% 288.00kB/346.57kB [2s] 
+
+Writing at 0x0008b715 [██████████████████████████░░░░]  87.7% 304.00kB/346.57kB [3s] 
+
+Writing at 0x0009137a [███████████████████████████░░░]  92.3% 320.00kB/346.57kB [3s] 
+
+Writing at 0x0009740f [█████████████████████████████░]  96.9% 336.00kB/346.57kB [3s] 
+
+Writing at 0x0009b280 [██████████████████████████████] 100.0% 346.57kB/346.57kB [3s] 
+Wrote 569984 bytes (354890 compressed) at 0x00010000 in 3.7 seconds (1245.4 kbit/s).
+Verifying written data...
+Hash of data verified.
+
+Hard resetting via RTS pin...
+========================= [SUCCESS] Took 54.70 seconds =========================
+
+Environment       Status    Duration
+----------------  --------  ------------
+ble_server_car_1  SUCCESS   00:00:54.697
+========================= 1 succeeded in 00:00:54.697 =========================

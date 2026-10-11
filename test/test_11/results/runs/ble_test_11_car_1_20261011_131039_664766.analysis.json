@@ -1,0 +1,156 @@
+{
+  "source": "test\\run_logs\\ble_test_11_car_1_20261011_131039_664766.csv",
+  "logger_summary": {
+    "started_utc": "2026-10-11T13:10:39.664766+00:00",
+    "planned_duration_s": 120.0,
+    "car_id": 1,
+    "service_uuid": "7a1e0001-4b6d-4f7a-9c2e-6d3b1a5f0001",
+    "status": "completed",
+    "connections": 1,
+    "ble_errors": 0,
+    "ble_disconnects": 0,
+    "overload_events": 0,
+    "notification_timeouts": 0,
+    "connected_at_deadline": true,
+    "ble_stats_reports": 22,
+    "received": 2198,
+    "seq_lost": 0,
+    "world_attempted": 5494,
+    "write_failures": 0,
+    "elapsed_s": 120.11515610000015,
+    "connection_mode": "default",
+    "successful_reconnections": 0,
+    "finished_utc": "2026-10-11T13:12:39.780546+00:00"
+  },
+  "reports": 22,
+  "reported_window_seconds": 109.908318,
+  "received": 2198,
+  "seq_lost": 0,
+  "sequence_loss_percent": 0.0,
+  "weighted_receive_rate_hz": 19.99848637479831,
+  "report_interval_s": {
+    "min": 3.907412999999991,
+    "mean": 4.993314523809524,
+    "median": 5.047163000000005,
+    "p95": 5.052601999999993,
+    "p99": 5.053813199999993,
+    "max": 5.054115999999993
+  },
+  "missing_report_or_connection_boundaries": [],
+  "rtt_samples": 2196,
+  "weighted_rtt_estimate_ms": 44.18032786885246,
+  "windows_gap_at_least_200ms": 0,
+  "windows_gap_above_200ms": 0,
+  "worst_gap_windows": [
+    {
+      "timestamp_utc": "2026-10-11T13:12:00.429+00:00",
+      "elapsed_s": "80.764012",
+      "max_gap_s": "0.15022559999988516",
+      "rtt_max_ms": "120.0",
+      "received": "101"
+    },
+    {
+      "timestamp_utc": "2026-10-11T13:11:15.006+00:00",
+      "elapsed_s": "35.340409",
+      "max_gap_s": "0.1498165999998946",
+      "rtt_max_ms": "120.0",
+      "received": "100"
+    },
+    {
+      "timestamp_utc": "2026-10-11T13:11:30.146+00:00",
+      "elapsed_s": "50.480724",
+      "max_gap_s": "0.12004449999994904",
+      "rtt_max_ms": "120.0",
+      "received": "100"
+    },
+    {
+      "timestamp_utc": "2026-10-11T13:11:35.189+00:00",
+      "elapsed_s": "55.523668",
+      "max_gap_s": "0.11997790000009445",
+      "rtt_max_ms": "100.0",
+      "received": "101"
+    },
+    {
+      "timestamp_utc": "2026-10-11T13:11:40.237+00:00",
+      "elapsed_s": "60.571854",
+      "max_gap_s": "0.09413710000012543",
+      "rtt_max_ms": "100.0",
+      "received": "102"
+    },
+    {
+      "timestamp_utc": "2026-10-11T13:10:54.810+00:00",
+      "elapsed_s": "15.145373",
+      "max_gap_s": "0.09060799999997471",
+      "rtt_max_ms": "80.0",
+      "received": "101"
+    },
+    {
+      "timestamp_utc": "2026-10-11T13:10:59.862+00:00",
+      "elapsed_s": "20.197078",
+      "max_gap_s": "0.09056420000001708",
+      "rtt_max_ms": "60.0",
+      "received": "101"
+    },
+    {
+      "timestamp_utc": "2026-10-11T13:12:25.669+00:00",
+      "elapsed_s": "106.00396",
+      "max_gap_s": "0.09054979999996249",
+      "rtt_max_ms": "60.0",
+      "received": "101"
+    },
+    {
+      "timestamp_utc": "2026-10-11T13:11:09.963+00:00",
+      "elapsed_s": "30.298227",
+      "max_gap_s": "0.09032300000012583",
+      "rtt_max_ms": "60.0",
+      "received": "101"
+    },
+    {
+      "timestamp_utc": "2026-10-11T13:12:15.569+00:00",
+      "elapsed_s": "95.904171",
+      "max_gap_s": "0.09030639999991763",
+      "rtt_max_ms": "80.0",
+      "received": "101"
+    }
+  ],
+  "rate_hz": {
+    "min": 19.791776655342016,
+    "mean": 19.998128996049655,
+    "median": 20.006549172384517,
+    "p95": 20.196510860174968,
+    "p99": 20.224436324549547,
+    "max": 20.22957593751439
+  },
+  "max_gap_s": {
+    "min": 0.08999629999993886,
+    "mean": 0.09858227272726791,
+    "median": 0.09029469999995854,
+    "p95": 0.1483279949998973,
+    "p99": 0.15013970999988716,
+    "max": 0.15022559999988516
+  },
+  "silence_s": {
+    "min": 0.007812599999851955,
+    "mean": 0.03092096818182778,
+    "median": 0.029858049999916147,
+    "p95": 0.05650226000019529,
+    "p99": 0.057712558000011994,
+    "max": 0.05795409999996082
+  },
+  "rtt_avg_ms": {
+    "min": 42.57425742574257,
+    "mean": 44.196554595813346,
+    "median": 43.960396039603964,
+    "p95": 46.190000000000005,
+    "p99": 46.72826262626263,
+    "max": 46.86868686868687
+  },
+  "rtt_max_ms": {
+    "min": 60.0,
+    "mean": 78.18181818181819,
+    "median": 70.0,
+    "p95": 120.0,
+    "p99": 120.0,
+    "max": 120.0
+  }
+}

@@ -1,0 +1,37 @@
+2026-10-11T13:36:08.101+00:00 [3.105s] world stats: rate=0.00 Hz seq_lost=0 silence=103.579 s
+2026-10-11T13:36:08.101+00:00 [3.105s] ble buffers: free=36 total=36 skipped_notifications=0
+2026-10-11T13:36:08.101+00:00 [3.105s] ble health: uptime_ms=5119150 connected=0 subscribed=0 advertising=1 heap=245192 min_heap=245012 notify_errors=0 last_error=0 restarts=0
+2026-10-11T13:36:13.096+00:00 [8.100s] world stats: rate=0.00 Hz seq_lost=0 silence=108.579 s
+2026-10-11T13:36:13.096+00:00 [8.100s] ble buffers: free=36 total=36 skipped_notifications=0
+2026-10-11T13:36:13.096+00:00 [8.100s] ble health: uptime_ms=5124150 connected=0 subscribed=0 advertising=1 heap=245192 min_heap=245012 notify_errors=0 last_error=0 restarts=0
+2026-10-11T13:36:13.491+00:00 [8.495s] ble event: uptime_ms=5124534 event=connected status=0 interval=0.00 ms latency=0 timeout=0 ms
+2026-10-11T13:36:14.241+00:00 [9.245s] ble event: uptime_ms=5125284 event=connection_parameters status=0 interval=7.50 ms latency=0 timeout=9600 ms
+2026-10-11T13:36:15.977+00:00 [10.981s] ble event: uptime_ms=5127024 event=connection_parameters status=0 interval=30.00 ms latency=0 timeout=6000 ms
+2026-10-11T13:36:18.478+00:00 [13.482s] world stats: rate=1.60 Hz seq_lost=0 silence=0.140 s
+2026-10-11T13:36:18.478+00:00 [13.482s] ble buffers: free=36 total=36 skipped_notifications=0
+2026-10-11T13:36:18.478+00:00 [13.482s] ble health: uptime_ms=5129534 connected=1 subscribed=0 advertising=0 heap=245148 min_heap=245012 notify_errors=0 last_error=0 restarts=0
+2026-10-11T13:36:23.479+00:00 [18.483s] world stats: rate=2.00 Hz seq_lost=0 silence=0.130 s
+2026-10-11T13:36:23.479+00:00 [18.483s] ble buffers: free=36 total=36 skipped_notifications=0
+2026-10-11T13:36:23.479+00:00 [18.483s] ble health: uptime_ms=5134534 connected=1 subscribed=0 advertising=0 heap=245148 min_heap=245012 notify_errors=0 last_error=0 restarts=0
+2026-10-11T13:36:28.487+00:00 [23.491s] world stats: rate=2.00 Hz seq_lost=0 silence=0.150 s
+2026-10-11T13:36:28.487+00:00 [23.491s] ble buffers: free=36 total=36 skipped_notifications=0
+2026-10-11T13:36:28.487+00:00 [23.491s] ble health: uptime_ms=5139534 connected=1 subscribed=0 advertising=0 heap=245148 min_heap=245012 notify_errors=0 last_error=0 restarts=0
+2026-10-11T13:36:33.485+00:00 [28.489s] world stats: rate=2.00 Hz seq_lost=0 silence=0.140 s
+2026-10-11T13:36:33.485+00:00 [28.489s] ble buffers: free=36 total=36 skipped_notifications=0
+2026-10-11T13:36:33.485+00:00 [28.489s] ble health: uptime_ms=5144534 connected=1 subscribed=0 advertising=0 heap=245148 min_heap=245012 notify_errors=0 last_error=0 restarts=0
+2026-10-11T13:36:38.483+00:00 [33.487s] world stats: rate=2.00 Hz seq_lost=0 silence=0.099 s
+2026-10-11T13:36:38.483+00:00 [33.487s] ble buffers: free=36 total=36 skipped_notifications=0
+2026-10-11T13:36:38.483+00:00 [33.487s] ble health: uptime_ms=5149534 connected=1 subscribed=0 advertising=0 heap=245148 min_heap=245012 notify_errors=0 last_error=0 restarts=0
+2026-10-11T13:36:43.491+00:00 [38.495s] world stats: rate=2.00 Hz seq_lost=0 silence=0.149 s
+2026-10-11T13:36:43.491+00:00 [38.495s] ble buffers: free=36 total=36 skipped_notifications=0
+2026-10-11T13:36:43.491+00:00 [38.495s] ble health: uptime_ms=5154534 connected=1 subscribed=0 advertising=0 heap=245148 min_heap=245012 notify_errors=0 last_error=0 restarts=0
+2026-10-11T13:36:48.483+00:00 [43.486s] world stats: rate=2.00 Hz seq_lost=0 silence=0.109 s
+2026-10-11T13:36:48.483+00:00 [43.487s] ble buffers: free=36 total=36 skipped_notifications=0
+2026-10-11T13:36:48.483+00:00 [43.487s] ble health: uptime_ms=5159534 connected=1 subscribed=0 advertising=0 heap=245148 min_heap=245012 notify_errors=0 last_error=0 restarts=0
+2026-10-11T13:36:50.390+00:00 [45.393s] ble event: uptime_ms=5161435 event=connection_parameters status=0 interval=30.00 ms latency=0 timeout=9600 ms
+2026-10-11T13:36:53.149+00:00 [48.153s] ble event: uptime_ms=5164195 event=gap_disconnect status=531 interval=0.00 ms latency=0 timeout=0 ms
+2026-10-11T13:36:53.149+00:00 [48.153s] ble event: uptime_ms=5164195 event=disconnected status=0 interval=0.00 ms latency=0 timeout=0 ms
+2026-10-11T13:36:53.478+00:00 [48.482s] world stats: rate=0.60 Hz seq_lost=0 silence=3.639 s
+2026-10-11T13:36:53.478+00:00 [48.482s] ble buffers: free=36 total=36 skipped_notifications=0
+2026-10-11T13:36:53.478+00:00 [48.482s] ble health: uptime_ms=5164534 connected=0 subscribed=0 advertising=0 heap=245192 min_heap=245012 notify_errors=0 last_error=0 restarts=0
+2026-10-11T13:36:53.645+00:00 [48.649s] ble event: uptime_ms=5164696 event=advertising_restart status=0 interval=0.00 ms latency=0 timeout=0 ms

@@ -1,0 +1,6 @@
+timestamp_utc,elapsed_s,phase,record_type,car,window_s,received,seq_lost,loss_percent,rate_hz,max_gap_s,silence_s,have_packet,world_seq,rtt_avg_ms,rtt_max_ms,rtt_samples,echo_age_avg_ms,echo_age_max_ms,echo_age_samples,world_attempted,world_tx_rate_hz,write_failures,max_tx_gap_s,max_write_ms,malformed,ignored,partial_window,target_tx_hz
+2026-10-11T13:36:14.845+00:00,9.848777500000324,sequential_setup_2Hz_no_notifications,ble_stats,1,0.023968,0,0,0,0.0,0.0,,0,,,,0,,,0,1,41.722992707428936,0,0.0,2.776799999992363,0,0,1,2.0
+2026-10-11T13:36:19.846+00:00,14.849319700000251,sequential_setup_2Hz_no_notifications,ble_stats,1,5.000546,0,0,0,0.0,0.0,,0,,,,0,,,0,10,1.9997816238465906,0,0.5002750000003289,1.783299999715382,0,0,1,2.0
+2026-10-11T13:36:39.989+00:00,34.99282640000001,sequential_setup_2Hz_no_notifications,ble_stats,1,20.143525,0,0,0,0.0,0.0,,0,,,,0,,,0,40,1.9857498026934084,0,0.5006183000000419,2.2821000002295477,0,0,1,2.0
+2026-10-11T13:36:45.040+00:00,40.043619000000035,sequential_setup_2Hz_no_notifications,ble_stats,1,5.050776,0,0,0,0.0,0.0,,0,,,,0,,,0,10,1.9798939002577245,0,0.5005049000001236,2.6534000003266556,0,0,0,2.0
+2026-10-11T13:36:49.990+00:00,44.99346250000008,sequential_setup_2Hz_no_notifications,ble_stats,1,4.949848,0,0,0,0.0,0.0,,0,,,,0,,,0,10,2.0202640974079653,0,0.5004159000000072,1.7366000001857174,0,0,1,2.0

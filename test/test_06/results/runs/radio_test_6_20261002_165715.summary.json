@@ -1,0 +1,14 @@
+{
+  "csv": "C:\\Users\\Zeyang Wu\\Documents\\GitHub\\esp32_broadcast_research\\test\\run_logs\\radio_test_6_20261002_165715.csv",
+  "phases": {
+    "baseline": {
+      "world_packets_sent": 1500,
+      "slaves_observed": [
+        2
+      ]
+    }
+  },
+  "status": "PASS",
+  "error": null,
+  "finished_local": "2026-10-02T16:57:48"
+}

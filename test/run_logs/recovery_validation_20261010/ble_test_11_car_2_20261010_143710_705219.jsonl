@@ -1,5 +1,0 @@
-{"timestamp_utc": "2026-10-10T14:37:10.712+00:00", "elapsed_s": 0.006415, "connection": 0, "record_type": "scanning", "message": "all three car service UUIDs"}
-{"timestamp_utc": "2026-10-10T14:37:18.825+00:00", "elapsed_s": 8.11956, "connection": 0, "record_type": "ble_error", "message": "BleakDeviceNotFoundError: Device with address 68:EE:8F:46:33:45 was not found."}
-{"timestamp_utc": "2026-10-10T14:37:20.835+00:00", "elapsed_s": 10.129575, "connection": 0, "record_type": "scanning", "message": "7a1e0001-4b6d-4f7a-9c2e-6d3b1a5f0002"}
-{"timestamp_utc": "2026-10-10T14:37:28.862+00:00", "elapsed_s": 18.156361, "connection": 0, "record_type": "ble_error", "message": "BleakDeviceNotFoundError: Device with address 68:EE:8F:46:33:45 was not found."}
-{"timestamp_utc": "2026-10-10T14:37:30.866+00:00", "elapsed_s": 20.160044, "connection": 0, "record_type": "scanning", "message": "7a1e0001-4b6d-4f7a-9c2e-6d3b1a5f0002"}

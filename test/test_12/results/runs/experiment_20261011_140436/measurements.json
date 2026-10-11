@@ -1,0 +1,269 @@
+[
+  {
+    "summary": "ble_test_12_concurrent_123_20261011_140536_411093.summary.json",
+    "setup": "concurrent",
+    "cars": [
+      1,
+      2,
+      3
+    ],
+    "status": "multiple_link_setup_failed",
+    "connected": [
+      "3"
+    ],
+    "active_s": 0,
+    "received": 0,
+    "writes": 0,
+    "rx_hz": null,
+    "tx_hz": null,
+    "notification_gaps": 0,
+    "malformed": 0,
+    "write_failures": 0,
+    "echo_age_avg_ms": null,
+    "echo_age_max_ms": null,
+    "max_notification_gap_s": null,
+    "server_estimated_received": {
+      "1": 0,
+      "2": 0,
+      "3": 0
+    },
+    "server_gaps": {
+      "1": 0,
+      "2": 0,
+      "3": 0
+    },
+    "server_cumulative_notify_errors": {
+      "1": 0,
+      "2": 0,
+      "3": 0
+    },
+    "errors": [
+      {
+        "car": 2,
+        "phase": "setup_idle",
+        "message": "BleakError: Could not get GATT services: Unreachable"
+      },
+      {
+        "car": 1,
+        "phase": "setup_idle",
+        "message": "BleakError: Could not get GATT services: Unreachable"
+      }
+    ]
+  },
+  {
+    "summary": "ble_test_12_sequential_123_20261011_140611_167209.summary.json",
+    "setup": "sequential",
+    "cars": [
+      1,
+      2,
+      3
+    ],
+    "status": "multiple_link_setup_failed",
+    "connected": [
+      "1"
+    ],
+    "active_s": 0,
+    "received": 0,
+    "writes": 0,
+    "rx_hz": null,
+    "tx_hz": null,
+    "notification_gaps": 0,
+    "malformed": 0,
+    "write_failures": 0,
+    "echo_age_avg_ms": null,
+    "echo_age_max_ms": null,
+    "max_notification_gap_s": null,
+    "server_estimated_received": {
+      "1": 0,
+      "2": 0,
+      "3": 0
+    },
+    "server_gaps": {
+      "1": 0,
+      "2": 0,
+      "3": 0
+    },
+    "server_cumulative_notify_errors": {
+      "1": 0,
+      "2": 0,
+      "3": 0
+    },
+    "errors": [
+      {
+        "car": 2,
+        "phase": "setup_idle",
+        "message": "BleakError: Could not get GATT services: Unreachable"
+      },
+      {
+        "car": 3,
+        "phase": "setup_idle",
+        "message": "BleakError: Could not get GATT services: Unreachable"
+      }
+    ]
+  },
+  {
+    "summary": "ble_test_12_sequential_1_20261011_140744_654578.summary.json",
+    "setup": "sequential",
+    "cars": [
+      1
+    ],
+    "status": "traffic_completed",
+    "connected": [
+      "1"
+    ],
+    "active_s": 35.128208,
+    "received": 702,
+    "writes": 1753,
+    "rx_hz": 19.983939972115856,
+    "tx_hz": 49.90291562837478,
+    "notification_gaps": 0,
+    "malformed": 0,
+    "write_failures": 0,
+    "echo_age_avg_ms": 53.272836857177026,
+    "echo_age_max_ms": 81.90539999941393,
+    "max_notification_gap_s": 0.09060829999998532,
+    "server_estimated_received": {
+      "1": 1753,
+      "2": 0,
+      "3": 0
+    },
+    "server_gaps": {
+      "1": 0,
+      "2": 0,
+      "3": 0
+    },
+    "server_cumulative_notify_errors": {
+      "1": 0,
+      "2": 0,
+      "3": 0
+    },
+    "errors": []
+  },
+  {
+    "summary": "ble_test_12_sequential_2_20261011_140846_493896.summary.json",
+    "setup": "sequential",
+    "cars": [
+      2
+    ],
+    "status": "traffic_completed",
+    "connected": [
+      "2"
+    ],
+    "active_s": 35.08598,
+    "received": 702,
+    "writes": 1753,
+    "rx_hz": 20.007991796153334,
+    "tx_hz": 49.96297666475327,
+    "notification_gaps": 0,
+    "malformed": 0,
+    "write_failures": 0,
+    "echo_age_avg_ms": 57.71748771427675,
+    "echo_age_max_ms": 108.66910000004282,
+    "max_notification_gap_s": 0.09025999999994383,
+    "server_estimated_received": {
+      "1": 0,
+      "2": 1753,
+      "3": 0
+    },
+    "server_gaps": {
+      "1": 0,
+      "2": 0,
+      "3": 0
+    },
+    "server_cumulative_notify_errors": {
+      "1": 0,
+      "2": 0,
+      "3": 0
+    },
+    "errors": []
+  },
+  {
+    "summary": "ble_test_12_sequential_321_20261011_140658_114046.summary.json",
+    "setup": "sequential",
+    "cars": [
+      3,
+      2,
+      1
+    ],
+    "status": "multiple_link_setup_failed",
+    "connected": [
+      "3"
+    ],
+    "active_s": 0,
+    "received": 0,
+    "writes": 0,
+    "rx_hz": null,
+    "tx_hz": null,
+    "notification_gaps": 0,
+    "malformed": 0,
+    "write_failures": 0,
+    "echo_age_avg_ms": null,
+    "echo_age_max_ms": null,
+    "max_notification_gap_s": null,
+    "server_estimated_received": {
+      "1": 0,
+      "2": 0,
+      "3": 0
+    },
+    "server_gaps": {
+      "1": 0,
+      "2": 0,
+      "3": 0
+    },
+    "server_cumulative_notify_errors": {
+      "1": 0,
+      "2": 0,
+      "3": 0
+    },
+    "errors": [
+      {
+        "car": 2,
+        "phase": "setup_idle",
+        "message": "BleakError: Could not get GATT services: Unreachable"
+      },
+      {
+        "car": 1,
+        "phase": "setup_idle",
+        "message": "BleakError: Could not get GATT services: Unreachable"
+      }
+    ]
+  },
+  {
+    "summary": "ble_test_12_sequential_3_20261011_140948_043700.summary.json",
+    "setup": "sequential",
+    "cars": [
+      3
+    ],
+    "status": "traffic_completed",
+    "connected": [
+      "3"
+    ],
+    "active_s": 35.06767,
+    "received": 701,
+    "writes": 1752,
+    "rx_hz": 19.98992234157559,
+    "tx_hz": 49.960547706762384,
+    "notification_gaps": 0,
+    "malformed": 0,
+    "write_failures": 0,
+    "echo_age_avg_ms": 53.98449728572684,
+    "echo_age_max_ms": 81.88020000034157,
+    "max_notification_gap_s": 0.0938839000000371,
+    "server_estimated_received": {
+      "1": 0,
+      "2": 0,
+      "3": 1752
+    },
+    "server_gaps": {
+      "1": 0,
+      "2": 0,
+      "3": 0
+    },
+    "server_cumulative_notify_errors": {
+      "1": 0,
+      "2": 0,
+      "3": 0
+    },
+    "errors": []
+  }
+]

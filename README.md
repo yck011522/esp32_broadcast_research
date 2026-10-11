@@ -1,5 +1,10 @@
 The purpose of this repository is to test communication between a master radio and multiple slave radios for real time control of up to four RC cars.
 
+Experiment scripts, plotting tools and results are grouped under numbered
+folders in [test/README.md](test/README.md). Available firmware mappings
+are listed in [src/README.md](src/README.md). The current ESP32 modem
+experiment is [Test 13](test/test_13/README.md).
+
 ## Goal
 
 Control signals sent from computer to all four cars with low latency (trusting ESP-NOW) and high reliability (loss of control gap < 200ms).
@@ -57,8 +62,8 @@ Slave 2: OK | world loss 84.4976% | max gap 161 | telemetry lost 668 | max telem
 
 ## BLE bidirectional car/computer test
 
-`src/ble_server/main.cpp` represents the car (BLE peripheral/server).
-`src/ble_client/main.cpp` represents the computer side, using an ESP32-S3
+`src/test_11/ble_server/main.cpp` represents the car (BLE peripheral/server).
+`src/test_09/ble_client/main.cpp` represents the computer side, using an ESP32-S3
 connected to the computer over USB (BLE central/client). The client sends dummy
 world-state commands at 50 Hz, while the server sends notifications at 20 Hz
 when subscribed. No dummy command is applied to a motor.
@@ -162,17 +167,17 @@ Close any serial monitor using COM4, then run:
 
 ```powershell
 python -m pip install pyserial
-python -u test/test_9_ble_test.py
+python -u test/test_09/test_9_ble_test.py
 ```
 
 Defaults are COM4, 115200 baud, and two hours. To try a short run or another port:
 
 ```powershell
-python -u test/test_9_ble_test.py --duration-seconds 30
-python -u test/test_9_ble_test.py --port COM13 --hours 2
+python -u test/test_09/test_9_ble_test.py --duration-seconds 30
+python -u test/test_09/test_9_ble_test.py --port COM13 --hours 2
 ```
 
-Files are saved under `test/run_logs/` with a unique UTC timestamp:
+Files are saved under each numbered test’s `results/runs/` folder with a unique UTC timestamp:
 
 - `.csv`: one `ble_stats` row per five-second report, containing notification
   and RTT measurements together, UTC timestamps, monotonic elapsed seconds,
@@ -206,7 +211,7 @@ To analyze the newest Test 9 run and save plots plus a Markdown/JSON report:
 
 ```powershell
 python -m pip install matplotlib
-python test/analyze_test_9.py
+python test/test_09/analyze_test_9.py
 ```
 
 An optional CSV path selects a specific run. Plots distinguish window-average
@@ -219,8 +224,8 @@ enable Bluetooth on the computer, and run from a terminal:
 
 ```powershell
 python -m pip install bleak
-python -u test/test_10_ble_pc.py --duration-seconds 30
-python -u test/test_10_ble_pc.py --hours 2
+python -u test/test_10/test_10_ble_pc.py --duration-seconds 30
+python -u test/test_10/test_10_ble_pc.py --hours 2
 ```
 
 Python 3.11 or newer is required. The default duration is two hours. This test uses the computer's BLE adapter
@@ -231,13 +236,19 @@ one with `--address XX:XX:XX:XX:XX:XX`. BLE failures trigger scan/reconnect
 attempts within the original run deadline. Ctrl+C preserves partial results.
 Windows idle sleep is prevented while the script runs.
 
-On Windows 11, the runner automatically uses the public WinRT
-`ThroughputOptimized` preference alongside Bleak. It verifies the negotiated
-interval and holds the preference request for the session. On this computer the
-preset requests 15 ms with zero peripheral latency. Failure to obtain that preset
-is logged as an error and triggers reconnection. No firmware change is required.
+Tests 10 and 11 use the adapter's default connection parameters unless
+`--connection-mode throughput` is supplied. Default mode sends no Windows
+throughput request and imposes no connection-interval check, so an adapter that
+negotiates 30 ms can still be measured at the same 50 Hz write target.
+The selected mode is recorded in each summary JSON. No firmware change is required.
 
-Output files under `test/run_logs/` start with `ble_test_10_`: numeric CSV,
+On Windows 11, `--connection-mode throughput` uses the public WinRT
+`ThroughputOptimized` preference alongside Bleak, verifies the negotiated
+interval, and holds the preference request for the session. On the original Intel
+adapter the preset requests 15 ms with zero peripheral latency. Failure to obtain
+that preset is logged as an error and triggers reconnection in this opt-in mode.
+
+Output files under each numbered test’s `results/runs/` folder start with `ble_test_10_`: numeric CSV,
 raw notification/event JSONL, and checkpointed summary JSON. Five-second rows
 use the Test 9 notification fields plus actual world write rate, local write
 failures, maximum send gap, and maximum write API duration. Reconnection and
@@ -261,7 +272,7 @@ Plot the newest Test 10 log with the shared BLE analysis:
 
 ```powershell
 python -m pip install matplotlib
-python test/analyze_test_10.py
+python test/test_10/analyze_test_10.py
 ```
 
 The plots show notification rate/loss, receive timing, and sequence-based RTT.
@@ -275,16 +286,16 @@ other COM3 monitors and start this in a separate terminal before the BLE runner:
 
 ```powershell
 python -m pip install pyserial
-python -u test/test_10_monitor_server.py --port COM3
+python -u test/test_10/test_10_monitor_server.py --port COM3
 ```
 
 It saves `ble_test_10_server_*.log` and defaults to two hours plus one minute
 for setup. Use `--seconds` to change this, or Ctrl+C to stop.
 
-For the two-hour experiment, run `python -u test/test_10_ble_pc.py --hours 2`.
-Afterward run `python test/analyze_test_10.py` to plot the newest Test 10 CSV.
+For the two-hour experiment, run `python -u test/test_10/test_10_ble_pc.py --hours 2`.
+Afterward run `python test/test_10/analyze_test_10.py` to plot the newest Test 10 CSV.
 The original Test 9 logs and analysis remain available via
-`python test/analyze_test_9.py`. Both analyses use the same notification rate,
+`python test/test_09/analyze_test_9.py`. Both analyses use the same notification rate,
 sequence-loss, gap, silence, and sequence-based RTT fields. Compare runs of
 similar duration under the same conditions. PC callback timing and ESP32 timing
 are different measurement points; timestamp-based echo age is Test 10 only.
@@ -292,15 +303,15 @@ The client TX rate counts write attempts; use the server log for delivered
 command rate/loss. The two-hour duration includes scanning and reconnect time.
 
 The successful short validation and its logs are retained in
-`test/test_10_throughput_result.md`. Development experiments and failed Test 10
+`test/test_10/results/test_10_throughput_result.md`. Development experiments and failed Test 10
 logs have been removed. Measurement and connection-lifetime regression checks
-remain in `test/test_10_checks.py`.
+remain in `test/test_10/test_10_checks.py`.
 
 ### Test 11: three cars on the computer BLE adapter
 
 Test 11 runs the same 50 Hz world writes and 20 Hz notification measurements
 for three cars at once. Each firmware profile builds the same
-`src/ble_server/main.cpp`; `BLE_CAR_ID` selects its advertised name and service
+`src/test_11/ble_server/main.cpp`; `BLE_CAR_ID` selects its advertised name and service
 UUID. The characteristic UUIDs and payloads remain the same on all cars.
 
 | Profile | Advertised name | Service UUID |
@@ -321,20 +332,21 @@ pio run -e ble_server_car_3 -t upload --upload-port COMy
 With all three cars powered on and the ESP32 BLE client powered off, run:
 
 ```powershell
-python -u test/test_11_monitor_servers.py --seconds 150
+python -u test/test_11/test_11_monitor_servers.py --seconds 150
 ```
 
 In another terminal, choose a short or long run:
 
 ```powershell
-python -u test/test_11_ble_pc.py --duration-seconds 120
-# Or: python -u test/test_11_ble_pc.py --hours 2
+python -u test/test_11/test_11_ble_pc.py --duration-seconds 120
+# Or: python -u test/test_11/test_11_ble_pc.py --hours 2
+# To compare with the Windows throughput preset, add: --connection-mode throughput
 ```
 
 After the run:
 
 ```powershell
-python test/analyze_test_11.py
+python test/test_11/analyze_test_11.py
 ```
 
 Start the optional serial monitor in a separate terminal. For a two-hour run,
@@ -364,8 +376,31 @@ counts overload events, notification timeouts, and disconnects. It marks a
 run `ended_disconnected` when retries never reconnect before the deadline,
 and `completed_with_reconnects` only after a later connection succeeds. Set
 `--max-echo-age-ms` or `--notification-timeout-seconds` to adjust the guards. See
-`test/test_11_result.md` for both measured runs; a longer guarded run is
+`test/test_11/results/test_11_result.md` for both measured runs; a longer guarded run is
 needed to assess endurance.
+
+For connection diagnostics, `test/test_11/test_11_connection_probe.py` scans while
+disconnected, connects cars sequentially, and initially sends only 2 Hz dummy
+writes without notifications. If all requested cars connect, it enables
+notifications and tests 5, 20, and 50 Hz writes. It captures COM3/COM4/COM5
+and records timestamped echo age; it suppresses the sequence-based RTT estimate
+because the write rate changes between stages.
+
+```powershell
+python -u test/test_11/test_11_connection_probe.py --order 1 2 3
+python -u test/test_11/test_11_connection_probe.py --order 3 2 1
+# Optional Windows scheduling comparison:
+python -u test/test_11/test_11_connection_probe.py --order 1 2 3 --connection-mode power
+```
+
+The normal server profiles keep the command watchdog enabled. Temporary
+`ble_server_car_N_idle_probe` profiles set `BLE_COMMAND_WATCHDOG_ENABLED=0`
+to disable only the command-timeout disconnect for pure-idle diagnostics.
+Task watchdog and advertising recovery remain enabled. After flashing these
+profiles to the corresponding boards, `--keepalive-hz 0` makes setup truly idle.
+The runner requires all selected boards to report `command_watchdog=0` over
+serial before proceeding. Restore the normal `ble_server_car_N` profiles
+afterward; their health logs report `command_watchdog=1`.
 
 The server also checks for a stalled command stream. After five seconds with
 no new valid world sequence while connected, it requests a disconnect (the
@@ -390,3 +425,166 @@ hardware reset reason and last recovery reason (1: disconnect stuck, 2:
 advertising stuck). The serial monitor retries USB ports that disappear during
 a reset, while continuing to capture the other cars. Both the monitor and PC
 test accept `--output-dir` to group an experiment's files.
+
+### Test 12: separate NimBLE-Arduino experiment
+
+`src/test_12/car/main.cpp` uses the separate `h2zero/NimBLE-Arduino` library,
+pinned to 2.5.1. The existing Test 10/11 firmware uses Arduino's `BLEDevice.h`
+API; the installed ESP32 core already backs that API with NimBLE. Test 12
+compares the library implementations and a simpler application, rather than
+assuming Test 11 was using Bluedroid. Existing firmware sources are unchanged.
+
+The three `ble_test12_car_N` profiles advertise `ESP32_Robot_N`, share the
+service UUID `12345678-1234-5678-1234-567812345678`, and implement no motor
+outputs. The command-disconnect watchdog is absent so connection setup can be
+tested with no application traffic. Notification subscription is tracked,
+advertising resumes after disconnect, and serial output is bounded and emitted
+outside BLE callbacks.
+
+Commands remain **20 bytes**: little-endian uint16 sequence, uint8 topology,
+four dummy movement bytes, and 13 random padding bytes. Telemetry follows the
+expanded example's **21-byte** structure, decoded with `<BHHB6sHBhhH`:
+car ID, telemetry sequence, echoed world sequence, saturated previous-window
+command loss, six NFC bytes, NFC age, follow state, two signed speeds and
+battery millivolts. The sample advice omitted the follow-state byte in Python;
+the corrected format agrees with the packed C++ structure. An ATT MTU of at
+least 24 is required; the server requests a local maximum of 64 and Python
+checks the negotiated value. Sensor fields are synthetic.
+
+Build and flash these explicit profiles to the matching boards:
+
+```powershell
+pio run -e ble_test12_car_1 -t upload --upload-port COM3
+pio run -e ble_test12_car_2 -t upload --upload-port COM4
+pio run -e ble_test12_car_3 -t upload --upload-port COM5
+python -u test/test_12/test_12_ble_pc.py --duration-seconds 120 --ports COM3 COM4 COM5
+python -u test/test_12/test_12_ble_pc.py --setup sequential --cars 3 2 1 --ports COM3 COM4 COM5
+python -u test/test_12/test_12_ble_pc.py --cars 1 --duration-seconds 35
+```
+
+The new Python runner scans before connecting and passes discovered BLEDevice
+objects to Bleak. Concurrent setup is the default; sequential order is an
+explicit alternative. It waits ten seconds with no commands or subscriptions,
+then starts traffic only if every requested car connected. It sends one shared
+world sequence at 50 Hz using concurrent writes without response and receives
+20 Hz notifications. It uses deadline pacing with worker-thread sleep on
+Windows, records actual rates and write errors, and avoids catch-up bursts.
+The approximate RTT compares the last sequence actually attempted to the
+echoed sequence; timestamped echo age measures each echoed command separately.
+Both include server processing and notification timing, and are not pure
+radio latency. Five-second statistics, raw telemetry and optional server serial
+logs are saved under `test/test_12/results/runs`. All clients and serial ports are
+closed on exit. `traffic_completed` means the observation finished; measured
+rates and gaps determine whether the performance target was achieved.
+
+For this bench's known USB identities, the following wrapper flashes all three
+Test 12 profiles, tries concurrent and two sequential setups, tests each car
+individually, and restores normal firmware in `finally`. It records uploads and
+restoration in `firmware_state.json`:
+
+```powershell
+python -u test/test_12/run_test_12_experiment.py --duration-seconds 120 --single-seconds 35
+```
+
+After manual tests, restore `ble_server_car_1`, `ble_server_car_2` and
+`ble_server_car_3` to COM3, COM4 and COM5 respectively. The normal health logs
+should report `command_watchdog=1`.
+
+The measured BARROT comparison and firmware restoration evidence are in
+[`test/test_12/results/test_12_result.md`](test/test_12/results/test_12_result.md).
+
+### Test 13: ESP32 serial/BLE modem with two car links
+
+This setup uses the ESP32 on **COM3** as the PC's BLE central radio. Python
+communicates only over USB serial; it does not use the Windows Bluetooth
+adapter. **COM4 is Car 2**, BLE address `68:EE:8F:46:33:45`, and **COM5 is
+Car 3**, BLE address `68:EE:8F:4B:5B:19`. Both use the same service and
+characteristic UUIDs as Test 12. Their fixed car IDs remain in telemetry.
+
+Firmware is separate from all earlier tests:
+
+- `src/test_13/esp_esp_ble_modem/main.cpp`: serial modem and BLE central.
+- `src/test_13/esp_esp_ble_car/main.cpp`: car peripheral, synthetic telemetry and no
+  motor outputs. `BLE_CAR_ID` selects the application ID.
+- `src/test_13/include/esp_esp_ble_protocol.h`: shared 20-byte command / 21-byte telemetry
+  formats and hex framing helpers.
+
+The modem accepts **40 hex characters followed by newline** for each binary
+20-byte command and sends it once, using write without response, to every
+ready car. Telemetry is returned as **42 hex characters followed by newline**,
+unchanged from the car's 21-byte BLE payload. No MAC or extra routing header
+is added to telemetry. Lines beginning with `#` are modem diagnostics or
+controls and cannot be mistaken for telemetry. CRLF and uppercase hex are
+accepted; wrong lengths, invalid hex and oversized lines are rejected.
+The modem forwards repeated or out-of-order sequence numbers too: sequence
+counters observe the stream without changing it. Each car decides whether a
+command is new, duplicated or old.
+
+The modem starts idle. Python sends `#START` to scan by shared service UUID
+and match the configured public BLE addresses, then connect and subscribe.
+`#STATUS` requests counters and link state. `#STOP` stops command forwarding
+and disconnects the links; another `#START` reconnects them. Commands are
+generated only by Python, at 50 Hz. Each car independently generates 20 Hz
+telemetry. The modem uses bounded queues and separates serial handling,
+connection management and command writes; BLE callbacks never write serial
+output. Queue drops, malformed frames, BLE write failures and disconnects
+are exposed in diagnostics.
+
+`src/test_13/include/esp_esp_ble_modem_config.h` is force-included only in the modem
+profile to build NimBLE-Arduino's host with **four connection slots**. The
+installed ESP32-S3 controller allows six activities, including scanning and
+advertising capacity. Only two peers are configured in the modem's `targets`
+table; add known ID/address entries there to use additional cars. Configuring
+four slots is not a physical four-car validation.
+
+Flash these explicit profiles:
+
+```powershell
+pio run -e esp_esp_ble_car_2 -t upload --upload-port COM4
+pio run -e esp_esp_ble_car_3 -t upload --upload-port COM5
+pio run -e esp_esp_ble_modem -t upload --upload-port COM3
+```
+
+`esp_esp_ble_car` is the base Car 2 profile. For this bench, an optional
+`python -u test/test_13/flash_test_13.py` verifies the three USB serial identities
+before uploading. It leaves the new modem/car firmware installed on success
+and falls back to the normal server profiles if an upload fails.
+
+Close other monitors on COM3/4/5, then run:
+
+```powershell
+python -u test/test_13/test_13_ble_modem.py --duration-seconds 120 --server-ports COM4 COM5
+python -u test/test_13/test_13_ble_modem.py --duration-seconds 300 --server-ports COM4 COM5
+python -u test/test_13/test_13_ble_modem.py --hours 2 --server-ports COM4 COM5
+```
+
+The default modem port is COM3 and the expected car IDs are 2 and 3. Car USB
+monitoring is optional, but `--server-ports` enables exact receive-total and
+sequence-loss validation against each car. The runner waits for both links
+and fresh server measurements before starting traffic. The initial world
+sequence defaults to 65520 to exercise uint16 wraparound within the first
+second. USB input is parsed as a stream and supports fragmented or combined
+reads. Telemetry ID selects each car's independent statistics and timestamps.
+
+Logs are saved under `test/test_13/results/runs`: raw JSONL (including every command,
+telemetry and modem diagnostic), per-car server serial logs, five-second CSV
+statistics and a final summary JSON. A `passed` result requires each car to
+average 50±1 Hz commands and 20±0.5 Hz telemetry, with no observed sequence
+gaps, format errors, modem queue drops or BLE write errors. Modem command and
+per-link write totals must equal Python's send total; monitored car receive
+totals must also match exactly. Unexpected reconnects fail validation. These
+are acceptance tolerances; measured rates and gaps are retained in the logs.
+
+Echo age includes both USB paths, modem scheduling, BLE transport and the
+car's telemetry timing. The sequence-based RTT remains a rough estimate at
+20 ms per world sequence. Neither is pure radio latency. On exit the runner
+stops traffic, allows the last command to drain, sends `#STOP`, captures final
+server counters and closes all serial ports. The firmware remains installed
+for the next run; these dummy car profiles have no command-disconnect watchdog.
+
+Measured results and links to the raw captures are in
+[`test/test_13/results/test_13_result.md`](test/test_13/results/test_13_result.md). For a separate hardware
+framing check, `python test/test_13/test_13_transport_probe.py` deliberately sends two
+malformed lines and a repeated sequence, then verifies recovery and forwarding
+on both cars. These intentional errors are separated from the rate tests by
+counter baselines.

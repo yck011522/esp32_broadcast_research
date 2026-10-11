@@ -1,0 +1,134 @@
+Processing esp_esp_ble_modem (platform: https://github.com/pioarduino/platform-espressif32/releases/download/55.03.312-1/platform-espressif32.zip; board: seeed_xiao_esp32s3; framework: arduino)
+--------------------------------------------------------------------------------
+Verbose mode can be enabled via `-v, --verbose` option
+CONFIGURATION: https://docs.platformio.org/page/boards/espressif32/seeed_xiao_esp32s3.html
+PLATFORM: Espressif 32 (55.3.312) > Seeed Studio XIAO ESP32S3
+HARDWARE: ESP32S3 240MHz, 320KB RAM, 8MB Flash
+DEBUG: Current (cmsis-dap) External (cmsis-dap, esp-bridge, esp-builtin, esp-prog, esp-prog-2, iot-bus-jtag, jlink, minimodule, olimex-arm-usb-ocd, olimex-arm-usb-ocd-h, olimex-arm-usb-tiny-h, olimex-jtag-tiny, tumpa)
+PACKAGES: 
+ - contrib-piohome @ 3.4.4 
+ - framework-arduinoespressif32 @ 3.3.12 
+ - framework-arduinoespressif32-libs @ 5.5.5+sha.b774170ff46 
+ - tool-esptoolpy @ 5.4.0 
+ - tool-xtensa-esp-elf-gdb @ 17.1.0+20260402 
+ - toolchain-xtensa-esp-elf @ 14.2.0+20260121
+LDF: Library Dependency Finder -> https://bit.ly/configure-pio-ldf
+LDF Modes: Finder ~ chain, Compatibility ~ soft
+Found 45 compatible libraries
+Scanning dependencies...
+Dependency Graph
+|-- NimBLE-Arduino @ 2.5.1
+Building in release mode
+Retrieving maximum program size .pio\build\esp_esp_ble_modem\firmware.elf
+Checking size .pio\build\esp_esp_ble_modem\firmware.elf
+Advanced Memory Usage is available via "PlatformIO Home > Project Inspect"
+RAM:   [=         ]  10.2% (used 33480 bytes from 327680 bytes)
+Flash: [==        ]  16.0% (used 534198 bytes from 3342336 bytes)
+Configuring upload protocol...
+AVAILABLE: cmsis-dap, esp-bridge, esp-builtin, esp-prog, esp-prog-2, espota, esptool, iot-bus-jtag, jlink, minimodule, olimex-arm-usb-ocd, olimex-arm-usb-ocd-h, olimex-arm-usb-tiny-h, olimex-jtag-tiny, tumpa
+CURRENT: upload_protocol = esptool
+Looking for upload port...
+Uploading .pio\build\esp_esp_ble_modem\firmware.bin
+esptool v5.4.0
+Serial port COM3:
+Connecting...
+Connected to ESP32-S3 on COM3:
+Chip type:          ESP32-S3 (QFN56) (revision v0.2)
+Features:           Wi-Fi, BT 5 (LE), Dual Core + LP Core, 240MHz, Embedded PSRAM 8MB (AP_3v3)
+Crystal frequency:  40MHz
+USB mode:           USB-Serial/JTAG
+MAC:                68:ee:8f:4b:5b:4c
+
+Uploading stub flasher...
+Running stub flasher...
+Stub flasher running.
+Changing baud rate to 460800...
+Changed.
+
+Configuring flash size...
+Auto-detected flash size: 8MB
+
+Writing 'C:\Users\leungp\Documents\GitHub\esp32_broadcast_research\.pio\build\esp_esp_ble_modem\bootloader.bin' at 0x00000000...
+SHA digest in image updated.
+Flash will be erased from 0x00000000 to 0x00004fff...
+Compressed 19968 bytes to 12992...
+
+Writing at 0x00004e00 [██████████████████████████████] 100.0% 12.69kB/12.69kB [0s] 
+Wrote 19968 bytes (12992 compressed) at 0x00000000 in 0.3 seconds (550.1 kbit/s).
+Verifying written data...
+Hash of data verified.
+
+Writing 'C:\Users\leungp\Documents\GitHub\esp32_broadcast_research\.pio\build\esp_esp_ble_modem\partitions.bin' at 0x00008000...
+Flash will be erased from 0x00008000 to 0x00008fff...
+Compressed 3072 bytes to 146...
+
+Writing at 0x00008c00 [██████████████████████████████] 100.0% 146B/146B [0s] 
+Wrote 3072 bytes (146 compressed) at 0x00008000 in 0.0 seconds (525.8 kbit/s).
+Verifying written data...
+Hash of data verified.
+
+Writing 'C:\Users\leungp\.platformio\packages\framework-arduinoespressif32\tools\partitions\boot_app0.bin' at 0x0000e000...
+Flash will be erased from 0x0000e000 to 0x0000ffff...
+Compressed 8192 bytes to 47...
+
+Writing at 0x00010000 [██████████████████████████████] 100.0% 47B/47B [0s] 
+Wrote 8192 bytes (47 compressed) at 0x0000e000 in 0.1 seconds (707.6 kbit/s).
+Verifying written data...
+Hash of data verified.
+
+Writing '.pio\build\esp_esp_ble_modem\firmware.bin' at 0x00010000...
+Flash will be erased from 0x00010000 to 0x00094fff...
+Compressed 543792 bytes to 339523...
+
+Writing at 0x0001bf3e [█░░░░░░░░░░░░░░░░░░░░░░░░░░░░░]   4.8% 16.00kB/331.57kB [0s] 
+
+Writing at 0x000275bf [██░░░░░░░░░░░░░░░░░░░░░░░░░░░░]   9.7% 32.00kB/331.57kB [0s] 
+
+Writing at 0x0002de72 [████░░░░░░░░░░░░░░░░░░░░░░░░░░]  14.5% 48.00kB/331.57kB [0s] 
+
+Writing at 0x00033650 [█████░░░░░░░░░░░░░░░░░░░░░░░░░]  19.3% 64.00kB/331.57kB [0s] 
+
+Writing at 0x00038e33 [███████░░░░░░░░░░░░░░░░░░░░░░░]  24.1% 80.00kB/331.57kB [0s] 
+
+Writing at 0x0003e6cc [████████░░░░░░░░░░░░░░░░░░░░░░]  29.0% 96.00kB/331.57kB [1s] 
+
+Writing at 0x00044096 [██████████░░░░░░░░░░░░░░░░░░░░]  33.8% 112.00kB/331.57kB [1s] 
+
+Writing at 0x00049b0f [███████████░░░░░░░░░░░░░░░░░░░]  38.6% 128.00kB/331.57kB [1s] 
+
+Writing at 0x0004f5b6 [█████████████░░░░░░░░░░░░░░░░░]  43.4% 144.00kB/331.57kB [1s] 
+
+Writing at 0x00054be4 [██████████████░░░░░░░░░░░░░░░░]  48.3% 160.00kB/331.57kB [1s] 
+
+Writing at 0x0005a500 [███████████████░░░░░░░░░░░░░░░]  53.1% 176.00kB/331.57kB [1s] 
+
+Writing at 0x0005ff88 [█████████████████░░░░░░░░░░░░░]  57.9% 192.00kB/331.57kB [2s] 
+
+Writing at 0x000659ac [██████████████████░░░░░░░░░░░░]  62.7% 208.00kB/331.57kB [2s] 
+
+Writing at 0x0006b226 [████████████████████░░░░░░░░░░]  67.6% 224.00kB/331.57kB [2s] 
+
+Writing at 0x00070bdd [█████████████████████░░░░░░░░░]  72.4% 240.00kB/331.57kB [2s] 
+
+Writing at 0x000762ea [███████████████████████░░░░░░░]  77.2% 256.00kB/331.57kB [2s] 
+
+Writing at 0x0007ef2d [████████████████████████░░░░░░]  82.0% 272.00kB/331.57kB [2s] 
+
+Writing at 0x00084b1c [██████████████████████████░░░░]  86.9% 288.00kB/331.57kB [2s] 
+
+Writing at 0x0008a84c [███████████████████████████░░░]  91.7% 304.00kB/331.57kB [3s] 
+
+Writing at 0x000907c0 [████████████████████████████░░]  96.5% 320.00kB/331.57kB [3s] 
+
+Writing at 0x00094c30 [██████████████████████████████] 100.0% 331.57kB/331.57kB [3s] 
+Wrote 543792 bytes (339523 compressed) at 0x00010000 in 3.4 seconds (1276.3 kbit/s).
+Verifying written data...
+Hash of data verified.
+
+Hard resetting via RTS pin...
+========================= [SUCCESS] Took 19.40 seconds =========================
+
+Environment        Status    Duration
+-----------------  --------  ------------
+esp_esp_ble_modem  SUCCESS   00:00:19.398
+========================= 1 succeeded in 00:00:19.398 =========================

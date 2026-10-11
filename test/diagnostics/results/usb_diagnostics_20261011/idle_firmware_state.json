@@ -1,0 +1,14 @@
+{
+  "temporary_profiles_uploaded": [
+    1,
+    2,
+    3
+  ],
+  "normal_profiles_restored": [
+    1,
+    2,
+    3
+  ],
+  "errors": [],
+  "status": "restored"
+}

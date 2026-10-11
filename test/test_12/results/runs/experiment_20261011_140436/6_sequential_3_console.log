@@ -1,0 +1,15 @@
+Test 12: C:\Users\leungp\Documents\GitHub\esp32_broadcast_research\test\run_logs\test12\experiment_20261011_140436\ble_test_12_sequential_3_20261011_140948_043700.jsonl
+[0.1s] scan car=None: {'attempt': 1}
+[8.2s] discovered car=None: {'addresses': {'3': '68:EE:8F:4B:5B:19'}}
+[8.2s] connect_attempt car=3: {'address': '68:EE:8F:4B:5B:19'}
+[8.5s] server_event car=3: {'message': 'test12 event: car=3 connected=1 connects=3 disconnects=2 reason=531'}
+[10.2s] connected car=3: {'address': '68:EE:8F:4B:5B:19', 'mtu': 64}
+[25.2s] car=3 TX=49.74 Hz RX=19.90 Hz lost=0 echo_age=54.5 ms
+[30.2s] car=3 TX=50.03 Hz RX=20.05 Hz lost=0 echo_age=55.1 ms
+[35.3s] car=3 TX=49.82 Hz RX=20.05 Hz lost=0 echo_age=54.2 ms
+[40.3s] car=3 TX=50.14 Hz RX=20.02 Hz lost=0 echo_age=55.3 ms
+[45.4s] car=3 TX=49.94 Hz RX=19.82 Hz lost=0 echo_age=52.8 ms
+[50.4s] car=3 TX=50.02 Hz RX=20.05 Hz lost=0 echo_age=52.8 ms
+[55.2s] car=3 TX=50.04 Hz RX=20.06 Hz lost=0 echo_age=53.2 ms
+[58.4s] server_event car=3: {'message': 'test12 event: car=3 connected=0 connects=3 disconnects=3 reason=531'}
+Finished: traffic_completed

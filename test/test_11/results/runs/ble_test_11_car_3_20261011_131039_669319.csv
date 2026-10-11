@@ -1,0 +1,15 @@
+timestamp_utc,elapsed_s,record_type,connection,window_s,received,seq_lost,loss_percent,rate_hz,max_gap_s,silence_s,have_packet,world_seq,rtt_avg_ms,rtt_max_ms,rtt_samples,echo_age_avg_ms,echo_age_max_ms,echo_age_samples,world_attempted,world_tx_rate_hz,write_failures,max_tx_gap_s,max_write_ms,malformed,ignored,partial_window,message
+2026-10-11T13:10:39.673+00:00,0.003652,scanning,0,,,,,,,,,,,,,,,,,,,,,,,,all three car service UUIDs
+2026-10-11T13:10:47.763+00:00,8.093296,discovery,0,,,,,,,,,,,,,,,,,,,,,,,,found 0 matching servers; retrying
+2026-10-11T13:10:47.771+00:00,8.102009,scanning,0,,,,,,,,,,,,,,,,,,,,,,,,7a1e0001-4b6d-4f7a-9c2e-6d3b1a5f0003
+2026-10-11T13:11:05.870+00:00,26.199823,ble_error,0,,,,,,,,,,,,,,,,,,,,,,,,BleakError: Could not get GATT services: Unreachable
+2026-10-11T13:11:07.874+00:00,28.203776,scanning,0,,,,,,,,,,,,,,,,,,,,,,,,7a1e0001-4b6d-4f7a-9c2e-6d3b1a5f0003
+2026-10-11T13:11:26.146+00:00,46.476382,ble_error,0,,,,,,,,,,,,,,,,,,,,,,,,BleakError: Could not get GATT services: Unreachable
+2026-10-11T13:11:28.150+00:00,48.479645,scanning,0,,,,,,,,,,,,,,,,,,,,,,,,7a1e0001-4b6d-4f7a-9c2e-6d3b1a5f0003
+2026-10-11T13:11:46.247+00:00,66.577122,ble_error,0,,,,,,,,,,,,,,,,,,,,,,,,BleakError: Could not get GATT services: Unreachable
+2026-10-11T13:11:48.250+00:00,68.579833,scanning,0,,,,,,,,,,,,,,,,,,,,,,,,7a1e0001-4b6d-4f7a-9c2e-6d3b1a5f0003
+2026-10-11T13:12:06.345+00:00,86.675443,ble_error,0,,,,,,,,,,,,,,,,,,,,,,,,BleakError: Could not get GATT services: Unreachable
+2026-10-11T13:12:08.348+00:00,88.678399,scanning,0,,,,,,,,,,,,,,,,,,,,,,,,7a1e0001-4b6d-4f7a-9c2e-6d3b1a5f0003
+2026-10-11T13:12:26.448+00:00,106.777982,ble_error,0,,,,,,,,,,,,,,,,,,,,,,,,BleakError: Could not get GATT services: Unreachable
+2026-10-11T13:12:28.451+00:00,108.780705,scanning,0,,,,,,,,,,,,,,,,,,,,,,,,7a1e0001-4b6d-4f7a-9c2e-6d3b1a5f0003
+2026-10-11T13:12:39.667+00:00,119.997593,ble_error,0,,,,,,,,,,,,,,,,,,,,,,,,TimeoutError: 

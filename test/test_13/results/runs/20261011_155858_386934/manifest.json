@@ -1,0 +1,50 @@
+{
+  "python": "3.12.10",
+  "python_executable": "C:\\Users\\leungp\\Documents\\GitHub\\esp32_broadcast_research\\.venv\\Scripts\\python.exe",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "packages": {
+    "pyserial": "3.5",
+    "bleak": "3.0.2",
+    "matplotlib": "3.11.2"
+  },
+  "settings": {
+    "port": "COM3",
+    "cars": [
+      2,
+      3
+    ],
+    "server_ports": [
+      "COM4",
+      "COM5"
+    ],
+    "duration_seconds": 120.0,
+    "start_sequence": 65520
+  },
+  "source_sha256": {
+    "platformio.ini": "b29b5e902b23e1a395d09f9814d4591b350cc8e3c8f5d348302eabc950c614ff",
+    "test/common/provenance.py": "f98d8ea3135529e42545d18ba9349de03f54fd4847ca62d438f9fee28d8b4127",
+    "test/test_11/test_11_ble_pc.py": "a5b80d918412ae2c59f46145fc17cb93ffe7c8d833779465fb1c784f0288ec0c",
+    "test/test_11/test_11_monitor_servers.py": "d45e7c1fd0b29eea489e590a3ffc70682dcd4fe80b17c0ca0e1678ce46ed452b",
+    "test/test_12/test_12_ble_pc.py": "3689995f71c10219679a8d9d6281d34d318f483d5261365fa8a365ff2ef1407a",
+    "test/test_13/test_13_ble_modem.py": "4e5ab345472686c75027b54c398885196b14611b498d87585b22942a057e6f4f",
+    "src/test_13/esp_esp_ble_car/main.cpp": "c0b44f1779dc935cba40928d0f0ebf6dfeb2a02bf62878cf94df7c8f910352b1",
+    "src/test_13/esp_esp_ble_modem/main.cpp": "3b66429c57fe01daf669320b5f39c37915b14c3c9d6364db9ccb0c97d6f9a51b",
+    "src/test_13/include/esp_esp_ble_modem_config.h": "7bc774fbd70045f4fd70a0e742a0995a5adce9c07bab7ce12df8e1e3c34df0cd",
+    "src/test_13/include/esp_esp_ble_protocol.h": "2dc8207b45b2923c98f14287566bb864b860acf75230b733dc314b7deb7464f9"
+  },
+  "available_builds": {
+    "esp_esp_ble_modem": {
+      "file": "firmware/esp_esp_ble_modem.bin",
+      "sha256": "f70373749e72bf1ee61d0367211763255c226cb82eac9df862a2a44d806efec0"
+    },
+    "esp_esp_ble_car_2": {
+      "file": "firmware/esp_esp_ble_car_2.bin",
+      "sha256": "a88de01c639d1bebd221c50ab2472b7b2d216b4e010c4cd36345b4f32360a17d"
+    },
+    "esp_esp_ble_car_3": {
+      "file": "firmware/esp_esp_ble_car_3.bin",
+      "sha256": "61bf90a410b7e22f55989f92795860694fb73b80d0ab633207a8fd8529c852d0"
+    }
+  },
+  "build_note": "Copies of available PlatformIO builds; not firmware read back from the boards."
+}

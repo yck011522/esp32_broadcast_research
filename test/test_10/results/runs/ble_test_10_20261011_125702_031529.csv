@@ -1,0 +1,13 @@
+timestamp_utc,elapsed_s,record_type,connection,window_s,received,seq_lost,loss_percent,rate_hz,max_gap_s,silence_s,have_packet,world_seq,rtt_avg_ms,rtt_max_ms,rtt_samples,echo_age_avg_ms,echo_age_max_ms,echo_age_samples,world_attempted,world_tx_rate_hz,write_failures,max_tx_gap_s,max_write_ms,malformed,ignored,partial_window,message
+2026-10-11T12:57:02.035+00:00,0.002732,scanning,0,,,,,,,,,,,,,,,,,,,,,,,,ble_server service
+2026-10-11T12:57:11.651+00:00,9.619174,connected,1,,,,,,,,,,,,,,,,,,,,,,,,ble_car_1 68:EE:8F:4B:5B:4D
+2026-10-11T12:57:11.672+00:00,9.639775,connection_parameters,1,,,,,,,,,,,,,,,,,,,,,,,,Before request: interval=7.5 ms latency=0
+2026-10-11T12:57:16.703+00:00,14.670237,ble_error,1,,,,,,,,,,,,,,,,,,,,,,,,"RuntimeError: Request accepted but negotiated interval is still 30 ms, latency=0"
+2026-10-11T12:57:18.817+00:00,16.784398,scanning,1,,,,,,,,,,,,,,,,,,,,,,,,ble_server service
+2026-10-11T12:57:28.391+00:00,26.358955,connected,2,,,,,,,,,,,,,,,,,,,,,,,,ble_car_1 68:EE:8F:4B:5B:4D
+2026-10-11T12:57:28.412+00:00,26.379722,connection_parameters,2,,,,,,,,,,,,,,,,,,,,,,,,Before request: interval=7.5 ms latency=0
+2026-10-11T12:57:33.443+00:00,31.410359,ble_error,2,,,,,,,,,,,,,,,,,,,,,,,,"RuntimeError: Request accepted but negotiated interval is still 30 ms, latency=0"
+2026-10-11T12:57:35.551+00:00,33.518141,scanning,2,,,,,,,,,,,,,,,,,,,,,,,,ble_server service
+2026-10-11T12:57:45.109+00:00,43.077069,connected,3,,,,,,,,,,,,,,,,,,,,,,,,ble_car_1 68:EE:8F:4B:5B:4D
+2026-10-11T12:57:45.132+00:00,43.099686,connection_parameters,3,,,,,,,,,,,,,,,,,,,,,,,,Before request: interval=7.5 ms latency=0
+2026-10-11T12:57:50.161+00:00,48.128323,ble_error,3,,,,,,,,,,,,,,,,,,,,,,,,"RuntimeError: Request accepted but negotiated interval is still 30 ms, latency=0"

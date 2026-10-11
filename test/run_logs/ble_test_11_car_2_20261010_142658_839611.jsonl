@@ -1,8 +1,0 @@
-{"timestamp_utc": "2026-10-10T14:26:58.849+00:00", "elapsed_s": 0.00882, "connection": 0, "record_type": "scanning", "message": "all three car service UUIDs"}
-{"timestamp_utc": "2026-10-10T14:27:06.965+00:00", "elapsed_s": 8.124951, "connection": 0, "record_type": "discovery", "message": "found 0 matching servers; retrying"}
-{"timestamp_utc": "2026-10-10T14:27:06.966+00:00", "elapsed_s": 8.126454, "connection": 0, "record_type": "scanning", "message": "7a1e0001-4b6d-4f7a-9c2e-6d3b1a5f0002"}
-{"timestamp_utc": "2026-10-10T14:27:23.022+00:00", "elapsed_s": 24.181671, "connection": 0, "record_type": "ble_error", "message": "RuntimeError: Car 2: found 0 matching servers"}
-{"timestamp_utc": "2026-10-10T14:27:25.026+00:00", "elapsed_s": 26.185645, "connection": 0, "record_type": "scanning", "message": "7a1e0001-4b6d-4f7a-9c2e-6d3b1a5f0002"}
-{"timestamp_utc": "2026-10-10T14:27:47.107+00:00", "elapsed_s": 48.267184, "connection": 0, "record_type": "ble_error", "message": "RuntimeError: Car 2: found 0 matching servers"}
-{"timestamp_utc": "2026-10-10T14:27:49.111+00:00", "elapsed_s": 50.270222, "connection": 0, "record_type": "scanning", "message": "7a1e0001-4b6d-4f7a-9c2e-6d3b1a5f0002"}
-{"timestamp_utc": "2026-10-10T14:27:58.891+00:00", "elapsed_s": 60.051259, "connection": 0, "record_type": "ble_error", "message": "RuntimeError: Car 2: found 0 matching servers"}

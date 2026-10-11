@@ -1,0 +1,23 @@
+﻿{
+    "process_id":  32260,
+    "started_utc":  "2026-10-11T16:01:39.8862715Z",
+    "planned_traffic_seconds":  7200,
+    "estimated_finish_utc":  "2026-10-11T18:01:59.8862715Z",
+    "python":  "C:\\Users\\leungp\\Documents\\GitHub\\esp32_broadcast_research\\.venv\\Scripts\\python.exe",
+    "script":  "C:\\Users\\leungp\\Documents\\GitHub\\esp32_broadcast_research\\test\\test_13\\test_13_ble_modem.py",
+    "arguments":  [
+                      "-u",
+                      "\"C:\\Users\\leungp\\Documents\\GitHub\\esp32_broadcast_research\\test\\test_13\\test_13_ble_modem.py\"",
+                      "--hours",
+                      "2",
+                      "--server-ports",
+                      "COM4",
+                      "COM5",
+                      "--output-dir",
+                      "\"C:\\Users\\leungp\\Documents\\GitHub\\esp32_broadcast_research\\test\\test_13\\results\\runs\\endurance_20261011_160139_879273\""
+                  ],
+    "run_directory":  "C:\\Users\\leungp\\Documents\\GitHub\\esp32_broadcast_research\\test\\test_13\\results\\runs\\endurance_20261011_160139_879273",
+    "console_log":  "C:\\Users\\leungp\\Documents\\GitHub\\esp32_broadcast_research\\test\\test_13\\results\\runs\\endurance_20261011_160139_879273\\console.log",
+    "stderr_log":  "C:\\Users\\leungp\\Documents\\GitHub\\esp32_broadcast_research\\test\\test_13\\results\\runs\\endurance_20261011_160139_879273\\stderr.log",
+    "status_note":  "Started in background; the final *.summary.json determines the result."
+}

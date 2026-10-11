@@ -1,0 +1,6 @@
+timestamp_utc,elapsed_s,phase,record_type,car,window_s,received,seq_lost,loss_percent,rate_hz,max_gap_s,silence_s,have_packet,world_seq,rtt_avg_ms,rtt_max_ms,rtt_samples,echo_age_avg_ms,echo_age_max_ms,echo_age_samples,world_attempted,world_tx_rate_hz,write_failures,max_tx_gap_s,max_write_ms,malformed,ignored,partial_window,target_tx_hz
+2026-10-11T13:35:09.555+00:00,18.04447970000001,sequential_setup_2Hz_no_notifications,ble_stats,3,0.000294,0,0,0,0.0,0.0,,0,,,,0,,,0,0,0.0,0,0.0,0.0,0,0,1,2.0
+2026-10-11T13:35:14.556+00:00,23.045180499999788,sequential_setup_2Hz_no_notifications,ble_stats,3,5.000706,0,0,0,0.0,0.0,,0,,,,0,,,0,10,1.9997177598354574,0,0.500224899999921,2.4303000000145403,0,0,1,2.0
+2026-10-11T13:35:34.697+00:00,43.18679249999968,sequential_setup_2Hz_no_notifications,ble_stats,3,20.14163,0,0,0,0.0,0.0,,0,,,,0,,,0,41,2.035584984575852,0,0.5005747999998675,2.1874999997635314,0,0,1,2.0
+2026-10-11T13:35:39.704+00:00,48.19309139999996,sequential_setup_2Hz_no_notifications,ble_stats,3,5.006282,0,0,0,0.0,0.0,,0,,,,0,,,0,10,1.997490393020027,0,0.5005768000000899,1.9800000000032014,0,0,0,2.0
+2026-10-11T13:35:44.698+00:00,53.187137599999915,sequential_setup_2Hz_no_notifications,ble_stats,3,4.994053,0,0,0,0.0,0.0,,0,,,,0,,,0,10,2.0023816327139925,0,0.5005754999997407,2.1280999999362393,0,0,1,2.0

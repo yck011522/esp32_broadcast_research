@@ -1,0 +1,241 @@
+2026-10-11T13:08:27.057+00:00 [0.006s] serial monitor: port opened
+2026-10-11T13:08:28.165+00:00 [1.114s] world stats: rate=0.00 Hz seq_lost=0 silence=805.001 s
+2026-10-11T13:08:28.165+00:00 [1.114s] ble buffers: free=36 total=36 skipped_notifications=0
+2026-10-11T13:08:28.165+00:00 [1.114s] ble health: uptime_ms=898320 connected=0 subscribed=0 advertising=1 heap=245032 min_heap=244940 notify_errors=0 last_error=0 restarts=0
+2026-10-11T13:08:33.173+00:00 [6.122s] world stats: rate=0.00 Hz seq_lost=0 silence=810.001 s
+2026-10-11T13:08:33.173+00:00 [6.122s] ble buffers: free=36 total=36 skipped_notifications=0
+2026-10-11T13:08:33.173+00:00 [6.122s] ble health: uptime_ms=903320 connected=0 subscribed=0 advertising=1 heap=245032 min_heap=244940 notify_errors=0 last_error=0 restarts=0
+2026-10-11T13:08:38.171+00:00 [11.120s] world stats: rate=0.00 Hz seq_lost=0 silence=815.001 s
+2026-10-11T13:08:38.171+00:00 [11.120s] ble buffers: free=36 total=36 skipped_notifications=0
+2026-10-11T13:08:38.171+00:00 [11.120s] ble health: uptime_ms=908320 connected=0 subscribed=0 advertising=1 heap=245032 min_heap=244940 notify_errors=0 last_error=0 restarts=0
+2026-10-11T13:08:43.170+00:00 [16.119s] world stats: rate=0.00 Hz seq_lost=0 silence=820.001 s
+2026-10-11T13:08:43.170+00:00 [16.119s] ble buffers: free=36 total=36 skipped_notifications=0
+2026-10-11T13:08:43.170+00:00 [16.119s] ble health: uptime_ms=913320 connected=0 subscribed=0 advertising=1 heap=245032 min_heap=244940 notify_errors=0 last_error=0 restarts=0
+2026-10-11T13:08:48.178+00:00 [21.127s] world stats: rate=0.00 Hz seq_lost=0 silence=825.001 s
+2026-10-11T13:08:48.178+00:00 [21.127s] ble buffers: free=36 total=36 skipped_notifications=0
+2026-10-11T13:08:48.178+00:00 [21.127s] ble health: uptime_ms=918320 connected=0 subscribed=0 advertising=1 heap=245032 min_heap=244940 notify_errors=0 last_error=0 restarts=0
+2026-10-11T13:08:53.170+00:00 [26.119s] world stats: rate=0.00 Hz seq_lost=0 silence=830.001 s
+2026-10-11T13:08:53.170+00:00 [26.119s] ble buffers: free=36 total=36 skipped_notifications=0
+2026-10-11T13:08:53.170+00:00 [26.119s] ble health: uptime_ms=923320 connected=0 subscribed=0 advertising=1 heap=245032 min_heap=244940 notify_errors=0 last_error=0 restarts=0
+2026-10-11T13:08:58.176+00:00 [31.125s] world stats: rate=0.00 Hz seq_lost=0 silence=835.001 s
+2026-10-11T13:08:58.176+00:00 [31.125s] ble buffers: free=36 total=36 skipped_notifications=0
+2026-10-11T13:08:58.176+00:00 [31.125s] ble health: uptime_ms=928320 connected=0 subscribed=0 advertising=1 heap=245032 min_heap=244940 notify_errors=0 last_error=0 restarts=0
+2026-10-11T13:09:03.177+00:00 [36.126s] world stats: rate=0.00 Hz seq_lost=0 silence=840.001 s
+2026-10-11T13:09:03.177+00:00 [36.126s] ble buffers: free=36 total=36 skipped_notifications=0
+2026-10-11T13:09:03.177+00:00 [36.126s] ble health: uptime_ms=933320 connected=0 subscribed=0 advertising=1 heap=245032 min_heap=244940 notify_errors=0 last_error=0 restarts=0
+2026-10-11T13:09:08.175+00:00 [41.124s] world stats: rate=0.00 Hz seq_lost=0 silence=845.001 s
+2026-10-11T13:09:08.175+00:00 [41.124s] ble buffers: free=36 total=36 skipped_notifications=0
+2026-10-11T13:09:08.175+00:00 [41.124s] ble health: uptime_ms=938320 connected=0 subscribed=0 advertising=1 heap=245032 min_heap=244940 notify_errors=0 last_error=0 restarts=0
+2026-10-11T13:09:13.163+00:00 [46.112s] world stats: rate=0.00 Hz seq_lost=0 silence=850.001 s
+2026-10-11T13:09:13.163+00:00 [46.112s] ble buffers: free=36 total=36 skipped_notifications=0
+2026-10-11T13:09:13.163+00:00 [46.112s] ble health: uptime_ms=943320 connected=0 subscribed=0 advertising=1 heap=245032 min_heap=244940 notify_errors=0 last_error=0 restarts=0
+2026-10-11T13:09:18.177+00:00 [51.126s] world stats: rate=0.00 Hz seq_lost=0 silence=855.001 s
+2026-10-11T13:09:18.177+00:00 [51.126s] ble buffers: free=36 total=36 skipped_notifications=0
+2026-10-11T13:09:18.177+00:00 [51.126s] ble health: uptime_ms=948320 connected=0 subscribed=0 advertising=1 heap=245032 min_heap=244940 notify_errors=0 last_error=0 restarts=0
+2026-10-11T13:09:23.178+00:00 [56.127s] world stats: rate=0.00 Hz seq_lost=0 silence=860.001 s
+2026-10-11T13:09:23.178+00:00 [56.127s] ble buffers: free=36 total=36 skipped_notifications=0
+2026-10-11T13:09:23.178+00:00 [56.127s] ble health: uptime_ms=953320 connected=0 subscribed=0 advertising=1 heap=245032 min_heap=244940 notify_errors=0 last_error=0 restarts=0
+2026-10-11T13:09:28.175+00:00 [61.124s] world stats: rate=0.00 Hz seq_lost=0 silence=865.001 s
+2026-10-11T13:09:28.175+00:00 [61.124s] ble buffers: free=36 total=36 skipped_notifications=0
+2026-10-11T13:09:28.175+00:00 [61.124s] ble health: uptime_ms=958320 connected=0 subscribed=0 advertising=1 heap=245032 min_heap=244940 notify_errors=0 last_error=0 restarts=0
+2026-10-11T13:09:33.165+00:00 [66.114s] world stats: rate=0.00 Hz seq_lost=0 silence=870.001 s
+2026-10-11T13:09:33.165+00:00 [66.114s] ble buffers: free=36 total=36 skipped_notifications=0
+2026-10-11T13:09:33.165+00:00 [66.114s] ble health: uptime_ms=963320 connected=0 subscribed=0 advertising=1 heap=245032 min_heap=244940 notify_errors=0 last_error=0 restarts=0
+2026-10-11T13:09:38.162+00:00 [71.111s] world stats: rate=0.00 Hz seq_lost=0 silence=875.001 s
+2026-10-11T13:09:38.162+00:00 [71.111s] ble buffers: free=36 total=36 skipped_notifications=0
+2026-10-11T13:09:38.162+00:00 [71.111s] ble health: uptime_ms=968320 connected=0 subscribed=0 advertising=1 heap=245032 min_heap=244940 notify_errors=0 last_error=0 restarts=0
+2026-10-11T13:09:43.177+00:00 [76.125s] world stats: rate=0.00 Hz seq_lost=0 silence=880.001 s
+2026-10-11T13:09:43.177+00:00 [76.125s] ble buffers: free=36 total=36 skipped_notifications=0
+2026-10-11T13:09:43.177+00:00 [76.125s] ble health: uptime_ms=973320 connected=0 subscribed=0 advertising=1 heap=245032 min_heap=244940 notify_errors=0 last_error=0 restarts=0
+2026-10-11T13:09:48.170+00:00 [81.119s] world stats: rate=0.00 Hz seq_lost=0 silence=885.001 s
+2026-10-11T13:09:48.170+00:00 [81.119s] ble buffers: free=36 total=36 skipped_notifications=0
+2026-10-11T13:09:48.170+00:00 [81.119s] ble health: uptime_ms=978320 connected=0 subscribed=0 advertising=1 heap=245032 min_heap=244940 notify_errors=0 last_error=0 restarts=0
+2026-10-11T13:09:53.160+00:00 [86.108s] world stats: rate=0.00 Hz seq_lost=0 silence=890.001 s
+2026-10-11T13:09:53.160+00:00 [86.109s] ble buffers: free=36 total=36 skipped_notifications=0
+2026-10-11T13:09:53.160+00:00 [86.109s] ble health: uptime_ms=983320 connected=0 subscribed=0 advertising=1 heap=245032 min_heap=244940 notify_errors=0 last_error=0 restarts=0
+2026-10-11T13:09:58.174+00:00 [91.123s] world stats: rate=0.00 Hz seq_lost=0 silence=895.001 s
+2026-10-11T13:09:58.174+00:00 [91.123s] ble buffers: free=36 total=36 skipped_notifications=0
+2026-10-11T13:09:58.174+00:00 [91.123s] ble health: uptime_ms=988320 connected=0 subscribed=0 advertising=1 heap=245032 min_heap=244940 notify_errors=0 last_error=0 restarts=0
+2026-10-11T13:10:03.166+00:00 [96.115s] world stats: rate=0.00 Hz seq_lost=0 silence=900.001 s
+2026-10-11T13:10:03.166+00:00 [96.115s] ble buffers: free=36 total=36 skipped_notifications=0
+2026-10-11T13:10:03.166+00:00 [96.115s] ble health: uptime_ms=993320 connected=0 subscribed=0 advertising=1 heap=245032 min_heap=244940 notify_errors=0 last_error=0 restarts=0
+2026-10-11T13:10:08.166+00:00 [101.114s] world stats: rate=0.00 Hz seq_lost=0 silence=905.001 s
+2026-10-11T13:10:08.166+00:00 [101.114s] ble buffers: free=36 total=36 skipped_notifications=0
+2026-10-11T13:10:08.166+00:00 [101.114s] ble health: uptime_ms=998320 connected=0 subscribed=0 advertising=1 heap=245032 min_heap=244940 notify_errors=0 last_error=0 restarts=0
+2026-10-11T13:10:13.163+00:00 [106.112s] world stats: rate=0.00 Hz seq_lost=0 silence=910.001 s
+2026-10-11T13:10:13.163+00:00 [106.112s] ble buffers: free=36 total=36 skipped_notifications=0
+2026-10-11T13:10:13.163+00:00 [106.112s] ble health: uptime_ms=1003320 connected=0 subscribed=0 advertising=1 heap=245032 min_heap=244940 notify_errors=0 last_error=0 restarts=0
+2026-10-11T13:10:18.170+00:00 [111.118s] world stats: rate=0.00 Hz seq_lost=0 silence=915.001 s
+2026-10-11T13:10:18.170+00:00 [111.118s] ble buffers: free=36 total=36 skipped_notifications=0
+2026-10-11T13:10:18.170+00:00 [111.118s] ble health: uptime_ms=1008320 connected=0 subscribed=0 advertising=1 heap=245032 min_heap=244940 notify_errors=0 last_error=0 restarts=0
+2026-10-11T13:10:23.169+00:00 [116.118s] world stats: rate=0.00 Hz seq_lost=0 silence=920.001 s
+2026-10-11T13:10:23.169+00:00 [116.118s] ble buffers: free=36 total=36 skipped_notifications=0
+2026-10-11T13:10:23.169+00:00 [116.118s] ble health: uptime_ms=1013320 connected=0 subscribed=0 advertising=1 heap=245032 min_heap=244940 notify_errors=0 last_error=0 restarts=0
+2026-10-11T13:10:28.167+00:00 [121.116s] world stats: rate=0.00 Hz seq_lost=0 silence=925.001 s
+2026-10-11T13:10:28.167+00:00 [121.116s] ble buffers: free=36 total=36 skipped_notifications=0
+2026-10-11T13:10:28.167+00:00 [121.116s] ble health: uptime_ms=1018320 connected=0 subscribed=0 advertising=1 heap=245032 min_heap=244940 notify_errors=0 last_error=0 restarts=0
+2026-10-11T13:10:33.159+00:00 [126.108s] world stats: rate=0.00 Hz seq_lost=0 silence=930.001 s
+2026-10-11T13:10:33.159+00:00 [126.108s] ble buffers: free=36 total=36 skipped_notifications=0
+2026-10-11T13:10:33.159+00:00 [126.108s] ble health: uptime_ms=1023320 connected=0 subscribed=0 advertising=1 heap=245032 min_heap=244940 notify_errors=0 last_error=0 restarts=0
+2026-10-11T13:10:38.171+00:00 [131.119s] world stats: rate=0.00 Hz seq_lost=0 silence=935.001 s
+2026-10-11T13:10:38.171+00:00 [131.119s] ble buffers: free=36 total=36 skipped_notifications=0
+2026-10-11T13:10:38.171+00:00 [131.119s] ble health: uptime_ms=1028320 connected=0 subscribed=0 advertising=1 heap=245032 min_heap=244940 notify_errors=0 last_error=0 restarts=0
+2026-10-11T13:10:43.173+00:00 [136.121s] world stats: rate=0.00 Hz seq_lost=0 silence=940.001 s
+2026-10-11T13:10:43.173+00:00 [136.121s] ble buffers: free=36 total=36 skipped_notifications=0
+2026-10-11T13:10:43.173+00:00 [136.122s] ble health: uptime_ms=1033320 connected=0 subscribed=0 advertising=1 heap=245032 min_heap=244940 notify_errors=0 last_error=0 restarts=0
+2026-10-11T13:10:48.173+00:00 [141.122s] world stats: rate=0.00 Hz seq_lost=0 silence=945.001 s
+2026-10-11T13:10:48.173+00:00 [141.122s] ble buffers: free=36 total=36 skipped_notifications=0
+2026-10-11T13:10:48.173+00:00 [141.122s] ble health: uptime_ms=1038320 connected=0 subscribed=0 advertising=1 heap=245032 min_heap=244940 notify_errors=0 last_error=0 restarts=0
+2026-10-11T13:10:53.173+00:00 [146.121s] world stats: rate=0.00 Hz seq_lost=0 silence=950.001 s
+2026-10-11T13:10:53.173+00:00 [146.121s] ble buffers: free=36 total=36 skipped_notifications=0
+2026-10-11T13:10:53.173+00:00 [146.122s] ble health: uptime_ms=1043320 connected=0 subscribed=0 advertising=1 heap=245032 min_heap=244940 notify_errors=0 last_error=0 restarts=0
+2026-10-11T13:10:58.167+00:00 [151.115s] world stats: rate=0.00 Hz seq_lost=0 silence=955.001 s
+2026-10-11T13:10:58.167+00:00 [151.115s] ble buffers: free=36 total=36 skipped_notifications=0
+2026-10-11T13:10:58.167+00:00 [151.115s] ble health: uptime_ms=1048320 connected=0 subscribed=0 advertising=1 heap=245032 min_heap=244940 notify_errors=0 last_error=0 restarts=0
+2026-10-11T13:11:03.158+00:00 [156.107s] world stats: rate=0.00 Hz seq_lost=0 silence=960.001 s
+2026-10-11T13:11:03.158+00:00 [156.107s] ble buffers: free=36 total=36 skipped_notifications=0
+2026-10-11T13:11:03.158+00:00 [156.107s] ble health: uptime_ms=1053320 connected=0 subscribed=0 advertising=1 heap=245032 min_heap=244940 notify_errors=0 last_error=0 restarts=0
+2026-10-11T13:11:08.172+00:00 [161.121s] world stats: rate=0.00 Hz seq_lost=0 silence=965.001 s
+2026-10-11T13:11:08.172+00:00 [161.121s] ble buffers: free=36 total=36 skipped_notifications=0
+2026-10-11T13:11:08.172+00:00 [161.121s] ble health: uptime_ms=1058320 connected=0 subscribed=0 advertising=1 heap=245032 min_heap=244940 notify_errors=0 last_error=0 restarts=0
+2026-10-11T13:11:13.169+00:00 [166.118s] world stats: rate=0.00 Hz seq_lost=0 silence=970.001 s
+2026-10-11T13:11:13.170+00:00 [166.118s] ble buffers: free=36 total=36 skipped_notifications=0
+2026-10-11T13:11:13.170+00:00 [166.118s] ble health: uptime_ms=1063320 connected=0 subscribed=0 advertising=1 heap=245032 min_heap=244940 notify_errors=0 last_error=0 restarts=0
+2026-10-11T13:11:18.167+00:00 [171.116s] world stats: rate=0.00 Hz seq_lost=0 silence=975.001 s
+2026-10-11T13:11:18.167+00:00 [171.116s] ble buffers: free=36 total=36 skipped_notifications=0
+2026-10-11T13:11:18.167+00:00 [171.116s] ble health: uptime_ms=1068320 connected=0 subscribed=0 advertising=1 heap=245032 min_heap=244940 notify_errors=0 last_error=0 restarts=0
+2026-10-11T13:11:23.157+00:00 [176.106s] world stats: rate=0.00 Hz seq_lost=0 silence=980.001 s
+2026-10-11T13:11:23.157+00:00 [176.106s] ble buffers: free=36 total=36 skipped_notifications=0
+2026-10-11T13:11:23.157+00:00 [176.106s] ble health: uptime_ms=1073320 connected=0 subscribed=0 advertising=1 heap=245032 min_heap=244940 notify_errors=0 last_error=0 restarts=0
+2026-10-11T13:11:28.157+00:00 [181.105s] world stats: rate=0.00 Hz seq_lost=0 silence=985.001 s
+2026-10-11T13:11:28.157+00:00 [181.106s] ble buffers: free=36 total=36 skipped_notifications=0
+2026-10-11T13:11:28.157+00:00 [181.106s] ble health: uptime_ms=1078320 connected=0 subscribed=0 advertising=1 heap=245032 min_heap=244940 notify_errors=0 last_error=0 restarts=0
+2026-10-11T13:11:33.174+00:00 [186.123s] world stats: rate=0.00 Hz seq_lost=0 silence=990.001 s
+2026-10-11T13:11:33.174+00:00 [186.123s] ble buffers: free=36 total=36 skipped_notifications=0
+2026-10-11T13:11:33.174+00:00 [186.123s] ble health: uptime_ms=1083320 connected=0 subscribed=0 advertising=1 heap=245032 min_heap=244940 notify_errors=0 last_error=0 restarts=0
+2026-10-11T13:11:38.174+00:00 [191.123s] world stats: rate=0.00 Hz seq_lost=0 silence=995.001 s
+2026-10-11T13:11:38.174+00:00 [191.123s] ble buffers: free=36 total=36 skipped_notifications=0
+2026-10-11T13:11:38.174+00:00 [191.123s] ble health: uptime_ms=1088320 connected=0 subscribed=0 advertising=1 heap=245032 min_heap=244940 notify_errors=0 last_error=0 restarts=0
+2026-10-11T13:11:43.173+00:00 [196.122s] world stats: rate=0.00 Hz seq_lost=0 silence=1000.001 s
+2026-10-11T13:11:43.173+00:00 [196.122s] ble buffers: free=36 total=36 skipped_notifications=0
+2026-10-11T13:11:43.173+00:00 [196.122s] ble health: uptime_ms=1093320 connected=0 subscribed=0 advertising=1 heap=245032 min_heap=244940 notify_errors=0 last_error=0 restarts=0
+2026-10-11T13:11:48.168+00:00 [201.117s] world stats: rate=0.00 Hz seq_lost=0 silence=1005.001 s
+2026-10-11T13:11:48.168+00:00 [201.117s] ble buffers: free=36 total=36 skipped_notifications=0
+2026-10-11T13:11:48.168+00:00 [201.117s] ble health: uptime_ms=1098320 connected=0 subscribed=0 advertising=1 heap=245032 min_heap=244940 notify_errors=0 last_error=0 restarts=0
+2026-10-11T13:11:53.157+00:00 [206.106s] world stats: rate=0.00 Hz seq_lost=0 silence=1010.001 s
+2026-10-11T13:11:53.157+00:00 [206.106s] ble buffers: free=36 total=36 skipped_notifications=0
+2026-10-11T13:11:53.157+00:00 [206.106s] ble health: uptime_ms=1103320 connected=0 subscribed=0 advertising=1 heap=245032 min_heap=244940 notify_errors=0 last_error=0 restarts=0
+2026-10-11T13:11:58.158+00:00 [211.106s] world stats: rate=0.00 Hz seq_lost=0 silence=1015.001 s
+2026-10-11T13:11:58.158+00:00 [211.106s] ble buffers: free=36 total=36 skipped_notifications=0
+2026-10-11T13:11:58.158+00:00 [211.106s] ble health: uptime_ms=1108320 connected=0 subscribed=0 advertising=1 heap=245032 min_heap=244940 notify_errors=0 last_error=0 restarts=0
+2026-10-11T13:12:03.173+00:00 [216.122s] world stats: rate=0.00 Hz seq_lost=0 silence=1020.001 s
+2026-10-11T13:12:03.173+00:00 [216.122s] ble buffers: free=36 total=36 skipped_notifications=0
+2026-10-11T13:12:03.173+00:00 [216.122s] ble health: uptime_ms=1113320 connected=0 subscribed=0 advertising=1 heap=245032 min_heap=244940 notify_errors=0 last_error=0 restarts=0
+2026-10-11T13:12:08.165+00:00 [221.113s] world stats: rate=0.00 Hz seq_lost=0 silence=1025.001 s
+2026-10-11T13:12:08.165+00:00 [221.114s] ble buffers: free=36 total=36 skipped_notifications=0
+2026-10-11T13:12:08.165+00:00 [221.114s] ble health: uptime_ms=1118320 connected=0 subscribed=0 advertising=1 heap=245032 min_heap=244940 notify_errors=0 last_error=0 restarts=0
+2026-10-11T13:12:13.161+00:00 [226.110s] world stats: rate=0.00 Hz seq_lost=0 silence=1030.001 s
+2026-10-11T13:12:13.161+00:00 [226.110s] ble buffers: free=36 total=36 skipped_notifications=0
+2026-10-11T13:12:13.161+00:00 [226.110s] ble health: uptime_ms=1123320 connected=0 subscribed=0 advertising=1 heap=245032 min_heap=244940 notify_errors=0 last_error=0 restarts=0
+2026-10-11T13:12:18.173+00:00 [231.122s] world stats: rate=0.00 Hz seq_lost=0 silence=1035.001 s
+2026-10-11T13:12:18.173+00:00 [231.122s] ble buffers: free=36 total=36 skipped_notifications=0
+2026-10-11T13:12:18.173+00:00 [231.122s] ble health: uptime_ms=1128320 connected=0 subscribed=0 advertising=1 heap=245032 min_heap=244940 notify_errors=0 last_error=0 restarts=0
+2026-10-11T13:12:23.172+00:00 [236.121s] world stats: rate=0.00 Hz seq_lost=0 silence=1040.001 s
+2026-10-11T13:12:23.172+00:00 [236.121s] ble buffers: free=36 total=36 skipped_notifications=0
+2026-10-11T13:12:23.172+00:00 [236.121s] ble health: uptime_ms=1133320 connected=0 subscribed=0 advertising=1 heap=245032 min_heap=244940 notify_errors=0 last_error=0 restarts=0
+2026-10-11T13:12:28.173+00:00 [241.121s] world stats: rate=0.00 Hz seq_lost=0 silence=1045.001 s
+2026-10-11T13:12:28.173+00:00 [241.122s] ble buffers: free=36 total=36 skipped_notifications=0
+2026-10-11T13:12:28.173+00:00 [241.122s] ble health: uptime_ms=1138320 connected=0 subscribed=0 advertising=1 heap=245032 min_heap=244940 notify_errors=0 last_error=0 restarts=0
+2026-10-11T13:12:33.173+00:00 [246.122s] world stats: rate=0.00 Hz seq_lost=0 silence=1050.001 s
+2026-10-11T13:12:33.173+00:00 [246.122s] ble buffers: free=36 total=36 skipped_notifications=0
+2026-10-11T13:12:33.173+00:00 [246.122s] ble health: uptime_ms=1143320 connected=0 subscribed=0 advertising=1 heap=245032 min_heap=244940 notify_errors=0 last_error=0 restarts=0
+2026-10-11T13:12:38.166+00:00 [251.115s] world stats: rate=0.00 Hz seq_lost=0 silence=1055.001 s
+2026-10-11T13:12:38.166+00:00 [251.115s] ble buffers: free=36 total=36 skipped_notifications=0
+2026-10-11T13:12:38.166+00:00 [251.115s] ble health: uptime_ms=1148320 connected=0 subscribed=0 advertising=1 heap=245032 min_heap=244940 notify_errors=0 last_error=0 restarts=0
+2026-10-11T13:12:43.165+00:00 [256.114s] world stats: rate=0.00 Hz seq_lost=0 silence=1060.001 s
+2026-10-11T13:12:43.165+00:00 [256.114s] ble buffers: free=36 total=36 skipped_notifications=0
+2026-10-11T13:12:43.165+00:00 [256.114s] ble health: uptime_ms=1153320 connected=0 subscribed=0 advertising=1 heap=245032 min_heap=244940 notify_errors=0 last_error=0 restarts=0
+2026-10-11T13:12:48.162+00:00 [261.111s] world stats: rate=0.00 Hz seq_lost=0 silence=1065.001 s
+2026-10-11T13:12:48.162+00:00 [261.111s] ble buffers: free=36 total=36 skipped_notifications=0
+2026-10-11T13:12:48.162+00:00 [261.111s] ble health: uptime_ms=1158320 connected=0 subscribed=0 advertising=1 heap=245032 min_heap=244940 notify_errors=0 last_error=0 restarts=0
+2026-10-11T13:12:53.169+00:00 [266.118s] world stats: rate=0.00 Hz seq_lost=0 silence=1070.001 s
+2026-10-11T13:12:53.169+00:00 [266.118s] ble buffers: free=36 total=36 skipped_notifications=0
+2026-10-11T13:12:53.169+00:00 [266.118s] ble health: uptime_ms=1163320 connected=0 subscribed=0 advertising=1 heap=245032 min_heap=244940 notify_errors=0 last_error=0 restarts=0
+2026-10-11T13:12:58.168+00:00 [271.117s] world stats: rate=0.00 Hz seq_lost=0 silence=1075.001 s
+2026-10-11T13:12:58.168+00:00 [271.117s] ble buffers: free=36 total=36 skipped_notifications=0
+2026-10-11T13:12:58.168+00:00 [271.117s] ble health: uptime_ms=1168320 connected=0 subscribed=0 advertising=1 heap=245032 min_heap=244940 notify_errors=0 last_error=0 restarts=0
+2026-10-11T13:13:03.167+00:00 [276.116s] world stats: rate=0.00 Hz seq_lost=0 silence=1080.001 s
+2026-10-11T13:13:03.167+00:00 [276.116s] ble buffers: free=36 total=36 skipped_notifications=0
+2026-10-11T13:13:03.167+00:00 [276.116s] ble health: uptime_ms=1173320 connected=0 subscribed=0 advertising=1 heap=245032 min_heap=244940 notify_errors=0 last_error=0 restarts=0
+2026-10-11T13:13:08.163+00:00 [281.112s] world stats: rate=0.00 Hz seq_lost=0 silence=1085.001 s
+2026-10-11T13:13:08.163+00:00 [281.112s] ble buffers: free=36 total=36 skipped_notifications=0
+2026-10-11T13:13:08.163+00:00 [281.112s] ble health: uptime_ms=1178320 connected=0 subscribed=0 advertising=1 heap=245032 min_heap=244940 notify_errors=0 last_error=0 restarts=0
+2026-10-11T13:13:13.158+00:00 [286.107s] world stats: rate=0.00 Hz seq_lost=0 silence=1090.001 s
+2026-10-11T13:13:13.158+00:00 [286.107s] ble buffers: free=36 total=36 skipped_notifications=0
+2026-10-11T13:13:13.158+00:00 [286.107s] ble health: uptime_ms=1183320 connected=0 subscribed=0 advertising=1 heap=245032 min_heap=244940 notify_errors=0 last_error=0 restarts=0
+2026-10-11T13:13:18.168+00:00 [291.116s] world stats: rate=0.00 Hz seq_lost=0 silence=1095.001 s
+2026-10-11T13:13:18.168+00:00 [291.117s] ble buffers: free=36 total=36 skipped_notifications=0
+2026-10-11T13:13:18.168+00:00 [291.117s] ble health: uptime_ms=1188320 connected=0 subscribed=0 advertising=1 heap=245032 min_heap=244940 notify_errors=0 last_error=0 restarts=0
+2026-10-11T13:13:23.170+00:00 [296.118s] world stats: rate=0.00 Hz seq_lost=0 silence=1100.001 s
+2026-10-11T13:13:23.170+00:00 [296.118s] ble buffers: free=36 total=36 skipped_notifications=0
+2026-10-11T13:13:23.170+00:00 [296.119s] ble health: uptime_ms=1193320 connected=0 subscribed=0 advertising=1 heap=245032 min_heap=244940 notify_errors=0 last_error=0 restarts=0
+2026-10-11T13:13:28.158+00:00 [301.107s] world stats: rate=0.00 Hz seq_lost=0 silence=1105.001 s
+2026-10-11T13:13:28.158+00:00 [301.107s] ble buffers: free=36 total=36 skipped_notifications=0
+2026-10-11T13:13:28.158+00:00 [301.107s] ble health: uptime_ms=1198320 connected=0 subscribed=0 advertising=1 heap=245032 min_heap=244940 notify_errors=0 last_error=0 restarts=0
+2026-10-11T13:13:33.161+00:00 [306.110s] world stats: rate=0.00 Hz seq_lost=0 silence=1110.001 s
+2026-10-11T13:13:33.161+00:00 [306.110s] ble buffers: free=36 total=36 skipped_notifications=0
+2026-10-11T13:13:33.161+00:00 [306.110s] ble health: uptime_ms=1203320 connected=0 subscribed=0 advertising=1 heap=245032 min_heap=244940 notify_errors=0 last_error=0 restarts=0
+2026-10-11T13:13:38.158+00:00 [311.106s] world stats: rate=0.00 Hz seq_lost=0 silence=1115.001 s
+2026-10-11T13:13:38.158+00:00 [311.107s] ble buffers: free=36 total=36 skipped_notifications=0
+2026-10-11T13:13:38.158+00:00 [311.107s] ble health: uptime_ms=1208320 connected=0 subscribed=0 advertising=1 heap=245032 min_heap=244940 notify_errors=0 last_error=0 restarts=0
+2026-10-11T13:13:43.169+00:00 [316.118s] world stats: rate=0.00 Hz seq_lost=0 silence=1120.001 s
+2026-10-11T13:13:43.169+00:00 [316.118s] ble buffers: free=36 total=36 skipped_notifications=0
+2026-10-11T13:13:43.169+00:00 [316.118s] ble health: uptime_ms=1213320 connected=0 subscribed=0 advertising=1 heap=245032 min_heap=244940 notify_errors=0 last_error=0 restarts=0
+2026-10-11T13:13:48.163+00:00 [321.111s] world stats: rate=0.00 Hz seq_lost=0 silence=1125.001 s
+2026-10-11T13:13:48.163+00:00 [321.111s] ble buffers: free=36 total=36 skipped_notifications=0
+2026-10-11T13:13:48.163+00:00 [321.111s] ble health: uptime_ms=1218320 connected=0 subscribed=0 advertising=1 heap=245032 min_heap=244940 notify_errors=0 last_error=0 restarts=0
+2026-10-11T13:13:53.171+00:00 [326.120s] world stats: rate=0.00 Hz seq_lost=0 silence=1130.001 s
+2026-10-11T13:13:53.171+00:00 [326.120s] ble buffers: free=36 total=36 skipped_notifications=0
+2026-10-11T13:13:53.171+00:00 [326.120s] ble health: uptime_ms=1223320 connected=0 subscribed=0 advertising=1 heap=245032 min_heap=244940 notify_errors=0 last_error=0 restarts=0
+2026-10-11T13:13:58.169+00:00 [331.118s] world stats: rate=0.00 Hz seq_lost=0 silence=1135.001 s
+2026-10-11T13:13:58.169+00:00 [331.118s] ble buffers: free=36 total=36 skipped_notifications=0
+2026-10-11T13:13:58.169+00:00 [331.118s] ble health: uptime_ms=1228320 connected=0 subscribed=0 advertising=1 heap=245032 min_heap=244940 notify_errors=0 last_error=0 restarts=0
+2026-10-11T13:14:03.166+00:00 [336.115s] world stats: rate=0.00 Hz seq_lost=0 silence=1140.001 s
+2026-10-11T13:14:03.166+00:00 [336.115s] ble buffers: free=36 total=36 skipped_notifications=0
+2026-10-11T13:14:03.166+00:00 [336.115s] ble health: uptime_ms=1233320 connected=0 subscribed=0 advertising=1 heap=245032 min_heap=244940 notify_errors=0 last_error=0 restarts=0
+2026-10-11T13:14:08.161+00:00 [341.110s] world stats: rate=0.00 Hz seq_lost=0 silence=1145.001 s
+2026-10-11T13:14:08.161+00:00 [341.110s] ble buffers: free=36 total=36 skipped_notifications=0
+2026-10-11T13:14:08.161+00:00 [341.110s] ble health: uptime_ms=1238320 connected=0 subscribed=0 advertising=1 heap=245032 min_heap=244940 notify_errors=0 last_error=0 restarts=0
+2026-10-11T13:14:13.161+00:00 [346.110s] world stats: rate=0.00 Hz seq_lost=0 silence=1150.001 s
+2026-10-11T13:14:13.161+00:00 [346.110s] ble buffers: free=36 total=36 skipped_notifications=0
+2026-10-11T13:14:13.161+00:00 [346.110s] ble health: uptime_ms=1243320 connected=0 subscribed=0 advertising=1 heap=245032 min_heap=244940 notify_errors=0 last_error=0 restarts=0
+2026-10-11T13:14:18.172+00:00 [351.121s] world stats: rate=0.00 Hz seq_lost=0 silence=1155.001 s
+2026-10-11T13:14:18.172+00:00 [351.121s] ble buffers: free=36 total=36 skipped_notifications=0
+2026-10-11T13:14:18.172+00:00 [351.121s] ble health: uptime_ms=1248320 connected=0 subscribed=0 advertising=1 heap=245032 min_heap=244940 notify_errors=0 last_error=0 restarts=0
+2026-10-11T13:14:18.480+00:00 [351.429s] ble event: uptime_ms=1248647 event=connected status=0 interval=0.00 ms latency=0 timeout=0 ms
+2026-10-11T13:14:19.454+00:00 [352.403s] ble event: uptime_ms=1249607 event=connection_parameters status=0 interval=7.50 ms latency=0 timeout=9600 ms
+2026-10-11T13:14:21.406+00:00 [354.355s] ble event: uptime_ms=1251557 event=connection_parameters status=0 interval=30.00 ms latency=0 timeout=9600 ms
+2026-10-11T13:14:23.489+00:00 [356.438s] world stats: rate=31.60 Hz seq_lost=0 silence=0.049 s
+2026-10-11T13:14:23.489+00:00 [356.438s] ble buffers: free=36 total=36 skipped_notifications=0
+2026-10-11T13:14:23.489+00:00 [356.438s] ble health: uptime_ms=1253647 connected=1 subscribed=1 advertising=0 heap=244936 min_heap=244860 notify_errors=0 last_error=0 restarts=0
+2026-10-11T13:14:28.493+00:00 [361.442s] world stats: rate=50.00 Hz seq_lost=0 silence=0.040 s
+2026-10-11T13:14:28.493+00:00 [361.442s] ble buffers: free=36 total=36 skipped_notifications=0
+2026-10-11T13:14:28.493+00:00 [361.442s] ble health: uptime_ms=1258647 connected=1 subscribed=1 advertising=0 heap=244936 min_heap=244860 notify_errors=0 last_error=0 restarts=0
+2026-10-11T13:14:33.498+00:00 [366.447s] world stats: rate=49.60 Hz seq_lost=0 silence=0.058 s
+2026-10-11T13:14:33.498+00:00 [366.447s] ble buffers: free=36 total=36 skipped_notifications=0
+2026-10-11T13:14:33.498+00:00 [366.447s] ble health: uptime_ms=1263647 connected=1 subscribed=1 advertising=0 heap=244936 min_heap=244860 notify_errors=0 last_error=0 restarts=0
+2026-10-11T13:14:38.479+00:00 [371.428s] world stats: rate=50.20 Hz seq_lost=0 silence=0.019 s
+2026-10-11T13:14:38.500+00:00 [371.448s] ble buffers: free=36 total=36 skipped_notifications=0
+2026-10-11T13:14:38.500+00:00 [371.448s] ble health: uptime_ms=1268647 connected=1 subscribed=1 advertising=0 heap=244964 min_heap=244860 notify_errors=0 last_error=0 restarts=0
+2026-10-11T13:14:43.215+00:00 [376.164s] ble event: uptime_ms=1273369 event=gap_disconnect status=531 interval=0.00 ms latency=0 timeout=0 ms
+2026-10-11T13:14:43.215+00:00 [376.164s] ble event: uptime_ms=1273369 event=disconnected status=0 interval=0.00 ms latency=0 timeout=0 ms
+2026-10-11T13:14:43.481+00:00 [376.429s] world stats: rate=16.00 Hz seq_lost=0 silence=3.399 s
+2026-10-11T13:14:43.481+00:00 [376.430s] ble buffers: free=36 total=36 skipped_notifications=0
+2026-10-11T13:14:43.481+00:00 [376.430s] ble health: uptime_ms=1273647 connected=0 subscribed=0 advertising=0 heap=245012 min_heap=244860 notify_errors=0 last_error=0 restarts=0
+2026-10-11T13:14:43.707+00:00 [376.655s] ble event: uptime_ms=1273870 event=advertising_restart status=0 interval=0.00 ms latency=0 timeout=0 ms
+2026-10-11T13:14:48.490+00:00 [381.439s] world stats: rate=0.00 Hz seq_lost=0 silence=8.399 s
+2026-10-11T13:14:48.490+00:00 [381.439s] ble buffers: free=36 total=36 skipped_notifications=0
+2026-10-11T13:14:48.490+00:00 [381.439s] ble health: uptime_ms=1278647 connected=0 subscribed=0 advertising=1 heap=245012 min_heap=244860 notify_errors=0 last_error=0 restarts=0
+2026-10-11T13:14:53.489+00:00 [386.437s] world stats: rate=0.00 Hz seq_lost=0 silence=13.399 s
+2026-10-11T13:14:53.489+00:00 [386.437s] ble buffers: free=36 total=36 skipped_notifications=0
+2026-10-11T13:14:53.489+00:00 [386.437s] ble health: uptime_ms=1283647 connected=0 subscribed=0 advertising=1 heap=245012 min_heap=244860 notify_errors=0 last_error=0 restarts=0

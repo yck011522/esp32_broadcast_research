@@ -1,0 +1,16 @@
+timestamp_utc,elapsed_s,record_type,connection,window_s,received,seq_lost,loss_percent,rate_hz,max_gap_s,silence_s,have_packet,world_seq,rtt_avg_ms,rtt_max_ms,rtt_samples,echo_age_avg_ms,echo_age_max_ms,echo_age_samples,world_attempted,world_tx_rate_hz,write_failures,max_tx_gap_s,max_write_ms,malformed,ignored,partial_window,message
+2026-10-11T12:53:55.498+00:00,0.007341,scanning,0,,,,,,,,,,,,,,,,,,,,,,,,all three car service UUIDs
+2026-10-11T12:54:05.688+00:00,10.198036,connected,1,,,,,,,,,,,,,,,,,,,,,,,,ble_car_2 68:EE:8F:46:33:45
+2026-10-11T12:54:05.715+00:00,10.224688,connection_parameters,1,,,,,,,,,,,,,,,,,,,,,,,,Before request: interval=7.5 ms latency=0
+2026-10-11T12:54:10.751+00:00,15.261275,ble_error,1,,,,,,,,,,,,,,,,,,,,,,,,"RuntimeError: Request accepted but negotiated interval is still 30 ms, latency=0"
+2026-10-11T12:54:12.865+00:00,17.374193,scanning,1,,,,,,,,,,,,,,,,,,,,,,,,7a1e0001-4b6d-4f7a-9c2e-6d3b1a5f0002
+2026-10-11T12:54:20.885+00:00,25.395021,ble_error,1,,,,,,,,,,,,,,,,,,,,,,,,RuntimeError: Car 2: found 0 matching servers
+2026-10-11T12:54:22.888+00:00,27.397626,scanning,1,,,,,,,,,,,,,,,,,,,,,,,,7a1e0001-4b6d-4f7a-9c2e-6d3b1a5f0002
+2026-10-11T12:54:41.996+00:00,46.505022,connected,2,,,,,,,,,,,,,,,,,,,,,,,,ble_car_2 68:EE:8F:46:33:45
+2026-10-11T12:54:42.017+00:00,46.526665,connection_parameters,2,,,,,,,,,,,,,,,,,,,,,,,,Before request: interval=7.5 ms latency=0
+2026-10-11T12:54:47.054+00:00,51.563971,ble_error,2,,,,,,,,,,,,,,,,,,,,,,,,"RuntimeError: Request accepted but negotiated interval is still 30 ms, latency=0"
+2026-10-11T12:54:49.162+00:00,53.671801,scanning,2,,,,,,,,,,,,,,,,,,,,,,,,7a1e0001-4b6d-4f7a-9c2e-6d3b1a5f0002
+2026-10-11T12:55:15.228+00:00,79.738319,connected,3,,,,,,,,,,,,,,,,,,,,,,,,ble_car_2 68:EE:8F:46:33:45
+2026-10-11T12:55:15.252+00:00,79.762597,connection_parameters,3,,,,,,,,,,,,,,,,,,,,,,,,Before request: interval=7.5 ms latency=0
+2026-10-11T12:55:20.285+00:00,84.795064,ble_error,3,,,,,,,,,,,,,,,,,,,,,,,,"RuntimeError: Request accepted but negotiated interval is still 30 ms, latency=0"
+2026-10-11T12:55:22.394+00:00,86.903581,scanning,3,,,,,,,,,,,,,,,,,,,,,,,,7a1e0001-4b6d-4f7a-9c2e-6d3b1a5f0002

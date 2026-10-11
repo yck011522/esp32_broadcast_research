@@ -1,0 +1,1051 @@
+{
+  "adapter": "BARROT Bluetooth 5.4 Adapter",
+  "hardware_id": "USB\\VID_33FA&PID_0010",
+  "driver_version": "17.55.6.566",
+  "connection_mode": "default",
+  "phases": [
+    {
+      "label": "Test 10 (120 seconds)",
+      "car": 1,
+      "csv": "test/run_logs/ble_test_10_20261011_130830_837302.csv",
+      "server_log": "test/run_logs/ble_test_11_car_1_server_20261011_130827.log"
+    },
+    {
+      "label": "Test 11 (120 seconds)",
+      "car": 1,
+      "csv": "test/run_logs/ble_test_11_car_1_20261011_131039_664766.csv",
+      "server_log": "test/run_logs/ble_test_11_car_1_server_20261011_130827.log"
+    },
+    {
+      "label": "Test 11 (120 seconds)",
+      "car": 2,
+      "csv": "test/run_logs/ble_test_11_car_2_20261011_131039_666271.csv",
+      "server_log": "test/run_logs/ble_test_11_car_2_server_20261011_130827.log"
+    },
+    {
+      "label": "Test 11 (120 seconds)",
+      "car": 3,
+      "csv": "test/run_logs/ble_test_11_car_3_20261011_131039_669319.csv",
+      "server_log": "test/run_logs/ble_test_11_car_3_server_20261011_130827.log"
+    },
+    {
+      "label": "Car 2 alone (40 seconds)",
+      "car": 2,
+      "csv": "test/run_logs/ble_test_10_20261011_131312_153512.csv",
+      "server_log": "test/run_logs/ble_test_11_car_2_server_20261011_130827.log"
+    },
+    {
+      "label": "Car 3 alone (40 seconds)",
+      "car": 3,
+      "csv": "test/run_logs/ble_test_10_20261011_131400_060557.csv",
+      "server_log": "test/run_logs/ble_test_11_car_3_server_20261011_130827.log"
+    }
+  ],
+  "results": [
+    {
+      "label": "Test 10 (120 seconds)",
+      "car": 1,
+      "csv": "test/run_logs/ble_test_10_20261011_130830_837302.csv",
+      "server_log": "test/run_logs/ble_test_11_car_1_server_20261011_130827.log",
+      "summary": {
+        "started_utc": "2026-10-11T13:08:30.838275+00:00",
+        "planned_duration_s": 120.0,
+        "status": "completed",
+        "connections": 1,
+        "ble_errors": 0,
+        "ble_disconnects": 0,
+        "ble_stats_reports": 22,
+        "received": 2203,
+        "seq_lost": 0,
+        "world_attempted": 5506,
+        "write_failures": 0,
+        "elapsed_s": 120.10992390000001,
+        "connection_mode": "default",
+        "finished_utc": "2026-10-11T13:10:30.947950+00:00"
+      },
+      "active_seconds": 110.159291,
+      "rx_hz": 19.998313169971293,
+      "tx_hz": 49.98216627955603,
+      "rtt_ms": 46.53042688465032,
+      "echo_age_ms": 57.5048103996363,
+      "echo_age_max_ms": 115.38560000008147,
+      "max_gap_ms": 119.94840000011209,
+      "errors": [],
+      "server_stats": [
+        {
+          "timestamp_utc": "2026-10-11T13:08:32.142000+00:00",
+          "rate_hz": 0.0,
+          "seq_lost": 0,
+          "silence_s": 188.408
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:08:37.148000+00:00",
+          "rate_hz": 0.0,
+          "seq_lost": 0,
+          "silence_s": 193.408
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:08:44.317000+00:00",
+          "rate_hz": 35.6,
+          "seq_lost": 0,
+          "silence_s": 0.049
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:08:49.306000+00:00",
+          "rate_hz": 50.4,
+          "seq_lost": 0,
+          "silence_s": 0.008
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:08:54.317000+00:00",
+          "rate_hz": 49.8,
+          "seq_lost": 0,
+          "silence_s": 0.028
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:08:59.309000+00:00",
+          "rate_hz": 50.0,
+          "seq_lost": 0,
+          "silence_s": 0.019
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:09:04.304000+00:00",
+          "rate_hz": 50.2,
+          "seq_lost": 0,
+          "silence_s": 0.008
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:09:09.301000+00:00",
+          "rate_hz": 49.8,
+          "seq_lost": 0,
+          "silence_s": 0.027
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:09:14.310000+00:00",
+          "rate_hz": 49.8,
+          "seq_lost": 0,
+          "silence_s": 0.018
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:09:19.302000+00:00",
+          "rate_hz": 50.0,
+          "seq_lost": 0,
+          "silence_s": 0.009
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:09:24.304000+00:00",
+          "rate_hz": 49.8,
+          "seq_lost": 0,
+          "silence_s": 0.028
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:09:29.300000+00:00",
+          "rate_hz": 50.2,
+          "seq_lost": 0,
+          "silence_s": 0.018
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:09:34.310000+00:00",
+          "rate_hz": 49.8,
+          "seq_lost": 0,
+          "silence_s": 0.037
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:09:39.311000+00:00",
+          "rate_hz": 49.8,
+          "seq_lost": 0,
+          "silence_s": 0.057
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:09:44.303000+00:00",
+          "rate_hz": 50.4,
+          "seq_lost": 0,
+          "silence_s": 0.017
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:09:49.314000+00:00",
+          "rate_hz": 50.0,
+          "seq_lost": 0,
+          "silence_s": 0.008
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:09:54.304000+00:00",
+          "rate_hz": 49.8,
+          "seq_lost": 0,
+          "silence_s": 0.028
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:09:59.301000+00:00",
+          "rate_hz": 50.2,
+          "seq_lost": 0,
+          "silence_s": 0.017
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:10:04.312000+00:00",
+          "rate_hz": 50.0,
+          "seq_lost": 0,
+          "silence_s": 0.006
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:10:09.313000+00:00",
+          "rate_hz": 49.8,
+          "seq_lost": 0,
+          "silence_s": 0.026
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:10:14.309000+00:00",
+          "rate_hz": 50.2,
+          "seq_lost": 0,
+          "silence_s": 0.016
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:10:19.296000+00:00",
+          "rate_hz": 50.0,
+          "seq_lost": 0,
+          "silence_s": 0.007
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:10:24.298000+00:00",
+          "rate_hz": 49.6,
+          "seq_lost": 0,
+          "silence_s": 0.056
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:10:29.313000+00:00",
+          "rate_hz": 50.4,
+          "seq_lost": 0,
+          "silence_s": 0.016
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:10:34.304000+00:00",
+          "rate_hz": 15.6,
+          "seq_lost": 0,
+          "silence_s": 3.456
+        }
+      ],
+      "server_events": [
+        "2026-10-11T13:08:39.301+00:00 [12.250s] ble event: uptime_ms=3470318 event=connected status=0 interval=0.00 ms latency=0 timeout=0 ms",
+        "2026-10-11T13:08:39.997+00:00 [12.946s] ble event: uptime_ms=3471008 event=connection_parameters status=0 interval=7.50 ms latency=0 timeout=9600 ms",
+        "2026-10-11T13:08:41.800+00:00 [14.749s] ble event: uptime_ms=3472808 event=connection_parameters status=0 interval=30.00 ms latency=0 timeout=9600 ms",
+        "2026-10-11T13:10:33.977+00:00 [126.925s] ble event: uptime_ms=3584982 event=gap_disconnect status=531 interval=0.00 ms latency=0 timeout=0 ms",
+        "2026-10-11T13:10:33.977+00:00 [126.926s] ble event: uptime_ms=3584982 event=disconnected status=0 interval=0.00 ms latency=0 timeout=0 ms",
+        "2026-10-11T13:10:34.467+00:00 [127.416s] ble event: uptime_ms=3585483 event=advertising_restart status=0 interval=0.00 ms latency=0 timeout=0 ms"
+      ],
+      "server_full_window_count": 21,
+      "server_full_window_mean_hz": 50.0,
+      "server_full_window_range_hz": [
+        49.6,
+        50.4
+      ],
+      "server_sequence_gaps": 0,
+      "server_estimated_commands": 5506.0
+    },
+    {
+      "label": "Test 11 (120 seconds)",
+      "car": 1,
+      "csv": "test/run_logs/ble_test_11_car_1_20261011_131039_664766.csv",
+      "server_log": "test/run_logs/ble_test_11_car_1_server_20261011_130827.log",
+      "summary": {
+        "started_utc": "2026-10-11T13:10:39.664766+00:00",
+        "planned_duration_s": 120.0,
+        "car_id": 1,
+        "service_uuid": "7a1e0001-4b6d-4f7a-9c2e-6d3b1a5f0001",
+        "status": "completed",
+        "connections": 1,
+        "ble_errors": 0,
+        "ble_disconnects": 0,
+        "overload_events": 0,
+        "notification_timeouts": 0,
+        "connected_at_deadline": true,
+        "ble_stats_reports": 22,
+        "received": 2198,
+        "seq_lost": 0,
+        "world_attempted": 5494,
+        "write_failures": 0,
+        "elapsed_s": 120.11515610000015,
+        "connection_mode": "default",
+        "successful_reconnections": 0,
+        "finished_utc": "2026-10-11T13:12:39.780546+00:00"
+      },
+      "active_seconds": 109.908318,
+      "rx_hz": 19.99848637479831,
+      "tx_hz": 49.987117444559566,
+      "rtt_ms": 44.18032786885246,
+      "echo_age_ms": 55.73108142076614,
+      "echo_age_max_ms": 136.81809999980032,
+      "max_gap_ms": 150.22559999988516,
+      "errors": [],
+      "server_stats": [
+        {
+          "timestamp_utc": "2026-10-11T13:10:44.302000+00:00",
+          "rate_hz": 0.0,
+          "seq_lost": 0,
+          "silence_s": 13.456
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:10:53.070000+00:00",
+          "rate_hz": 32.6,
+          "seq_lost": 0,
+          "silence_s": 0.02
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:10:58.064000+00:00",
+          "rate_hz": 49.8,
+          "seq_lost": 0,
+          "silence_s": 0.04
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:11:03.076000+00:00",
+          "rate_hz": 50.2,
+          "seq_lost": 0,
+          "silence_s": 0.029
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:11:08.070000+00:00",
+          "rate_hz": 50.0,
+          "seq_lost": 0,
+          "silence_s": 0.02
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:11:13.067000+00:00",
+          "rate_hz": 49.8,
+          "seq_lost": 0,
+          "silence_s": 0.04
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:11:18.065000+00:00",
+          "rate_hz": 50.2,
+          "seq_lost": 0,
+          "silence_s": 0.029
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:11:23.076000+00:00",
+          "rate_hz": 49.8,
+          "seq_lost": 0,
+          "silence_s": 0.048
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:11:28.075000+00:00",
+          "rate_hz": 50.4,
+          "seq_lost": 0,
+          "silence_s": 0.008
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:11:33.071000+00:00",
+          "rate_hz": 49.8,
+          "seq_lost": 0,
+          "silence_s": 0.027
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:11:38.071000+00:00",
+          "rate_hz": 50.0,
+          "seq_lost": 0,
+          "silence_s": 0.019
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:11:43.071000+00:00",
+          "rate_hz": 50.2,
+          "seq_lost": 0,
+          "silence_s": 0.007
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:11:48.066000+00:00",
+          "rate_hz": 49.8,
+          "seq_lost": 0,
+          "silence_s": 0.027
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:11:53.075000+00:00",
+          "rate_hz": 50.0,
+          "seq_lost": 0,
+          "silence_s": 0.018
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:11:58.076000+00:00",
+          "rate_hz": 50.2,
+          "seq_lost": 0,
+          "silence_s": 0.007
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:12:03.070000+00:00",
+          "rate_hz": 49.8,
+          "seq_lost": 0,
+          "silence_s": 0.027
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:12:08.062000+00:00",
+          "rate_hz": 49.8,
+          "seq_lost": 0,
+          "silence_s": 0.047
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:12:13.059000+00:00",
+          "rate_hz": 50.4,
+          "seq_lost": 0,
+          "silence_s": 0.007
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:12:18.070000+00:00",
+          "rate_hz": 49.8,
+          "seq_lost": 0,
+          "silence_s": 0.027
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:12:23.070000+00:00",
+          "rate_hz": 50.0,
+          "seq_lost": 0,
+          "silence_s": 0.016
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:12:28.070000+00:00",
+          "rate_hz": 50.2,
+          "seq_lost": 0,
+          "silence_s": 0.007
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:12:33.071000+00:00",
+          "rate_hz": 49.8,
+          "seq_lost": 0,
+          "silence_s": 0.026
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:12:38.063000+00:00",
+          "rate_hz": 50.0,
+          "seq_lost": 0,
+          "silence_s": 0.017
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:12:43.062000+00:00",
+          "rate_hz": 16.2,
+          "seq_lost": 0,
+          "silence_s": 3.397
+        }
+      ],
+      "server_events": [
+        "2026-10-11T13:10:48.070+00:00 [141.019s] ble event: uptime_ms=3599082 event=connected status=0 interval=0.00 ms latency=0 timeout=0 ms",
+        "2026-10-11T13:10:48.972+00:00 [141.921s] ble event: uptime_ms=3599982 event=connection_parameters status=0 interval=7.50 ms latency=0 timeout=9600 ms",
+        "2026-10-11T13:10:50.920+00:00 [143.868s] ble event: uptime_ms=3601932 event=connection_parameters status=0 interval=30.00 ms latency=0 timeout=9600 ms",
+        "2026-10-11T13:12:42.815+00:00 [255.764s] ble event: uptime_ms=3713836 event=gap_disconnect status=531 interval=0.00 ms latency=0 timeout=0 ms",
+        "2026-10-11T13:12:42.815+00:00 [255.764s] ble event: uptime_ms=3713836 event=disconnected status=0 interval=0.00 ms latency=0 timeout=0 ms",
+        "2026-10-11T13:12:43.329+00:00 [256.278s] ble event: uptime_ms=3714337 event=advertising_restart status=0 interval=0.00 ms latency=0 timeout=0 ms"
+      ],
+      "server_full_window_count": 21,
+      "server_full_window_mean_hz": 50.0,
+      "server_full_window_range_hz": [
+        49.8,
+        50.4
+      ],
+      "server_sequence_gaps": 0,
+      "server_estimated_commands": 5494.0
+    },
+    {
+      "label": "Test 11 (120 seconds)",
+      "car": 2,
+      "csv": "test/run_logs/ble_test_11_car_2_20261011_131039_666271.csv",
+      "server_log": "test/run_logs/ble_test_11_car_2_server_20261011_130827.log",
+      "summary": {
+        "started_utc": "2026-10-11T13:10:39.667286+00:00",
+        "planned_duration_s": 120.0,
+        "car_id": 2,
+        "service_uuid": "7a1e0001-4b6d-4f7a-9c2e-6d3b1a5f0002",
+        "status": "no_connection",
+        "connections": 0,
+        "ble_errors": 7,
+        "ble_disconnects": 0,
+        "overload_events": 0,
+        "notification_timeouts": 0,
+        "connected_at_deadline": false,
+        "ble_stats_reports": 0,
+        "received": 0,
+        "seq_lost": 0,
+        "world_attempted": 0,
+        "write_failures": 0,
+        "elapsed_s": 120.11445400000002,
+        "connection_mode": "default",
+        "successful_reconnections": 0,
+        "finished_utc": "2026-10-11T13:12:39.781549+00:00"
+      },
+      "active_seconds": 0,
+      "rx_hz": null,
+      "tx_hz": null,
+      "rtt_ms": null,
+      "echo_age_ms": null,
+      "echo_age_max_ms": null,
+      "max_gap_ms": null,
+      "errors": [
+        "BleakError: Could not get GATT services: Unreachable",
+        "RuntimeError: Car 2: found 0 matching servers",
+        "BleakError: Could not get GATT services: Unreachable",
+        "BleakError: Could not get GATT services: Unreachable",
+        "BleakError: Could not get GATT services: Unreachable",
+        "BleakError: Could not get GATT services: Unreachable",
+        "RuntimeError: Car 2: found 0 matching servers"
+      ],
+      "server_stats": [
+        {
+          "timestamp_utc": "2026-10-11T13:10:44.056000+00:00",
+          "rate_hz": 0.0,
+          "seq_lost": 0,
+          "silence_s": 930.0
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:10:49.055000+00:00",
+          "rate_hz": 0.0,
+          "seq_lost": 0,
+          "silence_s": 935.0
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:10:54.054000+00:00",
+          "rate_hz": 0.0,
+          "seq_lost": 0,
+          "silence_s": 940.0
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:10:59.048000+00:00",
+          "rate_hz": 0.0,
+          "seq_lost": 0,
+          "silence_s": 945.0
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:11:04.058000+00:00",
+          "rate_hz": 0.0,
+          "seq_lost": 0,
+          "silence_s": 950.0
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:11:09.051000+00:00",
+          "rate_hz": 0.0,
+          "seq_lost": 0,
+          "silence_s": 955.0
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:11:14.049000+00:00",
+          "rate_hz": 0.0,
+          "seq_lost": 0,
+          "silence_s": 960.0
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:11:19.046000+00:00",
+          "rate_hz": 0.0,
+          "seq_lost": 0,
+          "silence_s": 965.0
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:11:24.061000+00:00",
+          "rate_hz": 0.0,
+          "seq_lost": 0,
+          "silence_s": 970.0
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:11:29.060000+00:00",
+          "rate_hz": 0.0,
+          "seq_lost": 0,
+          "silence_s": 975.0
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:11:34.054000+00:00",
+          "rate_hz": 0.0,
+          "seq_lost": 0,
+          "silence_s": 980.0
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:11:39.056000+00:00",
+          "rate_hz": 0.0,
+          "seq_lost": 0,
+          "silence_s": 985.0
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:11:44.052000+00:00",
+          "rate_hz": 0.0,
+          "seq_lost": 0,
+          "silence_s": 990.0
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:11:49.048000+00:00",
+          "rate_hz": 0.0,
+          "seq_lost": 0,
+          "silence_s": 995.0
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:11:54.061000+00:00",
+          "rate_hz": 0.0,
+          "seq_lost": 0,
+          "silence_s": 1000.0
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:11:59.043000+00:00",
+          "rate_hz": 0.0,
+          "seq_lost": 0,
+          "silence_s": 1005.0
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:12:04.053000+00:00",
+          "rate_hz": 0.0,
+          "seq_lost": 0,
+          "silence_s": 1010.0
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:12:09.044000+00:00",
+          "rate_hz": 0.0,
+          "seq_lost": 0,
+          "silence_s": 1015.0
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:12:14.060000+00:00",
+          "rate_hz": 0.0,
+          "seq_lost": 0,
+          "silence_s": 1020.0
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:12:19.054000+00:00",
+          "rate_hz": 0.0,
+          "seq_lost": 0,
+          "silence_s": 1025.0
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:12:24.053000+00:00",
+          "rate_hz": 0.0,
+          "seq_lost": 0,
+          "silence_s": 1030.0
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:12:29.059000+00:00",
+          "rate_hz": 0.0,
+          "seq_lost": 0,
+          "silence_s": 1035.0
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:12:34.053000+00:00",
+          "rate_hz": 0.0,
+          "seq_lost": 0,
+          "silence_s": 1040.0
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:12:39.047000+00:00",
+          "rate_hz": 0.0,
+          "seq_lost": 0,
+          "silence_s": 1045.0
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:12:44.046000+00:00",
+          "rate_hz": 0.0,
+          "seq_lost": 0,
+          "silence_s": 1050.0
+        }
+      ],
+      "server_events": [],
+      "server_full_window_count": 0,
+      "server_full_window_mean_hz": null,
+      "server_full_window_range_hz": null,
+      "server_sequence_gaps": 0,
+      "server_estimated_commands": 0.0
+    },
+    {
+      "label": "Test 11 (120 seconds)",
+      "car": 3,
+      "csv": "test/run_logs/ble_test_11_car_3_20261011_131039_669319.csv",
+      "server_log": "test/run_logs/ble_test_11_car_3_server_20261011_130827.log",
+      "summary": {
+        "started_utc": "2026-10-11T13:10:39.670291+00:00",
+        "planned_duration_s": 120.0,
+        "car_id": 3,
+        "service_uuid": "7a1e0001-4b6d-4f7a-9c2e-6d3b1a5f0003",
+        "status": "no_connection",
+        "connections": 0,
+        "ble_errors": 6,
+        "ble_disconnects": 0,
+        "overload_events": 0,
+        "notification_timeouts": 0,
+        "connected_at_deadline": false,
+        "ble_stats_reports": 0,
+        "received": 0,
+        "seq_lost": 0,
+        "world_attempted": 0,
+        "write_failures": 0,
+        "elapsed_s": 120.11326429999986,
+        "connection_mode": "default",
+        "successful_reconnections": 0,
+        "finished_utc": "2026-10-11T13:12:39.783547+00:00"
+      },
+      "active_seconds": 0,
+      "rx_hz": null,
+      "tx_hz": null,
+      "rtt_ms": null,
+      "echo_age_ms": null,
+      "echo_age_max_ms": null,
+      "max_gap_ms": null,
+      "errors": [
+        "BleakError: Could not get GATT services: Unreachable",
+        "BleakError: Could not get GATT services: Unreachable",
+        "BleakError: Could not get GATT services: Unreachable",
+        "BleakError: Could not get GATT services: Unreachable",
+        "BleakError: Could not get GATT services: Unreachable",
+        "TimeoutError: "
+      ],
+      "server_stats": [
+        {
+          "timestamp_utc": "2026-10-11T13:10:43.173000+00:00",
+          "rate_hz": 0.0,
+          "seq_lost": 0,
+          "silence_s": 940.001
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:10:48.173000+00:00",
+          "rate_hz": 0.0,
+          "seq_lost": 0,
+          "silence_s": 945.001
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:10:53.173000+00:00",
+          "rate_hz": 0.0,
+          "seq_lost": 0,
+          "silence_s": 950.001
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:10:58.167000+00:00",
+          "rate_hz": 0.0,
+          "seq_lost": 0,
+          "silence_s": 955.001
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:11:03.158000+00:00",
+          "rate_hz": 0.0,
+          "seq_lost": 0,
+          "silence_s": 960.001
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:11:08.172000+00:00",
+          "rate_hz": 0.0,
+          "seq_lost": 0,
+          "silence_s": 965.001
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:11:13.169000+00:00",
+          "rate_hz": 0.0,
+          "seq_lost": 0,
+          "silence_s": 970.001
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:11:18.167000+00:00",
+          "rate_hz": 0.0,
+          "seq_lost": 0,
+          "silence_s": 975.001
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:11:23.157000+00:00",
+          "rate_hz": 0.0,
+          "seq_lost": 0,
+          "silence_s": 980.001
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:11:28.157000+00:00",
+          "rate_hz": 0.0,
+          "seq_lost": 0,
+          "silence_s": 985.001
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:11:33.174000+00:00",
+          "rate_hz": 0.0,
+          "seq_lost": 0,
+          "silence_s": 990.001
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:11:38.174000+00:00",
+          "rate_hz": 0.0,
+          "seq_lost": 0,
+          "silence_s": 995.001
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:11:43.173000+00:00",
+          "rate_hz": 0.0,
+          "seq_lost": 0,
+          "silence_s": 1000.001
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:11:48.168000+00:00",
+          "rate_hz": 0.0,
+          "seq_lost": 0,
+          "silence_s": 1005.001
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:11:53.157000+00:00",
+          "rate_hz": 0.0,
+          "seq_lost": 0,
+          "silence_s": 1010.001
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:11:58.158000+00:00",
+          "rate_hz": 0.0,
+          "seq_lost": 0,
+          "silence_s": 1015.001
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:12:03.173000+00:00",
+          "rate_hz": 0.0,
+          "seq_lost": 0,
+          "silence_s": 1020.001
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:12:08.165000+00:00",
+          "rate_hz": 0.0,
+          "seq_lost": 0,
+          "silence_s": 1025.001
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:12:13.161000+00:00",
+          "rate_hz": 0.0,
+          "seq_lost": 0,
+          "silence_s": 1030.001
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:12:18.173000+00:00",
+          "rate_hz": 0.0,
+          "seq_lost": 0,
+          "silence_s": 1035.001
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:12:23.172000+00:00",
+          "rate_hz": 0.0,
+          "seq_lost": 0,
+          "silence_s": 1040.001
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:12:28.173000+00:00",
+          "rate_hz": 0.0,
+          "seq_lost": 0,
+          "silence_s": 1045.001
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:12:33.173000+00:00",
+          "rate_hz": 0.0,
+          "seq_lost": 0,
+          "silence_s": 1050.001
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:12:38.166000+00:00",
+          "rate_hz": 0.0,
+          "seq_lost": 0,
+          "silence_s": 1055.001
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:12:43.165000+00:00",
+          "rate_hz": 0.0,
+          "seq_lost": 0,
+          "silence_s": 1060.001
+        }
+      ],
+      "server_events": [],
+      "server_full_window_count": 0,
+      "server_full_window_mean_hz": null,
+      "server_full_window_range_hz": null,
+      "server_sequence_gaps": 0,
+      "server_estimated_commands": 0.0
+    },
+    {
+      "label": "Car 2 alone (40 seconds)",
+      "car": 2,
+      "csv": "test/run_logs/ble_test_10_20261011_131312_153512.csv",
+      "server_log": "test/run_logs/ble_test_11_car_2_server_20261011_130827.log",
+      "summary": {
+        "started_utc": "2026-10-11T13:13:12.154512+00:00",
+        "planned_duration_s": 40.0,
+        "status": "completed",
+        "connections": 1,
+        "ble_errors": 0,
+        "ble_disconnects": 0,
+        "ble_stats_reports": 6,
+        "received": 602,
+        "seq_lost": 0,
+        "world_attempted": 1507,
+        "write_failures": 0,
+        "elapsed_s": 40.10943250000014,
+        "connection_mode": "default",
+        "finished_utc": "2026-10-11T13:13:52.263939+00:00"
+      },
+      "active_seconds": 30.150016,
+      "rx_hz": 19.96682190815421,
+      "tx_hz": 49.98338972689102,
+      "rtt_ms": 43.427620632279535,
+      "echo_age_ms": 52.508934941762234,
+      "echo_age_max_ms": 123.6145000000306,
+      "max_gap_ms": 119.83979999990879,
+      "errors": [],
+      "server_stats": [
+        {
+          "timestamp_utc": "2026-10-11T13:13:14.058000+00:00",
+          "rate_hz": 0.0,
+          "seq_lost": 0,
+          "silence_s": 1080.0
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:13:19.049000+00:00",
+          "rate_hz": 0.0,
+          "seq_lost": 0,
+          "silence_s": 1085.0
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:13:25.581000+00:00",
+          "rate_hz": 35.4,
+          "seq_lost": 0,
+          "silence_s": 0.02
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:13:30.599000+00:00",
+          "rate_hz": 49.8,
+          "seq_lost": 0,
+          "silence_s": 0.039
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:13:35.599000+00:00",
+          "rate_hz": 50.0,
+          "seq_lost": 0,
+          "silence_s": 0.0
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:13:40.590000+00:00",
+          "rate_hz": 50.0,
+          "seq_lost": 0,
+          "silence_s": 0.049
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:13:45.586000+00:00",
+          "rate_hz": 50.4,
+          "seq_lost": 0,
+          "silence_s": 0.009
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:13:50.588000+00:00",
+          "rate_hz": 49.8,
+          "seq_lost": 0,
+          "silence_s": 0.028
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:13:55.584000+00:00",
+          "rate_hz": 16.0,
+          "seq_lost": 0,
+          "silence_s": 3.409
+        }
+      ],
+      "server_events": [
+        "2026-10-11T13:13:20.585+00:00 [293.533s] ble event: uptime_ms=1181840 event=connected status=0 interval=0.00 ms latency=0 timeout=0 ms",
+        "2026-10-11T13:13:21.281+00:00 [294.229s] ble event: uptime_ms=1182537 event=connection_parameters status=0 interval=7.50 ms latency=0 timeout=9600 ms",
+        "2026-10-11T13:13:23.088+00:00 [296.037s] ble event: uptime_ms=1184330 event=connection_parameters status=0 interval=30.00 ms latency=0 timeout=9600 ms",
+        "2026-10-11T13:13:55.298+00:00 [328.247s] ble event: uptime_ms=1216551 event=gap_disconnect status=531 interval=0.00 ms latency=0 timeout=0 ms",
+        "2026-10-11T13:13:55.298+00:00 [328.247s] ble event: uptime_ms=1216552 event=disconnected status=0 interval=0.00 ms latency=0 timeout=0 ms",
+        "2026-10-11T13:13:55.809+00:00 [328.758s] ble event: uptime_ms=1217053 event=advertising_restart status=0 interval=0.00 ms latency=0 timeout=0 ms"
+      ],
+      "server_full_window_count": 5,
+      "server_full_window_mean_hz": 50.0,
+      "server_full_window_range_hz": [
+        49.8,
+        50.4
+      ],
+      "server_sequence_gaps": 0,
+      "server_estimated_commands": 1507.0
+    },
+    {
+      "label": "Car 3 alone (40 seconds)",
+      "car": 3,
+      "csv": "test/run_logs/ble_test_10_20261011_131400_060557.csv",
+      "server_log": "test/run_logs/ble_test_11_car_3_server_20261011_130827.log",
+      "summary": {
+        "started_utc": "2026-10-11T13:14:00.060557+00:00",
+        "planned_duration_s": 40.0,
+        "status": "completed",
+        "connections": 1,
+        "ble_errors": 1,
+        "ble_disconnects": 0,
+        "ble_stats_reports": 4,
+        "received": 396,
+        "seq_lost": 0,
+        "world_attempted": 987,
+        "write_failures": 0,
+        "elapsed_s": 40.10957589999998,
+        "connection_mode": "default",
+        "finished_utc": "2026-10-11T13:14:40.170675+00:00"
+      },
+      "active_seconds": 19.803553,
+      "rx_hz": 19.99641175500174,
+      "tx_hz": 49.839541419663426,
+      "rtt_ms": 50.63291139240506,
+      "echo_age_ms": 60.01641189874492,
+      "echo_age_max_ms": 111.45270000019991,
+      "max_gap_ms": 90.3712000001633,
+      "errors": [
+        "RuntimeError: Found 0 matching servers; power on the car or select --address"
+      ],
+      "server_stats": [
+        {
+          "timestamp_utc": "2026-10-11T13:14:03.166000+00:00",
+          "rate_hz": 0.0,
+          "seq_lost": 0,
+          "silence_s": 1140.001
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:14:08.161000+00:00",
+          "rate_hz": 0.0,
+          "seq_lost": 0,
+          "silence_s": 1145.001
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:14:13.161000+00:00",
+          "rate_hz": 0.0,
+          "seq_lost": 0,
+          "silence_s": 1150.001
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:14:18.172000+00:00",
+          "rate_hz": 0.0,
+          "seq_lost": 0,
+          "silence_s": 1155.001
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:14:23.489000+00:00",
+          "rate_hz": 31.6,
+          "seq_lost": 0,
+          "silence_s": 0.049
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:14:28.493000+00:00",
+          "rate_hz": 50.0,
+          "seq_lost": 0,
+          "silence_s": 0.04
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:14:33.498000+00:00",
+          "rate_hz": 49.6,
+          "seq_lost": 0,
+          "silence_s": 0.058
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:14:38.479000+00:00",
+          "rate_hz": 50.2,
+          "seq_lost": 0,
+          "silence_s": 0.019
+        },
+        {
+          "timestamp_utc": "2026-10-11T13:14:43.481000+00:00",
+          "rate_hz": 16.0,
+          "seq_lost": 0,
+          "silence_s": 3.399
+        }
+      ],
+      "server_events": [
+        "2026-10-11T13:14:18.480+00:00 [351.429s] ble event: uptime_ms=1248647 event=connected status=0 interval=0.00 ms latency=0 timeout=0 ms",
+        "2026-10-11T13:14:19.454+00:00 [352.403s] ble event: uptime_ms=1249607 event=connection_parameters status=0 interval=7.50 ms latency=0 timeout=9600 ms",
+        "2026-10-11T13:14:21.406+00:00 [354.355s] ble event: uptime_ms=1251557 event=connection_parameters status=0 interval=30.00 ms latency=0 timeout=9600 ms",
+        "2026-10-11T13:14:43.215+00:00 [376.164s] ble event: uptime_ms=1273369 event=gap_disconnect status=531 interval=0.00 ms latency=0 timeout=0 ms",
+        "2026-10-11T13:14:43.215+00:00 [376.164s] ble event: uptime_ms=1273369 event=disconnected status=0 interval=0.00 ms latency=0 timeout=0 ms",
+        "2026-10-11T13:14:43.707+00:00 [376.655s] ble event: uptime_ms=1273870 event=advertising_restart status=0 interval=0.00 ms latency=0 timeout=0 ms"
+      ],
+      "server_full_window_count": 3,
+      "server_full_window_mean_hz": 49.93333333333334,
+      "server_full_window_range_hz": [
+        49.6,
+        50.2
+      ],
+      "server_sequence_gaps": 0,
+      "server_estimated_commands": 987.0
+    }
+  ]
+}

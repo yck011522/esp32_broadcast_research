@@ -1,0 +1,16 @@
+{
+  "started_utc": "2026-10-11T13:04:00.184205+00:00",
+  "planned_duration_s": 35.0,
+  "status": "completed",
+  "connections": 1,
+  "ble_errors": 1,
+  "ble_disconnects": 0,
+  "ble_stats_reports": 4,
+  "received": 303,
+  "seq_lost": 0,
+  "world_attempted": 758,
+  "write_failures": 0,
+  "elapsed_s": 35.11056039999994,
+  "connection_mode": "default",
+  "finished_utc": "2026-10-11T13:04:35.294111+00:00"
+}

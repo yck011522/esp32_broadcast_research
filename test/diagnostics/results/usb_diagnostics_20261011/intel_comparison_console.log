@@ -1,0 +1,42 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20261011213956
+Username: DESKTOP-J8FUTVT\leungp
+RunAs User: DESKTOP-J8FUTVT\leungp
+Configuration Name: 
+Machine: DESKTOP-J8FUTVT (Microsoft Windows NT 10.0.26200.0)
+Host Application: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe -NoProfile -ExecutionPolicy Bypass -File C:\Users\leungp\Documents\GitHub\esp32_broadcast_research\test\run_intel_connection_comparison.ps1
+Process ID: 28848
+PSVersion: 5.1.26100.9444
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.9444
+BuildVersion: 10.0.26100.9444
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Microsoft PnP Utility
+
+Failed to disable device:  USB\VID_33FA&PID_0010\5&8f40d4c&0&1
+Device is pending system reboot to complete a previous operation.
+
+This command is not supported on this OS product.
+PS>TerminatingError(): "PnPUtil failed for USB\VID_33FA&PID_0010\5&8F40D4C&0&1 (exit 50)."
+PnPUtil failed for USB\VID_33FA&PID_0010\5&8F40D4C&0&1 (exit 50).
+Microsoft PnP Utility
+
+Disabling device:          USB\VID_8087&PID_0AAA\5&8f40d4c&0&14
+Device disabled successfully.
+Microsoft PnP Utility
+
+Failed to enable device:  USB\VID_33FA&PID_0010\5&8f40d4c&0&1
+Device is pending system reboot to complete a previous operation.
+
+This command is not supported on this OS product.
+PS>TerminatingError(): "PnPUtil failed for USB\VID_33FA&PID_0010\5&8F40D4C&0&1 (exit 50)."
+Restoration error: PnPUtil failed for USB\VID_33FA&PID_0010\5&8F40D4C&0&1 (exit 50).
+**********************
+Windows PowerShell transcript end
+End time: 20261011213957
+**********************

@@ -1,0 +1,8 @@
+timestamp_utc,elapsed_s,record_type,connection,window_s,received,seq_lost,loss_percent,rate_hz,max_gap_s,silence_s,have_packet,world_seq,rtt_avg_ms,rtt_max_ms,rtt_samples,echo_age_avg_ms,echo_age_max_ms,echo_age_samples,world_attempted,world_tx_rate_hz,write_failures,max_tx_gap_s,max_write_ms,malformed,ignored,partial_window,message
+2026-10-11T13:03:38.015+00:00,0.0032,scanning,0,,,,,,,,,,,,,,,,,,,,,,,,ble_server service
+2026-10-11T13:03:46.111+00:00,8.098786,ble_error,0,,,,,,,,,,,,,,,,,,,,,,,,RuntimeError: Found 0 matching servers; power on the car or select --address
+2026-10-11T13:03:48.114+00:00,10.101396,scanning,0,,,,,,,,,,,,,,,,,,,,,,,,ble_server service
+2026-10-11T13:03:56.143+00:00,18.130995,ble_error,0,,,,,,,,,,,,,,,,,,,,,,,,BleakDeviceNotFoundError: Device with address 68:EE:8F:4B:5B:4D was not found.
+2026-10-11T13:03:58.146+00:00,20.133721,scanning,0,,,,,,,,,,,,,,,,,,,,,,,,ble_server service
+2026-10-11T13:04:06.172+00:00,28.160081,ble_error,0,,,,,,,,,,,,,,,,,,,,,,,,BleakDeviceNotFoundError: Device with address 68:EE:8F:4B:5B:4D was not found.
+2026-10-11T13:04:08.175+00:00,30.162943,scanning,0,,,,,,,,,,,,,,,,,,,,,,,,ble_server service

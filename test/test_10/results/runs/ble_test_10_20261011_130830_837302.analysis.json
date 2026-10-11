@@ -1,0 +1,150 @@
+{
+  "source": "test\\run_logs\\ble_test_10_20261011_130830_837302.csv",
+  "logger_summary": {
+    "started_utc": "2026-10-11T13:08:30.838275+00:00",
+    "planned_duration_s": 120.0,
+    "status": "completed",
+    "connections": 1,
+    "ble_errors": 0,
+    "ble_disconnects": 0,
+    "ble_stats_reports": 22,
+    "received": 2203,
+    "seq_lost": 0,
+    "world_attempted": 5506,
+    "write_failures": 0,
+    "elapsed_s": 120.10992390000001,
+    "connection_mode": "default",
+    "finished_utc": "2026-10-11T13:10:30.947950+00:00"
+  },
+  "reports": 22,
+  "reported_window_seconds": 110.159291,
+  "received": 2203,
+  "seq_lost": 0,
+  "sequence_loss_percent": 0.0,
+  "weighted_receive_rate_hz": 19.998313169971293,
+  "report_interval_s": {
+    "min": 4.1581179999999875,
+    "mean": 5.004754,
+    "median": 5.046121999999997,
+    "p95": 5.052453999999997,
+    "p99": 5.055137200000002,
+    "max": 5.0558080000000025
+  },
+  "missing_report_or_connection_boundaries": [],
+  "rtt_samples": 2202,
+  "weighted_rtt_estimate_ms": 46.53042688465032,
+  "windows_gap_at_least_200ms": 0,
+  "windows_gap_above_200ms": 0,
+  "worst_gap_windows": [
+    {
+      "timestamp_utc": "2026-10-11T13:09:10.984+00:00",
+      "elapsed_s": "40.146694",
+      "max_gap_s": "0.11994840000011209",
+      "rtt_max_ms": "80.0",
+      "received": "101"
+    },
+    {
+      "timestamp_utc": "2026-10-11T13:08:45.739+00:00",
+      "elapsed_s": "14.900934",
+      "max_gap_s": "0.112509799999998",
+      "rtt_max_ms": "80.0",
+      "received": "101"
+    },
+    {
+      "timestamp_utc": "2026-10-11T13:10:30.838+00:00",
+      "elapsed_s": "120.000768",
+      "max_gap_s": "0.09061450000012883",
+      "rtt_max_ms": "100.0",
+      "received": "83"
+    },
+    {
+      "timestamp_utc": "2026-10-11T13:09:05.941+00:00",
+      "elapsed_s": "35.103709",
+      "max_gap_s": "0.09059460000003128",
+      "rtt_max_ms": "80.0",
+      "received": "101"
+    },
+    {
+      "timestamp_utc": "2026-10-11T13:09:46.304+00:00",
+      "elapsed_s": "75.465993",
+      "max_gap_s": "0.09056029999987913",
+      "rtt_max_ms": "100.0",
+      "received": "100"
+    },
+    {
+      "timestamp_utc": "2026-10-11T13:10:16.585+00:00",
+      "elapsed_s": "105.746881",
+      "max_gap_s": "0.09051629999999022",
+      "rtt_max_ms": "100.0",
+      "received": "101"
+    },
+    {
+      "timestamp_utc": "2026-10-11T13:09:51.350+00:00",
+      "elapsed_s": "80.511774",
+      "max_gap_s": "0.09049359999994522",
+      "rtt_max_ms": "80.0",
+      "received": "101"
+    },
+    {
+      "timestamp_utc": "2026-10-11T13:10:21.633+00:00",
+      "elapsed_s": "110.796177",
+      "max_gap_s": "0.09042389999990519",
+      "rtt_max_ms": "100.0",
+      "received": "101"
+    },
+    {
+      "timestamp_utc": "2026-10-11T13:10:26.680+00:00",
+      "elapsed_s": "115.84265",
+      "max_gap_s": "0.09041909999996278",
+      "rtt_max_ms": "100.0",
+      "received": "101"
+    },
+    {
+      "timestamp_utc": "2026-10-11T13:08:50.788+00:00",
+      "elapsed_s": "19.950408",
+      "max_gap_s": "0.09041009999987182",
+      "rtt_max_ms": "80.0",
+      "received": "101"
+    }
+  ],
+  "rate_hz": {
+    "min": 19.817647519992086,
+    "mean": 19.998025712336304,
+    "median": 20.01167884216712,
+    "p95": 20.02781536448286,
+    "p99": 20.182352041469493,
+    "max": 20.223423625764248
+  },
+  "max_gap_s": {
+    "min": 0.09002520000012737,
+    "mean": 0.09268416818184216,
+    "median": 0.09035740000001624,
+    "p95": 0.11141503500000452,
+    "p99": 0.11838629400008813,
+    "max": 0.11994840000011209
+  },
+  "silence_s": {
+    "min": 0.005252700000028199,
+    "mean": 0.02348135454546578,
+    "median": 0.023485950000122102,
+    "p95": 0.04089261499993881,
+    "p99": 0.04428887999994913,
+    "max": 0.04511879999995472
+  },
+  "rtt_avg_ms": {
+    "min": 42.97029702970297,
+    "mean": 46.55668976536208,
+    "median": 45.97029702970297,
+    "p95": 50.089108910891085,
+    "p99": 50.72475247524752,
+    "max": 50.89108910891089
+  },
+  "rtt_max_ms": {
+    "min": 60.0,
+    "mean": 87.27272727272727,
+    "median": 80.0,
+    "p95": 100.0,
+    "p99": 100.0,
+    "max": 100.0
+  }
+}

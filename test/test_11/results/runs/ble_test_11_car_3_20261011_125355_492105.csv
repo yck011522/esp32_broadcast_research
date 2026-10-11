@@ -1,0 +1,12 @@
+timestamp_utc,elapsed_s,record_type,connection,window_s,received,seq_lost,loss_percent,rate_hz,max_gap_s,silence_s,have_packet,world_seq,rtt_avg_ms,rtt_max_ms,rtt_samples,echo_age_avg_ms,echo_age_max_ms,echo_age_samples,world_attempted,world_tx_rate_hz,write_failures,max_tx_gap_s,max_write_ms,malformed,ignored,partial_window,message
+2026-10-11T12:53:55.498+00:00,0.005497,scanning,0,,,,,,,,,,,,,,,,,,,,,,,,all three car service UUIDs
+2026-10-11T12:54:03.701+00:00,8.208888,discovery,0,,,,,,,,,,,,,,,,,,,,,,,,found 0 matching servers; retrying
+2026-10-11T12:54:03.759+00:00,8.267101,scanning,0,,,,,,,,,,,,,,,,,,,,,,,,7a1e0001-4b6d-4f7a-9c2e-6d3b1a5f0003
+2026-10-11T12:54:21.859+00:00,26.366479,ble_error,0,,,,,,,,,,,,,,,,,,,,,,,,BleakError: Could not get GATT services: Unreachable
+2026-10-11T12:54:23.867+00:00,28.375017,scanning,0,,,,,,,,,,,,,,,,,,,,,,,,7a1e0001-4b6d-4f7a-9c2e-6d3b1a5f0003
+2026-10-11T12:54:46.726+00:00,51.23467,ble_error,0,,,,,,,,,,,,,,,,,,,,,,,,RuntimeError: Car 3: found 0 matching servers
+2026-10-11T12:54:48.732+00:00,53.239183,scanning,0,,,,,,,,,,,,,,,,,,,,,,,,7a1e0001-4b6d-4f7a-9c2e-6d3b1a5f0003
+2026-10-11T12:55:05.028+00:00,69.535797,connected,1,,,,,,,,,,,,,,,,,,,,,,,,ble_car_3 68:EE:8F:4B:5B:19
+2026-10-11T12:55:05.049+00:00,69.556837,connection_parameters,1,,,,,,,,,,,,,,,,,,,,,,,,Before request: interval=7.5 ms latency=0
+2026-10-11T12:55:10.081+00:00,74.588728,ble_error,1,,,,,,,,,,,,,,,,,,,,,,,,"RuntimeError: Request accepted but negotiated interval is still 30 ms, latency=0"
+2026-10-11T12:55:12.190+00:00,76.697176,scanning,1,,,,,,,,,,,,,,,,,,,,,,,,7a1e0001-4b6d-4f7a-9c2e-6d3b1a5f0003

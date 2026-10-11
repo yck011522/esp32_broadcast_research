@@ -5,3 +5,7 @@
 .vscode/ipch
 .venv/
 *.pyc
+__pycache__/
+
+# High-volume packet logs stay local. Commit CSVs, summaries and analysis instead.
+/test/**/*.jsonl

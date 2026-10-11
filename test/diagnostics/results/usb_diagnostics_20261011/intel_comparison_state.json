@@ -1,0 +1,8 @@
+{
+    "driver_updated":  false,
+    "error":  "PnPUtil failed for USB\\VID_33FA\u0026PID_0010\\5\u00268F40D4C\u00260\u00261 (exit 50).",
+    "restored":  false,
+    "restoration_error":  "PnPUtil failed for USB\\VID_33FA\u0026PID_0010\\5\u00268F40D4C\u00260\u00261 (exit 50).",
+    "status":  "error",
+    "administrator":  true
+}

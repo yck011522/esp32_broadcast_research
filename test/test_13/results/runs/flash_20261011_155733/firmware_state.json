@@ -1,0 +1,27 @@
+{
+  "status": "test13_installed",
+  "attempted": [
+    {
+      "profile": "esp_esp_ble_car_2",
+      "port": "COM4",
+      "previous": "ble_server_car_2"
+    },
+    {
+      "profile": "esp_esp_ble_car_3",
+      "port": "COM5",
+      "previous": "ble_server_car_3"
+    },
+    {
+      "profile": "esp_esp_ble_modem",
+      "port": "COM3",
+      "previous": "ble_server_car_1"
+    }
+  ],
+  "uploaded": [
+    "esp_esp_ble_car_2",
+    "esp_esp_ble_car_3",
+    "esp_esp_ble_modem"
+  ],
+  "restored": [],
+  "errors": []
+}

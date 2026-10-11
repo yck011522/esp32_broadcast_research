@@ -1,0 +1,8 @@
+2026-10-11T15:39:42.500+00:00 [2.237s] car event: car=2 connected=1 connects=3 disconnects=2 reason=531
+2026-10-11T15:39:45.008+00:00 [4.745s] car world: car=2 window=5.000 rate=0.00 seq_lost=0 silence=2.506 have_packet=0 duplicates=0 old=0 malformed=0 total_received=21000 total_lost=0
+2026-10-11T15:39:45.008+00:00 [4.745s] car health: car=2 library=NimBLE-Arduino-2.5.1 connected=1 subscribed=1 advertising=0 mtu=64 notify_errors=0 command_watchdog=0 heap=252072 uptime_ms=735062
+2026-10-11T15:39:50.007+00:00 [9.744s] car world: car=2 window=5.000 rate=0.40 seq_lost=0 silence=4.701 have_packet=1 duplicates=1 old=0 malformed=0 total_received=21002 total_lost=0
+2026-10-11T15:39:50.012+00:00 [9.749s] car health: car=2 library=NimBLE-Arduino-2.5.1 connected=1 subscribed=1 advertising=0 mtu=64 notify_errors=0 command_watchdog=0 heap=252072 uptime_ms=740062
+2026-10-11T15:39:50.856+00:00 [10.592s] car event: car=2 connected=0 connects=3 disconnects=3 reason=531
+2026-10-11T15:39:55.006+00:00 [14.743s] car world: car=2 window=5.000 rate=0.00 seq_lost=0 silence=9.701 have_packet=1 duplicates=0 old=0 malformed=0 total_received=21002 total_lost=0
+2026-10-11T15:39:55.006+00:00 [14.743s] car health: car=2 library=NimBLE-Arduino-2.5.1 connected=0 subscribed=0 advertising=1 mtu=64 notify_errors=0 command_watchdog=0 heap=252072 uptime_ms=745062

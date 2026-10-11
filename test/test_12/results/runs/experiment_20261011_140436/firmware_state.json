@@ -1,0 +1,60 @@
+{
+  "started_utc": "2026-10-11T14:04:36.735347+00:00",
+  "test12_upload_attempts": [
+    1,
+    2,
+    3
+  ],
+  "normal_profiles_restored": [
+    1,
+    2,
+    3
+  ],
+  "runs": [
+    {
+      "label": "1_concurrent_123",
+      "exit_code": 1,
+      "summaries": [
+        "C:\\Users\\leungp\\Documents\\GitHub\\esp32_broadcast_research\\test\\run_logs\\test12\\experiment_20261011_140436\\ble_test_12_concurrent_123_20261011_140536_411093.summary.json"
+      ]
+    },
+    {
+      "label": "2_sequential_123",
+      "exit_code": 1,
+      "summaries": [
+        "C:\\Users\\leungp\\Documents\\GitHub\\esp32_broadcast_research\\test\\run_logs\\test12\\experiment_20261011_140436\\ble_test_12_sequential_123_20261011_140611_167209.summary.json"
+      ]
+    },
+    {
+      "label": "3_sequential_321",
+      "exit_code": 1,
+      "summaries": [
+        "C:\\Users\\leungp\\Documents\\GitHub\\esp32_broadcast_research\\test\\run_logs\\test12\\experiment_20261011_140436\\ble_test_12_sequential_321_20261011_140658_114046.summary.json"
+      ]
+    },
+    {
+      "label": "4_sequential_1",
+      "exit_code": 0,
+      "summaries": [
+        "C:\\Users\\leungp\\Documents\\GitHub\\esp32_broadcast_research\\test\\run_logs\\test12\\experiment_20261011_140436\\ble_test_12_sequential_1_20261011_140744_654578.summary.json"
+      ]
+    },
+    {
+      "label": "5_sequential_2",
+      "exit_code": 0,
+      "summaries": [
+        "C:\\Users\\leungp\\Documents\\GitHub\\esp32_broadcast_research\\test\\run_logs\\test12\\experiment_20261011_140436\\ble_test_12_sequential_2_20261011_140846_493896.summary.json"
+      ]
+    },
+    {
+      "label": "6_sequential_3",
+      "exit_code": 0,
+      "summaries": [
+        "C:\\Users\\leungp\\Documents\\GitHub\\esp32_broadcast_research\\test\\run_logs\\test12\\experiment_20261011_140436\\ble_test_12_sequential_3_20261011_140948_043700.summary.json"
+      ]
+    }
+  ],
+  "errors": [],
+  "status": "restored",
+  "finished_utc": "2026-10-11T14:13:39.708794+00:00"
+}

@@ -1,0 +1,12 @@
+Test 12: C:\Users\leungp\Documents\GitHub\esp32_broadcast_research\test\run_logs\test12\experiment_20261011_140436\ble_test_12_sequential_321_20261011_140658_114046.jsonl
+[0.1s] scan car=None: {'attempt': 1}
+[8.2s] discovered car=None: {'addresses': {'3': '68:EE:8F:4B:5B:19', '2': '68:EE:8F:46:33:45', '1': '68:EE:8F:4B:5B:4D'}}
+[8.2s] connect_attempt car=3: {'address': '68:EE:8F:4B:5B:19'}
+[8.5s] server_event car=3: {'message': 'test12 event: car=3 connected=1 connects=2 disconnects=1 reason=531'}
+[10.1s] connected car=3: {'address': '68:EE:8F:4B:5B:19', 'mtu': 64}
+[10.1s] connect_attempt car=2: {'address': '68:EE:8F:46:33:45'}
+[20.2s] connect_failed car=2: {'message': 'BleakError: Could not get GATT services: Unreachable'}
+[20.2s] connect_attempt car=1: {'address': '68:EE:8F:4B:5B:4D'}
+[30.2s] connect_failed car=1: {'message': 'BleakError: Could not get GATT services: Unreachable'}
+[43.4s] server_event car=3: {'message': 'test12 event: car=3 connected=0 connects=2 disconnects=2 reason=531'}
+Finished: multiple_link_setup_failed

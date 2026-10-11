@@ -1,0 +1,7 @@
+2026-10-11T13:54:08.590+00:00 [0.002s] serial monitor: port opened
+2026-10-11T13:54:11.166+00:00 [2.578s] world stats: rate=0.00 Hz seq_lost=0 silence=140.000 s
+2026-10-11T13:54:11.166+00:00 [2.578s] ble buffers: free=36 total=36 skipped_notifications=0
+2026-10-11T13:54:11.166+00:00 [2.578s] ble health: uptime_ms=140260 connected=0 subscribed=0 advertising=1 heap=245140 min_heap=245140 notify_errors=0 last_error=0 restarts=0 command_watchdog=1
+2026-10-11T13:54:16.174+00:00 [7.585s] world stats: rate=0.00 Hz seq_lost=0 silence=145.000 s
+2026-10-11T13:54:16.179+00:00 [7.590s] ble buffers: free=36 total=36 skipped_notifications=0
+2026-10-11T13:54:16.179+00:00 [7.590s] ble health: uptime_ms=145260 connected=0 subscribed=0 advertising=1 heap=245140 min_heap=245140 notify_errors=0 last_error=0 restarts=0 command_watchdog=1

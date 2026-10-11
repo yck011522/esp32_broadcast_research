@@ -1,0 +1,4 @@
+2026-10-11T14:14:05.592+00:00 [0.006s] serial monitor: port opened
+2026-10-11T14:14:09.768+00:00 [4.182s] world stats: rate=0.00 Hz seq_lost=0 silence=30.000 s
+2026-10-11T14:14:09.768+00:00 [4.182s] ble buffers: free=36 total=36 skipped_notifications=0
+2026-10-11T14:14:09.768+00:00 [4.182s] ble health: uptime_ms=30272 connected=0 subscribed=0 advertising=1 heap=245096 min_heap=245096 notify_errors=0 last_error=0 restarts=0 command_watchdog=1

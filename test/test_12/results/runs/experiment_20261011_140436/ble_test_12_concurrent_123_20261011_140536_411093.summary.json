@@ -1,0 +1,39 @@
+{
+  "started_utc": "2026-10-11T14:05:36.411093+00:00",
+  "setup": "concurrent",
+  "cars": [
+    1,
+    2,
+    3
+  ],
+  "duration_s": 120.0,
+  "world_bytes": 20,
+  "telemetry_bytes": 21,
+  "connections": {
+    "3": {
+      "address": "68:EE:8F:4B:5B:19",
+      "mtu": 64
+    }
+  },
+  "errors": [
+    {
+      "car": 2,
+      "phase": "setup_idle",
+      "message": "BleakError: Could not get GATT services: Unreachable"
+    },
+    {
+      "car": 1,
+      "phase": "setup_idle",
+      "message": "BleakError: Could not get GATT services: Unreachable"
+    }
+  ],
+  "statistics": [],
+  "serial_logs": {
+    "1": "C:\\Users\\leungp\\Documents\\GitHub\\esp32_broadcast_research\\test\\run_logs\\test12\\experiment_20261011_140436\\ble_test_12_concurrent_123_20261011_140536_411093_car_1_COM3.log",
+    "2": "C:\\Users\\leungp\\Documents\\GitHub\\esp32_broadcast_research\\test\\run_logs\\test12\\experiment_20261011_140436\\ble_test_12_concurrent_123_20261011_140536_411093_car_2_COM4.log",
+    "3": "C:\\Users\\leungp\\Documents\\GitHub\\esp32_broadcast_research\\test\\run_logs\\test12\\experiment_20261011_140436\\ble_test_12_concurrent_123_20261011_140536_411093_car_3_COM5.log"
+  },
+  "status": "multiple_link_setup_failed",
+  "finished_utc": "2026-10-11T14:06:10.971462+00:00",
+  "elapsed_s": 34.56071510000038
+}

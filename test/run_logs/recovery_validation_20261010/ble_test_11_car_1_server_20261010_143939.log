@@ -1,0 +1,380 @@
+2026-10-10T14:39:39.495+00:00 [0.002s] serial monitor: port opened
+2026-10-10T14:39:44.332+00:00 [4.840s] world stats: rate=0.00 Hz seq_lost=0 silence=60.000 s
+2026-10-10T14:39:44.332+00:00 [4.840s] ble health: uptime_ms=60260 connected=0 subscribed=0 advertising=1 heap=245052 min_heap=245052 notify_errors=0 last_error=0 restarts=0
+2026-10-10T14:39:49.335+00:00 [9.842s] world stats: rate=0.00 Hz seq_lost=0 silence=65.000 s
+2026-10-10T14:39:49.335+00:00 [9.842s] ble health: uptime_ms=65260 connected=0 subscribed=0 advertising=1 heap=245052 min_heap=245052 notify_errors=0 last_error=0 restarts=0
+2026-10-10T14:39:54.330+00:00 [14.838s] world stats: rate=0.00 Hz seq_lost=0 silence=70.000 s
+2026-10-10T14:39:54.330+00:00 [14.838s] ble health: uptime_ms=70260 connected=0 subscribed=0 advertising=1 heap=245052 min_heap=245052 notify_errors=0 last_error=0 restarts=0
+2026-10-10T14:39:59.331+00:00 [19.838s] world stats: rate=0.00 Hz seq_lost=0 silence=75.000 s
+2026-10-10T14:39:59.331+00:00 [19.838s] ble health: uptime_ms=75260 connected=0 subscribed=0 advertising=1 heap=245052 min_heap=245052 notify_errors=0 last_error=0 restarts=0
+2026-10-10T14:40:01.565+00:00 [22.072s] ble event: uptime_ms=77499 event=connected status=0 interval=0.00 ms latency=0 timeout=0 ms
+2026-10-10T14:40:02.895+00:00 [23.402s] ble event: uptime_ms=78819 event=connection_parameters status=0 interval=15.00 ms latency=0 timeout=9600 ms
+2026-10-10T14:40:04.676+00:00 [25.183s] ble event: uptime_ms=80604 event=connection_parameters status=0 interval=15.00 ms latency=0 timeout=2000 ms
+2026-10-10T14:40:06.560+00:00 [27.067s] world stats: rate=25.40 Hz seq_lost=0 silence=0.020 s
+2026-10-10T14:40:06.560+00:00 [27.067s] ble health: uptime_ms=82499 connected=1 subscribed=1 advertising=0 heap=244956 min_heap=244900 notify_errors=0 last_error=0 restarts=0
+2026-10-10T14:40:07.628+00:00 [28.135s] ble event: uptime_ms=83559 event=connection_parameters status=0 interval=60.00 ms latency=0 timeout=9600 ms
+2026-10-10T14:40:11.561+00:00 [32.068s] world stats: rate=16.80 Hz seq_lost=0 silence=0.759 s
+2026-10-10T14:40:11.561+00:00 [32.068s] ble health: uptime_ms=87499 connected=1 subscribed=1 advertising=0 heap=244956 min_heap=244852 notify_errors=0 last_error=0 restarts=0
+2026-10-10T14:40:13.798+00:00 [34.305s] ble event: uptime_ms=89740 event=gap_disconnect status=531 interval=0.00 ms latency=0 timeout=0 ms
+2026-10-10T14:40:13.798+00:00 [34.305s] ble event: uptime_ms=89740 event=disconnected status=0 interval=0.00 ms latency=0 timeout=0 ms
+2026-10-10T14:40:14.312+00:00 [34.819s] ble event: uptime_ms=90241 event=advertising_restart status=0 interval=0.00 ms latency=0 timeout=0 ms
+2026-10-10T14:40:16.569+00:00 [37.076s] world stats: rate=0.00 Hz seq_lost=0 silence=5.759 s
+2026-10-10T14:40:16.569+00:00 [37.076s] ble health: uptime_ms=92499 connected=0 subscribed=0 advertising=1 heap=244956 min_heap=244852 notify_errors=0 last_error=0 restarts=0
+2026-10-10T14:40:20.940+00:00 [41.447s] ble event: uptime_ms=96877 event=connected status=0 interval=0.00 ms latency=0 timeout=0 ms
+2026-10-10T14:40:22.331+00:00 [42.838s] ble event: uptime_ms=98257 event=connection_parameters status=0 interval=15.00 ms latency=0 timeout=9600 ms
+2026-10-10T14:40:24.052+00:00 [44.559s] ble event: uptime_ms=99982 event=connection_parameters status=0 interval=15.00 ms latency=0 timeout=2000 ms
+2026-10-10T14:40:25.933+00:00 [46.441s] world stats: rate=32.80 Hz seq_lost=0 silence=0.005 s
+2026-10-10T14:40:25.954+00:00 [46.461s] ble health: uptime_ms=101877 connected=1 subscribed=1 advertising=0 heap=244884 min_heap=244836 notify_errors=0 last_error=0 restarts=0
+2026-10-10T14:40:30.953+00:00 [51.461s] world stats: rate=49.00 Hz seq_lost=0 silence=0.008 s
+2026-10-10T14:40:30.953+00:00 [51.461s] ble health: uptime_ms=106877 connected=1 subscribed=1 advertising=0 heap=244884 min_heap=244836 notify_errors=0 last_error=0 restarts=0
+2026-10-10T14:40:35.937+00:00 [56.445s] world stats: rate=43.40 Hz seq_lost=0 silence=0.014 s
+2026-10-10T14:40:35.937+00:00 [56.445s] ble health: uptime_ms=111877 connected=1 subscribed=1 advertising=0 heap=244884 min_heap=244752 notify_errors=0 last_error=0 restarts=0
+2026-10-10T14:40:36.960+00:00 [57.468s] ble event: uptime_ms=112898 event=connection_parameters status=0 interval=60.00 ms latency=0 timeout=9600 ms
+2026-10-10T14:40:40.938+00:00 [61.446s] world stats: rate=15.40 Hz seq_lost=0 silence=1.519 s
+2026-10-10T14:40:40.938+00:00 [61.446s] ble health: uptime_ms=116877 connected=1 subscribed=1 advertising=0 heap=244884 min_heap=244752 notify_errors=0 last_error=0 restarts=0
+2026-10-10T14:40:42.369+00:00 [62.876s] ble event: uptime_ms=118298 event=gap_disconnect status=531 interval=0.00 ms latency=0 timeout=0 ms
+2026-10-10T14:40:42.369+00:00 [62.876s] ble event: uptime_ms=118299 event=disconnected status=0 interval=0.00 ms latency=0 timeout=0 ms
+2026-10-10T14:40:42.862+00:00 [63.369s] ble event: uptime_ms=118800 event=advertising_restart status=0 interval=0.00 ms latency=0 timeout=0 ms
+2026-10-10T14:40:45.937+00:00 [66.444s] world stats: rate=0.00 Hz seq_lost=0 silence=6.519 s
+2026-10-10T14:40:45.937+00:00 [66.444s] ble health: uptime_ms=121877 connected=0 subscribed=0 advertising=1 heap=244956 min_heap=244752 notify_errors=0 last_error=0 restarts=0
+2026-10-10T14:40:50.937+00:00 [71.444s] world stats: rate=0.00 Hz seq_lost=0 silence=11.519 s
+2026-10-10T14:40:50.937+00:00 [71.444s] ble health: uptime_ms=126877 connected=0 subscribed=0 advertising=1 heap=244956 min_heap=244752 notify_errors=0 last_error=0 restarts=0
+2026-10-10T14:40:55.934+00:00 [76.441s] world stats: rate=0.00 Hz seq_lost=0 silence=16.519 s
+2026-10-10T14:40:55.934+00:00 [76.441s] ble health: uptime_ms=131877 connected=0 subscribed=0 advertising=1 heap=244956 min_heap=244752 notify_errors=0 last_error=0 restarts=0
+2026-10-10T14:40:58.147+00:00 [78.654s] ble event: uptime_ms=134082 event=connected status=0 interval=0.00 ms latency=0 timeout=0 ms
+2026-10-10T14:41:00.298+00:00 [80.806s] ble event: uptime_ms=136242 event=connection_parameters status=0 interval=15.00 ms latency=0 timeout=9600 ms
+2026-10-10T14:41:02.304+00:00 [82.811s] ble event: uptime_ms=138237 event=connection_parameters status=0 interval=15.00 ms latency=0 timeout=2000 ms
+2026-10-10T14:41:03.144+00:00 [83.652s] world stats: rate=10.20 Hz seq_lost=0 silence=0.020 s
+2026-10-10T14:41:03.144+00:00 [83.652s] ble health: uptime_ms=139082 connected=1 subscribed=1 advertising=0 heap=244908 min_heap=244752 notify_errors=0 last_error=0 restarts=0
+2026-10-10T14:41:04.701+00:00 [85.209s] [140646][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:04.763+00:00 [85.270s] [140697][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:04.804+00:00 [85.311s] [140746][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:04.865+00:00 [85.373s] [140796][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:04.906+00:00 [85.414s] [140846][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:04.968+00:00 [85.475s] [140896][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:05.009+00:00 [85.516s] [140946][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:05.071+00:00 [85.578s] [140996][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:05.112+00:00 [85.619s] [141046][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:05.153+00:00 [85.660s] [141096][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:05.214+00:00 [85.722s] [141147][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:05.256+00:00 [85.763s] [141196][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:05.317+00:00 [85.824s] [141246][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:05.358+00:00 [85.865s] [141296][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:05.419+00:00 [85.927s] [141346][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:05.460+00:00 [85.967s] [141396][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:05.501+00:00 [86.008s] [141446][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:05.563+00:00 [86.070s] [141496][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:05.606+00:00 [86.114s] [141546][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:05.668+00:00 [86.175s] [141596][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:05.709+00:00 [86.216s] [141646][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:05.770+00:00 [86.277s] [141696][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:05.811+00:00 [86.319s] [141746][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:05.852+00:00 [86.360s] [141796][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:05.913+00:00 [86.421s] [141846][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:05.954+00:00 [86.462s] [141896][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:06.016+00:00 [86.523s] [141946][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:06.057+00:00 [86.564s] [141996][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:06.119+00:00 [86.626s] [142046][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:06.160+00:00 [86.667s] [142096][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:06.221+00:00 [86.728s] [142147][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:06.262+00:00 [86.769s] [142196][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:06.303+00:00 [86.810s] [142246][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:06.364+00:00 [86.871s] [142296][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:06.405+00:00 [86.912s] [142346][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:06.467+00:00 [86.974s] [142396][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:06.508+00:00 [87.015s] [142446][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:06.569+00:00 [87.077s] [142496][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:06.610+00:00 [87.117s] [142546][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:06.651+00:00 [87.158s] [142596][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:06.712+00:00 [87.220s] [142646][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:06.754+00:00 [87.261s] [142696][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:06.816+00:00 [87.323s] [142746][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:06.857+00:00 [87.364s] [142796][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:06.919+00:00 [87.426s] [142846][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:06.960+00:00 [87.467s] [142896][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:07.021+00:00 [87.529s] [142946][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:07.062+00:00 [87.570s] [142996][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:07.104+00:00 [87.611s] [143046][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:07.165+00:00 [87.672s] [143096][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:07.206+00:00 [87.713s] [143147][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:07.267+00:00 [87.774s] [143196][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:07.308+00:00 [87.815s] [143246][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:07.370+00:00 [87.877s] [143296][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:07.411+00:00 [87.918s] [143346][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:07.451+00:00 [87.958s] [143396][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:07.513+00:00 [88.020s] [143446][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:07.554+00:00 [88.061s] [143496][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:07.615+00:00 [88.122s] [143546][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:07.656+00:00 [88.164s] [143596][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:07.718+00:00 [88.225s] [143646][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:07.759+00:00 [88.266s] [143696][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:07.820+00:00 [88.327s] [143746][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:07.862+00:00 [88.369s] [143796][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:07.903+00:00 [88.410s] [143846][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:07.964+00:00 [88.471s] [143896][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:08.005+00:00 [88.512s] [143946][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:08.066+00:00 [88.574s] [143996][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:08.107+00:00 [88.615s] [144046][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:08.149+00:00 [88.656s] world stats: rate=3.80 Hz seq_lost=0 silence=4.345 s
+2026-10-10T14:41:08.149+00:00 [88.656s] ble health: uptime_ms=144082 connected=1 subscribed=1 advertising=0 heap=244572 min_heap=244448 notify_errors=138 last_error=6 restarts=0
+2026-10-10T14:41:08.170+00:00 [88.677s] [144097][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:08.211+00:00 [88.718s] [144147][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:08.252+00:00 [88.759s] [144197][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:08.314+00:00 [88.821s] [144246][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:08.355+00:00 [88.862s] [144296][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:08.416+00:00 [88.924s] [144346][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:08.458+00:00 [88.965s] [144396][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:08.520+00:00 [89.027s] [144446][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:08.562+00:00 [89.069s] [144496][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:08.603+00:00 [89.110s] [144546][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:08.665+00:00 [89.172s] [144596][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:08.706+00:00 [89.214s] [144646][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:08.768+00:00 [89.275s] [144696][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:08.809+00:00 [89.316s] ble event: uptime_ms=144737 event=command_timeout_disconnect status=0 interval=0.00 ms latency=0 timeout=0 ms
+2026-10-10T14:41:08.809+00:00 [89.316s] [144747][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:08.871+00:00 [89.378s] [144797][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:08.912+00:00 [89.419s] [144846][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:08.953+00:00 [89.461s] [144896][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:09.015+00:00 [89.522s] [144946][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:09.057+00:00 [89.564s] [144996][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:09.118+00:00 [89.625s] [145046][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:09.159+00:00 [89.667s] [145097][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:09.221+00:00 [89.728s] [145147][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:09.262+00:00 [89.769s] [145196][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:09.303+00:00 [89.811s] [145246][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:09.365+00:00 [89.872s] [145296][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:09.406+00:00 [89.914s] [145346][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:09.468+00:00 [89.976s] [145396][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:09.510+00:00 [90.017s] [145446][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:09.571+00:00 [90.078s] [145496][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:09.612+00:00 [90.119s] [145546][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:09.653+00:00 [90.160s] [145596][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:09.714+00:00 [90.221s] [145646][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:09.755+00:00 [90.263s] [145696][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:09.817+00:00 [90.325s] [145746][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:09.859+00:00 [90.366s] [145796][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:09.920+00:00 [90.427s] [145846][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:09.961+00:00 [90.468s] [145896][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:10.002+00:00 [90.509s] [145946][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:10.063+00:00 [90.570s] [145996][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:10.104+00:00 [90.612s] [146046][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:10.166+00:00 [90.673s] [146097][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:10.207+00:00 [90.714s] [146147][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:10.268+00:00 [90.776s] [146196][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:10.309+00:00 [90.816s] [146246][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:10.371+00:00 [90.878s] [146296][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:10.412+00:00 [90.919s] [146346][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:10.453+00:00 [90.961s] [146396][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:10.515+00:00 [91.023s] [146446][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:10.556+00:00 [91.064s] [146496][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:10.618+00:00 [91.126s] [146546][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:10.659+00:00 [91.166s] [146596][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:10.720+00:00 [91.228s] [146646][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:10.762+00:00 [91.269s] [146696][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:10.803+00:00 [91.310s] [146747][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:41:10.823+00:00 [91.331s] ble event: uptime_ms=146749 event=connection_parameters status=34 interval=15.00 ms latency=0 timeout=2000 ms
+2026-10-10T14:41:10.823+00:00 [91.331s] ble event: uptime_ms=146750 event=gap_disconnect status=546 interval=0.00 ms latency=0 timeout=0 ms
+2026-10-10T14:41:10.823+00:00 [91.331s] ble event: uptime_ms=146750 event=disconnected status=0 interval=0.00 ms latency=0 timeout=0 ms
+2026-10-10T14:41:11.313+00:00 [91.821s] ble event: uptime_ms=147257 event=advertising_restart status=0 interval=0.00 ms latency=0 timeout=0 ms
+2026-10-10T14:41:13.137+00:00 [93.644s] world stats: rate=0.00 Hz seq_lost=0 silence=9.345 s
+2026-10-10T14:41:13.158+00:00 [93.665s] ble health: uptime_ms=149082 connected=0 subscribed=0 advertising=1 heap=244956 min_heap=244448 notify_errors=246 last_error=6 restarts=0
+2026-10-10T14:41:18.143+00:00 [98.650s] world stats: rate=0.00 Hz seq_lost=0 silence=14.345 s
+2026-10-10T14:41:18.143+00:00 [98.651s] ble health: uptime_ms=154082 connected=0 subscribed=0 advertising=1 heap=244956 min_heap=244448 notify_errors=246 last_error=6 restarts=0
+2026-10-10T14:41:23.141+00:00 [103.648s] world stats: rate=0.00 Hz seq_lost=0 silence=19.345 s
+2026-10-10T14:41:23.141+00:00 [103.648s] ble health: uptime_ms=159082 connected=0 subscribed=0 advertising=1 heap=244956 min_heap=244448 notify_errors=246 last_error=6 restarts=0
+2026-10-10T14:41:25.144+00:00 [105.651s] ble event: uptime_ms=161084 event=connected status=0 interval=0.00 ms latency=0 timeout=0 ms
+2026-10-10T14:41:26.617+00:00 [107.124s] ble event: uptime_ms=162559 event=connection_parameters status=0 interval=15.00 ms latency=0 timeout=9600 ms
+2026-10-10T14:41:28.525+00:00 [109.033s] ble event: uptime_ms=164458 event=connection_parameters status=0 interval=15.00 ms latency=0 timeout=2000 ms
+2026-10-10T14:41:30.141+00:00 [110.648s] world stats: rate=29.40 Hz seq_lost=0 silence=0.066 s
+2026-10-10T14:41:30.141+00:00 [110.648s] ble health: uptime_ms=166084 connected=1 subscribed=1 advertising=0 heap=244856 min_heap=244448 notify_errors=246 last_error=6 restarts=0
+2026-10-10T14:41:35.138+00:00 [115.646s] world stats: rate=47.00 Hz seq_lost=0 silence=0.011 s
+2026-10-10T14:41:35.159+00:00 [115.666s] ble health: uptime_ms=171084 connected=1 subscribed=1 advertising=0 heap=244856 min_heap=244448 notify_errors=246 last_error=6 restarts=0
+2026-10-10T14:41:39.420+00:00 [119.927s] ble event: uptime_ms=175363 event=connection_parameters status=0 interval=60.00 ms latency=0 timeout=9600 ms
+2026-10-10T14:41:40.138+00:00 [120.645s] world stats: rate=39.80 Hz seq_lost=0 silence=0.001 s
+2026-10-10T14:41:40.159+00:00 [120.666s] ble health: uptime_ms=176084 connected=1 subscribed=1 advertising=0 heap=244884 min_heap=244448 notify_errors=246 last_error=6 restarts=0
+2026-10-10T14:41:45.148+00:00 [125.656s] ble event: uptime_ms=181083 event=command_timeout_disconnect status=0 interval=0.00 ms latency=0 timeout=0 ms
+2026-10-10T14:41:45.148+00:00 [125.656s] world stats: rate=0.00 Hz seq_lost=0 silence=5.001 s
+2026-10-10T14:41:45.148+00:00 [125.656s] ble health: uptime_ms=181084 connected=1 subscribed=1 advertising=0 heap=244884 min_heap=244448 notify_errors=246 last_error=6 restarts=0
+2026-10-10T14:41:45.190+00:00 [125.697s] ble event: uptime_ms=181124 event=gap_disconnect status=534 interval=0.00 ms latency=0 timeout=0 ms
+2026-10-10T14:41:45.190+00:00 [125.697s] ble event: uptime_ms=181124 event=disconnected status=0 interval=0.00 ms latency=0 timeout=0 ms
+2026-10-10T14:41:45.681+00:00 [126.189s] ble event: uptime_ms=181625 event=advertising_restart status=0 interval=0.00 ms latency=0 timeout=0 ms
+2026-10-10T14:41:50.152+00:00 [130.660s] world stats: rate=0.00 Hz seq_lost=0 silence=10.001 s
+2026-10-10T14:41:50.152+00:00 [130.660s] ble health: uptime_ms=186084 connected=0 subscribed=0 advertising=1 heap=244956 min_heap=244448 notify_errors=246 last_error=6 restarts=0
+2026-10-10T14:41:52.856+00:00 [133.363s] ble event: uptime_ms=188799 event=connected status=0 interval=0.00 ms latency=0 timeout=0 ms
+2026-10-10T14:41:54.189+00:00 [134.696s] ble event: uptime_ms=190119 event=connection_parameters status=0 interval=15.00 ms latency=0 timeout=9600 ms
+2026-10-10T14:41:55.933+00:00 [136.440s] ble event: uptime_ms=191874 event=connection_parameters status=0 interval=15.00 ms latency=0 timeout=2000 ms
+2026-10-10T14:41:57.855+00:00 [138.362s] world stats: rate=32.80 Hz seq_lost=0 silence=0.003 s
+2026-10-10T14:41:57.855+00:00 [138.362s] ble health: uptime_ms=193799 connected=1 subscribed=1 advertising=0 heap=244880 min_heap=244448 notify_errors=246 last_error=6 restarts=0
+2026-10-10T14:42:02.861+00:00 [143.368s] world stats: rate=50.40 Hz seq_lost=0 silence=0.010 s
+2026-10-10T14:42:02.861+00:00 [143.368s] ble health: uptime_ms=198799 connected=1 subscribed=1 advertising=0 heap=244880 min_heap=244448 notify_errors=246 last_error=6 restarts=0
+2026-10-10T14:42:07.860+00:00 [148.367s] world stats: rate=44.20 Hz seq_lost=0 silence=0.044 s
+2026-10-10T14:42:07.860+00:00 [148.368s] ble health: uptime_ms=203799 connected=1 subscribed=1 advertising=0 heap=244852 min_heap=244448 notify_errors=246 last_error=6 restarts=0
+2026-10-10T14:42:09.355+00:00 [149.862s] ble event: uptime_ms=205300 event=connection_parameters status=0 interval=60.00 ms latency=0 timeout=9600 ms
+2026-10-10T14:42:12.854+00:00 [153.362s] world stats: rate=10.00 Hz seq_lost=0 silence=3.589 s
+2026-10-10T14:42:12.854+00:00 [153.362s] ble health: uptime_ms=208799 connected=1 subscribed=1 advertising=0 heap=244880 min_heap=244448 notify_errors=246 last_error=6 restarts=0
+2026-10-10T14:42:14.274+00:00 [154.781s] ble event: uptime_ms=210210 event=command_timeout_disconnect status=0 interval=0.00 ms latency=0 timeout=0 ms
+2026-10-10T14:42:14.295+00:00 [154.802s] ble event: uptime_ms=210221 event=gap_disconnect status=534 interval=0.00 ms latency=0 timeout=0 ms
+2026-10-10T14:42:14.295+00:00 [154.802s] ble event: uptime_ms=210221 event=disconnected status=0 interval=0.00 ms latency=0 timeout=0 ms
+2026-10-10T14:42:14.789+00:00 [155.296s] ble event: uptime_ms=210722 event=advertising_restart status=0 interval=0.00 ms latency=0 timeout=0 ms
+2026-10-10T14:42:17.870+00:00 [158.377s] world stats: rate=0.00 Hz seq_lost=0 silence=8.589 s
+2026-10-10T14:42:17.870+00:00 [158.377s] ble health: uptime_ms=213799 connected=0 subscribed=0 advertising=1 heap=244956 min_heap=244448 notify_errors=246 last_error=6 restarts=0
+2026-10-10T14:42:22.860+00:00 [163.367s] world stats: rate=0.00 Hz seq_lost=0 silence=13.589 s
+2026-10-10T14:42:22.860+00:00 [163.367s] ble health: uptime_ms=218799 connected=0 subscribed=0 advertising=1 heap=244956 min_heap=244448 notify_errors=246 last_error=6 restarts=0
+2026-10-10T14:42:27.855+00:00 [168.363s] world stats: rate=0.00 Hz seq_lost=0 silence=18.589 s
+2026-10-10T14:42:27.855+00:00 [168.363s] ble health: uptime_ms=223799 connected=0 subscribed=0 advertising=1 heap=244956 min_heap=244448 notify_errors=246 last_error=6 restarts=0
+2026-10-10T14:42:32.053+00:00 [172.560s] ble event: uptime_ms=227988 event=connected status=0 interval=0.00 ms latency=0 timeout=0 ms
+2026-10-10T14:42:33.463+00:00 [173.970s] ble event: uptime_ms=229406 event=connection_parameters status=0 interval=15.00 ms latency=0 timeout=9600 ms
+2026-10-10T14:42:35.367+00:00 [175.874s] ble event: uptime_ms=231302 event=connection_parameters status=0 interval=15.00 ms latency=0 timeout=2000 ms
+2026-10-10T14:42:37.045+00:00 [177.552s] world stats: rate=18.60 Hz seq_lost=0 silence=0.066 s
+2026-10-10T14:42:37.045+00:00 [177.552s] ble health: uptime_ms=232988 connected=1 subscribed=1 advertising=0 heap=244856 min_heap=244448 notify_errors=246 last_error=6 restarts=0
+2026-10-10T14:42:38.049+00:00 [178.556s] [233985][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:38.090+00:00 [178.597s] [234036][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:38.152+00:00 [178.659s] [234086][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:38.193+00:00 [178.700s] [234136][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:38.254+00:00 [178.762s] [234185][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:38.295+00:00 [178.803s] [234235][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:38.357+00:00 [178.865s] [234285][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:38.398+00:00 [178.906s] [234335][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:38.439+00:00 [178.947s] [234385][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:38.500+00:00 [179.008s] [234435][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:38.542+00:00 [179.049s] [234485][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:38.603+00:00 [179.110s] [234535][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:38.644+00:00 [179.151s] [234585][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:38.705+00:00 [179.213s] [234635][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:38.747+00:00 [179.254s] [234685][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:38.808+00:00 [179.315s] [234735][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:38.849+00:00 [179.357s] [234785][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:38.891+00:00 [179.398s] [234835][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:38.952+00:00 [179.460s] [234885][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:38.993+00:00 [179.501s] [234935][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:39.055+00:00 [179.563s] [234985][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:39.096+00:00 [179.604s] [235035][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:39.158+00:00 [179.666s] [235086][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:39.200+00:00 [179.707s] [235136][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:39.241+00:00 [179.749s] [235185][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:39.303+00:00 [179.810s] [235235][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:39.344+00:00 [179.852s] [235285][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:39.406+00:00 [179.913s] [235335][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:39.447+00:00 [179.955s] [235385][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:39.489+00:00 [179.996s] [235435][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:39.550+00:00 [180.057s] [235485][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:39.591+00:00 [180.098s] [235535][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:39.653+00:00 [180.160s] [235585][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:39.694+00:00 [180.202s] [235635][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:39.756+00:00 [180.263s] [235685][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:39.799+00:00 [180.306s] [235735][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:39.840+00:00 [180.347s] [235785][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:39.905+00:00 [180.413s] [235835][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:39.939+00:00 [180.447s] [235885][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:39.992+00:00 [180.499s] [235935][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:40.055+00:00 [180.562s] [235985][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:40.096+00:00 [180.603s] [236035][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:40.158+00:00 [180.665s] [236086][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:40.199+00:00 [180.707s] [236135][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:40.240+00:00 [180.748s] [236185][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:40.302+00:00 [180.810s] [236235][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:40.344+00:00 [180.851s] [236285][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:40.405+00:00 [180.912s] [236335][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:40.446+00:00 [180.954s] [236385][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:40.508+00:00 [181.015s] [236435][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:40.549+00:00 [181.056s] [236485][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:40.590+00:00 [181.097s] [236535][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:40.651+00:00 [181.159s] [236585][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:40.692+00:00 [181.200s] [236635][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:40.754+00:00 [181.262s] [236685][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:40.795+00:00 [181.303s] [236735][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:40.857+00:00 [181.365s] [236785][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:40.898+00:00 [181.405s] [236835][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:40.939+00:00 [181.447s] [236885][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:41.001+00:00 [181.508s] [236935][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:41.042+00:00 [181.549s] [236985][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:41.104+00:00 [181.611s] [237035][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:41.145+00:00 [181.652s] [237086][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:41.207+00:00 [181.714s] [237136][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:41.248+00:00 [181.755s] [237185][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:41.289+00:00 [181.796s] [237235][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:41.351+00:00 [181.858s] [237285][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:41.392+00:00 [181.899s] [237335][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:41.453+00:00 [181.961s] [237385][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:41.494+00:00 [182.002s] [237435][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:41.557+00:00 [182.064s] [237485][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:41.598+00:00 [182.105s] [237535][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:41.639+00:00 [182.146s] [237585][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:41.700+00:00 [182.207s] [237635][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:41.741+00:00 [182.248s] [237685][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:41.803+00:00 [182.310s] [237735][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:41.844+00:00 [182.352s] [237785][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:41.905+00:00 [182.413s] [237835][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:41.946+00:00 [182.454s] [237885][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:42.012+00:00 [182.519s] [237935][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:42.053+00:00 [182.560s] [237985][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:42.053+00:00 [182.560s] world stats: rate=0.60 Hz seq_lost=0 silence=4.878 s
+2026-10-10T14:42:42.053+00:00 [182.560s] ble health: uptime_ms=237995 connected=1 subscribed=1 advertising=0 heap=244576 min_heap=244448 notify_errors=408 last_error=6 restarts=0
+2026-10-10T14:42:42.094+00:00 [182.601s] [238036][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:42.156+00:00 [182.664s] [238086][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:42.177+00:00 [182.684s] ble event: uptime_ms=238117 event=command_timeout_disconnect status=0 interval=0.00 ms latency=0 timeout=0 ms
+2026-10-10T14:42:42.197+00:00 [182.705s] [238136][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:42.239+00:00 [182.746s] [238186][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:42.300+00:00 [182.808s] [238235][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:42.342+00:00 [182.849s] [238285][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:42.404+00:00 [182.911s] [238335][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:42.445+00:00 [182.952s] [238385][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:42.507+00:00 [183.014s] [238435][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:42.548+00:00 [183.055s] [238485][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:42.589+00:00 [183.096s] [238535][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:42.651+00:00 [183.158s] [238585][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:42.692+00:00 [183.199s] [238635][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:42.754+00:00 [183.261s] [238685][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:42.795+00:00 [183.302s] [238735][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:42.857+00:00 [183.364s] [238785][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:42.898+00:00 [183.405s] [238835][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:42.939+00:00 [183.447s] [238885][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:43.001+00:00 [183.508s] [238935][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:43.042+00:00 [183.549s] [238985][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:43.104+00:00 [183.611s] [239035][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:43.145+00:00 [183.652s] [239086][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:43.207+00:00 [183.714s] [239135][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:43.248+00:00 [183.755s] [239185][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:43.288+00:00 [183.796s] [239235][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:43.351+00:00 [183.858s] [239285][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:43.392+00:00 [183.899s] [239335][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:43.453+00:00 [183.961s] [239385][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:43.495+00:00 [184.002s] [239435][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:43.557+00:00 [184.064s] [239485][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:43.598+00:00 [184.106s] [239535][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:43.640+00:00 [184.147s] [239585][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:43.701+00:00 [184.209s] [239635][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:43.743+00:00 [184.250s] [239685][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:43.805+00:00 [184.312s] [239735][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:43.847+00:00 [184.354s] [239785][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:43.889+00:00 [184.396s] [239835][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:43.950+00:00 [184.457s] [239885][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:43.991+00:00 [184.498s] [239935][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:44.053+00:00 [184.560s] [239985][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:44.094+00:00 [184.601s] [240035][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:44.156+00:00 [184.663s] [240086][E][BLECharacteristic.cpp:1171] notify(): << ble_gatts_notify_custom: rc=6 Unknown ESP_ERR error
+2026-10-10T14:42:44.176+00:00 [184.684s] ble event: uptime_ms=240118 event=connection_parameters status=34 interval=15.00 ms latency=0 timeout=2000 ms
+2026-10-10T14:42:44.176+00:00 [184.684s] ble event: uptime_ms=240119 event=gap_disconnect status=546 interval=0.00 ms latency=0 timeout=0 ms
+2026-10-10T14:42:44.176+00:00 [184.684s] ble event: uptime_ms=240119 event=disconnected status=0 interval=0.00 ms latency=0 timeout=0 ms
+2026-10-10T14:42:44.688+00:00 [185.195s] ble event: uptime_ms=240620 event=advertising_restart status=0 interval=0.00 ms latency=0 timeout=0 ms
+2026-10-10T14:42:47.063+00:00 [187.571s] world stats: rate=0.00 Hz seq_lost=0 silence=9.878 s
+2026-10-10T14:42:47.063+00:00 [187.571s] ble health: uptime_ms=242995 connected=0 subscribed=0 advertising=1 heap=244956 min_heap=244448 notify_errors=492 last_error=6 restarts=0
+2026-10-10T14:42:52.064+00:00 [192.572s] world stats: rate=0.00 Hz seq_lost=0 silence=14.878 s
+2026-10-10T14:42:52.064+00:00 [192.572s] ble health: uptime_ms=247995 connected=0 subscribed=0 advertising=1 heap=244956 min_heap=244448 notify_errors=492 last_error=6 restarts=0
+2026-10-10T14:42:57.064+00:00 [197.571s] world stats: rate=0.00 Hz seq_lost=0 silence=19.878 s
+2026-10-10T14:42:57.064+00:00 [197.571s] ble health: uptime_ms=252995 connected=0 subscribed=0 advertising=1 heap=244956 min_heap=244448 notify_errors=492 last_error=6 restarts=0
+2026-10-10T14:43:01.020+00:00 [201.528s] ble event: uptime_ms=256966 event=connected status=0 interval=0.00 ms latency=0 timeout=0 ms
+2026-10-10T14:43:02.721+00:00 [203.228s] ble event: uptime_ms=258651 event=connection_parameters status=0 interval=15.00 ms latency=0 timeout=9600 ms
+2026-10-10T14:43:04.478+00:00 [204.985s] ble event: uptime_ms=260415 event=connection_parameters status=0 interval=15.00 ms latency=0 timeout=2000 ms
+2026-10-10T14:43:06.033+00:00 [206.540s] world stats: rate=17.20 Hz seq_lost=0 silence=0.005 s
+2026-10-10T14:43:06.033+00:00 [206.540s] ble health: uptime_ms=261966 connected=1 subscribed=1 advertising=0 heap=244912 min_heap=244448 notify_errors=492 last_error=6 restarts=0
+2026-10-10T14:43:06.136+00:00 [206.644s] ble event: uptime_ms=262065 event=connection_parameters status=0 interval=60.00 ms latency=0 timeout=9600 ms
+2026-10-10T14:43:10.935+00:00 [211.443s] ble event: uptime_ms=266865 event=gap_disconnect status=531 interval=0.00 ms latency=0 timeout=0 ms
+2026-10-10T14:43:10.935+00:00 [211.443s] ble event: uptime_ms=266866 event=disconnected status=0 interval=0.00 ms latency=0 timeout=0 ms
+2026-10-10T14:43:11.038+00:00 [211.546s] world stats: rate=9.00 Hz seq_lost=0 silence=3.041 s
+2026-10-10T14:43:11.038+00:00 [211.546s] ble health: uptime_ms=266966 connected=0 subscribed=0 advertising=0 heap=244956 min_heap=244448 notify_errors=492 last_error=6 restarts=0
+2026-10-10T14:43:11.426+00:00 [211.933s] ble event: uptime_ms=267367 event=advertising_restart status=0 interval=0.00 ms latency=0 timeout=0 ms
+2026-10-10T14:43:16.022+00:00 [216.529s] world stats: rate=0.00 Hz seq_lost=0 silence=8.041 s
+2026-10-10T14:43:16.022+00:00 [216.529s] ble health: uptime_ms=271966 connected=0 subscribed=0 advertising=1 heap=244956 min_heap=244448 notify_errors=492 last_error=6 restarts=0
+2026-10-10T14:43:19.136+00:00 [219.643s] ble event: uptime_ms=275081 event=connected status=0 interval=0.00 ms latency=0 timeout=0 ms
+2026-10-10T14:43:20.814+00:00 [221.321s] ble event: uptime_ms=276761 event=connection_parameters status=0 interval=15.00 ms latency=0 timeout=9600 ms

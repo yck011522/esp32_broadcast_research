@@ -1,0 +1,27 @@
+{
+  "started_utc": "2026-10-10T15:26:10.565327+00:00",
+  "planned_duration_s": 7200.0,
+  "car_id": 2,
+  "service_uuid": "7a1e0001-4b6d-4f7a-9c2e-6d3b1a5f0002",
+  "status": "ended_disconnected",
+  "connections": 2,
+  "ble_errors": 230,
+  "ble_disconnects": 0,
+  "overload_events": 1,
+  "notification_timeouts": 1,
+  "connected_at_deadline": false,
+  "ble_stats_reports": 301,
+  "received": 30233,
+  "seq_lost": 0,
+  "world_attempted": 75612,
+  "write_failures": 0,
+  "elapsed_s": 7200.127933600001,
+  "connection_mode": "throughput",
+  "connection_parameters": {
+    "interval_ms": 15.0,
+    "latency": 0,
+    "supervision_timeout_ms": 9600
+  },
+  "successful_reconnections": 1,
+  "finished_utc": "2026-10-10T17:26:10.693885+00:00"
+}

@@ -1,0 +1,20 @@
+{
+  "started_utc": "2026-10-10T14:37:10.703216+00:00",
+  "planned_duration_s": 900.0,
+  "car_id": 1,
+  "service_uuid": "7a1e0001-4b6d-4f7a-9c2e-6d3b1a5f0001",
+  "status": "running",
+  "connections": 0,
+  "ble_errors": 1,
+  "ble_disconnects": 0,
+  "overload_events": 0,
+  "notification_timeouts": 0,
+  "connected_at_deadline": false,
+  "ble_stats_reports": 0,
+  "received": 0,
+  "seq_lost": 0,
+  "world_attempted": 0,
+  "write_failures": 0,
+  "elapsed_s": 8.132846799999243,
+  "connection_mode": "throughput"
+}

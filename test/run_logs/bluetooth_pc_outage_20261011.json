@@ -1,0 +1,44 @@
+{
+  "cars": [
+    {
+      "file": "ble_test_11_car_1_20261010_152610_561327.jsonl",
+      "last_notification_utc": "2026-10-10T15:51:56.167+00:00",
+      "last_notification_elapsed_s": 1545.604282,
+      "world_sequence_wraps_utc": [
+        "2026-10-10T15:48:41.090+00:00"
+      ]
+    },
+    {
+      "file": "ble_test_11_car_2_20261010_152610_564328.jsonl",
+      "last_notification_utc": "2026-10-10T15:51:56.157+00:00",
+      "last_notification_elapsed_s": 1545.592468,
+      "world_sequence_wraps_utc": [
+        "2026-10-10T15:48:49.197+00:00"
+      ]
+    },
+    {
+      "file": "ble_test_11_car_3_20261010_152610_568331.jsonl",
+      "last_notification_utc": "2026-10-10T15:51:56.107+00:00",
+      "last_notification_elapsed_s": 1545.539073,
+      "world_sequence_wraps_utc": [
+        "2026-10-10T15:48:57.878+00:00"
+      ]
+    }
+  ],
+  "windows_event": {
+    "provider": "BTHUSB",
+    "id": 3,
+    "time_utc": "2026-10-10T16:44:50.8672613Z",
+    "message": "A command sent to the adapter has timed out. The adapter did not respond."
+  },
+  "adapter": {
+    "name": "Intel(R) Wireless Bluetooth(R)",
+    "driver_version": "22.0.0.2",
+    "driver_date": "2020-09-13",
+    "pnp_status": "OK",
+    "pnp_error_code": 0,
+    "radio_state": "ON",
+    "scan_duration_s": 8,
+    "advertisers_found": 0
+  }
+}

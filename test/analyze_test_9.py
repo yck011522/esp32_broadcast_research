@@ -34,7 +34,7 @@ def main():
     with path.open(newline="", encoding="utf-8") as source:
         all_rows = list(csv.DictReader(source))
     rows = [row for row in all_rows if row["record_type"] == "ble_stats"]
-    test_number = 10 if path.name.startswith("ble_test_10_") else 9
+    test_number = 11 if path.name.startswith("ble_test_11_") else (10 if path.name.startswith("ble_test_10_") else 9)
     if not rows:
         parser.error("no combined BLE_STATS rows found")
     rows.sort(key=lambda row: float(row["elapsed_s"]))

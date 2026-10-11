@@ -1,0 +1,6 @@
+timestamp_utc,elapsed_s,record_type,connection,window_s,received,seq_lost,loss_percent,rate_hz,max_gap_s,silence_s,have_packet,world_seq,rtt_avg_ms,rtt_max_ms,rtt_samples,echo_age_avg_ms,echo_age_max_ms,echo_age_samples,world_attempted,world_tx_rate_hz,write_failures,max_tx_gap_s,max_write_ms,malformed,ignored,partial_window,message
+2026-10-10T14:37:10.712+00:00,0.006415,scanning,0,,,,,,,,,,,,,,,,,,,,,,,,all three car service UUIDs
+2026-10-10T14:37:18.825+00:00,8.11956,ble_error,0,,,,,,,,,,,,,,,,,,,,,,,,BleakDeviceNotFoundError: Device with address 68:EE:8F:46:33:45 was not found.
+2026-10-10T14:37:20.835+00:00,10.129575,scanning,0,,,,,,,,,,,,,,,,,,,,,,,,7a1e0001-4b6d-4f7a-9c2e-6d3b1a5f0002
+2026-10-10T14:37:28.862+00:00,18.156361,ble_error,0,,,,,,,,,,,,,,,,,,,,,,,,BleakDeviceNotFoundError: Device with address 68:EE:8F:46:33:45 was not found.
+2026-10-10T14:37:30.866+00:00,20.160044,scanning,0,,,,,,,,,,,,,,,,,,,,,,,,7a1e0001-4b6d-4f7a-9c2e-6d3b1a5f0002

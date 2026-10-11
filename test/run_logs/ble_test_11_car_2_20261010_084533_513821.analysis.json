@@ -1,0 +1,162 @@
+{
+  "source": "C:\\Users\\leungp\\Documents\\GitHub\\esp32_broadcast_research\\test\\run_logs\\ble_test_11_car_2_20261010_084533_513821.csv",
+  "logger_summary": {
+    "started_utc": "2026-10-10T08:45:33.513821+00:00",
+    "planned_duration_s": 7200.0,
+    "car_id": 2,
+    "service_uuid": "7a1e0001-4b6d-4f7a-9c2e-6d3b1a5f0002",
+    "status": "ended_disconnected",
+    "connections": 1,
+    "ble_errors": 293,
+    "ble_disconnects": 0,
+    "overload_events": 0,
+    "notification_timeouts": 1,
+    "ble_stats_reports": 77,
+    "received": 7665,
+    "seq_lost": 0,
+    "world_attempted": 19251,
+    "write_failures": 0,
+    "elapsed_s": 7200.063273,
+    "connection_mode": "throughput",
+    "connection_parameters": {
+      "interval_ms": 15.0,
+      "latency": 0,
+      "supervision_timeout_ms": 9600
+    },
+    "finished_utc": "2026-10-10T10:45:33.577522+00:00",
+    "status_before_correction": "completed_with_recoveries",
+    "successful_reconnections": 0,
+    "connected_at_deadline": false
+  },
+  "reports": 77,
+  "reported_window_seconds": 385.302437,
+  "received": 7665,
+  "seq_lost": 0,
+  "sequence_loss_percent": 0.0,
+  "weighted_receive_rate_hz": 19.89346358585321,
+  "report_interval_s": {
+    "min": 2.021811000000014,
+    "mean": 5.003443605263158,
+    "median": 5.044542500000006,
+    "p95": 5.0638794999999845,
+    "p99": 5.096808249999999,
+    "max": 5.100136000000006
+  },
+  "missing_report_or_connection_boundaries": [],
+  "rtt_samples": 7664,
+  "weighted_rtt_estimate_ms": 84.62421711899792,
+  "windows_gap_at_least_200ms": 0,
+  "windows_gap_above_200ms": 0,
+  "worst_gap_windows": [
+    {
+      "timestamp_utc": "2026-10-10T08:45:59.145+00:00",
+      "elapsed_s": "25.631015",
+      "max_gap_s": "0.14970360000006622",
+      "rtt_max_ms": "160.0",
+      "received": "101"
+    },
+    {
+      "timestamp_utc": "2026-10-10T08:50:36.466+00:00",
+      "elapsed_s": "302.952295",
+      "max_gap_s": "0.1350804000030621",
+      "rtt_max_ms": "240.0",
+      "received": "101"
+    },
+    {
+      "timestamp_utc": "2026-10-10T08:50:56.655+00:00",
+      "elapsed_s": "323.141426",
+      "max_gap_s": "0.1350616000017908",
+      "rtt_max_ms": "160.0",
+      "received": "101"
+    },
+    {
+      "timestamp_utc": "2026-10-10T08:49:15.746+00:00",
+      "elapsed_s": "222.231952",
+      "max_gap_s": "0.13496800000211806",
+      "rtt_max_ms": "320.0",
+      "received": "101"
+    },
+    {
+      "timestamp_utc": "2026-10-10T08:50:41.508+00:00",
+      "elapsed_s": "307.994956",
+      "max_gap_s": "0.1345435000002908",
+      "rtt_max_ms": "160.0",
+      "received": "101"
+    },
+    {
+      "timestamp_utc": "2026-10-10T08:50:06.198+00:00",
+      "elapsed_s": "272.685218",
+      "max_gap_s": "0.12008009999772185",
+      "rtt_max_ms": "180.0",
+      "received": "101"
+    },
+    {
+      "timestamp_utc": "2026-10-10T08:45:49.053+00:00",
+      "elapsed_s": "15.539778",
+      "max_gap_s": "0.10543710000274586",
+      "rtt_max_ms": "420.0",
+      "received": "100"
+    },
+    {
+      "timestamp_utc": "2026-10-10T08:51:26.939+00:00",
+      "elapsed_s": "353.425318",
+      "max_gap_s": "0.10527989999900456",
+      "rtt_max_ms": "180.0",
+      "received": "101"
+    },
+    {
+      "timestamp_utc": "2026-10-10T08:51:47.114+00:00",
+      "elapsed_s": "373.599746",
+      "max_gap_s": "0.10511520000000019",
+      "rtt_max_ms": "180.0",
+      "received": "100"
+    },
+    {
+      "timestamp_utc": "2026-10-10T08:47:04.711+00:00",
+      "elapsed_s": "91.196679",
+      "max_gap_s": "0.1051024000007601",
+      "rtt_max_ms": "80.0",
+      "received": "101"
+    }
+  ],
+  "rate_hz": {
+    "min": 0.0,
+    "mean": 19.738691537186714,
+    "median": 20.016409095451866,
+    "p95": 20.197145510108466,
+    "p99": 20.223535847283888,
+    "max": 20.232069774459255
+  },
+  "max_gap_s": {
+    "min": 0.0,
+    "mean": 0.09088683766236358,
+    "median": 0.09023650000017369,
+    "p95": 0.13462840000065626,
+    "p99": 0.13858996800234302,
+    "max": 0.14970360000006622
+  },
+  "silence_s": {
+    "min": 7.950000144774094e-05,
+    "mean": 0.05507403246742029,
+    "median": 0.028860999998869374,
+    "p95": 0.05771899999745075,
+    "p99": 0.5617476840014468,
+    "max": 2.0666667000004963
+  },
+  "rtt_avg_ms": {
+    "min": 19.207920792079207,
+    "mean": 84.63593020292741,
+    "median": 55.82178217821782,
+    "p95": 247.559900990099,
+    "p99": 433.66336633663366,
+    "max": 531.0891089108911
+  },
+  "rtt_max_ms": {
+    "min": 60.0,
+    "mean": 239.73684210526315,
+    "median": 200.0,
+    "p95": 505.0,
+    "p99": 670.0,
+    "max": 700.0000000000001
+  }
+}

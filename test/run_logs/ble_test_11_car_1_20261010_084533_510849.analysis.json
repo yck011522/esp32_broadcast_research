@@ -1,0 +1,162 @@
+{
+  "source": "C:\\Users\\leungp\\Documents\\GitHub\\esp32_broadcast_research\\test\\run_logs\\ble_test_11_car_1_20261010_084533_510849.csv",
+  "logger_summary": {
+    "started_utc": "2026-10-10T08:45:33.511817+00:00",
+    "planned_duration_s": 7200.0,
+    "car_id": 1,
+    "service_uuid": "7a1e0001-4b6d-4f7a-9c2e-6d3b1a5f0001",
+    "status": "ended_disconnected",
+    "connections": 1,
+    "ble_errors": 289,
+    "ble_disconnects": 0,
+    "overload_events": 0,
+    "notification_timeouts": 1,
+    "ble_stats_reports": 77,
+    "received": 7669,
+    "seq_lost": 0,
+    "world_attempted": 19264,
+    "write_failures": 0,
+    "elapsed_s": 7200.0633376000005,
+    "connection_mode": "throughput",
+    "connection_parameters": {
+      "interval_ms": 15.0,
+      "latency": 0,
+      "supervision_timeout_ms": 9600
+    },
+    "finished_utc": "2026-10-10T10:45:33.574522+00:00",
+    "status_before_correction": "completed_with_recoveries",
+    "successful_reconnections": 0,
+    "connected_at_deadline": false
+  },
+  "reports": 77,
+  "reported_window_seconds": 385.508395,
+  "received": 7669,
+  "seq_lost": 0,
+  "sequence_loss_percent": 0.0,
+  "weighted_receive_rate_hz": 19.89321140464399,
+  "report_interval_s": {
+    "min": 2.3226849999999786,
+    "mean": 5.006095789473684,
+    "median": 5.043307499999997,
+    "p95": 5.058155750000019,
+    "p99": 5.101908249999994,
+    "max": 5.1076809999999995
+  },
+  "missing_report_or_connection_boundaries": [],
+  "rtt_samples": 7668,
+  "weighted_rtt_estimate_ms": 82.86384976525821,
+  "windows_gap_at_least_200ms": 0,
+  "windows_gap_above_200ms": 0,
+  "worst_gap_windows": [
+    {
+      "timestamp_utc": "2026-10-10T08:51:06.440+00:00",
+      "elapsed_s": "332.928833",
+      "max_gap_s": "0.1197243000024173",
+      "rtt_max_ms": "260.0",
+      "received": "101"
+    },
+    {
+      "timestamp_utc": "2026-10-10T08:49:40.669+00:00",
+      "elapsed_s": "247.157588",
+      "max_gap_s": "0.10488519999853452",
+      "rtt_max_ms": "240.0",
+      "received": "101"
+    },
+    {
+      "timestamp_utc": "2026-10-10T08:52:06.989+00:00",
+      "elapsed_s": "393.477823",
+      "max_gap_s": "0.09073649999845657",
+      "rtt_max_ms": "680.0",
+      "received": "101"
+    },
+    {
+      "timestamp_utc": "2026-10-10T08:51:36.717+00:00",
+      "elapsed_s": "363.20535",
+      "max_gap_s": "0.0905616000018199",
+      "rtt_max_ms": "340.0",
+      "received": "101"
+    },
+    {
+      "timestamp_utc": "2026-10-10T08:50:26.065+00:00",
+      "elapsed_s": "292.554059",
+      "max_gap_s": "0.0905334999988554",
+      "rtt_max_ms": "520.0",
+      "received": "101"
+    },
+    {
+      "timestamp_utc": "2026-10-10T08:49:35.624+00:00",
+      "elapsed_s": "242.112228",
+      "max_gap_s": "0.09048619999884977",
+      "rtt_max_ms": "120.0",
+      "received": "101"
+    },
+    {
+      "timestamp_utc": "2026-10-10T08:49:50.751+00:00",
+      "elapsed_s": "257.239862",
+      "max_gap_s": "0.0903814000012062",
+      "rtt_max_ms": "220.0",
+      "received": "101"
+    },
+    {
+      "timestamp_utc": "2026-10-10T08:50:46.252+00:00",
+      "elapsed_s": "312.740774",
+      "max_gap_s": "0.09031890000187559",
+      "rtt_max_ms": "220.0",
+      "received": "101"
+    },
+    {
+      "timestamp_utc": "2026-10-10T08:48:05.017+00:00",
+      "elapsed_s": "151.505402",
+      "max_gap_s": "0.09031429999959073",
+      "rtt_max_ms": "460.0",
+      "received": "99"
+    },
+    {
+      "timestamp_utc": "2026-10-10T08:46:24.154+00:00",
+      "elapsed_s": "50.643094",
+      "max_gap_s": "0.09029999999984284",
+      "rtt_max_ms": "640.0",
+      "received": "101"
+    }
+  ],
+  "rate_hz": {
+    "min": 2.583201808896208,
+    "mean": 19.77195759246482,
+    "median": 20.0143941144519,
+    "p95": 20.200111181504308,
+    "p99": 20.237438933538858,
+    "max": 20.252658265627346
+  },
+  "max_gap_s": {
+    "min": 0.060258699999394594,
+    "mean": 0.07859549740254357,
+    "median": 0.07521169999745325,
+    "p95": 0.0905391199994483,
+    "p99": 0.10844658399946631,
+    "max": 0.1197243000024173
+  },
+  "silence_s": {
+    "min": 9.720000161905773e-05,
+    "mean": 0.05213900649347101,
+    "median": 0.025715700001455843,
+    "p95": 0.05321373999977369,
+    "p99": 0.5445726159980301,
+    "max": 2.081715099997382
+  },
+  "rtt_avg_ms": {
+    "min": 18.81188118811881,
+    "mean": 87.97497424303164,
+    "median": 53.4,
+    "p95": 310.7623529411765,
+    "p99": 503.34125412541255,
+    "max": 503.36633663366337
+  },
+  "rtt_max_ms": {
+    "min": 60.0,
+    "mean": 236.1038961038961,
+    "median": 180.0,
+    "p95": 520.0,
+    "p99": 649.5999999999998,
+    "max": 680.0
+  }
+}

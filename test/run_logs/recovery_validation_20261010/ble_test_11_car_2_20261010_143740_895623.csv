@@ -1,0 +1,13 @@
+timestamp_utc,elapsed_s,record_type,connection,window_s,received,seq_lost,loss_percent,rate_hz,max_gap_s,silence_s,have_packet,world_seq,rtt_avg_ms,rtt_max_ms,rtt_samples,echo_age_avg_ms,echo_age_max_ms,echo_age_samples,world_attempted,world_tx_rate_hz,write_failures,max_tx_gap_s,max_write_ms,malformed,ignored,partial_window,message
+2026-10-10T14:37:40.902+00:00,0.005414,scanning,0,,,,,,,,,,,,,,,,,,,,,,,,all three car service UUIDs
+2026-10-10T14:37:51.634+00:00,10.737699,connected,1,,,,,,,,,,,,,,,,,,,,,,,,ble_car_2 68:EE:8F:46:33:45
+2026-10-10T14:37:51.668+00:00,10.771535,connection_parameters,1,,,,,,,,,,,,,,,,,,,,,,,,Before request: interval=15 ms latency=0
+2026-10-10T14:37:51.669+00:00,10.772163,connection_parameters,1,,,,,,,,,,,,,,,,,,,,,,,,"Throughput request verified: {'interval_ms': 15.0, 'latency': 0, 'supervision_timeout_ms': 9600}"
+2026-10-10T14:37:54.505+00:00,13.608128,ble_stats,1,2.722039,53,0,0.0,19.47069968290875,0.15003319999959785,0.021916599995165598,1,83,552.2448979591836,1000.0,49,562.9281102047404,1015.9200000052806,49,136,49.962550129728115,0,0.02377849999902537,6.135900002846029,0,0,1,
+2026-10-10T14:37:54.509+00:00,13.61251,overloaded,1,,,,,,,,,,,,,,,,,,,,,,,,Car 2 echo age 1016 ms exceeds 1000 ms
+2026-10-10T14:37:54.509+00:00,13.612628,reconnecting,1,,,,,,,,,,,,,,,,,,,,,,,,"cooling down for 5 s, then scanning again"
+2026-10-10T14:37:59.617+00:00,18.720633,scanning,1,,,,,,,,,,,,,,,,,,,,,,,,7a1e0001-4b6d-4f7a-9c2e-6d3b1a5f0002
+2026-10-10T14:38:09.584+00:00,28.687652,connected,2,,,,,,,,,,,,,,,,,,,,,,,,ble_car_2 68:EE:8F:46:33:45
+2026-10-10T14:38:09.615+00:00,28.718524,connection_parameters,2,,,,,,,,,,,,,,,,,,,,,,,,Before request: interval=15 ms latency=0
+2026-10-10T14:38:09.616+00:00,28.719056,connection_parameters,2,,,,,,,,,,,,,,,,,,,,,,,,"Throughput request verified: {'interval_ms': 15.0, 'latency': 0, 'supervision_timeout_ms': 9600}"
+2026-10-10T14:38:14.690+00:00,33.792792,ble_stats,2,5.046422,101,0,0.0,20.014182327009706,0.07531310000194935,0.009323600002971943,1,249,29.0,80.0,100,39.37747700023465,86.30690000427421,100,252,49.93637570699452,0,0.022041900003387127,18.17029999801889,0,0,0,

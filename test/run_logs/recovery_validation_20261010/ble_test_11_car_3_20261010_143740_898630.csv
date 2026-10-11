@@ -1,0 +1,9 @@
+timestamp_utc,elapsed_s,record_type,connection,window_s,received,seq_lost,loss_percent,rate_hz,max_gap_s,silence_s,have_packet,world_seq,rtt_avg_ms,rtt_max_ms,rtt_samples,echo_age_avg_ms,echo_age_max_ms,echo_age_samples,world_attempted,world_tx_rate_hz,write_failures,max_tx_gap_s,max_write_ms,malformed,ignored,partial_window,message
+2026-10-10T14:37:40.902+00:00,0.003276,scanning,0,,,,,,,,,,,,,,,,,,,,,,,,all three car service UUIDs
+2026-10-10T14:37:51.524+00:00,10.625454,connected,1,,,,,,,,,,,,,,,,,,,,,,,,ble_car_3 68:EE:8F:4B:5B:19
+2026-10-10T14:37:51.586+00:00,10.686671,connection_parameters,1,,,,,,,,,,,,,,,,,,,,,,,,Before request: interval=15 ms latency=0
+2026-10-10T14:37:51.587+00:00,10.687448,connection_parameters,1,,,,,,,,,,,,,,,,,,,,,,,,"Throughput request verified: {'interval_ms': 15.0, 'latency': 0, 'supervision_timeout_ms': 9600}"
+2026-10-10T14:37:54.536+00:00,13.637504,ble_stats,1,2.923565,58,0,0.0,19.838791349692787,0.17962419999821577,0.014139700004307088,1,93,565.9649122807018,1020.0,57,578.3336596493763,1028.5366999960388,57,146,49.93902650095081,0,0.021017200000642333,6.303000001935288,0,0,1,
+2026-10-10T14:37:54.539+00:00,13.640676,overloaded,1,,,,,,,,,,,,,,,,,,,,,,,,Car 3 echo age 1029 ms exceeds 1000 ms
+2026-10-10T14:37:54.539+00:00,13.6408,reconnecting,1,,,,,,,,,,,,,,,,,,,,,,,,"cooling down for 5 s, then scanning again"
+2026-10-10T14:37:59.648+00:00,18.748931,scanning,1,,,,,,,,,,,,,,,,,,,,,,,,7a1e0001-4b6d-4f7a-9c2e-6d3b1a5f0003

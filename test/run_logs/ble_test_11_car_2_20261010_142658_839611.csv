@@ -1,0 +1,9 @@
+timestamp_utc,elapsed_s,record_type,connection,window_s,received,seq_lost,loss_percent,rate_hz,max_gap_s,silence_s,have_packet,world_seq,rtt_avg_ms,rtt_max_ms,rtt_samples,echo_age_avg_ms,echo_age_max_ms,echo_age_samples,world_attempted,world_tx_rate_hz,write_failures,max_tx_gap_s,max_write_ms,malformed,ignored,partial_window,message
+2026-10-10T14:26:58.849+00:00,0.00882,scanning,0,,,,,,,,,,,,,,,,,,,,,,,,all three car service UUIDs
+2026-10-10T14:27:06.965+00:00,8.124951,discovery,0,,,,,,,,,,,,,,,,,,,,,,,,found 0 matching servers; retrying
+2026-10-10T14:27:06.966+00:00,8.126454,scanning,0,,,,,,,,,,,,,,,,,,,,,,,,7a1e0001-4b6d-4f7a-9c2e-6d3b1a5f0002
+2026-10-10T14:27:23.022+00:00,24.181671,ble_error,0,,,,,,,,,,,,,,,,,,,,,,,,RuntimeError: Car 2: found 0 matching servers
+2026-10-10T14:27:25.026+00:00,26.185645,scanning,0,,,,,,,,,,,,,,,,,,,,,,,,7a1e0001-4b6d-4f7a-9c2e-6d3b1a5f0002
+2026-10-10T14:27:47.107+00:00,48.267184,ble_error,0,,,,,,,,,,,,,,,,,,,,,,,,RuntimeError: Car 2: found 0 matching servers
+2026-10-10T14:27:49.111+00:00,50.270222,scanning,0,,,,,,,,,,,,,,,,,,,,,,,,7a1e0001-4b6d-4f7a-9c2e-6d3b1a5f0002
+2026-10-10T14:27:58.891+00:00,60.051259,ble_error,0,,,,,,,,,,,,,,,,,,,,,,,,RuntimeError: Car 2: found 0 matching servers

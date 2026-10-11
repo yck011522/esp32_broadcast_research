@@ -79,7 +79,7 @@ both characteristics, and subscribes again. Pairing is not required.
 
 ### GATT interface
 
-The server advertises `ble_server` and service UUID
+The Car 1 server advertises `ble_car_1` and service UUID
 `7a1e0001-4b6d-4f7a-9c2e-6d3b1a5f0001`. The client discovers the characteristics
 inside that service after connecting.
 
@@ -295,3 +295,98 @@ The successful short validation and its logs are retained in
 `test/test_10_throughput_result.md`. Development experiments and failed Test 10
 logs have been removed. Measurement and connection-lifetime regression checks
 remain in `test/test_10_checks.py`.
+
+### Test 11: three cars on the computer BLE adapter
+
+Test 11 runs the same 50 Hz world writes and 20 Hz notification measurements
+for three cars at once. Each firmware profile builds the same
+`src/ble_server/main.cpp`; `BLE_CAR_ID` selects its advertised name and service
+UUID. The characteristic UUIDs and payloads remain the same on all cars.
+
+| Profile | Advertised name | Service UUID |
+| --- | --- | --- |
+| `ble_server_car_1` | `ble_car_1` | `7a1e0001-4b6d-4f7a-9c2e-6d3b1a5f0001` |
+| `ble_server_car_2` | `ble_car_2` | `7a1e0001-4b6d-4f7a-9c2e-6d3b1a5f0002` |
+| `ble_server_car_3` | `ble_car_3` | `7a1e0001-4b6d-4f7a-9c2e-6d3b1a5f0003` |
+
+Flash each profile to its corresponding board, substituting its actual COM
+port. The legacy `ble_server` profile also uses Car 1's service UUID.
+
+```powershell
+pio run -e ble_server_car_1 -t upload --upload-port COM3
+pio run -e ble_server_car_2 -t upload --upload-port COMx
+pio run -e ble_server_car_3 -t upload --upload-port COMy
+```
+
+With all three cars powered on and the ESP32 BLE client powered off, run:
+
+```powershell
+python -u test/test_11_monitor_servers.py --seconds 150
+```
+
+In another terminal, choose a short or long run:
+
+```powershell
+python -u test/test_11_ble_pc.py --duration-seconds 120
+# Or: python -u test/test_11_ble_pc.py --hours 2
+```
+
+After the run:
+
+```powershell
+python test/analyze_test_11.py
+```
+
+Start the optional serial monitor in a separate terminal. For a two-hour run,
+omit `--seconds`; its default adds one minute for startup. Close other serial
+monitors first. Each server log records the car's actual command rate and loss.
+
+The PC matches the advertised service UUID to a car number, then records its
+Bluetooth address in that car's connection event. The name is only a readable
+label. Test 11 keeps one independent connection, 16-bit command sequence,
+notification sequence baseline, and CSV/JSONL/summary set per car under
+`test/run_logs/ble_test_11_car_N_*`. If a car is absent or disconnects, its
+log records retries while the other cars continue. Each car runs at 50 Hz
+world writes and 20 Hz notifications, so the total target is 150 writes and
+60 notifications per second over one PC radio. Actual three-car capacity must
+be measured on the hardware; a successful single-car Test 10 does not establish
+three-car throughput.
+
+The first three-car hardware run showed 50 Hz client write calls but an early
+server receive rate near 30 Hz per car and a growing command age. A later
+120-second run delivered all writes at about 50 Hz per car with low latency.
+The startup behavior was inconsistent, so Test 11 closes and reconnects a
+car when echoed command age exceeds one second, waiting five seconds before
+trying again. It also reconnects when notifications stop for two seconds,
+even if Windows has not reported a disconnection. Each new connection resets
+that car's command sequence and measurement baseline. The per-car summary
+counts overload events, notification timeouts, and disconnects. It marks a
+run `ended_disconnected` when retries never reconnect before the deadline,
+and `completed_with_reconnects` only after a later connection succeeds. Set
+`--max-echo-age-ms` or `--notification-timeout-seconds` to adjust the guards. See
+`test/test_11_result.md` for both measured runs; a longer guarded run is
+needed to assess endurance.
+
+The server also checks for a stalled command stream. After five seconds with
+no new valid world sequence while connected, it requests a disconnect (the
+first command gets a ten-second connection-setup grace period). If
+that request remains stuck for another 15 seconds, it restarts the ESP32 as a
+last resort. While disconnected, it retries inactive advertising once per
+second after a short handshake grace period; 15 seconds of failed advertising
+recovery also triggers a restart. A powered car waiting normally for a PC
+does not restart. The platform's five-second task watchdog also monitors the
+main loop for blocked BLE calls. These are communication recovery limits for the test, not
+a motor-control safety timeout.
+
+Server serial output includes `ble event:` records for connection changes and
+`ble health:` records for connection/subscription/advertising state, free heap,
+notification errors and recovery restarts. `ble buffers:` reports BLE packet
+buffer availability and skipped telemetry samples. When buffers are nearly
+exhausted, the server skips samples to leave capacity for command/control
+traffic; an allocation failure also causes a 200 ms notification backoff.
+Skipped samples still advance the notification sequence and are visible as
+sequence gaps if the same connection resumes. `ble boot:` records include the
+hardware reset reason and last recovery reason (1: disconnect stuck, 2:
+advertising stuck). The serial monitor retries USB ports that disappear during
+a reset, while continuing to capture the other cars. Both the monitor and PC
+test accept `--output-dir` to group an experiment's files.

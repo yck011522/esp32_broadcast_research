@@ -1,0 +1,65 @@
+{
+  "python": "3.12.10",
+  "python_executable": "C:\\Users\\leungp\\Documents\\GitHub\\esp32_broadcast_research\\.venv\\Scripts\\python.exe",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "packages": {
+    "pyserial": "3.5",
+    "bleak": "3.0.2",
+    "matplotlib": "3.11.2"
+  },
+  "settings": {
+    "port": "COM3",
+    "cars": [
+      2,
+      3,
+      1,
+      4
+    ],
+    "server_ports": [
+      "COM4",
+      "COM5",
+      "COM7",
+      "COM8"
+    ],
+    "duration_seconds": 120.0,
+    "start_sequence": 65520,
+    "experiment": "13b",
+    "label": "bench"
+  },
+  "source_sha256": {
+    "platformio.ini": "8be39bf495296c232625f313e115c37158f370d9fec1b02f7a59de3cfa6919f3",
+    "test/common/provenance.py": "75ea890fc1872dcaeb0858ca8ff909a2747070ce4c1fd6cf58c2fc4c072c06ac",
+    "test/test_11/test_11_ble_pc.py": "a5b80d918412ae2c59f46145fc17cb93ffe7c8d833779465fb1c784f0288ec0c",
+    "test/test_11/test_11_monitor_servers.py": "d45e7c1fd0b29eea489e590a3ffc70682dcd4fe80b17c0ca0e1678ce46ed452b",
+    "test/test_12/test_12_ble_pc.py": "3689995f71c10219679a8d9d6281d34d318f483d5261365fa8a365ff2ef1407a",
+    "test/test_13/test_13_ble_modem.py": "31a90f306f38b74a184bd72cd667ab76a1f8942bad8bbc0237f0abb1121e4204",
+    "src/test_13/esp_esp_ble_car/main.cpp": "f5969a04beea8332183c21fd6ec52e1f2ebfda5099df2b2e1456db143859f26c",
+    "src/test_13/esp_esp_ble_modem/main.cpp": "0c9784c003f6992a05c2fb45a87ede6904fac28a7706b86432023a8c1ea127e0",
+    "src/test_13/include/esp_esp_ble_modem_config.h": "7bc774fbd70045f4fd70a0e742a0995a5adce9c07bab7ce12df8e1e3c34df0cd",
+    "src/test_13/include/esp_esp_ble_protocol.h": "2dc8207b45b2923c98f14287566bb864b860acf75230b733dc314b7deb7464f9",
+    "test/test_13b/test_13b_ble_modem.py": "770f2989c528a38e46371ad4d9f085236a5507dc4ba37fb71ad259710868eb37"
+  },
+  "available_builds": {
+    "esp_esp_ble_modem_13b": {
+      "file": "firmware/esp_esp_ble_modem_13b.bin",
+      "sha256": "b101b45ea76c344416ae4a2b6f6f2c45b7e48932aa5a024a25b5e979b1a7728f"
+    },
+    "esp_esp_ble_car_2": {
+      "file": "firmware/esp_esp_ble_car_2.bin",
+      "sha256": "0943eafc1a66fada8c487c4badbf863641a739300b566d76a9aa08115748e774"
+    },
+    "esp_esp_ble_car_3": {
+      "file": "firmware/esp_esp_ble_car_3.bin",
+      "sha256": "0fb5e9c9b25fb100c941dc2d6f9cc5f680cfc7a55a2338db189b78b251fad5ea"
+    },
+    "esp_esp_ble_car_1": {
+      "file": "firmware/esp_esp_ble_car_1.bin",
+      "sha256": "809ee1cb407761fe64e565887b04c3b0ed01ae4471fa40a34c62a0b23e2d0624"
+    },
+    "esp_esp_ble_car_4": {
+      "file": "firmware/esp_esp_ble_car_4.bin",
+      "sha256": "7df14dbc74a3e264f2bb85e3df062123a53db840cf861fc93fa0b97c9901bb16"
+    }
+  },
+  "build_note": "Copies of available PlatformIO builds; not firmware read back from the boards."
+}

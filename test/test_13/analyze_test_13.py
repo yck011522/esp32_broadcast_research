@@ -153,7 +153,8 @@ def analyze(path):
     commands, raw, counts, failures = read_raw(raw_path, summary["cars"])
     if commands["count"] != summary["commands_sent"] or commands["sequence_gaps"] or commands["sequence_errors"]:
         failures.append("Raw command continuity/count does not match summary")
-    metadata = {"status": summary["status"], "started_utc": summary["started_utc"],
+    metadata = {"experiment": summary.get("experiment", "13"),
+                "status": summary["status"], "started_utc": summary["started_utc"],
                 "finished_utc": summary["finished_utc"], "active_s": summary["active_s"],
                 "raw_event_counts": counts, "commands": {k: v for k, v in commands.items() if k != "gaps_ms"},
                 "command_spacing_ms": distribution(commands["gaps_ms"]), "cars": {},
@@ -214,7 +215,9 @@ def plots(directory, rows_by_car, raw, metadata):
     directory.mkdir(exist_ok=True)
     colors = ["#2463a5", "#d47721", "#448844", "#994488"]
     plt.rcParams.update({"font.size": 10, "axes.spines.top": False, "axes.spines.right": False})
-    fig, axes = plt.subplots(4, 2, figsize=(14, 12), sharex=True, layout="constrained")
+    columns = len(rows_by_car)
+    fig, axes = plt.subplots(4, columns, figsize=(7*columns, 12), sharex=True,
+                             squeeze=False, layout="constrained")
     for column, (car, rows) in enumerate(rows_by_car.items()):
         time = [(float(r["elapsed_s"])-metadata["commands"]["first_time"])/60 for r in rows]
         for ax, field, label, target in (
@@ -239,7 +242,7 @@ def plots(directory, rows_by_car, raw, metadata):
         axes[3, column].legend(loc="upper right", fontsize=8)
         for ax in axes[:, column]:
             ax.grid(alpha=.2)
-    fig.suptitle("Test 13: simultaneous 50 Hz commands and 20 Hz telemetry\nEach point represents one reporting window")
+    fig.suptitle(f"Test {metadata['experiment']}: simultaneous 50 Hz commands and 20 Hz telemetry\nEach point represents one reporting window")
     overview = directory / "overview.png"
     fig.savefig(overview, dpi=160)
     plt.close(fig)
@@ -269,7 +272,7 @@ def report(path, summary, metrics):
     local = timezone(timedelta(hours=8))
     started = datetime.fromisoformat(summary["started_utc"]).astimezone(local)
     finished = datetime.fromisoformat(summary["finished_utc"]).astimezone(local)
-    text = f"# Test 13 endurance analysis\n\nRun: {started:%Y-%m-%d %H:%M:%S} to {finished:%Y-%m-%d %H:%M:%S} Hong Kong time.\n\n"
+    text = f"# Test {metrics['experiment']} analysis\n\nRun: {started:%Y-%m-%d %H:%M:%S} to {finished:%Y-%m-%d %H:%M:%S} Hong Kong time.\n\n"
     text += f"Traffic duration: **{summary['active_s']:.3f} seconds**. Runner result: **{summary['status']}**.\n\n"
     text += "| Metric | " + " | ".join(f"Car {car}" for car in summary["cars"]) + " |\n|---|" + "---:|"*len(summary["cars"]) + "\n"
     for label, field, fmt in (("Commands received by car", "server_received", ",d"),
@@ -280,16 +283,19 @@ def report(path, summary, metrics):
                               ("Telemetry sequence gaps", "notification_seq_lost", "d"),
                               ("Mean echoed-command age (ms)", "echo_age_avg_ms", ".2f"),
                               ("Maximum echoed-command age (ms)", "echo_age_max_ms", ".2f")):
-        text += f"| {label} | " + " | ".join(format(metrics["cars"][str(car)][field], fmt) for car in summary["cars"]) + " |\n"
+        text += f"| {label} | " + " | ".join(
+            format(metrics["cars"][str(car)][field], fmt) if field in metrics["cars"][str(car)]
+            else "not monitored" for car in summary["cars"]) + " |\n"
     text += "| Maximum telemetry gap (ms) | " + " | ".join(f"{metrics['cars'][str(car)]['notification_spacing_ms']['max']:.2f}" for car in summary["cars"]) + " |\n"
     text += "\n## Delivery and stability\n\n"
-    text += (f"Python's {metrics['commands']['count']:,} world records reconcile with the CSV, modem\n"
-             "serial/per-link counters and each car's independently monitored receive totals.\n"
+    text += (f"Python's {metrics['commands']['count']:,} world records reconcile with the CSV and modem\n"
+             "serial/per-link counters. Car receive totals are independently checked when\n"
+             "car serial logs are available; unmonitored receive totals remain unavailable.\n"
              "Notification counts and sequence continuity were rechecked directly from raw\n"
              "21-byte packets. Sequence loss counts application gaps, not radio retransmissions.\n\n")
     text += f"Raw command sequence wraparounds: {metrics['commands']['wraps']}. Command pacing overruns: {metrics['raw_event_counts'].get('tx_overrun', 0)}.\n\n"
     if not metrics["independent_check_failures"]:
-        text += "Modem gap/error/drop counters did not increase. Both links had no reconnects\nduring traffic and one intentional disconnect at shutdown.\n\n"
+        text += "Modem gap/error/drop counters did not increase. All links had no reconnects\nduring traffic and one intentional disconnect each at shutdown.\n\n"
     for car in summary["cars"]:
         item = metrics["cars"][str(car)]
         gaps, age, server = item["notification_spacing_ms"], item["logged_echo_age_ms"], item["server"]
@@ -304,7 +310,7 @@ def report(path, summary, metrics):
     text += "\nIndependent check failures: " + ("none" if not metrics["independent_check_failures"] else "; ".join(metrics["independent_check_failures"])) + ".\n"
     text += "\n## Interpretation and measurement limits\n\n"
     if summary["status"] == "passed" and not metrics["independent_check_failures"]:
-        text += "The two-link setup sustained the target throughput over this observation.\n"
+        text += f"The {len(summary['cars'])}-link setup sustained the target throughput over this observation.\n"
     quarters = [q["echo_age_avg_ms"] for item in metrics["cars"].values() for q in item["quarter_echo_age"]]
     if quarters:
         text += (f"Quarter-run mean echo ages range from {min(quarters):.2f} to {max(quarters):.2f} ms.\n"
@@ -319,8 +325,8 @@ def report(path, summary, metrics):
              "scheduling, BLE and car notification timing. Neither measures pure RF RTT.\n\n"
              "Server silence is sampled at five-second report times, not the worst gap\n"
              "between every world command. Exact matching final command totals strengthen\n"
-             "the receive-rate result. Two-car synthetic traffic does not validate four-car\n"
-             "capacity, motor response or disconnect safety behavior.\n\n"
+             "the receive-rate result. Synthetic traffic does not validate motor response\n"
+             "or disconnect safety behavior.\n\n"
              "Intentional final `#STOP` disconnects are outside traffic. The recorded final\n"
              "modem state is disabled with zero links, and both cars resume advertising.\n\n")
     text += "## Sources and plots\n\n"
@@ -330,13 +336,13 @@ def report(path, summary, metrics):
     return text
 
 
-def main():
+def main(argv=None, result_root=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("summary", nargs="?", type=Path)
-    args = parser.parse_args()
+    args = parser.parse_args(argv)
     path = args.summary
     if path is None:
-        candidates = sorted((Path(__file__).parent / "results/runs").rglob("*.summary.json"), key=lambda p: p.stat().st_mtime, reverse=True)
+        candidates = sorted((result_root or Path(__file__).parent / "results/runs").rglob("*.summary.json"), key=lambda p: p.stat().st_mtime, reverse=True)
         path = next((p for p in candidates if json.loads(p.read_text()).get("measurements")), None)
     if path is None:
         parser.error("No completed Test 13 rate run found")

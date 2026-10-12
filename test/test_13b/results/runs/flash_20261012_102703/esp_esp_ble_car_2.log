@@ -1,0 +1,424 @@
+Processing esp_esp_ble_car_2 (platform: https://github.com/pioarduino/platform-espressif32/releases/download/55.03.312-1/platform-espressif32.zip; board: seeed_xiao_esp32s3; framework: arduino)
+--------------------------------------------------------------------------------
+Verbose mode can be enabled via `-v, --verbose` option
+CONFIGURATION: https://docs.platformio.org/page/boards/espressif32/seeed_xiao_esp32s3.html
+PLATFORM: Espressif 32 (55.3.312) > Seeed Studio XIAO ESP32S3
+HARDWARE: ESP32S3 240MHz, 320KB RAM, 8MB Flash
+DEBUG: Current (cmsis-dap) External (cmsis-dap, esp-bridge, esp-builtin, esp-prog, esp-prog-2, iot-bus-jtag, jlink, minimodule, olimex-arm-usb-ocd, olimex-arm-usb-ocd-h, olimex-arm-usb-tiny-h, olimex-jtag-tiny, tumpa)
+PACKAGES: 
+ - contrib-piohome @ 3.4.4 
+ - framework-arduinoespressif32 @ 3.3.12 
+ - framework-arduinoespressif32-libs @ 5.5.5+sha.b774170ff46 
+ - tool-esptoolpy @ 5.4.0 
+ - tool-xtensa-esp-elf-gdb @ 17.1.0+20260402 
+ - toolchain-xtensa-esp-elf @ 14.2.0+20260121
+LDF: Library Dependency Finder -> https://bit.ly/configure-pio-ldf
+LDF Modes: Finder ~ chain, Compatibility ~ soft
+Found 45 compatible libraries
+Scanning dependencies...
+Dependency Graph
+|-- NimBLE-Arduino @ 2.5.1
+Building in release mode
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\NimBLE2904.cpp.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\NimBLEAddress.cpp.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\NimBLEAdvertisedDevice.cpp.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\NimBLEAdvertisementData.cpp.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\NimBLEAdvertising.cpp.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\NimBLEAttValue.cpp.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\NimBLEBeacon.cpp.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\NimBLECharacteristic.cpp.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\NimBLEClient.cpp.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\NimBLEDescriptor.cpp.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\NimBLEDevice.cpp.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\NimBLEEddystoneTLM.cpp.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\NimBLEExtAdvertising.cpp.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\NimBLEHIDDevice.cpp.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\NimBLEL2CAPChannel.cpp.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\NimBLEL2CAPServer.cpp.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\NimBLERemoteCharacteristic.cpp.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\NimBLERemoteDescriptor.cpp.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\NimBLERemoteService.cpp.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\NimBLERemoteValueAttribute.cpp.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\NimBLEScan.cpp.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\NimBLEServer.cpp.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\NimBLEService.cpp.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\NimBLEStream.cpp.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\NimBLEUUID.cpp.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\NimBLEUtils.cpp.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\esp_port\esp-hci\src\esp_nimble_hci.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\esp_port\esp-hci\src\na_hci_driver.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\esp_port\esp-hci\src\na_hci_transport.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\esp_port\port\src\exp_nimble_mem.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\ext\tinycrypt\src\aes_decrypt.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\ext\tinycrypt\src\aes_encrypt.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\ext\tinycrypt\src\cbc_mode.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\ext\tinycrypt\src\ccm_mode.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\ext\tinycrypt\src\cmac_mode.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\ext\tinycrypt\src\ctr_mode.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\ext\tinycrypt\src\ctr_prng.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\ext\tinycrypt\src\ecc.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\ext\tinycrypt\src\ecc_dh.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\ext\tinycrypt\src\ecc_dsa.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\ext\tinycrypt\src\ecc_platform_specific.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\ext\tinycrypt\src\hmac.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\ext\tinycrypt\src\hmac_prng.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\ext\tinycrypt\src\sha256.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\ext\tinycrypt\src\utils.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\controller\src\ble_ll.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\controller\src\ble_ll_adv.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\controller\src\ble_ll_conn.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\controller\src\ble_ll_conn_hci.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\controller\src\ble_ll_crypto.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\controller\src\ble_ll_ctrl.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\controller\src\ble_ll_dtm.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\controller\src\ble_ll_hci.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\controller\src\ble_ll_hci_ev.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\controller\src\ble_ll_hci_supp_cmd.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\controller\src\ble_ll_hci_vs.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\controller\src\ble_ll_iso.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\controller\src\ble_ll_iso_big.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\controller\src\ble_ll_isoal.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\controller\src\ble_ll_pdu.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\controller\src\ble_ll_rand.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\controller\src\ble_ll_resolv.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\controller\src\ble_ll_rfmgmt.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\controller\src\ble_ll_scan.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\controller\src\ble_ll_scan_aux.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\controller\src\ble_ll_sched.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\controller\src\ble_ll_sync.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\controller\src\ble_ll_trace.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\controller\src\ble_ll_utils.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\controller\src\ble_ll_whitelist.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\drivers\nrf51\src\ble_hw.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\drivers\nrf51\src\ble_phy.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\drivers\nrf5x\src\ble_hw.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\drivers\nrf5x\src\ble_phy.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\drivers\nrf5x\src\ble_phy_trace.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\drivers\nrf5x\src\nrf52\phy.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\drivers\nrf5x\src\nrf53\phy.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\mesh\src\access.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\mesh\src\adv.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\mesh\src\adv_ext.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\mesh\src\adv_legacy.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\mesh\src\aes-ccm.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\mesh\src\app_keys.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\mesh\src\beacon.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\mesh\src\cdb.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\mesh\src\cfg.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\mesh\src\cfg_cli.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\mesh\src\cfg_srv.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\mesh\src\crypto.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\mesh\src\friend.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\mesh\src\glue.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\mesh\src\health_cli.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\mesh\src\health_srv.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\mesh\src\heartbeat.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\mesh\src\light_model.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\mesh\src\lpn.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\mesh\src\mesh.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\mesh\src\model_cli.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\mesh\src\model_srv.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\mesh\src\msg.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\mesh\src\net.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\mesh\src\pb_adv.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\mesh\src\pb_gatt.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\mesh\src\pb_gatt_srv.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\mesh\src\prov.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\mesh\src\prov_device.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\mesh\src\provisioner.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\mesh\src\proxy.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\mesh\src\proxy_msg.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\mesh\src\proxy_srv.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\mesh\src\rpl.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\mesh\src\settings.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\mesh\src\shell.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\mesh\src\subnet.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\mesh\src\testing.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\mesh\src\transport.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\services\gap\src\ble_svc_gap.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\services\gatt\src\ble_svc_gatt.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\src\ble_aes_ccm.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\src\ble_att.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\src\ble_att_clt.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\src\ble_att_cmd.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\src\ble_att_svr.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\src\ble_dtm.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\src\ble_ead.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\src\ble_eatt.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\src\ble_eddystone.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\src\ble_gap.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\src\ble_gattc.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\src\ble_gattc_cache.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\src\ble_gattc_cache_conn.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\src\ble_gatts.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\src\ble_gatts_lcl.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\src\ble_hs.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\src\ble_hs_adv.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\src\ble_hs_atomic.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\src\ble_hs_cfg.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\src\ble_hs_conn.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\src\ble_hs_flow.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\src\ble_hs_hci.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\src\ble_hs_hci_cmd.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\src\ble_hs_hci_evt.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\src\ble_hs_hci_util.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\src\ble_hs_id.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\src\ble_hs_log.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\src\ble_hs_mbuf.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\src\ble_hs_misc.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\src\ble_hs_mqueue.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\src\ble_hs_periodic_sync.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\src\ble_hs_pvcy.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\src\ble_hs_resolv.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\src\ble_hs_shutdown.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\src\ble_hs_startup.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\src\ble_hs_stop.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\src\ble_ibeacon.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\src\ble_l2cap.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\src\ble_l2cap_coc.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\src\ble_l2cap_sig.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\src\ble_l2cap_sig_cmd.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\src\ble_sm.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\src\ble_sm_alg.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\src\ble_sm_cmd.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\src\ble_sm_lgcy.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\src\ble_sm_sc.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\src\ble_store.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\src\ble_store_util.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\src\ble_uuid.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\store\config\src\ble_store_config.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\store\config\src\ble_store_config_conf.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\store\config\src\ble_store_nvs.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\store\ram\src\ble_store_ram.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\host\util\src\addr.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\transport\common\hci_h4\src\hci_h4.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\transport\common\hci_ipc\src\hci_ipc.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\transport\esp_ipc\src\hci_esp_ipc.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\transport\esp_ipc_legacy\src\hci_esp_ipc_legacy.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\transport\nrf5340\src\nrf5340_ble_hci.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\nimble\transport\src\transport.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\porting\nimble\src\endian.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\porting\nimble\src\hal_timer.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\porting\nimble\src\mem.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\porting\nimble\src\nimble_port.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\porting\nimble\src\os_cputime.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\porting\nimble\src\os_cputime_pwr2.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\porting\nimble\src\os_mbuf.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\porting\nimble\src\os_mempool.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\porting\nimble\src\os_msys_init.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\porting\npl\freertos\src\nimble_port_freertos.c.o
+Compiling .pio\build\esp_esp_ble_car_2\libbce\NimBLE-Arduino\nimble\porting\npl\freertos\src\npl_os_freertos.c.o
+Compiling .pio\build\esp_esp_ble_car_2\src\test_13\esp_esp_ble_car\main.cpp.o
+Building .pio\build\esp_esp_ble_car_2\bootloader.bin
+Generating partitions .pio\build\esp_esp_ble_car_2\partitions.bin
+Compiling .pio\build\esp_esp_ble_car_2\FrameworkArduino\ColorFormat.c.o
+esptool v5.4.0
+Creating ESP32-S3 image...
+Merged 2 ELF sections.
+Successfully created ESP32-S3 image.
+Compiling .pio\build\esp_esp_ble_car_2\FrameworkArduino\Esp.cpp.o
+Compiling .pio\build\esp_esp_ble_car_2\FrameworkArduino\FirmwareMSC.cpp.o
+Compiling .pio\build\esp_esp_ble_car_2\FrameworkArduino\FunctionalInterrupt.cpp.o
+Compiling .pio\build\esp_esp_ble_car_2\FrameworkArduino\HEXBuilder.cpp.o
+Compiling .pio\build\esp_esp_ble_car_2\FrameworkArduino\HWCDC.cpp.o
+Compiling .pio\build\esp_esp_ble_car_2\FrameworkArduino\HardwareSerial.cpp.o
+Compiling .pio\build\esp_esp_ble_car_2\FrameworkArduino\HashBuilder.cpp.o
+Compiling .pio\build\esp_esp_ble_car_2\FrameworkArduino\IPAddress.cpp.o
+Compiling .pio\build\esp_esp_ble_car_2\FrameworkArduino\MD5Builder.cpp.o
+Compiling .pio\build\esp_esp_ble_car_2\FrameworkArduino\MacAddress.cpp.o
+Compiling .pio\build\esp_esp_ble_car_2\FrameworkArduino\Print.cpp.o
+Compiling .pio\build\esp_esp_ble_car_2\FrameworkArduino\Stream.cpp.o
+Compiling .pio\build\esp_esp_ble_car_2\FrameworkArduino\StreamString.cpp.o
+Compiling .pio\build\esp_esp_ble_car_2\FrameworkArduino\StringUtils.cpp.o
+Compiling .pio\build\esp_esp_ble_car_2\FrameworkArduino\Tone.cpp.o
+Compiling .pio\build\esp_esp_ble_car_2\FrameworkArduino\USB.cpp.o
+Compiling .pio\build\esp_esp_ble_car_2\FrameworkArduino\USBCDC.cpp.o
+Compiling .pio\build\esp_esp_ble_car_2\FrameworkArduino\USBHost.cpp.o
+Compiling .pio\build\esp_esp_ble_car_2\FrameworkArduino\USBMSC.cpp.o
+Compiling .pio\build\esp_esp_ble_car_2\FrameworkArduino\WMath.cpp.o
+Compiling .pio\build\esp_esp_ble_car_2\FrameworkArduino\WString.cpp.o
+Compiling .pio\build\esp_esp_ble_car_2\FrameworkArduino\base64.cpp.o
+Compiling .pio\build\esp_esp_ble_car_2\FrameworkArduino\cbuf.cpp.o
+Compiling .pio\build\esp_esp_ble_car_2\FrameworkArduino\chip-debug-report.cpp.o
+Compiling .pio\build\esp_esp_ble_car_2\FrameworkArduino\esp32-hal-adc.c.o
+Compiling .pio\build\esp_esp_ble_car_2\FrameworkArduino\esp32-hal-bt.c.o
+Compiling .pio\build\esp_esp_ble_car_2\FrameworkArduino\esp32-hal-cpu.c.o
+Compiling .pio\build\esp_esp_ble_car_2\FrameworkArduino\esp32-hal-dac.c.o
+Compiling .pio\build\esp_esp_ble_car_2\FrameworkArduino\esp32-hal-gpio.c.o
+Compiling .pio\build\esp_esp_ble_car_2\FrameworkArduino\esp32-hal-hosted.c.o
+Compiling .pio\build\esp_esp_ble_car_2\FrameworkArduino\esp32-hal-i2c-ng.c.o
+Compiling .pio\build\esp_esp_ble_car_2\FrameworkArduino\esp32-hal-i2c-slave.c.o
+Compiling .pio\build\esp_esp_ble_car_2\FrameworkArduino\esp32-hal-i2c.c.o
+Compiling .pio\build\esp_esp_ble_car_2\FrameworkArduino\esp32-hal-ldo.c.o
+Compiling .pio\build\esp_esp_ble_car_2\FrameworkArduino\esp32-hal-ledc.c.o
+Compiling .pio\build\esp_esp_ble_car_2\FrameworkArduino\esp32-hal-log-wrapper.c.o
+Compiling .pio\build\esp_esp_ble_car_2\FrameworkArduino\esp32-hal-matrix.c.o
+Compiling .pio\build\esp_esp_ble_car_2\FrameworkArduino\esp32-hal-misc.c.o
+Compiling .pio\build\esp_esp_ble_car_2\FrameworkArduino\esp32-hal-periman.c.o
+Compiling .pio\build\esp_esp_ble_car_2\FrameworkArduino\esp32-hal-psram.c.o
+Compiling .pio\build\esp_esp_ble_car_2\FrameworkArduino\esp32-hal-rgb-led.c.o
+Compiling .pio\build\esp_esp_ble_car_2\FrameworkArduino\esp32-hal-rmt.c.o
+Compiling .pio\build\esp_esp_ble_car_2\FrameworkArduino\esp32-hal-sigmadelta.c.o
+Compiling .pio\build\esp_esp_ble_car_2\FrameworkArduino\esp32-hal-spi.c.o
+Compiling .pio\build\esp_esp_ble_car_2\FrameworkArduino\esp32-hal-time.c.o
+Compiling .pio\build\esp_esp_ble_car_2\FrameworkArduino\esp32-hal-timer.c.o
+Compiling .pio\build\esp_esp_ble_car_2\FrameworkArduino\esp32-hal-tinyusb.c.o
+Compiling .pio\build\esp_esp_ble_car_2\FrameworkArduino\esp32-hal-touch-ng.c.o
+Compiling .pio\build\esp_esp_ble_car_2\FrameworkArduino\esp32-hal-touch.c.o
+Compiling .pio\build\esp_esp_ble_car_2\FrameworkArduino\esp32-hal-uart.c.o
+Compiling .pio\build\esp_esp_ble_car_2\FrameworkArduino\firmware_msc_fat.c.o
+Compiling .pio\build\esp_esp_ble_car_2\FrameworkArduino\freertos_stats.cpp.o
+Compiling .pio\build\esp_esp_ble_car_2\FrameworkArduino\idf_openthread_mpool_wrapper.c.o
+Compiling .pio\build\esp_esp_ble_car_2\FrameworkArduino\libb64\cdecode.c.o
+Compiling .pio\build\esp_esp_ble_car_2\FrameworkArduino\libb64\cencode.c.o
+Compiling .pio\build\esp_esp_ble_car_2\FrameworkArduino\main.cpp.o
+Compiling .pio\build\esp_esp_ble_car_2\FrameworkArduino\stdlib_noniso.c.o
+Compiling .pio\build\esp_esp_ble_car_2\FrameworkArduino\wiring_pulse.c.o
+Compiling .pio\build\esp_esp_ble_car_2\FrameworkArduino\wiring_shift.c.o
+Archiving .pio\build\esp_esp_ble_car_2\libFrameworkArduino.a
+Linking .pio\build\esp_esp_ble_car_2\firmware.elf
+                            Memory Type Usage Summary                             
+┌─────────────────────┬──────────────┬──────────┬────────────────┬───────────────┐
+│ Memory Type/Section │ Used [bytes] │ Used [%] │ Remain [bytes] │ Total [bytes] │
+├─────────────────────┼──────────────┼──────────┼────────────────┼───────────────┤
+│ Flash Code          │       337604 │          │                │               │
+│    .text            │       337604 │          │                │               │
+│ DIRAM               │       109474 │    32.03 │         232286 │        341760 │
+│    .text            │        76539 │     22.4 │                │               │
+│    .data            │        19367 │     5.67 │                │               │
+│    .bss             │        13568 │     3.97 │                │               │
+│ Flash Data          │        84004 │          │                │               │
+│    .rodata          │        75332 │          │                │               │
+│    .eh_frame        │         8416 │          │                │               │
+│    .appdesc         │          256 │          │                │               │
+│ IRAM                │        16384 │    100.0 │              0 │         16384 │
+│    .text            │        15356 │    93.73 │                │               │
+│    .vectors         │         1028 │     6.27 │                │               │
+└─────────────────────┴──────────────┴──────────┴────────────────┴───────────────┘
+Total image size: 533898 bytes (.bin may be padded larger)
+Note: The reported total sizes may be smaller than those in the technical reference manual due to reserved memory and application configuration. The total flash size available for the application is not included by default, as it cannot be reliably determined due to the presence of other data like the bootloader, partition table, and application partition size. The total external RAM size is not included either, because the amount of RAM connected to the chip is detected at boot and is not known during the build.
+Retrieving maximum program size .pio\build\esp_esp_ble_car_2\firmware.elf
+Checking size .pio\build\esp_esp_ble_car_2\firmware.elf
+Advanced Memory Usage is available via "PlatformIO Home > Project Inspect"
+RAM:   [=         ]  10.1% (used 32936 bytes from 327680 bytes)
+Flash: [==        ]  15.7% (used 525226 bytes from 3342336 bytes)
+Building .pio\build\esp_esp_ble_car_2\firmware.bin
+esptool v5.4.0
+Creating ESP32-S3 image...
+Merged 3 ELF sections.
+Successfully created ESP32-S3 image.
+Creating binary "firmware.factory.bin" with:
+    Offset   | File
+ -  0x0000   | bootloader.bin
+ -  0x8000   | partitions.bin
+ -  0xe000   | boot_app0.bin
+ -  0x10000  | firmware.bin
+Successfully created combined binary image.
+Configuring upload protocol...
+AVAILABLE: cmsis-dap, esp-bridge, esp-builtin, esp-prog, esp-prog-2, espota, esptool, iot-bus-jtag, jlink, minimodule, olimex-arm-usb-ocd, olimex-arm-usb-ocd-h, olimex-arm-usb-tiny-h, olimex-jtag-tiny, tumpa
+CURRENT: upload_protocol = esptool
+Looking for upload port...
+Uploading .pio\build\esp_esp_ble_car_2\firmware.bin
+esptool v5.4.0
+Serial port COM4:
+Connecting...
+Connected to ESP32-S3 on COM4:
+Chip type:          ESP32-S3 (QFN56) (revision v0.2)
+Features:           Wi-Fi, BT 5 (LE), Dual Core + LP Core, 240MHz, Embedded PSRAM 8MB (AP_3v3)
+Crystal frequency:  40MHz
+USB mode:           USB-Serial/JTAG
+MAC:                68:ee:8f:46:33:44
+
+Uploading stub flasher...
+Running stub flasher...
+Stub flasher running.
+Changing baud rate to 460800...
+Changed.
+
+Configuring flash size...
+Auto-detected flash size: 8MB
+
+Writing 'C:\Users\leungp\Documents\GitHub\esp32_broadcast_research\.pio\build\esp_esp_ble_car_2\bootloader.bin' at 0x00000000...
+SHA digest in image updated.
+Flash will be erased from 0x00000000 to 0x00004fff...
+Compressed 19968 bytes to 12992...
+
+Writing at 0x00004e00 [██████████████████████████████] 100.0% 12.69kB/12.69kB [0s] 
+Wrote 19968 bytes (12992 compressed) at 0x00000000 in 0.3 seconds (505.5 kbit/s).
+Verifying written data...
+Hash of data verified.
+
+Writing 'C:\Users\leungp\Documents\GitHub\esp32_broadcast_research\.pio\build\esp_esp_ble_car_2\partitions.bin' at 0x00008000...
+Flash will be erased from 0x00008000 to 0x00008fff...
+Compressed 3072 bytes to 146...
+
+Writing at 0x00008c00 [██████████████████████████████] 100.0% 146B/146B [0s] 
+Wrote 3072 bytes (146 compressed) at 0x00008000 in 0.1 seconds (481.9 kbit/s).
+Verifying written data...
+Hash of data verified.
+
+Writing 'C:\Users\leungp\.platformio\packages\framework-arduinoespressif32\tools\partitions\boot_app0.bin' at 0x0000e000...
+Flash will be erased from 0x0000e000 to 0x0000ffff...
+Compressed 8192 bytes to 47...
+
+Writing at 0x00010000 [██████████████████████████████] 100.0% 47B/47B [0s] 
+Wrote 8192 bytes (47 compressed) at 0x0000e000 in 0.1 seconds (642.7 kbit/s).
+Verifying written data...
+Hash of data verified.
+
+Writing '.pio\build\esp_esp_ble_car_2\firmware.bin' at 0x00010000...
+Flash will be erased from 0x00010000 to 0x00092fff...
+Compressed 534048 bytes to 332805...
+
+Writing at 0x0001bd2b [█░░░░░░░░░░░░░░░░░░░░░░░░░░░░░]   4.9% 16.00kB/325.00kB [0s] 
+
+Writing at 0x00027408 [██░░░░░░░░░░░░░░░░░░░░░░░░░░░░]   9.8% 32.00kB/325.00kB [0s] 
+
+Writing at 0x0002dab5 [████░░░░░░░░░░░░░░░░░░░░░░░░░░]  14.8% 48.00kB/325.00kB [0s] 
+
+Writing at 0x0003328e [█████░░░░░░░░░░░░░░░░░░░░░░░░░]  19.7% 64.00kB/325.00kB [0s] 
+
+Writing at 0x000389ed [███████░░░░░░░░░░░░░░░░░░░░░░░]  24.6% 80.00kB/325.00kB [1s] 
+
+Writing at 0x0003e2ac [████████░░░░░░░░░░░░░░░░░░░░░░]  29.5% 96.00kB/325.00kB [1s] 
+
+Writing at 0x00043ea7 [██████████░░░░░░░░░░░░░░░░░░░░]  34.5% 112.00kB/325.00kB [1s] 
+
+Writing at 0x00049960 [███████████░░░░░░░░░░░░░░░░░░░]  39.4% 128.00kB/325.00kB [1s] 
+
+Writing at 0x0004f0b3 [█████████████░░░░░░░░░░░░░░░░░]  44.3% 144.00kB/325.00kB [1s] 
+
+Writing at 0x000546f9 [██████████████░░░░░░░░░░░░░░░░]  49.2% 160.00kB/325.00kB [1s] 
+
+Writing at 0x0005a29c [████████████████░░░░░░░░░░░░░░]  54.2% 176.00kB/325.00kB [1s] 
+
+Writing at 0x0005fbdd [█████████████████░░░░░░░░░░░░░]  59.1% 192.00kB/325.00kB [2s] 
+
+Writing at 0x00065725 [███████████████████░░░░░░░░░░░]  64.0% 208.00kB/325.00kB [2s] 
+
+Writing at 0x0006afcb [████████████████████░░░░░░░░░░]  68.9% 224.00kB/325.00kB [2s] 
+
+Writing at 0x00070a2f [██████████████████████░░░░░░░░]  73.8% 240.00kB/325.00kB [2s] 
+
+Writing at 0x000761b1 [███████████████████████░░░░░░░]  78.8% 256.00kB/325.00kB [2s] 
+
+Writing at 0x0007ed6e [█████████████████████████░░░░░]  83.7% 272.00kB/325.00kB [2s] 
+
+Writing at 0x0008479f [██████████████████████████░░░░]  88.6% 288.00kB/325.00kB [3s] 
+
+Writing at 0x0008a4e4 [████████████████████████████░░]  93.5% 304.00kB/325.00kB [3s] 
+
+Writing at 0x000904b6 [█████████████████████████████░]  98.5% 320.00kB/325.00kB [3s] 
+
+Writing at 0x00092620 [██████████████████████████████] 100.0% 325.00kB/325.00kB [3s] 
+Wrote 534048 bytes (332805 compressed) at 0x00010000 in 3.5 seconds (1219.4 kbit/s).
+Verifying written data...
+Hash of data verified.
+
+Hard resetting via RTS pin...
+========================= [SUCCESS] Took 75.03 seconds =========================
+
+Environment        Status    Duration
+-----------------  --------  ------------
+esp_esp_ble_car_2  SUCCESS   00:01:15.034
+========================= 1 succeeded in 00:01:15.034 =========================

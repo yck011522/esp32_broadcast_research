@@ -1,0 +1,236 @@
+Test 13b: C:\Users\leungp\Documents\GitHub\esp32_broadcast_research\test\test_13b\results\runs\20261012_135434_008559_recovery_powercycle\ble_test_13b_20261012_135434_260822.jsonl
+[0.0s] modem_event: {'event': 'stopped'}
+[0.1s] modem_event: {'event': 'started'}
+[0.2s] modem_event: {'car': 2, 'event': 'connecting', 'mac': '68:ee:8f:46:33:45'}
+[0.7s] modem_event: {'car': 2, 'event': 'ready', 'mtu': 64, 'interval_ms': 15.0}
+[0.7s] modem_event: {'car': 3, 'event': 'connecting', 'mac': '68:ee:8f:4b:5b:19'}
+[1.1s] modem_event: {'car': 3, 'event': 'ready', 'mtu': 64, 'interval_ms': 15.0}
+[1.1s] modem_event: {'car': 1, 'event': 'connecting', 'mac': '1c:db:d4:43:73:ed'}
+[2.3s] modem_event: {'car': 1, 'event': 'ready', 'mtu': 64, 'interval_ms': 15.0}
+[2.3s] modem_event: {'car': 4, 'event': 'connecting', 'mac': '68:ee:8f:4b:4f:35'}
+[3.5s] modem_event: {'car': 4, 'event': 'connect_failed', 'error': 574}
+[4.6s] modem_event: {'car': 4, 'event': 'connecting', 'mac': '68:ee:8f:4b:4f:35'}
+[6.0s] modem_event: {'car': 4, 'event': 'ready', 'mtu': 64, 'interval_ms': 15.0}
+[6.1s] all_cars_ready: {'cars': [2, 3, 1, 4]}
+[11.1s] car=2 TX=50.19 Hz RX=20.00 Hz lost=0 echo_age=33.0 ms
+[11.1s] car=3 TX=50.19 Hz RX=20.00 Hz lost=0 echo_age=29.7 ms
+[11.1s] car=1 TX=50.19 Hz RX=20.00 Hz lost=0 echo_age=28.7 ms
+[11.1s] car=4 TX=50.19 Hz RX=20.00 Hz lost=0 echo_age=31.5 ms
+[16.1s] car=2 TX=49.99 Hz RX=20.19 Hz lost=0 echo_age=33.5 ms
+[16.1s] car=3 TX=49.99 Hz RX=19.99 Hz lost=0 echo_age=28.2 ms
+[16.1s] car=1 TX=49.99 Hz RX=19.99 Hz lost=0 echo_age=29.1 ms
+[16.1s] car=4 TX=49.99 Hz RX=19.99 Hz lost=0 echo_age=31.0 ms
+[21.1s] car=2 TX=50.00 Hz RX=19.80 Hz lost=0 echo_age=32.0 ms
+[21.1s] car=3 TX=50.00 Hz RX=20.00 Hz lost=0 echo_age=29.3 ms
+[21.1s] car=1 TX=50.00 Hz RX=20.00 Hz lost=0 echo_age=29.2 ms
+[21.1s] car=4 TX=50.00 Hz RX=20.00 Hz lost=0 echo_age=30.5 ms
+[26.1s] car=2 TX=49.99 Hz RX=20.19 Hz lost=0 echo_age=34.6 ms
+[26.1s] car=3 TX=49.99 Hz RX=19.99 Hz lost=0 echo_age=28.7 ms
+[26.1s] car=1 TX=49.99 Hz RX=19.99 Hz lost=0 echo_age=28.6 ms
+[26.1s] car=4 TX=49.99 Hz RX=19.99 Hz lost=0 echo_age=33.3 ms
+[31.1s] car=2 TX=49.99 Hz RX=20.00 Hz lost=0 echo_age=38.3 ms
+[31.1s] car=3 TX=49.99 Hz RX=20.00 Hz lost=0 echo_age=29.4 ms
+[31.1s] car=1 TX=49.99 Hz RX=20.00 Hz lost=0 echo_age=28.4 ms
+[31.1s] car=4 TX=49.99 Hz RX=20.00 Hz lost=0 echo_age=35.3 ms
+[36.1s] car=2 TX=49.98 Hz RX=19.79 Hz lost=0 echo_age=33.4 ms
+[36.1s] car=3 TX=49.98 Hz RX=19.99 Hz lost=0 echo_age=28.9 ms
+[36.1s] car=1 TX=49.98 Hz RX=19.99 Hz lost=0 echo_age=29.2 ms
+[36.1s] car=4 TX=49.98 Hz RX=19.99 Hz lost=0 echo_age=32.8 ms
+[41.1s] car=2 TX=49.99 Hz RX=20.19 Hz lost=0 echo_age=33.2 ms
+[41.1s] car=3 TX=49.99 Hz RX=19.99 Hz lost=0 echo_age=29.6 ms
+[41.1s] car=1 TX=49.99 Hz RX=19.99 Hz lost=0 echo_age=28.9 ms
+[41.1s] car=4 TX=49.99 Hz RX=19.99 Hz lost=0 echo_age=32.7 ms
+[46.1s] car=2 TX=49.98 Hz RX=19.99 Hz lost=0 echo_age=32.8 ms
+[46.1s] car=3 TX=49.98 Hz RX=19.99 Hz lost=0 echo_age=28.7 ms
+[46.1s] car=1 TX=49.98 Hz RX=19.99 Hz lost=0 echo_age=28.9 ms
+[46.1s] car=4 TX=49.98 Hz RX=20.19 Hz lost=0 echo_age=32.4 ms
+[51.1s] car=2 TX=49.98 Hz RX=19.99 Hz lost=0 echo_age=31.9 ms
+[51.1s] car=3 TX=49.98 Hz RX=20.19 Hz lost=0 echo_age=28.5 ms
+[51.1s] car=1 TX=49.98 Hz RX=19.99 Hz lost=0 echo_age=29.6 ms
+[51.1s] car=4 TX=49.98 Hz RX=19.79 Hz lost=0 echo_age=32.4 ms
+[56.1s] car=2 TX=50.00 Hz RX=20.00 Hz lost=0 echo_age=31.1 ms
+[56.1s] car=3 TX=50.00 Hz RX=19.80 Hz lost=0 echo_age=27.9 ms
+[56.1s] car=1 TX=50.00 Hz RX=20.00 Hz lost=0 echo_age=30.6 ms
+[56.1s] car=4 TX=50.00 Hz RX=20.00 Hz lost=0 echo_age=33.0 ms
+[58.7s] recovery_event: {'car': 4, 'event': 'outage_started', 'session': 1, 'cause': 'stale_command_echo'}
+[58.7s] recovery_event: {'car': 4, 'event': 'warning', 'session': 1, 'condition': 'stale_command_echo', 'silence_s': 0.9737526999997499, 'echo_age_ms': 1001.1255999997957}
+[59.0s] recovery_event: {'car': 3, 'event': 'outage_started', 'session': 1, 'cause': 'stale_command_echo'}
+[59.0s] recovery_event: {'car': 3, 'event': 'warning', 'session': 1, 'condition': 'stale_command_echo', 'silence_s': 3.819999983534217e-05, 'echo_age_ms': 1000.4301000008127}
+[59.0s] recovery_event: {'car': 1, 'event': 'outage_started', 'session': 1, 'cause': 'stale_command_echo'}
+[59.0s] recovery_event: {'car': 1, 'event': 'warning', 'session': 1, 'condition': 'stale_command_echo', 'silence_s': 0.041340100000525126, 'echo_age_ms': 1000.4301000008127}
+[59.0s] recovery_event: {'car': 2, 'event': 'outage_started', 'session': 1, 'cause': 'stale_command_echo'}
+[59.0s] recovery_event: {'car': 2, 'event': 'warning', 'session': 1, 'condition': 'stale_command_echo', 'silence_s': 0.023633800001334748, 'echo_age_ms': 1000.5462000008265}
+[60.8s] recovery_event: {'car': 4, 'event': 'warning', 'session': 1, 'condition': 'telemetry_silence', 'silence_s': 3.000628099998721, 'echo_age_ms': 3028.000999998767}
+[61.1s] car=2 TX=49.98 Hz RX=19.99 Hz lost=0 echo_age=941.5 ms
+[61.1s] car=3 TX=49.98 Hz RX=19.99 Hz lost=0 echo_age=930.4 ms
+[61.1s] car=1 TX=49.98 Hz RX=19.99 Hz lost=0 echo_age=933.4 ms
+[61.1s] car=4 TX=49.98 Hz RX=7.00 Hz lost=0 echo_age=32.3 ms
+[61.8s] modem_event: {'car': 4, 'event': 'disconnected', 'reason': 520}
+[61.8s] recovery_event: {'car': 4, 'event': 'link_down', 'session': 1, 'reason': 520}
+[61.8s] recovery_event: {'car': 4, 'event': 'warning', 'session': 1, 'condition': 'link_down', 'silence_s': 4.043406400000094, 'echo_age_ms': 4070.77930000014}
+[61.9s] recovery_event: {'car': 2, 'event': 'traffic_restored', 'session': 1, 'outage_s': 2.8266112999990582, 'echo_age_ms': 26.85580000070331}
+[61.9s] recovery_event: {'car': 2, 'event': 'warning_cleared', 'session': 1, 'condition': 'stale_command_echo'}
+[61.9s] recovery_event: {'car': 3, 'event': 'traffic_restored', 'session': 1, 'outage_s': 2.849414700000125, 'echo_age_ms': 29.3842000010045}
+[61.9s] recovery_event: {'car': 3, 'event': 'warning_cleared', 'session': 1, 'condition': 'stale_command_echo'}
+[61.9s] recovery_event: {'car': 1, 'event': 'traffic_restored', 'session': 1, 'outage_s': 2.8535704999994778, 'echo_age_ms': 33.540000000357395}
+[61.9s] recovery_event: {'car': 1, 'event': 'warning_cleared', 'session': 1, 'condition': 'stale_command_echo'}
+[61.9s] modem_event: {'car': 4, 'event': 'connecting', 'mac': '68:ee:8f:4b:4f:35'}
+[66.1s] car=2 TX=50.00 Hz RX=20.00 Hz lost=0 echo_age=541.7 ms
+[66.1s] car=3 TX=50.00 Hz RX=20.20 Hz lost=0 echo_age=570.7 ms
+[66.1s] car=1 TX=50.00 Hz RX=20.00 Hz lost=0 echo_age=579.0 ms
+[66.1s] car=4 TX=50.00 Hz RX=0.00 Hz lost=0 echo_age=n/a ms
+[66.9s] modem_event: {'car': 4, 'event': 'connect_failed', 'error': 13}
+[68.0s] modem_event: {'car': 4, 'event': 'connecting', 'mac': '68:ee:8f:4b:4f:35'}
+[71.1s] car=2 TX=49.98 Hz RX=19.99 Hz lost=0 echo_age=32.8 ms
+[71.1s] car=3 TX=49.98 Hz RX=19.79 Hz lost=0 echo_age=32.0 ms
+[71.1s] car=1 TX=49.98 Hz RX=19.99 Hz lost=0 echo_age=35.0 ms
+[71.1s] car=4 TX=49.98 Hz RX=0.00 Hz lost=0 echo_age=n/a ms
+[73.0s] modem_event: {'car': 4, 'event': 'connect_failed', 'error': 13}
+[74.1s] modem_event: {'car': 4, 'event': 'connecting', 'mac': '68:ee:8f:4b:4f:35'}
+[76.1s] car=2 TX=50.00 Hz RX=20.00 Hz lost=0 echo_age=32.6 ms
+[76.1s] car=3 TX=50.00 Hz RX=20.20 Hz lost=0 echo_age=31.2 ms
+[76.1s] car=1 TX=50.00 Hz RX=20.00 Hz lost=0 echo_age=34.6 ms
+[76.1s] car=4 TX=50.00 Hz RX=0.00 Hz lost=0 echo_age=n/a ms
+[79.1s] modem_event: {'car': 4, 'event': 'connect_failed', 'error': 13}
+[80.2s] modem_event: {'car': 4, 'event': 'connecting', 'mac': '68:ee:8f:4b:4f:35'}
+[81.1s] car=2 TX=49.99 Hz RX=19.99 Hz lost=0 echo_age=32.0 ms
+[81.1s] car=3 TX=49.99 Hz RX=19.99 Hz lost=0 echo_age=31.4 ms
+[81.1s] car=1 TX=49.99 Hz RX=19.99 Hz lost=0 echo_age=34.3 ms
+[81.1s] car=4 TX=49.99 Hz RX=0.00 Hz lost=0 echo_age=n/a ms
+[85.2s] modem_event: {'car': 4, 'event': 'connect_failed', 'error': 13}
+[86.1s] car=2 TX=50.00 Hz RX=20.00 Hz lost=0 echo_age=35.8 ms
+[86.1s] car=3 TX=50.00 Hz RX=19.80 Hz lost=0 echo_age=33.3 ms
+[86.1s] car=1 TX=50.00 Hz RX=20.00 Hz lost=0 echo_age=36.9 ms
+[86.1s] car=4 TX=50.00 Hz RX=0.00 Hz lost=0 echo_age=n/a ms
+[86.3s] modem_event: {'car': 4, 'event': 'connecting', 'mac': '68:ee:8f:4b:4f:35'}
+[91.1s] car=2 TX=49.99 Hz RX=20.00 Hz lost=0 echo_age=33.1 ms
+[91.1s] car=3 TX=49.99 Hz RX=20.20 Hz lost=0 echo_age=32.6 ms
+[91.1s] car=1 TX=49.99 Hz RX=20.00 Hz lost=0 echo_age=35.7 ms
+[91.1s] car=4 TX=49.99 Hz RX=0.00 Hz lost=0 echo_age=n/a ms
+[91.3s] modem_event: {'car': 4, 'event': 'connect_failed', 'error': 13}
+[92.4s] modem_event: {'car': 4, 'event': 'connecting', 'mac': '68:ee:8f:4b:4f:35'}
+[96.1s] car=2 TX=50.00 Hz RX=20.00 Hz lost=0 echo_age=33.1 ms
+[96.1s] car=3 TX=50.00 Hz RX=20.00 Hz lost=0 echo_age=31.0 ms
+[96.1s] car=1 TX=50.00 Hz RX=20.20 Hz lost=0 echo_age=35.6 ms
+[96.1s] car=4 TX=50.00 Hz RX=0.00 Hz lost=0 echo_age=n/a ms
+[97.4s] modem_event: {'car': 4, 'event': 'connect_failed', 'error': 13}
+[98.5s] modem_event: {'car': 4, 'event': 'connecting', 'mac': '68:ee:8f:4b:4f:35'}
+[98.7s] recovery_event: {'car': 4, 'event': 'warning_cleared', 'session': 1, 'condition': 'stale_command_echo'}
+[101.1s] car=2 TX=50.00 Hz RX=20.00 Hz lost=0 echo_age=33.1 ms
+[101.1s] car=3 TX=50.00 Hz RX=19.80 Hz lost=0 echo_age=31.6 ms
+[101.1s] car=1 TX=50.00 Hz RX=19.80 Hz lost=0 echo_age=34.6 ms
+[101.1s] car=4 TX=50.00 Hz RX=0.00 Hz lost=0 echo_age=n/a ms
+[103.5s] modem_event: {'car': 4, 'event': 'connect_failed', 'error': 13}
+[104.6s] modem_event: {'car': 4, 'event': 'connecting', 'mac': '68:ee:8f:4b:4f:35'}
+[106.1s] car=2 TX=50.00 Hz RX=20.00 Hz lost=0 echo_age=32.4 ms
+[106.1s] car=3 TX=50.00 Hz RX=20.20 Hz lost=0 echo_age=32.4 ms
+[106.1s] car=1 TX=50.00 Hz RX=20.20 Hz lost=0 echo_age=36.0 ms
+[106.1s] car=4 TX=50.00 Hz RX=0.00 Hz lost=0 echo_age=n/a ms
+[109.6s] modem_event: {'car': 4, 'event': 'connect_failed', 'error': 13}
+[110.7s] modem_event: {'car': 4, 'event': 'connecting', 'mac': '68:ee:8f:4b:4f:35'}
+[111.1s] car=2 TX=50.00 Hz RX=20.00 Hz lost=0 echo_age=30.9 ms
+[111.1s] car=3 TX=50.00 Hz RX=20.00 Hz lost=0 echo_age=30.1 ms
+[111.1s] car=1 TX=50.00 Hz RX=20.00 Hz lost=0 echo_age=34.2 ms
+[111.1s] car=4 TX=50.00 Hz RX=0.00 Hz lost=0 echo_age=n/a ms
+[115.7s] modem_event: {'car': 4, 'event': 'connect_failed', 'error': 13}
+[116.1s] car=2 TX=49.99 Hz RX=20.00 Hz lost=0 echo_age=32.4 ms
+[116.1s] car=3 TX=49.99 Hz RX=20.00 Hz lost=0 echo_age=33.3 ms
+[116.1s] car=1 TX=49.99 Hz RX=19.80 Hz lost=0 echo_age=38.2 ms
+[116.1s] car=4 TX=49.99 Hz RX=0.00 Hz lost=0 echo_age=n/a ms
+[116.8s] modem_event: {'car': 4, 'event': 'connecting', 'mac': '68:ee:8f:4b:4f:35'}
+[121.1s] car=2 TX=50.00 Hz RX=20.00 Hz lost=0 echo_age=31.0 ms
+[121.1s] car=3 TX=50.00 Hz RX=19.80 Hz lost=0 echo_age=33.6 ms
+[121.1s] car=1 TX=50.00 Hz RX=20.00 Hz lost=0 echo_age=36.3 ms
+[121.1s] car=4 TX=50.00 Hz RX=0.00 Hz lost=0 echo_age=n/a ms
+[121.8s] modem_event: {'car': 4, 'event': 'connect_failed', 'error': 13}
+[122.9s] modem_event: {'car': 4, 'event': 'connecting', 'mac': '68:ee:8f:4b:4f:35'}
+[126.1s] car=2 TX=50.19 Hz RX=20.00 Hz lost=0 echo_age=32.3 ms
+[126.1s] car=3 TX=50.19 Hz RX=20.20 Hz lost=0 echo_age=31.5 ms
+[126.1s] car=1 TX=50.19 Hz RX=20.20 Hz lost=0 echo_age=35.6 ms
+[126.1s] car=4 TX=50.19 Hz RX=0.00 Hz lost=0 echo_age=n/a ms
+[127.9s] modem_event: {'car': 4, 'event': 'connect_failed', 'error': 13}
+[129.0s] modem_event: {'car': 4, 'event': 'connecting', 'mac': '68:ee:8f:4b:4f:35'}
+[131.1s] car=2 TX=49.98 Hz RX=19.99 Hz lost=0 echo_age=32.5 ms
+[131.1s] car=3 TX=49.98 Hz RX=19.99 Hz lost=0 echo_age=32.4 ms
+[131.1s] car=1 TX=49.98 Hz RX=19.99 Hz lost=0 echo_age=35.5 ms
+[131.1s] car=4 TX=49.98 Hz RX=0.00 Hz lost=0 echo_age=n/a ms
+[134.0s] modem_event: {'car': 4, 'event': 'connect_failed', 'error': 13}
+[135.1s] modem_event: {'car': 4, 'event': 'connecting', 'mac': '68:ee:8f:4b:4f:35'}
+[136.0s] recovery_event: {'car': 2, 'event': 'outage_started', 'session': 1, 'cause': 'stale_command_echo'}
+[136.1s] recovery_event: {'car': 2, 'event': 'warning', 'session': 1, 'condition': 'stale_command_echo', 'silence_s': 0.9770903999997245, 'echo_age_ms': 1002.0335999997769}
+[136.1s] recovery_event: {'car': 3, 'event': 'outage_started', 'session': 1, 'cause': 'stale_command_echo'}
+[136.1s] recovery_event: {'car': 3, 'event': 'warning', 'session': 1, 'condition': 'stale_command_echo', 'silence_s': 0.9738535999986198, 'echo_age_ms': 1002.0335999997769}
+[136.1s] recovery_event: {'car': 1, 'event': 'outage_started', 'session': 1, 'cause': 'stale_command_echo'}
+[136.1s] recovery_event: {'car': 1, 'event': 'warning', 'session': 1, 'condition': 'stale_command_echo', 'silence_s': 0.9704160999990563, 'echo_age_ms': 1002.0335999997769}
+[136.1s] car=2 TX=50.00 Hz RX=16.00 Hz lost=0 echo_age=30.5 ms
+[136.1s] car=3 TX=50.00 Hz RX=16.00 Hz lost=0 echo_age=32.7 ms
+[136.1s] car=1 TX=50.00 Hz RX=16.00 Hz lost=0 echo_age=35.5 ms
+[136.1s] car=4 TX=50.00 Hz RX=0.00 Hz lost=0 echo_age=n/a ms
+[138.1s] recovery_event: {'car': 2, 'event': 'warning', 'session': 1, 'condition': 'telemetry_silence', 'silence_s': 3.0002722999997786, 'echo_age_ms': 3025.215499999831}
+[138.1s] recovery_event: {'car': 3, 'event': 'warning', 'session': 1, 'condition': 'telemetry_silence', 'silence_s': 3.0038711999986845, 'echo_age_ms': 3032.0511999998416}
+[138.1s] recovery_event: {'car': 1, 'event': 'warning', 'session': 1, 'condition': 'telemetry_silence', 'silence_s': 3.000433699999121, 'echo_age_ms': 3032.0511999998416}
+[141.1s] car=2 TX=50.00 Hz RX=0.00 Hz lost=0 echo_age=n/a ms
+[141.1s] car=3 TX=50.00 Hz RX=0.00 Hz lost=0 echo_age=n/a ms
+[141.1s] car=1 TX=50.00 Hz RX=0.00 Hz lost=0 echo_age=n/a ms
+[141.1s] car=4 TX=50.00 Hz RX=0.00 Hz lost=0 echo_age=n/a ms
+[146.1s] car=2 TX=49.98 Hz RX=0.00 Hz lost=0 echo_age=n/a ms
+[146.1s] car=3 TX=49.98 Hz RX=0.00 Hz lost=0 echo_age=n/a ms
+[146.1s] car=1 TX=49.98 Hz RX=0.00 Hz lost=0 echo_age=n/a ms
+[146.1s] car=4 TX=49.98 Hz RX=0.00 Hz lost=0 echo_age=n/a ms
+[151.1s] car=2 TX=50.00 Hz RX=0.00 Hz lost=0 echo_age=n/a ms
+[151.1s] car=3 TX=50.00 Hz RX=0.00 Hz lost=0 echo_age=n/a ms
+[151.1s] car=1 TX=50.00 Hz RX=0.00 Hz lost=0 echo_age=n/a ms
+[151.1s] car=4 TX=50.00 Hz RX=0.00 Hz lost=0 echo_age=n/a ms
+[156.1s] car=2 TX=49.99 Hz RX=0.00 Hz lost=0 echo_age=n/a ms
+[156.1s] car=3 TX=49.99 Hz RX=0.00 Hz lost=0 echo_age=n/a ms
+[156.1s] car=1 TX=49.99 Hz RX=0.00 Hz lost=0 echo_age=n/a ms
+[156.1s] car=4 TX=49.99 Hz RX=0.00 Hz lost=0 echo_age=n/a ms
+[161.1s] car=2 TX=50.00 Hz RX=0.00 Hz lost=0 echo_age=n/a ms
+[161.1s] car=3 TX=50.00 Hz RX=0.00 Hz lost=0 echo_age=n/a ms
+[161.1s] car=1 TX=50.00 Hz RX=0.00 Hz lost=0 echo_age=n/a ms
+[161.1s] car=4 TX=50.00 Hz RX=0.00 Hz lost=0 echo_age=n/a ms
+[166.1s] car=2 TX=50.00 Hz RX=0.00 Hz lost=0 echo_age=n/a ms
+[166.1s] car=3 TX=50.00 Hz RX=0.00 Hz lost=0 echo_age=n/a ms
+[166.1s] car=1 TX=50.00 Hz RX=0.00 Hz lost=0 echo_age=n/a ms
+[166.1s] car=4 TX=50.00 Hz RX=0.00 Hz lost=0 echo_age=n/a ms
+[171.1s] car=2 TX=49.99 Hz RX=0.00 Hz lost=0 echo_age=n/a ms
+[171.1s] car=3 TX=49.99 Hz RX=0.00 Hz lost=0 echo_age=n/a ms
+[171.1s] car=1 TX=49.99 Hz RX=0.00 Hz lost=0 echo_age=n/a ms
+[171.1s] car=4 TX=49.99 Hz RX=0.00 Hz lost=0 echo_age=n/a ms
+[176.0s] recovery_event: {'car': 2, 'event': 'warning', 'session': 1, 'condition': 'no_matched_echo', 'silence_s': 40.934861900001124, 'echo_age_ms': None}
+[176.0s] recovery_event: {'car': 2, 'event': 'warning_cleared', 'session': 1, 'condition': 'stale_command_echo'}
+[176.0s] recovery_event: {'car': 3, 'event': 'warning', 'session': 1, 'condition': 'no_matched_echo', 'silence_s': 40.93162510000002, 'echo_age_ms': None}
+[176.0s] recovery_event: {'car': 3, 'event': 'warning_cleared', 'session': 1, 'condition': 'stale_command_echo'}
+[176.0s] recovery_event: {'car': 1, 'event': 'warning', 'session': 1, 'condition': 'no_matched_echo', 'silence_s': 40.928187600000456, 'echo_age_ms': None}
+[176.0s] recovery_event: {'car': 1, 'event': 'warning_cleared', 'session': 1, 'condition': 'stale_command_echo'}
+[176.1s] car=2 TX=49.99 Hz RX=0.00 Hz lost=0 echo_age=n/a ms
+[176.1s] car=3 TX=49.99 Hz RX=0.00 Hz lost=0 echo_age=n/a ms
+[176.1s] car=1 TX=49.99 Hz RX=0.00 Hz lost=0 echo_age=n/a ms
+[176.1s] car=4 TX=49.99 Hz RX=0.00 Hz lost=0 echo_age=n/a ms
+[181.1s] car=2 TX=49.99 Hz RX=0.00 Hz lost=0 echo_age=n/a ms
+[181.1s] car=3 TX=49.99 Hz RX=0.00 Hz lost=0 echo_age=n/a ms
+[181.1s] car=1 TX=49.99 Hz RX=0.00 Hz lost=0 echo_age=n/a ms
+[181.1s] car=4 TX=49.99 Hz RX=0.00 Hz lost=0 echo_age=n/a ms
+[186.1s] car=2 TX=49.99 Hz RX=0.00 Hz lost=0 echo_age=n/a ms
+[186.1s] car=3 TX=49.99 Hz RX=0.00 Hz lost=0 echo_age=n/a ms
+[186.1s] car=1 TX=49.99 Hz RX=0.00 Hz lost=0 echo_age=n/a ms
+[186.1s] car=4 TX=49.99 Hz RX=0.00 Hz lost=0 echo_age=n/a ms
+[191.1s] car=2 TX=49.99 Hz RX=0.00 Hz lost=0 echo_age=n/a ms
+[191.1s] car=3 TX=49.99 Hz RX=0.00 Hz lost=0 echo_age=n/a ms
+[191.1s] car=1 TX=49.99 Hz RX=0.00 Hz lost=0 echo_age=n/a ms
+[191.1s] car=4 TX=49.99 Hz RX=0.00 Hz lost=0 echo_age=n/a ms
+[196.1s] car=2 TX=49.99 Hz RX=0.00 Hz lost=0 echo_age=n/a ms
+[196.1s] car=3 TX=49.99 Hz RX=0.00 Hz lost=0 echo_age=n/a ms
+[196.1s] car=1 TX=49.99 Hz RX=0.00 Hz lost=0 echo_age=n/a ms
+[196.1s] car=4 TX=49.99 Hz RX=0.00 Hz lost=0 echo_age=n/a ms
+[201.1s] car=2 TX=50.00 Hz RX=0.00 Hz lost=0 echo_age=n/a ms
+[201.1s] car=3 TX=50.00 Hz RX=0.00 Hz lost=0 echo_age=n/a ms
+[201.1s] car=1 TX=50.00 Hz RX=0.00 Hz lost=0 echo_age=n/a ms
+[201.1s] car=4 TX=50.00 Hz RX=0.00 Hz lost=0 echo_age=n/a ms
+[204.8s] stop_requested: {'path': 'C:\\Users\\leungp\\Documents\\GitHub\\esp32_broadcast_research\\test\\test_13b\\results\\runs\\20261012_135434_008559_recovery_powercycle\\stop.request'}
+[204.8s] car=2 TX=49.96 Hz RX=0.00 Hz lost=0 echo_age=n/a ms
+[204.8s] car=3 TX=49.96 Hz RX=0.00 Hz lost=0 echo_age=n/a ms
+[204.8s] car=1 TX=49.96 Hz RX=0.00 Hz lost=0 echo_age=n/a ms
+[204.8s] car=4 TX=49.96 Hz RX=0.00 Hz lost=0 echo_age=n/a ms
+Finished: observation_completed; C:\Users\leungp\Documents\GitHub\esp32_broadcast_research\test\test_13b\results\runs\20261012_135434_008559_recovery_powercycle\ble_test_13b_20261012_135434_260822.summary.json
+Validation: Modem received 6312 commands; Python sent 9935; Modem did not stop/disconnect cleanly; Car 2: modem BLE write count differs from Python; Car 2: BLE write errors; Car 2: disconnect count differs from one intentional shutdown; Car 2: rate outside 50±1 Hz TX / 20±0.5 Hz RX; Car 3: modem BLE write count differs from Python; Car 3: BLE write errors; Car 3: disconnect count differs from one intentional shutdown; Car 3: rate outside 50±1 Hz TX / 20±0.5 Hz RX; Car 1: modem BLE write count differs from Python; Car 1: BLE write errors; Car 1: disconnect count differs from one intentional shutdown; Car 1: rate outside 50±1 Hz TX / 20±0.5 Hz RX; Car 4: modem BLE write count differs from Python; Car 4: BLE write errors; Car 4: rate outside 50±1 Hz TX / 20±0.5 Hz RX

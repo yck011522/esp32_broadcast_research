@@ -1,0 +1,39 @@
+{
+  "status": "test13b_installed",
+  "attempted": [
+    {
+      "port": "COM4",
+      "usb_serial": "68:EE:8F:46:33:44",
+      "profile": "esp_esp_ble_car_2"
+    },
+    {
+      "port": "COM5",
+      "usb_serial": "68:EE:8F:4B:5B:18",
+      "profile": "esp_esp_ble_car_3"
+    },
+    {
+      "port": "COM7",
+      "usb_serial": "1C:DB:D4:43:73:EC",
+      "profile": "esp_esp_ble_car_1"
+    },
+    {
+      "port": "COM8",
+      "usb_serial": "68:EE:8F:4B:4F:34",
+      "profile": "esp_esp_ble_car_4"
+    },
+    {
+      "port": "COM3",
+      "usb_serial": "68:EE:8F:4B:5B:4C",
+      "profile": "esp_esp_ble_modem_13b"
+    }
+  ],
+  "uploaded": [
+    "esp_esp_ble_car_2",
+    "esp_esp_ble_car_3",
+    "esp_esp_ble_car_1",
+    "esp_esp_ble_car_4",
+    "esp_esp_ble_modem_13b"
+  ],
+  "errors": [],
+  "note": "Leaves Test 13b installed; partial upload failures are recorded and not claimed as success."
+}

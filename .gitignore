@@ -9,3 +9,7 @@ __pycache__/
 
 # High-volume packet logs stay local. Commit CSVs, summaries and analysis instead.
 /test/**/*.jsonl
+
+# Local process-control files are not experiment results.
+/test/**/launcher.json
+/test/**/stop.request

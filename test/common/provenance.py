@@ -10,7 +10,7 @@ import sys
 ROOT = Path(__file__).resolve().parents[2]
 
 
-def capture_test13(directory, settings):
+def capture_test13(directory, settings, profiles=None, extra_sources=()):
     paths = [ROOT / 'platformio.ini', Path(__file__),
              ROOT / 'test/test_11/test_11_ble_pc.py',
              ROOT / 'test/test_11/test_11_monitor_servers.py',
@@ -18,6 +18,7 @@ def capture_test13(directory, settings):
              ROOT / 'test/test_13/test_13_ble_modem.py']
     paths += list((ROOT / 'src/test_13').rglob('*.cpp'))
     paths += list((ROOT / 'src/test_13').rglob('*.h'))
+    paths += [Path(p) for p in extra_sources]
     sources = {p.relative_to(ROOT).as_posix(): hashlib.sha256(p.read_bytes()).hexdigest() for p in paths}
     packages = {}
     for package in ('pyserial', 'bleak', 'matplotlib'):
@@ -26,7 +27,7 @@ def capture_test13(directory, settings):
         except PackageNotFoundError:
             packages[package] = None
     builds = {}
-    for profile in ('esp_esp_ble_modem', 'esp_esp_ble_car_2', 'esp_esp_ble_car_3'):
+    for profile in profiles or ('esp_esp_ble_modem', 'esp_esp_ble_car_2', 'esp_esp_ble_car_3'):
         binary = ROOT / '.pio/build' / profile / 'firmware.bin'
         if binary.is_file():
             destination = directory / 'firmware' / (profile + '.bin')

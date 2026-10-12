@@ -42,6 +42,7 @@ class LoggerChecks(unittest.TestCase):
 
     def test_chunked_serial_to_files(self):
         import serial
+        clock = [0.0]
 
         class FakeSerial:
             def __init__(self, **kwargs):
@@ -57,7 +58,7 @@ class LoggerChecks(unittest.TestCase):
                 return 4096
 
             def read(self, size):
-                time.sleep(0.001)
+                clock[0] += 0.01
                 return self.chunks.pop(0) if self.chunks else b""
 
             def close(self):
@@ -68,6 +69,7 @@ class LoggerChecks(unittest.TestCase):
             args = ["test.test_09.test_9_ble_test.py", "--duration-seconds", "0.05",
                     "--output-dir", directory]
             with patch("sys.argv", args), patch.object(serial, "Serial", return_value=link), \
+                    patch.object(logger.time, "monotonic", side_effect=lambda: clock[0]), \
                     contextlib.redirect_stdout(io.StringIO()):
                 logger.main()
             root = Path(directory)

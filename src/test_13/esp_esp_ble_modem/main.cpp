@@ -22,7 +22,12 @@ struct Target {
     std::atomic<uint32_t> tx{0}, rx{0}, writeErrors{0}, connects{0}, disconnects{0};
 };
 // Public BLE addresses, not USB serial MACs. Add entries here for more cars.
+#if BLE_MODEM_FOUR_CARS
+Target targets[] = {{2, "68:ee:8f:46:33:45"}, {3, "68:ee:8f:4b:5b:19"},
+                    {1, "1c:db:d4:43:73:ed"}, {4, "68:ee:8f:4b:4f:35"}};
+#else
 Target targets[] = {{2, "68:ee:8f:46:33:45"}, {3, "68:ee:8f:4b:5b:19"}};
+#endif
 constexpr size_t TARGET_COUNT = sizeof(targets) / sizeof(targets[0]);
 static_assert(TARGET_COUNT <= MAX_CARS, "Too many target cars");
 

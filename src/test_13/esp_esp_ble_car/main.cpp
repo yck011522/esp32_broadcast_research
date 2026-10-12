@@ -145,10 +145,11 @@ void loop() {
                  (unsigned long)dup, (unsigned long)old, (unsigned long)bad,
                  (unsigned long)totalRx, (unsigned long)totalGaps);
         printLine(line);
-        snprintf(line, sizeof(line), "car health: car=%d library=NimBLE-Arduino-2.5.1 connected=%d subscribed=%d advertising=%d mtu=%u notify_errors=%lu command_watchdog=0 heap=%lu uptime_ms=%lu\n",
+        snprintf(line, sizeof(line), "car health: car=%d library=NimBLE-Arduino-2.5.1 connected=%d subscribed=%d advertising=%d mtu=%u notify_errors=%lu command_watchdog=0 heap=%lu uptime_ms=%lu ble_mac=%s\n",
                  BLE_CAR_ID, int(connected.load()), int(subscribed.load()),
                  int(NimBLEDevice::getAdvertising()->isAdvertising()), mtu.load(),
-                 (unsigned long)notifyErrors.load(), (unsigned long)ESP.getFreeHeap(), (unsigned long)now);
+                 (unsigned long)notifyErrors.load(), (unsigned long)ESP.getFreeHeap(), (unsigned long)now,
+                 NimBLEDevice::getAddress().toString().c_str());
         printLine(line);
         lastReport = now;
     }

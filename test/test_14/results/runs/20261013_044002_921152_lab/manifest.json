@@ -1,0 +1,39 @@
+{
+  "python": "3.11.9",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "packages": {
+    "pyserial": "3.5",
+    "matplotlib": "3.10.6"
+  },
+  "settings": {
+    "port": "COM3",
+    "duration_seconds": 120.0,
+    "hours": null,
+    "label": "lab",
+    "scenario": "bench",
+    "no_server_monitor": true,
+    "output_dir": null,
+    "stop_file": null,
+    "start_sequence": 65520,
+    "modem_profile": "ble14_modem"
+  },
+  "source_sha256": {
+    "platformio.ini": "fdee5dce836762e4db28bb27db174c0a37bae4c04ad0634bc8cd0217df1c4460",
+    "payload.md": "5de7ea6e6d5f2034946056f73eecb911bb982549d16574e75fb0a121151c1e01",
+    "src/test_14/car/main.cpp": "9bcaaa9c6aa87de1af4721951977c8237b229556c68beb68bf6f1f0300bb5f91",
+    "src/test_14/include/ble14_modem_config.h": "18d06713702721e5eb35340dc6af2a68352eb47852b2a9ab4763ceecf40a59bb",
+    "src/test_14/include/ble14_protocol.h": "5addde21dfb9d4f917fe3adfcb5912c7a55eac0c4e9aaaca147d9c0dd8cf9f5c",
+    "src/test_14/include/ble14_watchdog.h": "df7da860726d1f55f28cb78d7bb9b52f0e46dce09f896f556301566ab1f144b2",
+    "src/test_14/modem/main.cpp": "a8433a7922b22d07dd47f08cc1dc83a54566097ad1b918891f593ba5c993b9cb",
+    "test/test_14/analyze_test_14.py": "caadedf5f80c025d5d01937a2d9be29a499820614d93867bf266eec68f197239",
+    "test/test_14/audit_test_14.py": "5c7f5bfe11cc22c7bf18f0c64186416993f226238571f54b927935aca033eb3f",
+    "test/test_14/flash_test_14.py": "e8e8e5d5c97e2a0088b0dbed4242353b1b80f57c39082aae8caa1d75019492e7",
+    "test/test_14/protocol.py": "b914bd00c17647a0a5763a66a65e8933df86285b5e0da75607ddd2a8a2792060",
+    "test/test_14/qualify_test_14.py": "6d9c9e9111560ac77ef11579f496277f111fca5c39119773d5a7352f19341721",
+    "test/test_14/test_14_ble_modem.py": "81ea8be3605f31d9be8912c35cb1cca3c13057c5107bed08cef56d7921a21adb",
+    "test/test_14/test_14_checks.py": "c6b7969896177455a7e3b22bbbc643b4058b3219ce3e0472714b7ab5f25ca9cf",
+    "test/test_14/__init__.py": "4aee6230244a9889915be3920faf98a6dd598d67c67ceb37450e70c81e442e0f"
+  },
+  "available_builds": {},
+  "build_note": "Available builds copied locally, not firmware read back from devices."
+}

@@ -3,8 +3,9 @@ The purpose of this repository is to test communication between a master radio a
 Experiment scripts, plotting tools and results are grouped under numbered
 folders in [test/README.md](test/README.md). Available firmware mappings
 are listed in [src/README.md](src/README.md). The current ESP32 modem
-experiments are [Test 13](test/test_13/README.md) with two cars and
-[Test 13b](test/test_13b/README.md) with four cars, sharing firmware sources.
+experiment is [Test 14](test/test_14/README.md), with a transparent four-car
+modem and automatic reconnects. Earlier [Test 13](test/test_13/README.md) and
+[Test 13b](test/test_13b/README.md) retain their shared firmware and results.
 
 ## Goal
 

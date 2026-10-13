@@ -1,0 +1,57 @@
+{
+  "python": "3.12.10",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "packages": {
+    "pyserial": "3.5",
+    "matplotlib": "3.11.2"
+  },
+  "settings": {
+    "port": "COM3",
+    "duration_seconds": 120.0,
+    "hours": null,
+    "label": "bench",
+    "scenario": "bench",
+    "no_server_monitor": false,
+    "output_dir": null,
+    "stop_file": null,
+    "start_sequence": 65520,
+    "modem_profile": "ble14_modem"
+  },
+  "source_sha256": {
+    "platformio.ini": "8c65b032ee73d99a6e63ff4977c467b04089887f7b65fc5c36f23d236672998b",
+    "payload.md": "fda88f0bdc8ed0979fa36bccf9981b8ffeb16286d4f7c7e35a9de6d507dbe31d",
+    "src/test_14/car/main.cpp": "242f0966ac3efd467bd0b8d52ae45598df9dc66a9bf65e2267af5df135e50b6f",
+    "src/test_14/include/ble14_modem_config.h": "d46c74f4686055f4a0c4e56a2e9611f241dd2ef17b85f593b9e3182af74fde7c",
+    "src/test_14/include/ble14_protocol.h": "8c10e23c2f36841aed17d37177014bb67ea267482b28536f243565a0f590cf54",
+    "src/test_14/include/ble14_watchdog.h": "46c34d6f10b9d294888ae008283b5be7b357b7b985d57cf078f881f3e696c6bf",
+    "src/test_14/modem/main.cpp": "61696a9d726a23bb137195e5b1860c6f966d1037f1737cf000df0575fa1d2935",
+    "test/test_14/flash_test_14.py": "15ed3d018da950284d0e07143345804c0dfb7ff48fdce77683ca2e38e8b76c38",
+    "test/test_14/protocol.py": "0352dc192e0db7c40d33a77fee2f3040f152f2e0f100f2ecf7a12dab99c61fdc",
+    "test/test_14/test_14_ble_modem.py": "88ed43fa235bf650fc94a5a2acf45971d194876a56f6e07e8e2cf08a71d7117d",
+    "test/test_14/test_14_checks.py": "c9b437a2a64233cdeb0aa30438abe86ed3096470c60dd9606fb91966a917b2e7",
+    "test/test_14/__init__.py": "a229818fb29edb21f0482f75cd6923245813c3bf60cab0df11885ac0a2c24c06"
+  },
+  "available_builds": {
+    "ble14_modem": {
+      "file": "firmware/ble14_modem.bin",
+      "sha256": "fee4fc5e45abcc67d0bce9583608382eba62440e8a9e006991c8d54b32fd8299"
+    },
+    "ble14_car_1": {
+      "file": "firmware/ble14_car_1.bin",
+      "sha256": "6448f3aab0a848933173ea93da8dcc5a30a04bffc3d7a4970aed6cde20112aac"
+    },
+    "ble14_car_2": {
+      "file": "firmware/ble14_car_2.bin",
+      "sha256": "7bc3b3d5332e1565967dde15bc4bcf0b3625c074e2ae1522eee092d5bb75b586"
+    },
+    "ble14_car_3": {
+      "file": "firmware/ble14_car_3.bin",
+      "sha256": "8441327f52062163a684bfc2bfafbd0396d98a9079ba2ac2eef0733e9eada4bd"
+    },
+    "ble14_car_4": {
+      "file": "firmware/ble14_car_4.bin",
+      "sha256": "423cd38b1d0121febc7c01caeed268c669ff85993bd79a280a0d39f943e1e4be"
+    }
+  },
+  "build_note": "Available builds copied locally, not firmware read back from devices."
+}

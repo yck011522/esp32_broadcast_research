@@ -1,0 +1,48 @@
+{
+  "passed": true,
+  "original_status": "failed",
+  "failures": [],
+  "stale_startup_snapshot_cars": [
+    "1"
+  ],
+  "proof": {
+    "1": {
+      "car_received": 180000,
+      "connection_counts_during_traffic": [
+        5
+      ],
+      "disconnect_delta": 0,
+      "baseline_connected": 0,
+      "baseline_subscribed": 0
+    },
+    "2": {
+      "car_received": 180000,
+      "connection_counts_during_traffic": [
+        13
+      ],
+      "disconnect_delta": 0,
+      "baseline_connected": 1,
+      "baseline_subscribed": 1
+    },
+    "3": {
+      "car_received": 180000,
+      "connection_counts_during_traffic": [
+        14
+      ],
+      "disconnect_delta": 0,
+      "baseline_connected": 1,
+      "baseline_subscribed": 1
+    },
+    "4": {
+      "car_received": 180000,
+      "connection_counts_during_traffic": [
+        13
+      ],
+      "disconnect_delta": 0,
+      "baseline_connected": 1,
+      "baseline_subscribed": 1
+    }
+  },
+  "note": "Reassessment of communication evidence; original CSV and summary remain unchanged.",
+  "source_summary_sha256": "7dfbc7ed67e12e3c08c31470e400eb455e84beeef3cde4311e22b411173d03b5"
+}

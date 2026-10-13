@@ -9,18 +9,21 @@ At non-regular intervals, PC can send a **Configuration command** to change robo
 - Transport through Bluetooth LE that is available on ESP32S3.
 - ESP32 on the **Robot** acts as **Server** side, advertise itself, provide one **Service** that contain multiple **Characteristics**.
 - Each Characteristic is a fixed size **Binary Packet**.
-- Each packet is a self-contained **latest snapshot**, old packets can be discarded at all layers.
-- USB serial framing may add a newline, but that newline is not transmitted over ESP-NOW.
+- World State and Robot State packets are self-contained **latest snapshots**; old snapshots can be discarded. Configuration commands use their separate acknowledged path.
+- PC-to-modem USB framing is a literal message character followed by hexadecimal payload bytes and a newline. Neither the message character nor the newline is transmitted over BLE.
+- For World State, USB sends `W` + 14 hex characters + newline (16 bytes on USB). The modem writes exactly the seven decoded payload bytes into the car's characteristic, without padding. Multi-byte integers are little-endian.
+- Robot State is 21 binary bytes on BLE and 42 hex characters plus newline on modem-to-PC USB. The modem forwards it unchanged, without adding headers, session tokens or receive counters.
 
 # World State
 
 Sends out at approximately 50Hz
 This will "Write without response" to the "world_state" characteristic of each car. All cars will receive the same World State packet.
 If more a world state is pending to be sent to a car but a new world state is received from the computer, the new world state will be sent and the old one will be dropped. The car will always receive the latest world state.
+The modem holds one shared pending World State and expires it 1,000 ms after reception. Idle application traffic does not disconnect BLE. The `msg_type` row below describes USB framing only; the remaining rows constitute the seven-byte BLE characteristic.
 
 | Name | Expected format | Bytes | Type | Meaning of that property |
 | --- | --- | ---: | --- | --: |
-| `msg_type` | `W` | 1 | char | Message type identifier for World State. |
+| `msg_type` | `W` | 1 | char | USB-only dispatch character; stripped by the modem before the BLE write. |
 | `world_seq` | `0-65535` | 2 | uint16 | Monotonically increasing World State sequence number, typically at 50Hz / 20ms interval. Used by each car to detect missing broadcasts. |
 | `topology_id` | `0-255` | 1 | uint8 | ID of the active predefined map/topology configuration. Only a few configurations are possible. |
 | `movement_command_1` | bit mask | 1 | bits | Movement Command for Car 1. |
@@ -64,10 +67,11 @@ The PC side will be able to read the latest telemetry from each car to confirm t
 
 | Name | Expected format | Bytes | Type | Meaning of that property |
 | --- | --- | ---: | --- | --: |
-| `msg_type` | `C` | 1 | char | Message type identifier for Configuration Command. |
+| `msg_type` | `C` | 1 | char | USB-only dispatch character; stripped by the modem before the BLE write. |
 | `world_seq` | `0-65535` | 2 | uint16 | Monotonically increasing World State sequence number, typically at 50Hz / 20ms interval. Used by each car to detect missing broadcasts. |
 
 Other configuration parameters are TBD.
+Configuration handling is reserved for future implementation; Test 14 implements World State and Robot State only.
 
 # Robot State
 
@@ -78,13 +82,13 @@ Each car sends one Robot State packet at approximately **20 Hz**.
 | `robot_id` | `1-4` | 1 | uint8 | Identifies which car generated this telemetry packet. |
 | `telemetry_seq` | `0-65535`                           | 2     | uint16 | Sequence number incremented for every Robot State transmission. <br />Allows the PC to detect missing telemetry packets. |
 | `last_world_seq`          | `0-65535`                           | 2     | uint16 | Most recent valid World State sequence number received and applied by this car. <br />Zero before the first World State packet is received. |
-| `world_packets_lost_5s` | `0-255` | 1 | uint8 | Number of missing World State sequence numbers detected during the most recently completed one-second measurement window. The reported value remains fixed until the next one-second window completes. |
-| `nfc_marker_id` | `0-65535` | 6 | bytes | The 2nd to 7th byte of the NFC tag's UID. 1st byte skipped because they are the same. |
+| `world_packets_lost_5s` | `0-255` | 1 | uint8 | Number of missing World State sequence numbers detected during the most recently completed five-second measurement window, saturated at 255. The reported value remains fixed until the next five-second window completes. Sequence gaps include intentionally superseded World States and do not identify radio loss alone. |
+| `nfc_marker_id` | 6 raw bytes | 6 | bytes | The 2nd to 7th byte of the NFC tag's UID. 1st byte skipped because they are the same. |
 | `nfc_marker_age_ms` | `0-65535` | 2 | uint16 | Milliseconds elapsed since the most recent valid NFC marker detection. |
-| `controller_follow_state` | `0-4` | 1 | uint | Current local intersection/navigation FSM state. |
-| `left_speed_mm_s` | signed integer, `-32768` to `32767` |  | 6 | Current measured left-wheel speed in mm/s, derived from encoder feedback through the motor driver. Positive and negative signs indicate direction. |
-| `right_speed_mm_s` | signed integer, `-32768` to `32767` |  | 6 | Current measured right-wheel speed in mm/s, derived from encoder feedback through the motor driver. Positive and negative signs indicate direction. |
-| `battery_mv` | `0-65535` |  | 5 | Measured battery voltage in millivolts. Example: `12420` = 12.420 V. |
+| `controller_follow_state` | `0-10` | 1 | uint8 | Current local intersection/navigation FSM state. |
+| `left_speed_mm_s` | signed integer, `-32768` to `32767` | 2 | int16 | Current measured left-wheel speed in mm/s, derived from encoder feedback through the motor driver. Positive and negative signs indicate direction. |
+| `right_speed_mm_s` | signed integer, `-32768` to `32767` | 2 | int16 | Current measured right-wheel speed in mm/s, derived from encoder feedback through the motor driver. Positive and negative signs indicate direction. |
+| `battery_mv` | `0-65535` | 2 | uint16 | Measured battery voltage in millivolts. Example: `12420` = 12.420 V. |
 
 ## Controller Follow State
 

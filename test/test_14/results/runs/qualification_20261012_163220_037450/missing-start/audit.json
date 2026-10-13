@@ -1,0 +1,7 @@
+{
+  "passed": true,
+  "failures": [],
+  "proof": {
+    "car_1_missing_then_connected": true
+  }
+}

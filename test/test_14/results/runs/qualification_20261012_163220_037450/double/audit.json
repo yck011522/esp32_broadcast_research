@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "failures": [],
+  "proof": {
+    "observed_telemetry_outages_s": {
+      "2": [
+        13.038959600002272
+      ],
+      "3": [
+        13.859142999997857
+      ]
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "failures": [],
+  "proof": {
+    "returned_car_without_expired_world_samples": [
+      29.997,
+      34.997,
+      39.997
+    ]
+  }
+}

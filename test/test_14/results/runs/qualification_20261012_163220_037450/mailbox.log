@@ -1,0 +1,37 @@
+Test 14: C:\Users\leungp\Documents\GitHub\esp32_broadcast_research\test\test_14\results\runs\qualification_20261012_163220_037450\mailbox\ble_test_14_20261012_163849_996372.csv
+[0.0s] serial_opened: {'role': 'modem', 'port': 'COM3'}
+[0.0s] serial_opened: {'role': 1, 'port': 'COM7'}
+[0.0s] serial_opened: {'role': 2, 'port': 'COM4'}
+[0.1s] serial_opened: {'role': 3, 'port': 'COM5'}
+[0.1s] serial_opened: {'role': 4, 'port': 'COM8'}
+[4.5s] baseline_ready: {'cars': [1, 2, 3, 4]}
+[5.0s] car=1 PC_TX=50.20 Hz RX=20.00 Hz gaps=0 changes=0 echo_age=33.5 ms
+[5.0s] car=2 PC_TX=50.20 Hz RX=20.00 Hz gaps=0 changes=0 echo_age=36.9 ms
+[5.0s] car=3 PC_TX=50.20 Hz RX=20.00 Hz gaps=0 changes=0 echo_age=40.3 ms
+[5.0s] car=4 PC_TX=50.20 Hz RX=20.00 Hz gaps=0 changes=0 echo_age=39.9 ms
+[10.0s] car=1 PC_TX=50.00 Hz RX=20.00 Hz gaps=0 changes=0 echo_age=34.3 ms
+[10.0s] car=2 PC_TX=50.00 Hz RX=20.00 Hz gaps=0 changes=0 echo_age=36.7 ms
+[10.0s] car=3 PC_TX=50.00 Hz RX=20.20 Hz gaps=0 changes=0 echo_age=40.1 ms
+[10.0s] car=4 PC_TX=50.00 Hz RX=20.00 Hz gaps=0 changes=0 echo_age=42.0 ms
+[19.5s] mailbox_burst: {'final_sequence': 933}
+[15.0s] car=1 PC_TX=90.00 Hz RX=20.00 Hz gaps=0 changes=0 echo_age=33.2 ms
+[15.0s] car=2 PC_TX=90.00 Hz RX=20.00 Hz gaps=0 changes=0 echo_age=36.6 ms
+[15.0s] car=3 PC_TX=90.00 Hz RX=20.00 Hz gaps=0 changes=0 echo_age=39.8 ms
+[15.0s] car=4 PC_TX=90.00 Hz RX=20.00 Hz gaps=0 changes=0 echo_age=43.7 ms
+[20.0s] car=1 PC_TX=49.78 Hz RX=19.99 Hz gaps=0 changes=0 echo_age=31.9 ms
+[20.0s] car=2 PC_TX=49.78 Hz RX=19.99 Hz gaps=0 changes=0 echo_age=34.8 ms
+[20.0s] car=3 PC_TX=49.78 Hz RX=19.99 Hz gaps=0 changes=0 echo_age=38.5 ms
+[20.0s] car=4 PC_TX=49.78 Hz RX=19.99 Hz gaps=0 changes=0 echo_age=42.6 ms
+[25.0s] car=1 PC_TX=50.00 Hz RX=20.00 Hz gaps=0 changes=0 echo_age=31.5 ms
+[25.0s] car=2 PC_TX=50.00 Hz RX=20.00 Hz gaps=0 changes=0 echo_age=34.7 ms
+[25.0s] car=3 PC_TX=50.00 Hz RX=20.00 Hz gaps=0 changes=0 echo_age=39.9 ms
+[25.0s] car=4 PC_TX=50.00 Hz RX=20.00 Hz gaps=0 changes=0 echo_age=42.7 ms
+[30.0s] car=1 PC_TX=49.99 Hz RX=19.99 Hz gaps=0 changes=0 echo_age=31.3 ms
+[30.0s] car=2 PC_TX=49.99 Hz RX=19.99 Hz gaps=0 changes=0 echo_age=34.6 ms
+[30.0s] car=3 PC_TX=49.99 Hz RX=19.99 Hz gaps=0 changes=0 echo_age=38.4 ms
+[30.0s] car=4 PC_TX=49.99 Hz RX=20.19 Hz gaps=0 changes=0 echo_age=42.3 ms
+[35.0s] car=1 PC_TX=49.83 Hz RX=20.01 Hz gaps=0 changes=0 echo_age=32.3 ms
+[35.0s] car=2 PC_TX=49.83 Hz RX=20.01 Hz gaps=0 changes=0 echo_age=34.5 ms
+[35.0s] car=3 PC_TX=49.83 Hz RX=20.01 Hz gaps=0 changes=0 echo_age=38.0 ms
+[35.0s] car=4 PC_TX=49.83 Hz RX=19.81 Hz gaps=0 changes=0 echo_age=42.3 ms
+Finished: passed; C:\Users\leungp\Documents\GitHub\esp32_broadcast_research\test\test_14\results\runs\qualification_20261012_163220_037450\mailbox\ble_test_14_20261012_163849_996372.summary.json

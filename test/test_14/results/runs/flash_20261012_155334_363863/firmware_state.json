@@ -1,0 +1,38 @@
+{
+  "status": "test14_installed",
+  "uploaded": [
+    "ble14_car_1",
+    "ble14_car_2",
+    "ble14_car_3",
+    "ble14_car_4",
+    "ble14_modem"
+  ],
+  "attempted": [
+    {
+      "port": "COM7",
+      "profile": "ble14_car_1",
+      "usb_serial": "1C:DB:D4:43:73:EC"
+    },
+    {
+      "port": "COM4",
+      "profile": "ble14_car_2",
+      "usb_serial": "68:EE:8F:46:33:44"
+    },
+    {
+      "port": "COM5",
+      "profile": "ble14_car_3",
+      "usb_serial": "68:EE:8F:4B:5B:18"
+    },
+    {
+      "port": "COM8",
+      "profile": "ble14_car_4",
+      "usb_serial": "68:EE:8F:4B:4F:34"
+    },
+    {
+      "port": "COM3",
+      "profile": "ble14_modem",
+      "usb_serial": "68:EE:8F:4B:5B:4C"
+    }
+  ],
+  "errors": []
+}

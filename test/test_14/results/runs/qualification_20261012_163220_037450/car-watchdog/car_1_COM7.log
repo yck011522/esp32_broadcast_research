@@ -1,0 +1,43 @@
+[4.507s] car14: car=1 connected=1 subscribed=1 rx_hz=0.00 seq_lost=0 total_rx=28879 total_lost=18 seq_changes=6 connects=11 disconnects=10 notify_errors=0 uptime_ms=2740091 last_world=1932 silence_ms=10004 led=0
+[9.505s] car14: car=1 connected=1 subscribed=1 rx_hz=50.00 seq_lost=0 total_rx=29129 total_lost=18 seq_changes=7 connects=11 disconnects=10 notify_errors=0 uptime_ms=2745091 last_world=233 silence_ms=4 led=0
+[14.505s] car14: car=1 connected=1 subscribed=1 rx_hz=50.00 seq_lost=0 total_rx=29379 total_lost=18 seq_changes=7 connects=11 disconnects=10 notify_errors=0 uptime_ms=2750091 last_world=483 silence_ms=4 led=0
+[19.505s] car14: car=1 connected=1 subscribed=1 rx_hz=50.00 seq_lost=0 total_rx=29629 total_lost=18 seq_changes=7 connects=11 disconnects=10 notify_errors=0 uptime_ms=2755091 last_world=733 silence_ms=4 led=0
+[19.512s] car14 test: watchdog_injection
+[31.509s] E (2778387) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:
+[31.512s] E (2778387) task_wdt:  - loopTask (CPU 1)
+[31.515s] E (2778387) task_wdt: Tasks currently running:
+[31.518s] E (2778387) task_wdt: CPU 0: IDLE0
+[31.522s] E (2778387) task_wdt: CPU 1: IDLE1
+[31.524s] E (2778387) task_wdt: Aborting.
+[31.528s] E (2778387) task_wdt: Print CPU 1 backtrace
+[31.647s] 
+[31.647s] 
+[31.647s] 
+[31.647s] 
+[31.647s] Backtrace: 0x4037e787:0x3fca9580 0x4205570d:0x3fca95a0 0x40383337:0x3fca95c0 0x4038253d:0x3fca95e0
+[31.647s] 
+[31.647s] 
+[31.647s] 
+[31.647s] 
+[31.647s] ELF file SHA256: 50e6e48be
+[31.647s] 
+[31.647s] Rebooting...
+[31.647s] ESP-ROM:esp32s3-20210327
+[31.647s] Build:Mar 27 2021
+[31.648s] rst:0xc (RTC_SW_CPU_RST),boot:0x8 (SPI_FAST_FLASH_BOOT)
+[31.649s] Saved PC:0x4201c274
+[31.650s] SPIWP:0xee
+[31.650s] mode:DIO, clock div:1
+[31.652s] load:0x3fce2820,len:0x10cc
+[31.654s] load:0x403c8700,len:0xc2c
+[31.656s] load:0x403cb700,len:0x30b0
+[31.665s] entry 0x403c88b8
+[31.804s] E (9) task_wdt: esp_task_wdt_init(517): TWDT already initialized
+[36.847s] car14: car=1 connected=0 subscribed=0 rx_hz=0.00 seq_lost=0 total_rx=0 total_lost=0 seq_changes=0 connects=0 disconnects=0 notify_errors=0 uptime_ms=5066 last_world=0 silence_ms=0 led=0
+[41.845s] car14: car=1 connected=0 subscribed=0 rx_hz=0.00 seq_lost=0 total_rx=0 total_lost=0 seq_changes=0 connects=0 disconnects=0 notify_errors=0 uptime_ms=10066 last_world=0 silence_ms=0 led=0
+[46.846s] car14: car=1 connected=1 subscribed=1 rx_hz=36.80 seq_lost=0 total_rx=184 total_lost=0 seq_changes=0 connects=1 disconnects=0 notify_errors=0 uptime_ms=15066 last_world=2099 silence_ms=25 led=1
+[51.845s] car14: car=1 connected=1 subscribed=1 rx_hz=50.20 seq_lost=0 total_rx=435 total_lost=0 seq_changes=0 connects=1 disconnects=0 notify_errors=0 uptime_ms=20066 last_world=2350 silence_ms=5 led=1
+[56.845s] car14: car=1 connected=1 subscribed=1 rx_hz=50.00 seq_lost=0 total_rx=685 total_lost=0 seq_changes=0 connects=1 disconnects=0 notify_errors=0 uptime_ms=25066 last_world=2600 silence_ms=5 led=1
+[61.845s] car14: car=1 connected=1 subscribed=1 rx_hz=50.00 seq_lost=0 total_rx=935 total_lost=0 seq_changes=0 connects=1 disconnects=0 notify_errors=0 uptime_ms=30066 last_world=2850 silence_ms=5 led=1
+[66.845s] car14: car=1 connected=1 subscribed=1 rx_hz=50.00 seq_lost=0 total_rx=1185 total_lost=0 seq_changes=0 connects=1 disconnects=0 notify_errors=0 uptime_ms=35066 last_world=3100 silence_ms=6 led=1
+[71.845s] car14: car=1 connected=1 subscribed=1 rx_hz=26.60 seq_lost=0 total_rx=1318 total_lost=0 seq_changes=0 connects=1 disconnects=0 notify_errors=0 uptime_ms=40066 last_world=3233 silence_ms=2345 led=0

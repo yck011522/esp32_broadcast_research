@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "failures": [],
+  "proof": {
+    "pc_submitted": 1949,
+    "car_receipts": {
+      "2": 1753,
+      "3": 1753,
+      "4": 1752,
+      "1": 1752
+    },
+    "burst_observed": true
+  }
+}

@@ -19,3 +19,9 @@ Test 13b shares the Test 13 modem and car files. Profile
 `BLE_MODEM_FOUR_CARS=1`; `esp_esp_ble_car_1/2/3/4` selects each application ID.
 The original modem profile still selects only Cars 2 and 3. Test 13b results
 and run instructions are in [test/test_13b](../test/test_13b/README.md).
+
+Test 14 uses separate `test_14/modem`, `test_14/car`, and `test_14/include`
+sources. Profiles `ble14_modem` and `ble14_car_1/2/3/4` select them. It uses
+seven-byte WorldState payloads and logical-ID advertisements. The optional
+`ble14_modem_watchdog_test` profile deliberately stalls a worker once; normal
+firmware does not enable this injection. See [Test 14](../test/test_14/README.md).

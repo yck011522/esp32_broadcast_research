@@ -1,0 +1,7 @@
+{
+  "passed": true,
+  "failures": [],
+  "proof": {
+    "car_1_uptime_reset_observed": true
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "python": "3.12.10",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "packages": {
+    "pyserial": "3.5",
+    "matplotlib": "3.11.2"
+  },
+  "settings": {
+    "port": "COM3",
+    "duration_seconds": 60.0,
+    "hours": null,
+    "label": "missing-start",
+    "scenario": "missing-start",
+    "no_server_monitor": false,
+    "output_dir": "C:\\Users\\leungp\\Documents\\GitHub\\esp32_broadcast_research\\test\\test_14\\results\\runs\\qualification_20261012_163220_037450\\missing-start",
+    "stop_file": null,
+    "start_sequence": 65520,
+    "modem_profile": "ble14_modem"
+  },
+  "source_sha256": {
+    "platformio.ini": "f3288f425cb790baa30a0f396b95768a3060bebc606bc4fe9a437e5efca3e0dc",
+    "payload.md": "c9b84ea5cb3f7d81ac5c585050c9b835339532aaacc6a6a7e6aab1d6850e50df",
+    "src/test_14/car/main.cpp": "242f0966ac3efd467bd0b8d52ae45598df9dc66a9bf65e2267af5df135e50b6f",
+    "src/test_14/include/ble14_modem_config.h": "d46c74f4686055f4a0c4e56a2e9611f241dd2ef17b85f593b9e3182af74fde7c",
+    "src/test_14/include/ble14_protocol.h": "3ef7ac6c77d2ab527b616be09a6b7b72d20415be3aebf3615095f4f126d57ec5",
+    "src/test_14/include/ble14_watchdog.h": "46c34d6f10b9d294888ae008283b5be7b357b7b985d57cf078f881f3e696c6bf",
+    "src/test_14/modem/main.cpp": "6cc6aea61d542c74009fa9a1fe8fc2ece4821a302ac9cfa43c735ea327b83283",
+    "test/test_14/analyze_test_14.py": "cb466f3f25facb7d0faea0e67a85c53c4c278a16407fc3f75f01c9a594df50d6",
+    "test/test_14/flash_test_14.py": "88ed62a41d9f93113e34f36da5a56fe6fb4a65f6bdbf15cecaf6af33e96badc8",
+    "test/test_14/protocol.py": "0352dc192e0db7c40d33a77fee2f3040f152f2e0f100f2ecf7a12dab99c61fdc",
+    "test/test_14/qualify_test_14.py": "05ac94d82ae1a0e29a2cbf35cead1ced0d74dea9541c34c4ba88baaea1ce6a6c",
+    "test/test_14/test_14_ble_modem.py": "88ed43fa235bf650fc94a5a2acf45971d194876a56f6e07e8e2cf08a71d7117d",
+    "test/test_14/test_14_checks.py": "c9b437a2a64233cdeb0aa30438abe86ed3096470c60dd9606fb91966a917b2e7",
+    "test/test_14/__init__.py": "a229818fb29edb21f0482f75cd6923245813c3bf60cab0df11885ac0a2c24c06"
+  },
+  "available_builds": {
+    "ble14_modem": {
+      "file": "firmware/ble14_modem.bin",
+      "sha256": "ed745fea5e480041cd979718c26006fab4c27d8b3bbb8fc5672560bcfac14384"
+    }
+  },
+  "build_note": "Available builds copied locally, not firmware read back from devices."
+}

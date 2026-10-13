@@ -1,0 +1,14 @@
+{
+  "status": "test14_installed",
+  "uploaded": [
+    "ble14_modem_debug"
+  ],
+  "attempted": [
+    {
+      "port": "COM3",
+      "profile": "ble14_modem_debug",
+      "usb_serial": "68:EE:8F:4B:5B:4C"
+    }
+  ],
+  "errors": []
+}

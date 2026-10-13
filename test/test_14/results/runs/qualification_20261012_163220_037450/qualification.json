@@ -1,0 +1,140 @@
+{
+  "started_utc": "2026-10-12T16:32:20.037450+00:00",
+  "status": "failed",
+  "cases": [
+    {
+      "case": "reconnect",
+      "exit_code": 0,
+      "status": "passed",
+      "summary": "reconnect\\ble_test_14_20261012_163220_181194.summary.json",
+      "validation_failures": [],
+      "errors": []
+    },
+    {
+      "case": "double",
+      "exit_code": 0,
+      "status": "passed",
+      "summary": "double\\ble_test_14_20261012_163510_019946.summary.json",
+      "validation_failures": [],
+      "errors": []
+    },
+    {
+      "case": "idle",
+      "exit_code": 0,
+      "status": "passed",
+      "summary": "idle\\ble_test_14_20261012_163619_996745.summary.json",
+      "validation_failures": [],
+      "errors": []
+    },
+    {
+      "case": "expiry",
+      "exit_code": 0,
+      "status": "passed",
+      "summary": "expiry\\ble_test_14_20261012_163740_003868.summary.json",
+      "validation_failures": [],
+      "errors": []
+    },
+    {
+      "case": "mailbox",
+      "exit_code": 0,
+      "status": "passed",
+      "summary": "mailbox\\ble_test_14_20261012_163849_996372.summary.json",
+      "validation_failures": [],
+      "errors": []
+    },
+    {
+      "case": "car-watchdog",
+      "exit_code": 0,
+      "status": "passed",
+      "summary": "car-watchdog\\ble_test_14_20261012_163934_991619.summary.json",
+      "validation_failures": [],
+      "errors": []
+    },
+    {
+      "case": "missing-start",
+      "exit_code": 0,
+      "status": "passed",
+      "summary": "missing-start\\ble_test_14_20261012_164049_995176.summary.json",
+      "validation_failures": [],
+      "errors": []
+    },
+    {
+      "case": "modem-watchdog",
+      "exit_code": 0,
+      "status": "passed",
+      "summary": "modem-watchdog\\ble_test_14_20261012_164307_417566.summary.json",
+      "validation_failures": [],
+      "errors": []
+    },
+    {
+      "case": "stability",
+      "exit_code": 1,
+      "status": "failed",
+      "summary": "stability\\ble_test_14_20261012_164508_507394.summary.json",
+      "validation_failures": [
+        "Car 1: unexpected reconnect"
+      ]
+    }
+  ],
+  "operations": [
+    {
+      "label": "reconnect",
+      "exit_code": 0,
+      "elapsed_s": 169.81165669999973
+    },
+    {
+      "label": "double",
+      "exit_code": 0,
+      "elapsed_s": 69.97660539999924
+    },
+    {
+      "label": "idle",
+      "exit_code": 0,
+      "elapsed_s": 79.99178549999851
+    },
+    {
+      "label": "expiry",
+      "exit_code": 0,
+      "elapsed_s": 69.98737149999943
+    },
+    {
+      "label": "mailbox",
+      "exit_code": 0,
+      "elapsed_s": 44.988564600000245
+    },
+    {
+      "label": "car-watchdog",
+      "exit_code": 0,
+      "elapsed_s": 74.98855149999872
+    },
+    {
+      "label": "missing-start",
+      "exit_code": 0,
+      "elapsed_s": 69.18535439999687
+    },
+    {
+      "label": "flash_watchdog",
+      "exit_code": 0,
+      "elapsed_s": 68.20538809999925
+    },
+    {
+      "label": "modem-watchdog",
+      "exit_code": 0,
+      "elapsed_s": 100.74050390000048
+    },
+    {
+      "label": "restore_normal",
+      "exit_code": 0,
+      "elapsed_s": 20.353826799997478
+    },
+    {
+      "label": "stability",
+      "exit_code": 1,
+      "elapsed_s": 3612.8044462
+    }
+  ],
+  "errors": [
+    "RuntimeError: Stability run failed"
+  ],
+  "finished_utc": "2026-10-12T17:45:21.212784+00:00"
+}

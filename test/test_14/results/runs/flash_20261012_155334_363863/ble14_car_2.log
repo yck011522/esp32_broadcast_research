@@ -1,0 +1,170 @@
+Processing ble14_car_2 (platform: https://github.com/pioarduino/platform-espressif32/releases/download/55.03.312-1/platform-espressif32.zip; board: seeed_xiao_esp32s3; framework: arduino)
+--------------------------------------------------------------------------------
+Verbose mode can be enabled via `-v, --verbose` option
+CONFIGURATION: https://docs.platformio.org/page/boards/espressif32/seeed_xiao_esp32s3.html
+PLATFORM: Espressif 32 (55.3.312) > Seeed Studio XIAO ESP32S3
+HARDWARE: ESP32S3 240MHz, 320KB RAM, 8MB Flash
+DEBUG: Current (cmsis-dap) External (cmsis-dap, esp-bridge, esp-builtin, esp-prog, esp-prog-2, iot-bus-jtag, jlink, minimodule, olimex-arm-usb-ocd, olimex-arm-usb-ocd-h, olimex-arm-usb-tiny-h, olimex-jtag-tiny, tumpa)
+PACKAGES: 
+ - contrib-piohome @ 3.4.4 
+ - framework-arduinoespressif32 @ 3.3.12 
+ - framework-arduinoespressif32-libs @ 5.5.5+sha.b774170ff46 
+ - tool-esptoolpy @ 5.4.0 
+ - tool-xtensa-esp-elf-gdb @ 17.1.0+20260402 
+ - toolchain-xtensa-esp-elf @ 14.2.0+20260121
+LDF: Library Dependency Finder -> https://bit.ly/configure-pio-ldf
+LDF Modes: Finder ~ chain, Compatibility ~ soft
+Found 45 compatible libraries
+Scanning dependencies...
+Dependency Graph
+|-- NimBLE-Arduino @ 2.5.1
+Building in release mode
+Compiling .pio\build\ble14_car_2\src\test_14\car\main.cpp.o
+Linking .pio\build\ble14_car_2\firmware.elf
+                            Memory Type Usage Summary                             
+┌─────────────────────┬──────────────┬──────────┬────────────────┬───────────────┐
+│ Memory Type/Section │ Used [bytes] │ Used [%] │ Remain [bytes] │ Total [bytes] │
+├─────────────────────┼──────────────┼──────────┼────────────────┼───────────────┤
+│ Flash Code          │       354848 │          │                │               │
+│    .text            │       354848 │          │                │               │
+│ DIRAM               │       109506 │    32.04 │         232254 │        341760 │
+│    .text            │        76539 │     22.4 │                │               │
+│    .data            │        19367 │     5.67 │                │               │
+│    .bss             │        13600 │     3.98 │                │               │
+│ Flash Data          │        84972 │          │                │               │
+│    .rodata          │        76408 │          │                │               │
+│    .eh_frame        │         8308 │          │                │               │
+│    .appdesc         │          256 │          │                │               │
+│ IRAM                │        16384 │    100.0 │              0 │         16384 │
+│    .text            │        15356 │    93.73 │                │               │
+│    .vectors         │         1028 │     6.27 │                │               │
+└─────────────────────┴──────────────┴──────────┴────────────────┴───────────────┘
+Total image size: 552110 bytes (.bin may be padded larger)
+Note: The reported total sizes may be smaller than those in the technical reference manual due to reserved memory and application configuration. The total flash size available for the application is not included by default, as it cannot be reliably determined due to the presence of other data like the bootloader, partition table, and application partition size. The total external RAM size is not included either, because the amount of RAM connected to the chip is detected at boot and is not known during the build.
+Retrieving maximum program size .pio\build\ble14_car_2\firmware.elf
+Checking size .pio\build\ble14_car_2\firmware.elf
+Advanced Memory Usage is available via "PlatformIO Home > Project Inspect"
+RAM:   [=         ]  10.1% (used 32968 bytes from 327680 bytes)
+Flash: [==        ]  16.3% (used 543546 bytes from 3342336 bytes)
+Building .pio\build\ble14_car_2\firmware.bin
+esptool v5.4.0
+Creating ESP32-S3 image...
+Merged 3 ELF sections.
+Successfully created ESP32-S3 image.
+Creating binary "firmware.factory.bin" with:
+    Offset   | File
+ -  0x0000   | bootloader.bin
+ -  0x8000   | partitions.bin
+ -  0xe000   | boot_app0.bin
+ -  0x10000  | firmware.bin
+Successfully created combined binary image.
+Configuring upload protocol...
+AVAILABLE: cmsis-dap, esp-bridge, esp-builtin, esp-prog, esp-prog-2, espota, esptool, iot-bus-jtag, jlink, minimodule, olimex-arm-usb-ocd, olimex-arm-usb-ocd-h, olimex-arm-usb-tiny-h, olimex-jtag-tiny, tumpa
+CURRENT: upload_protocol = esptool
+Looking for upload port...
+Uploading .pio\build\ble14_car_2\firmware.bin
+esptool v5.4.0
+Serial port COM4:
+Connecting...
+Connected to ESP32-S3 on COM4:
+Chip type:          ESP32-S3 (QFN56) (revision v0.2)
+Features:           Wi-Fi, BT 5 (LE), Dual Core + LP Core, 240MHz, Embedded PSRAM 8MB (AP_3v3)
+Crystal frequency:  40MHz
+USB mode:           USB-Serial/JTAG
+MAC:                68:ee:8f:46:33:44
+
+Uploading stub flasher...
+Running stub flasher...
+Stub flasher running.
+Changing baud rate to 460800...
+Changed.
+
+Configuring flash size...
+Auto-detected flash size: 8MB
+
+Writing 'C:\Users\leungp\Documents\GitHub\esp32_broadcast_research\.pio\build\ble14_car_2\bootloader.bin' at 0x00000000...
+SHA digest in image updated.
+Flash will be erased from 0x00000000 to 0x00004fff...
+Compressed 19968 bytes to 12992...
+
+Writing at 0x00004e00 [██████████████████████████████] 100.0% 12.69kB/12.69kB [0s] 
+Wrote 19968 bytes (12992 compressed) at 0x00000000 in 0.3 seconds (512.6 kbit/s).
+Verifying written data...
+Hash of data verified.
+
+Writing 'C:\Users\leungp\Documents\GitHub\esp32_broadcast_research\.pio\build\ble14_car_2\partitions.bin' at 0x00008000...
+Flash will be erased from 0x00008000 to 0x00008fff...
+Compressed 3072 bytes to 146...
+
+Writing at 0x00008c00 [██████████████████████████████] 100.0% 146B/146B [0s] 
+Wrote 3072 bytes (146 compressed) at 0x00008000 in 0.0 seconds (495.5 kbit/s).
+Verifying written data...
+Hash of data verified.
+
+Writing 'C:\Users\leungp\.platformio\packages\framework-arduinoespressif32\tools\partitions\boot_app0.bin' at 0x0000e000...
+Flash will be erased from 0x0000e000 to 0x0000ffff...
+Compressed 8192 bytes to 47...
+
+Writing at 0x00010000 [██████████████████████████████] 100.0% 47B/47B [0s] 
+Wrote 8192 bytes (47 compressed) at 0x0000e000 in 0.1 seconds (655.6 kbit/s).
+Verifying written data...
+Hash of data verified.
+
+Writing '.pio\build\ble14_car_2\firmware.bin' at 0x00010000...
+Flash will be erased from 0x00010000 to 0x00096fff...
+Compressed 552256 bytes to 345037...
+
+Writing at 0x0001bd82 [█░░░░░░░░░░░░░░░░░░░░░░░░░░░░░]   4.7% 16.00kB/336.95kB [0s] 
+
+Writing at 0x00027581 [██░░░░░░░░░░░░░░░░░░░░░░░░░░░░]   9.5% 32.00kB/336.95kB [0s] 
+
+Writing at 0x0002dd0f [████░░░░░░░░░░░░░░░░░░░░░░░░░░]  14.2% 48.00kB/336.95kB [0s] 
+
+Writing at 0x0003349e [█████░░░░░░░░░░░░░░░░░░░░░░░░░]  19.0% 64.00kB/336.95kB [0s] 
+
+Writing at 0x00038bd5 [███████░░░░░░░░░░░░░░░░░░░░░░░]  23.7% 80.00kB/336.95kB [0s] 
+
+Writing at 0x0003e52d [████████░░░░░░░░░░░░░░░░░░░░░░]  28.5% 96.00kB/336.95kB [1s] 
+
+Writing at 0x000441a3 [█████████░░░░░░░░░░░░░░░░░░░░░]  33.2% 112.00kB/336.95kB [1s] 
+
+Writing at 0x00049b9e [███████████░░░░░░░░░░░░░░░░░░░]  38.0% 128.00kB/336.95kB [1s] 
+
+Writing at 0x0004f2c5 [████████████░░░░░░░░░░░░░░░░░░]  42.7% 144.00kB/336.95kB [1s] 
+
+Writing at 0x00054909 [██████████████░░░░░░░░░░░░░░░░]  47.5% 160.00kB/336.95kB [1s] 
+
+Writing at 0x0005a490 [███████████████░░░░░░░░░░░░░░░]  52.2% 176.00kB/336.95kB [1s] 
+
+Writing at 0x0005fde5 [█████████████████░░░░░░░░░░░░░]  57.0% 192.00kB/336.95kB [2s] 
+
+Writing at 0x00065927 [██████████████████░░░░░░░░░░░░]  61.7% 208.00kB/336.95kB [2s] 
+
+Writing at 0x0006b1d1 [███████████████████░░░░░░░░░░░]  66.5% 224.00kB/336.95kB [2s] 
+
+Writing at 0x00070c20 [█████████████████████░░░░░░░░░]  71.2% 240.00kB/336.95kB [2s] 
+
+Writing at 0x000762cf [██████████████████████░░░░░░░░]  76.0% 256.00kB/336.95kB [2s] 
+
+Writing at 0x0007c96e [████████████████████████░░░░░░]  80.7% 272.00kB/336.95kB [2s] 
+
+Writing at 0x00084d0a [█████████████████████████░░░░░]  85.5% 288.00kB/336.95kB [2s] 
+
+Writing at 0x0008a854 [███████████████████████████░░░]  90.2% 304.00kB/336.95kB [3s] 
+
+Writing at 0x00090487 [████████████████████████████░░]  95.0% 320.00kB/336.95kB [3s] 
+
+Writing at 0x00096859 [█████████████████████████████░]  99.7% 336.00kB/336.95kB [3s] 
+
+Writing at 0x00096d40 [██████████████████████████████] 100.0% 336.95kB/336.95kB [3s] 
+Wrote 552256 bytes (345037 compressed) at 0x00010000 in 3.6 seconds (1240.9 kbit/s).
+Verifying written data...
+Hash of data verified.
+
+Hard resetting via RTS pin...
+========================= [SUCCESS] Took 25.57 seconds =========================
+
+Environment    Status    Duration
+-------------  --------  ------------
+ble14_car_2    SUCCESS   00:00:25.569
+========================= 1 succeeded in 00:00:25.569 =========================

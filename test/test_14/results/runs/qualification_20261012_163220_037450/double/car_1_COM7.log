@@ -1,0 +1,14 @@
+[4.467s] car14: car=1 connected=1 subscribed=1 rx_hz=0.00 seq_lost=0 total_rx=20376 total_lost=0 seq_changes=1 connects=10 disconnects=9 notify_errors=0 uptime_ms=2475091 last_world=7983 silence_ms=10003 led=0
+[9.470s] car14: car=1 connected=1 subscribed=1 rx_hz=50.00 seq_lost=0 total_rx=20626 total_lost=0 seq_changes=2 connects=10 disconnects=9 notify_errors=0 uptime_ms=2480091 last_world=233 silence_ms=3 led=0
+[14.468s] car14: car=1 connected=1 subscribed=1 rx_hz=50.00 seq_lost=0 total_rx=20876 total_lost=0 seq_changes=2 connects=10 disconnects=9 notify_errors=0 uptime_ms=2485091 last_world=483 silence_ms=3 led=0
+[19.469s] car14: car=1 connected=1 subscribed=1 rx_hz=50.00 seq_lost=0 total_rx=21126 total_lost=0 seq_changes=2 connects=10 disconnects=9 notify_errors=0 uptime_ms=2490091 last_world=733 silence_ms=3 led=0
+[24.469s] car14: car=1 connected=1 subscribed=1 rx_hz=50.00 seq_lost=0 total_rx=21376 total_lost=0 seq_changes=2 connects=10 disconnects=9 notify_errors=0 uptime_ms=2495091 last_world=983 silence_ms=3 led=0
+[29.469s] car14: car=1 connected=1 subscribed=1 rx_hz=50.00 seq_lost=0 total_rx=21626 total_lost=0 seq_changes=2 connects=10 disconnects=9 notify_errors=0 uptime_ms=2500091 last_world=1233 silence_ms=3 led=0
+[34.468s] car14: car=1 connected=1 subscribed=1 rx_hz=50.00 seq_lost=0 total_rx=21876 total_lost=0 seq_changes=2 connects=10 disconnects=9 notify_errors=0 uptime_ms=2505091 last_world=1483 silence_ms=3 led=0
+[39.468s] car14: car=1 connected=1 subscribed=1 rx_hz=50.00 seq_lost=0 total_rx=22126 total_lost=0 seq_changes=2 connects=10 disconnects=9 notify_errors=0 uptime_ms=2510091 last_world=1733 silence_ms=3 led=0
+[44.468s] car14: car=1 connected=1 subscribed=1 rx_hz=50.00 seq_lost=0 total_rx=22376 total_lost=0 seq_changes=2 connects=10 disconnects=9 notify_errors=0 uptime_ms=2515091 last_world=1983 silence_ms=3 led=0
+[49.469s] car14: car=1 connected=1 subscribed=1 rx_hz=50.00 seq_lost=0 total_rx=22626 total_lost=0 seq_changes=2 connects=10 disconnects=9 notify_errors=0 uptime_ms=2520091 last_world=2233 silence_ms=3 led=0
+[54.469s] car14: car=1 connected=1 subscribed=1 rx_hz=50.00 seq_lost=0 total_rx=22876 total_lost=0 seq_changes=2 connects=10 disconnects=9 notify_errors=0 uptime_ms=2525091 last_world=2483 silence_ms=3 led=0
+[59.468s] car14: car=1 connected=1 subscribed=1 rx_hz=50.00 seq_lost=0 total_rx=23126 total_lost=0 seq_changes=2 connects=10 disconnects=9 notify_errors=0 uptime_ms=2530091 last_world=2733 silence_ms=3 led=0
+[64.467s] car14: car=1 connected=1 subscribed=1 rx_hz=50.00 seq_lost=0 total_rx=23376 total_lost=0 seq_changes=2 connects=10 disconnects=9 notify_errors=0 uptime_ms=2535091 last_world=2983 silence_ms=3 led=0
+[69.466s] car14: car=1 connected=1 subscribed=1 rx_hz=0.00 seq_lost=0 total_rx=23376 total_lost=0 seq_changes=2 connects=10 disconnects=9 notify_errors=0 uptime_ms=2540091 last_world=2983 silence_ms=5003 led=0

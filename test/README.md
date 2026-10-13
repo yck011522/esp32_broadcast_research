@@ -18,6 +18,7 @@ results together. Run commands from the repository root with `.venv` activated.
 | [12](test_12/README.md) | NimBLE car firmware with PC Bluetooth |
 | [13](test_13/README.md) | ESP32 serial/BLE modem with two cars |
 | [13b](test_13b/README.md) | Shared ESP32 BLE firmware with four cars; separate bench/distance results |
+| [14](test_14/README.md) | Transparent modem, seven-byte worlds, ID discovery and periodic reconnects |
 
 Firmware folders exist for Tests 9, 11, 12 and 13. Tests 9–11 share the
 retained Test 11 BLE server source. Older ESP-NOW sources are retained

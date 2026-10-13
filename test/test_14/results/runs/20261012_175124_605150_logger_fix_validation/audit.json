@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "failures": [],
+  "proof": {
+    "car_receipt_counts": {
+      "2": 6000,
+      "1": 6000,
+      "3": 6000,
+      "4": 6000
+    }
+  }
+}

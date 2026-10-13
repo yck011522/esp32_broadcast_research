@@ -1,0 +1,59 @@
+Test 14: C:\Users\leungp\Documents\GitHub\esp32_broadcast_research\test\test_14\results\runs\qualification_20261012_163220_037450\missing-start\ble_test_14_20261012_164049_995176.csv
+[0.0s] serial_opened: {'role': 'modem', 'port': 'COM3'}
+[0.0s] serial_opened: {'role': 1, 'port': 'COM7'}
+[0.0s] serial_opened: {'role': 2, 'port': 'COM4'}
+[0.1s] serial_opened: {'role': 3, 'port': 'COM5'}
+[0.1s] serial_opened: {'role': 4, 'port': 'COM8'}
+[0.1s] car_test_command: {'car': 1, 'command': 'DISCONNECT 30'}
+[3.7s] baseline_ready: {'cars': [2, 3, 4]}
+[4.7s] traffic_warning: {'car': 1, 'silence_s': 1.0005478000020958, 'echo_age_ms': None, 'expected': True}
+[5.0s] car=1 PC_TX=50.19 Hz RX=0.00 Hz gaps=0 changes=0 echo_age=n/a ms
+[5.0s] car=2 PC_TX=50.19 Hz RX=20.00 Hz gaps=0 changes=0 echo_age=37.5 ms
+[5.0s] car=3 PC_TX=50.19 Hz RX=20.20 Hz gaps=0 changes=0 echo_age=40.6 ms
+[5.0s] car=4 PC_TX=50.19 Hz RX=20.00 Hz gaps=0 changes=0 echo_age=30.7 ms
+[10.0s] car=1 PC_TX=50.00 Hz RX=0.00 Hz gaps=0 changes=0 echo_age=n/a ms
+[10.0s] car=2 PC_TX=50.00 Hz RX=20.00 Hz gaps=0 changes=0 echo_age=37.2 ms
+[10.0s] car=3 PC_TX=50.00 Hz RX=20.00 Hz gaps=0 changes=0 echo_age=40.5 ms
+[10.0s] car=4 PC_TX=50.00 Hz RX=20.00 Hz gaps=0 changes=0 echo_age=31.1 ms
+[15.0s] car=1 PC_TX=49.98 Hz RX=0.00 Hz gaps=0 changes=0 echo_age=n/a ms
+[15.0s] car=2 PC_TX=49.98 Hz RX=19.99 Hz gaps=0 changes=0 echo_age=37.2 ms
+[15.0s] car=3 PC_TX=49.98 Hz RX=19.99 Hz gaps=0 changes=0 echo_age=40.3 ms
+[15.0s] car=4 PC_TX=49.98 Hz RX=19.99 Hz gaps=0 changes=0 echo_age=36.1 ms
+[20.0s] car=1 PC_TX=50.00 Hz RX=0.00 Hz gaps=0 changes=0 echo_age=n/a ms
+[20.0s] car=2 PC_TX=50.00 Hz RX=20.00 Hz gaps=0 changes=0 echo_age=36.9 ms
+[20.0s] car=3 PC_TX=50.00 Hz RX=20.00 Hz gaps=0 changes=0 echo_age=40.3 ms
+[20.0s] car=4 PC_TX=50.00 Hz RX=20.00 Hz gaps=0 changes=0 echo_age=37.3 ms
+[25.0s] car=1 PC_TX=50.00 Hz RX=0.00 Hz gaps=0 changes=0 echo_age=n/a ms
+[25.0s] car=2 PC_TX=50.00 Hz RX=20.00 Hz gaps=0 changes=0 echo_age=36.7 ms
+[25.0s] car=3 PC_TX=50.00 Hz RX=20.00 Hz gaps=0 changes=0 echo_age=40.6 ms
+[25.0s] car=4 PC_TX=50.00 Hz RX=20.00 Hz gaps=0 changes=0 echo_age=41.0 ms
+[30.0s] car=1 PC_TX=50.00 Hz RX=0.00 Hz gaps=0 changes=0 echo_age=n/a ms
+[30.0s] car=2 PC_TX=50.00 Hz RX=20.00 Hz gaps=0 changes=0 echo_age=37.3 ms
+[30.0s] car=3 PC_TX=50.00 Hz RX=20.00 Hz gaps=0 changes=0 echo_age=42.0 ms
+[30.0s] car=4 PC_TX=50.00 Hz RX=20.00 Hz gaps=0 changes=0 echo_age=42.3 ms
+[37.7s] traffic_warning_cleared: {'car': 1}
+[35.0s] car=1 PC_TX=49.99 Hz RX=4.40 Hz gaps=0 changes=0 echo_age=1560.0 ms
+[35.0s] car=2 PC_TX=49.99 Hz RX=19.99 Hz gaps=0 changes=0 echo_age=37.3 ms
+[35.0s] car=3 PC_TX=49.99 Hz RX=19.99 Hz gaps=0 changes=0 echo_age=43.1 ms
+[35.0s] car=4 PC_TX=49.99 Hz RX=20.19 Hz gaps=0 changes=0 echo_age=43.2 ms
+[40.0s] car=1 PC_TX=49.99 Hz RX=19.99 Hz gaps=0 changes=0 echo_age=33.8 ms
+[40.0s] car=2 PC_TX=49.99 Hz RX=19.99 Hz gaps=0 changes=0 echo_age=36.6 ms
+[40.0s] car=3 PC_TX=49.99 Hz RX=19.99 Hz gaps=0 changes=0 echo_age=40.2 ms
+[40.0s] car=4 PC_TX=49.99 Hz RX=19.99 Hz gaps=0 changes=0 echo_age=44.2 ms
+[45.0s] car=1 PC_TX=49.99 Hz RX=20.00 Hz gaps=0 changes=0 echo_age=33.3 ms
+[45.0s] car=2 PC_TX=49.99 Hz RX=20.00 Hz gaps=0 changes=0 echo_age=36.6 ms
+[45.0s] car=3 PC_TX=49.99 Hz RX=20.00 Hz gaps=0 changes=0 echo_age=39.7 ms
+[45.0s] car=4 PC_TX=49.99 Hz RX=20.00 Hz gaps=0 changes=0 echo_age=43.8 ms
+[50.0s] car=1 PC_TX=50.00 Hz RX=20.00 Hz gaps=0 changes=0 echo_age=32.6 ms
+[50.0s] car=2 PC_TX=50.00 Hz RX=20.00 Hz gaps=0 changes=0 echo_age=36.4 ms
+[50.0s] car=3 PC_TX=50.00 Hz RX=20.00 Hz gaps=0 changes=0 echo_age=39.8 ms
+[50.0s] car=4 PC_TX=50.00 Hz RX=20.00 Hz gaps=0 changes=0 echo_age=43.6 ms
+[55.0s] car=1 PC_TX=49.98 Hz RX=19.99 Hz gaps=0 changes=0 echo_age=33.6 ms
+[55.0s] car=2 PC_TX=49.98 Hz RX=19.99 Hz gaps=0 changes=0 echo_age=36.3 ms
+[55.0s] car=3 PC_TX=49.98 Hz RX=19.99 Hz gaps=0 changes=0 echo_age=39.3 ms
+[55.0s] car=4 PC_TX=49.98 Hz RX=19.99 Hz gaps=0 changes=0 echo_age=43.4 ms
+[60.0s] car=1 PC_TX=50.06 Hz RX=20.02 Hz gaps=0 changes=0 echo_age=34.3 ms
+[60.0s] car=2 PC_TX=50.06 Hz RX=20.02 Hz gaps=0 changes=0 echo_age=36.4 ms
+[60.0s] car=3 PC_TX=50.06 Hz RX=20.02 Hz gaps=0 changes=0 echo_age=39.7 ms
+[60.0s] car=4 PC_TX=50.06 Hz RX=19.82 Hz gaps=0 changes=0 echo_age=44.0 ms
+Finished: passed; C:\Users\leungp\Documents\GitHub\esp32_broadcast_research\test\test_14\results\runs\qualification_20261012_163220_037450\missing-start\ble_test_14_20261012_164049_995176.summary.json
